@@ -1,5 +1,1 @@
 User-agent: *
-Disallow: /pages
-Disallow: /src
-Allow: /images
-Sitemap: http://www.gstatic.com/s2/sitemaps/profiles-sitemap.xml
