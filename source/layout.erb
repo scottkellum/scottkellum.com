@@ -1,5 +1,7 @@
 <!doctype html>
-<html>
+<!--[if lt IE 9 ]> <html class="ie ltie9 no-js no-mqs" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
   <head>
     <title><%= data.page.title || "Scott Kellum" %></title>
     <meta charset="utf-8" />
@@ -10,13 +12,18 @@
     <%= stylesheet_link_tag "style" %>
     <!-- <%= javascript_include_tag  "main" %> -->
 
+    <link href="//cloud.webtype.com/css/5fd75aea-fa83-43ad-8fb7-509ad91b9cd7.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="//use.typekit.net/qfs2thr.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
   </head>
   <body>
     
-    <div id="main" role="main">
+    <article id="main" role="main">
       <h1><%= data.page.title %></h1>
       <%= yield %>
-    </div>
+    </article>
     
     <aside>
       <h2>Recent Articles</h2>
@@ -33,5 +40,11 @@
         <% end %>
       </ol>
     </aside>
+
+    <nav>
+      <ul>
+        <li><a href="/">home</a></li>
+      </ul>
+    </nav>
   </body>
 </html>
