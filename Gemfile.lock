@@ -73,6 +73,7 @@ GEM
       sass (>= 3.2.0)
       sassy-math (>= 1.5)
     multi_json (1.7.0)
+    nokogiri (1.5.8)
     padrino-core (0.10.7)
       activesupport (~> 3.2.0)
       http_router (~> 0.10.2)
@@ -139,4 +140,5 @@ DEPENDENCIES
   color-schemer (~> 0.2.3)
   middleman (~> 3.0.12)
   middleman-blog (~> 3.2.0)
+  nokogiri
   toolkit (~> 0.2.6)

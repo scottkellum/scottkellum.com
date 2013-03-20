@@ -1,4 +1,11 @@
 ###
+# Layout
+###
+
+page "/index.html", :layout => "layout_home"
+page "/blog/*", :layout => "layout_legacy"
+
+###
 # Blog settings
 ###
 
@@ -36,9 +43,9 @@ require 'toolkit'
 require 'breakpoint'
 require 'color-schemer'
 
-output_style     = :compressed
-line_comments    = false
-preferred_syntax = :scss
+# output_style     = :compressed
+# line_comments    = false
+# preferred_syntax = :scss
 
 
 ###
