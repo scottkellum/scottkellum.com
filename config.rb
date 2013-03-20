@@ -4,6 +4,7 @@
 
 page "/index.html", :layout => "layout_home"
 page "/blog/*", :layout => "layout_legacy"
+page "/404.html", :layout => "layout_legacy"
 
 ###
 # Blog settings
