@@ -10,7 +10,7 @@ nav {
     margin: 0;
   }
   a {
-    background: #000;
+    background: $primary;
     color: #fff;
     text-decoration: none;
   }
@@ -32,18 +32,20 @@ nav {
     bottom: 0;
     opacity: 0;
     padding: 1em;
-    width: ms(5);
+    width: ms(4.5);
+    max-width: 60%;
+    @include box-sizing(border-box);
     @include transition(all .5s);
   }
   #older a {
-    left: -1 * ms(5);
+    left: -1 * ms(4.5) + 1em;
     &:hover {
       left: 0;
       opacity: 1;
     }
   }
   #newer a {
-    right: -1 * ms(5);
+    right: -1 * ms(4.5) + 1em;
     &:hover {
       right: 0;
       opacity: 1;
