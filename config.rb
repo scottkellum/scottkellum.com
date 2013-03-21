@@ -2,8 +2,9 @@
 # Layout
 ###
 
-page "/index.html", :layout => "layout_home"
-page "/blog/*", :layout => "layout_legacy"
+page "/*", :layout => "layout/_layout"
+page "/index.html", :layout => "layout/_home"
+page "/blog/*", :layout => "layout/_legacy"
 
 ###
 # Blog settings
