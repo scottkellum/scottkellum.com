@@ -4,20 +4,9 @@
 @import "modular-scale";
 @import "color-schemer";
 
-// MODULAR SCALE
-$ratio: golden();
-$base-size: 1em;
-
-// BREAKPOINT
 $breakpoint-no-queries: false;
 $breakpoint-no-query-wrappers: true;
 
-// COLOR SCHEMER
-$cs-primary: #8DB035;
-$primary: cs-primary();
-$secondary: cs-secondary();
-
-// TYPE
 $acta: "acta-display", Georgia, serif;
 $turnip: "Turnip RE", Georgia, serif;
 $freight: "freight-sans-pro", Verdana, sans-serif;
