@@ -5,5 +5,20 @@
       <%= yield %>
     </article>
     
+    <aside>
+      <h2>Recent Articles</h2>
+      <ol>
+        <% blog.articles[0...10].each do |article| %>
+          <li><%= link_to article.title, article %></li>
+        <% end %>
+      </ol>
+
+      <h2>By Year</h2>
+      <ol>
+        <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
+          <li><%= link_to year, blog_year_path(year) %> (<%= articles.size %>)</a></li>
+        <% end %>
+      </ol>
+    </aside>
   </body>
 </html>
