@@ -2,46 +2,6 @@
 
 @import "lib/head";
 
-body {
-  margin: 0 auto;
-  padding: 1em 5%;
-  max-width: 40em;
-  font-family: $freight;
-  line-height: 1.5;
-  font-size: percentage(18 / 16);
-  @include breakpoint(30em, $no-query: '.no-mqs') {
-    font-size: percentage(20 / 16);
-  }
-}
-
-h1 {
-  font-family: $acta;
-  font-size: 2em;
-  line-height: 1;
-  font-style: italic;
-  font-weight: 800;
-  @include breakpoint(30em) {
-    font-size: 3em;
-  }
-  @include breakpoint(40em, $no-query: '.no-mqs') {
-    font-size: 4em;
-  }
-}
-
-nav {
-  position: absolute;
-  top: 0;
-  right: 5%;
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  a {
-    display: inline-block;
-    background: #000;
-    padding: .5em;
-    color: #fff;
-    text-decoration: none;
-  }
-}
+@import "base";
+@import "typography";
+@import "nav";
