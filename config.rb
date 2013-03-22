@@ -76,6 +76,9 @@ configure :build do
   
   # Minify Javascript on build
   activate :minify_javascript
+
+  # Gzip html/css/js
+  activate :gzip
   
   # Enable cache buster
   activate :cache_buster
