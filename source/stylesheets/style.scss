@@ -6,11 +6,11 @@ body {
   margin: 0 auto;
   padding: 1em 5%;
   max-width: 40em;
-  font-family: $freight;
+  font-family: $turnip;
   line-height: 1.5;
-  font-size: percentage(18 / 16);
+  font-size: percentage(16 / 16);
   @include breakpoint(30em, $no-query: '.no-mqs') {
-    font-size: percentage(20 / 16);
+    font-size: percentage(18 / 16);
   }
 }
 
