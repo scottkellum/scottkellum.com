@@ -1,7 +1,11 @@
 <%= partial "partials/head" %>
     
     <article id="main" role="main">
-      <h1><%= data.page.title %></h1>
+      <h1 class="hed"><%= data.page.title %></h1>
+      <% if data.page.dek %>
+        <h2 class="dek"><%= data.page.dek %></h2>
+      <% end %>
+
       <%= yield %>
     </article>
     

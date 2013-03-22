@@ -1,11 +1,22 @@
 @import "compass";
 @import "toolkit-no-css";
 @import "breakpoint";
+@import "modular-scale";
 @import "color-schemer";
 
+// Color schemer
+$cs-primary: #81B847;
+$primary: cs-primary();
+$secondary: cs-secondary();
+
+// Modular scale
+$base-size: 1em;
+
+// Breakpoint
 $breakpoint-no-queries: false;
 $breakpoint-no-query-wrappers: true;
 
+// Fonts
 $acta: "acta-display", Georgia, serif;
 $turnip: "Turnip RE", Georgia, serif;
 $freight: "freight-sans-pro", Verdana, sans-serif;
