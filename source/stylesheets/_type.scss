@@ -33,6 +33,9 @@ h1, h2 {
   @include breakpoint(ms(7.5), $no-query: '.no-mqs') {
     font-size: ms(3);
   }
+}
+
+h1 {
   @include breakpoint(ms(8.5)) {
     font-size: ms(3.5);
   }
