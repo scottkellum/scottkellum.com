@@ -2,6 +2,16 @@
     
     <article id="main" role="main">
       <%= yield %>
+
+      <a class="FlattrButton" style="display:none;"
+          title="<%= data.page.title || "Scott Kellum" %>"
+          data-flattr-uid="ScottKellum"
+          data-flattr-category="text"
+          data-flattr-popout="0"
+          href="<%= data.page.link %>">
+          Flattr
+      </a>
+
     </article>
     
 <%= partial "partials/foot" %>
