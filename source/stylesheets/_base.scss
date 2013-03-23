@@ -1,5 +1,9 @@
 @import "toolkit";
 
+* {
+  @include transition(all .25s);
+}
+
 // soft reset some things
 html, p, q, h1, h2, h3, h4, h5, h6, ul, ol, li {
   list-style: none;
@@ -19,6 +23,10 @@ body {
   }
 }
 
-article {
+header, article, aside, footer {
   @include clearfix;
+  a:link    {color: darken($primary, 10%);}
+  a:visited {color: $primary;}
+  a:hover   {color: $secondary;}
+  a:active  {color: $secondary;}
 }

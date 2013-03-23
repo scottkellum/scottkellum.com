@@ -5,9 +5,15 @@
 @import "color-schemer";
 
 // Color schemer
-$cs-primary: #81B847;
+$cs-primary: #60bd05;
+$cs-scheme: complement; // mono, complement, triad, tetrad, analogic, accented-analogic
+$cs-hue-offset: 40;
+$cs-color-model: ryb;
+
 $primary: cs-primary();
 $secondary: cs-secondary();
+$tertiary: cs-tertiary();
+$quadrary: cs-quadrary();
 
 // Modular scale
 $base-size: 1em;
