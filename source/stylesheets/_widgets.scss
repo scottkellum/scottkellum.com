@@ -2,3 +2,18 @@
   margin: ms(-1) 0 0 0;
   float: right;
 }
+
+.articles-cal {
+  .count, .date {
+    font-size: .6em;
+    line-height: 1;
+    font-weight: bold;
+    color: #fff;
+    background: #000;
+    border-radius: 1em;
+    position: relative;
+    top: -.8em;
+    padding: .1em .5em;
+    -webkit-font-smoothing: antialiased;
+  }
+}
