@@ -29,9 +29,9 @@
       </ol>
 
       <h2>By Year</h2>
-      <ol>
+      <ol class="articles-cal">
         <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
-          <li><%= link_to year, blog_year_path(year) %> (<%= articles.size %>)</a></li>
+          <li><%= link_to year, blog_year_path(year) %> <span class="count"><%= articles.size %></span></a></li>
         <% end %>
       </ol>
     </aside>
