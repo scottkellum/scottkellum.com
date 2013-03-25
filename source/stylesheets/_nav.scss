@@ -20,13 +20,15 @@ nav {
       bottom: 0;
       right: 0;
       width: 1em;
-      background: $secondary;
+      background: $primary;
       color: transparent;
       white-space: nowrap;
       text-indent: 100%;
       opacity: 0;
       &:hover {
+        background: $secondary;
         opacity: 1;
+        width: 1.5em;
       }
       &:before {
         content: " ";
