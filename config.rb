@@ -44,6 +44,7 @@ require 'compass'
 require 'toolkit'
 require 'breakpoint'
 require 'color-schemer'
+require 'sass-getunicode'
 
 # output_style     = :compressed
 # line_comments    = false

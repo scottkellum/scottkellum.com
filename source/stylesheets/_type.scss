@@ -1,7 +1,14 @@
+$symbols: ☺ ✌ ✍ ☂ ✰ ❦ ☜ ☠ ✑ ❀ ⚐ ➳ ✈ ♞;
+$symbol: getUnicode('#{nth($symbols, random(length($symbols)) + 1)}');
+
 p {
   text-indent: ms(2);
   h1+&, h2+&, h3+&, h4+& {
     text-indent: 0;
+  }
+  article &:last-of-type:after {
+    content: " #{$symbol}";
+    color: $primary;
   }
 }
 
@@ -67,4 +74,11 @@ h5 {
 
 h6 {
   font-size: ms(.5);
+}
+
+hr {
+  border: none;
+  height: ms(-4);
+  background: $primary;
+  margin: ms(1) 0;
 }
