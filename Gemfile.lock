@@ -92,6 +92,8 @@ GEM
     respond-to (2.6)
       breakpoint (>= 1.3)
     sass (3.2.7)
+    sass-getunicode (1.0)
+      sass (>= 3)
     sassy-math (1.5)
       compass (~> 0.11)
     sassy-strings (0.3.1)
@@ -141,4 +143,5 @@ DEPENDENCIES
   middleman (~> 3.0.12)
   middleman-blog (~> 3.2.0)
   nokogiri
+  sass-getunicode
   toolkit (~> 0.2.6)

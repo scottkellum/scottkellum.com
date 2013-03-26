@@ -5,7 +5,7 @@
 @import "color-schemer";
 
 // Color schemer
-$cs-primary: #60bd05;
+$cs-primary: set-hue(#60bd05, random(360) * 1deg);
 $cs-scheme: complement; // mono, complement, triad, tetrad, analogic, accented-analogic
 $cs-hue-offset: 40;
 $cs-color-model: ryb;
