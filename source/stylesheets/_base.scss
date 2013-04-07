@@ -13,7 +13,7 @@ html, p, q, h1, h2, h3, h4, h5, h6, ul, ol, li {
 
 body {
   margin: 0 auto;
-  padding: 1em ms(-6, 100%) ms(-3, 100%) ms(-6, 100%);
+  padding: 1em ms(-6, 100%) 0 ms(-6, 100%);
   max-width: ms(8);
   font-family: $turnip;
   line-height: ms(1, 1);
@@ -21,6 +21,11 @@ body {
   @include breakpoint(ms(7), $no-query: '.no-mqs') {
     font-size: percentage(18 / 16);
   }
+}
+
+aside {
+  border-top: ms(-4) solid $primary;
+  margin: ms(2) 0 ms(-3, 100%) 0;
 }
 
 header, article, aside, footer {

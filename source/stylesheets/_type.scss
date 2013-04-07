@@ -6,7 +6,7 @@ p {
   h1+&, h2+&, h3+&, h4+& {
     text-indent: 0;
   }
-  article &:last-of-type:after {
+  article.post &:last-of-type:after {
     content: " #{$symbol}";
     color: $primary;
   }
@@ -30,6 +30,9 @@ h2 {
   margin: ms(0) 0 ms(-2) 0;
   &.dek {
     margin: -1em 0 ms(0) 0;
+  }
+  aside &:first-child {
+    margin-top: ms(-1);
   }
 }
 
