@@ -20,7 +20,8 @@
 
 footer {
   background: $primary;
-  padding: 1em 1em 2em 1em;
+  padding: 1em 1em ms(2) 1em;
+  margin-top: ms(1);
   font-size: ms(-1);
   *, a:link, a:hover, a:visited, a:active {
     color: white;
