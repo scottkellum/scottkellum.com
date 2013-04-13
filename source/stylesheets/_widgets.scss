@@ -17,3 +17,24 @@
     -webkit-font-smoothing: antialiased;
   }
 }
+
+footer {
+  background: $primary;
+  padding: 1em 1em 2em 1em;
+  font-size: ms(-1);
+  *, a:link, a:hover, a:visited, a:active {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    color: $secondary;
+  }
+  .social {
+    @extend %icon;
+    font-size: ms(2);
+    li {
+      display: inline;
+      margin-right: ms(-2);
+    }
+  }
+}
