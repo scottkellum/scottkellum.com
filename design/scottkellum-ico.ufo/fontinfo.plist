@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ascender</key>
+	<integer>1000</integer>
+	<key>capHeight</key>
+	<integer>1000</integer>
+	<key>copyright</key>
+	<string>Copyright © 2013 by Scott Kellum. All rights reserved.</string>
+	<key>descender</key>
+	<integer>0</integer>
+	<key>familyName</key>
+	<string>scottkellum-ico</string>
+	<key>italicAngle</key>
+	<real>0.0</real>
+	<key>openTypeHeadCreated</key>
+	<string>2013/04/13 09:33:25</string>
+	<key>openTypeNameDesigner</key>
+	<string>Scott Kellum</string>
+	<key>openTypeNameDesignerURL</key>
+	<string>http://scottkellum.com</string>
+	<key>openTypeNameManufacturer</key>
+	<string>scottkellum</string>
+	<key>openTypeNameManufacturerURL</key>
+	<string>http://scottkellum.com</string>
+	<key>openTypeNamePreferredFamilyName</key>
+	<string>scottkellum-ico</string>
+	<key>openTypeNamePreferredSubfamilyName</key>
+	<string>Regular</string>
+	<key>openTypeOS2WeightClass</key>
+	<integer>400</integer>
+	<key>openTypeOS2WidthClass</key>
+	<integer>5</integer>
+	<key>postscriptBlueValues</key>
+	<array>
+	</array>
+	<key>postscriptOtherBlues</key>
+	<array>
+	</array>
+	<key>postscriptWeightName</key>
+	<string>Normal</string>
+	<key>styleName</key>
+	<string>Regular</string>
+	<key>unitsPerEm</key>
+	<integer>1000</integer>
+	<key>versionMajor</key>
+	<integer>1</integer>
+	<key>versionMinor</key>
+	<integer>1</integer>
+	<key>xHeight</key>
+	<integer>1000</integer>
+</dict>
+</plist>
