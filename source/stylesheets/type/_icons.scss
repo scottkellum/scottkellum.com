@@ -1,0 +1,21 @@
+$symbols: ☺ ✌ ✍ ☂ ✰ ❦ ☜ ☠ ✑ ❀ ⚐ ➳ ✈ ♞;
+$symbol: getUnicode('#{nth($symbols, random(length($symbols)) + 1)}');
+
+// Load icon font
+@font-face {
+  font-family: 'iconfnt';
+  src: url('iconfnt.eot');
+  src: url('iconfnt.eot?#iefix') format('embedded-opentype'),
+       url('iconfnt.woff') format('woff'),
+       url('iconfnt.ttf') format('truetype'),
+       url('iconfnt.svg#scottkellum-icoregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+%icon {
+  font-family: iconfnt;
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+}

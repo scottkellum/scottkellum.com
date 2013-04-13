@@ -1,0 +1,10 @@
+p {
+  text-indent: ms(2);
+  h1+&, h2+&, h3+&, h4+& {
+    text-indent: 0;
+  }
+  article.post &:last-of-type:after {
+    content: " #{$symbol}";
+    color: $primary;
+  }
+}
