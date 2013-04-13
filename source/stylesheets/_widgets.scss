@@ -28,7 +28,7 @@ footer {
     text-decoration: none;
   }
   a:hover {
-    color: $secondary;
+    text-shadow: 0 0 6px white;
   }
   .social {
     @extend %icon;
