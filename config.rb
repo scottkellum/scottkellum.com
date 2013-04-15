@@ -6,6 +6,9 @@ page "/*", :layout => "layout/_layout"
 page "/index.html", :layout => "layout/_home"
 page "/404.html", :layout => "layout/_legacy"
 page "/blog/*", :layout => "layout/_legacy"
+page "/projects/*", :layout => "layout/_legacy"
+page "/about-me.html", :layout => "layout/_legacy"
+page "/colophon.html", :layout => "layout/_legacy"
 
 ###
 # Blog settings

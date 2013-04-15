@@ -2,17 +2,6 @@
     
     <article id="main" role="main">
       <%= yield %>
-
-      <a class="FlattrButton" style="display:none;"
-          title="<%= data.page.title || "Scott Kellum" %>"
-          data-flattr-uid="ScottKellum"
-          data-flattr-category="text"
-          data-flattr-popout="0"
-          data-flattr-button="compact"
-          href="<%= data.page.link %>">
-          Flattr <%= data.page.title || "Scott Kellum" %>
-      </a>
-
     </article>
     
     <nav>
@@ -20,13 +9,6 @@
         <li id="home"><a href="/">home</a></li>
       </ul>
     </nav>
-    <footer>
-      <ul class="social">
-        <li><a href="/feed.xml">Rss</a></li>
-        <li><a href="https://twitter.com/scottkellum">Twitter</a></li>
-        <li><a href="https://www.facebook.com/scott.kellum">Facebook</a></li>
-        <li><a href="mailto:scott@scottkellum.com">Email</a></li>
-      </ul>
-    </footer>
+    <%= partial "partials/footer" %>
   </body>
 </html>

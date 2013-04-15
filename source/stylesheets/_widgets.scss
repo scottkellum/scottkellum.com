@@ -21,8 +21,8 @@
 footer {
   background: $primary;
   padding: 1em 1em ms(2) 1em;
-  margin-top: ms(1);
-  font-size: ms(-1);
+  margin-top: 33%;
+  font-size: ms(-.5);
   *, a:link, a:hover, a:visited, a:active {
     color: white;
     text-decoration: none;
@@ -30,12 +30,18 @@ footer {
   a:hover {
     text-shadow: 0 0 6px white;
   }
+  ul {
+    float: left;
+  }
   .social {
+    width: 2em + (ms(-2) * 3);
+    float: right;
     @extend %icon;
-    font-size: ms(2);
+    font-size: ms(1.5);
     li {
+      line-height: 1;
       display: inline;
-      margin-right: ms(-2);
+      margin-left: ms(-2);
     }
   }
 }
