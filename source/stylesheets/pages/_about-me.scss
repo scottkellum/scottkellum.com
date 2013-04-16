@@ -1,0 +1,12 @@
+.profile-img {
+  text-align: center;
+  line-height: 0;
+  img {
+    width: 50%;
+    background: $primary;
+    border: ms(-4) solid $primary;
+    border-radius: 50%;
+    overflow: hidden;
+    max-width: 300px;
+  }
+}
