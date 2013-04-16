@@ -30,8 +30,8 @@ aside {
 
 header, article, aside, footer {
   @include clearfix;
-  a:link    {color: darken($primary, 10%);}
-  a:visited {color: $primary;}
+  a:link    {color: $primary;}
+  a:visited {color: tint($primary, 25%);}
   a:hover   {color: $secondary;}
   a:active  {color: $secondary;}
 }
