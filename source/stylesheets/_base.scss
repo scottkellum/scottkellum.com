@@ -17,9 +17,6 @@ body {
   max-width: ms(8);
   font-family: $turnip;
   line-height: ms(1, 1);
-  @include breakpoint(ms(7), $no-query: '.no-mqs') {
-    font-size: percentage(18 / 16);
-  }
 }
 
 aside {
