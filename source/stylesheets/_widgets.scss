@@ -28,7 +28,7 @@ footer {
     text-decoration: none;
   }
   a:hover {
-    text-shadow: 0 0 6px white;
+    color: mix($primary, white, 20%);
   }
   ul {
     float: left;
