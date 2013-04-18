@@ -17,5 +17,6 @@ $symbol: getUnicode('#{nth($symbols, random(length($symbols)) + 1)}');
   font-family: iconfnt;
   font-weight: normal;
   font-style: normal;
+  text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
 }
