@@ -7,6 +7,9 @@
 # Ignore bundler config
 /.bundle
 
+# Ignore bundler config
+/components
+
 # Ignore the build directory
 /build
 
