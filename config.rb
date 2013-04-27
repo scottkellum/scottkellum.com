@@ -44,6 +44,10 @@ page "/feed.xml", :layout => false
 ###
 
 require 'compass'
+
+# bower extensions
+extensions_dir = "components"
+
 require 'toolkit'
 require 'breakpoint'
 require 'color-schemer'
