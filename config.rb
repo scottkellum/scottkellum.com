@@ -44,14 +44,16 @@ page "/feed.xml", :layout => false
 ###
 
 require 'compass'
-
-# bower extensions
-extensions_dir = "components"
-
 require 'toolkit'
 require 'breakpoint'
 require 'color-schemer'
 require 'sass-getunicode'
+
+# bower extensions
+compass_config do |compass|
+  extensions_dir = "components"
+end
+
 
 # output_style     = :compressed
 # line_comments    = false
