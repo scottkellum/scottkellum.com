@@ -1,10 +1,13 @@
 <%= partial "partials/head" %>
     
-    <article class="feature" id="main" role="main">
+    <header>
       <h1 class="hed"><%= data.page.title %></h1>
       <% if data.page.dek %>
         <h2 class="dek"><%= data.page.dek %></h2>
       <% end %>
+    </header>
+
+    <article class="feature" id="main" role="main">
 
       <%= yield %>
 
@@ -20,19 +23,4 @@
 
     </article>
     
-    <aside>
-      <h2>Recent Articles</h2>
-      <ol>
-        <% blog.articles[0...10].each do |article| %>
-          <li><%= link_to article.title, article %></li>
-        <% end %>
-      </ol>
-
-      <h2>By Year</h2>
-      <ol class="articles-cal">
-        <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
-          <li><%= link_to year, blog_year_path(year) %> <span class="count"><%= articles.size %></span></a></li>
-        <% end %>
-      </ol>
-    </aside>
 <%= partial "partials/foot" %>

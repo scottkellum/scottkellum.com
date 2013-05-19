@@ -1,0 +1,10 @@
+@media print {
+  nav, .FlattrButton, footer, aside {
+    display: none;
+  }
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+}

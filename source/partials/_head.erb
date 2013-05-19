@@ -11,7 +11,7 @@
 
 
 
-Looking for this?
+Viewing souce? Check out the full source:
 https://github.com/scottkellum/scottkellum.com/
 
 
@@ -39,14 +39,15 @@ https://github.com/scottkellum/scottkellum.com/
     <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" />
 
     <%= stylesheet_link_tag "style" %>
-    # <%= javascript_include_tag  "main" %>
+    <% if data.page.style %>
+      <%= stylesheet_link_tag "feature/" + data.page.style %>
+    <% end %>
+
+    <%= javascript_include_tag  "main" %>
 
     <!--[if lt IE 9]>
     <%= javascript_include_tag  "html5shiv" %>
     <![endif]-->
-
-    <!-- WEBTYPE -->
-    <link href="//cloud.webtype.com/css/5fd75aea-fa83-43ad-8fb7-509ad91b9cd7.css" rel="stylesheet" type="text/css" />
 
   </head>
   <body>
