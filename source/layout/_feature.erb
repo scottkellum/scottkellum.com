@@ -1,6 +1,10 @@
 <%= partial "partials/head" %>
     
-    <header>
+    <header
+      <% if data.page.ledeimg %>
+        style="background-image: url('<%= data.page.ledeimg %>')"
+      <% end %>
+    >
       <h1 class="hed"><%= data.page.title %></h1>
       <% if data.page.dek %>
         <h2 class="dek"><%= data.page.dek %></h2>
