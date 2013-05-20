@@ -1,7 +1,0 @@
-{
-  "name": "scottkellum.com",
-  "version": "0.0.0",
-  "dependencies": {
-    "jacket": "~0.1.3"
-  }
-}
