@@ -1,6 +1,6 @@
 ---
 title: Stop redesigning, keep designing
-date: 2013-07-17
+date: 2013-06-17
 ---
 
 Designers, myself included, tend to have a Sisyphus complex with our personal websites. We slave away for days, weeks, months, trying to perfect our sites to be the most awesome things ever and once they go live everything short of perfection is a total failure in our minds. Instead of fixing parts, the whole thing usually goes out the window for the next website to take its place. A lot of this is driven by changing design fashion, poor planning, and a lack of persistence to revise the imperfections. This itch to redesign has been featured on [The Industry](http://theindustry.cc/2012/11/28/the-redesigners-itch/) and is an all too common. [Jonnie Hallman](https://twitter.com/destroytoday) just announced his [site redesign](http://destroytoday.com/blog/redesigning-with-rules/) in witch he wrote goals to make sure his site is well structured to combat the itch to redesign later. The conclusion [CJ Melegrito](https://twitter.com/cjmlgrto) comes to in his Industry article is to be confident in your design and Jonnie has aimed for a similar goal.
