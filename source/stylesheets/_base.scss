@@ -15,8 +15,11 @@ body {
   margin: 0 auto;
   padding: 1em ms(-6, 100%) 0 ms(-6, 100%);
   max-width: ms(8);
-  font-family: $turnip;
   line-height: ms(1, 1);
+  font-family: Georgia, serif;
+  html.wf-active & {
+    font-family: $turnip;
+  }
 }
 
 aside {

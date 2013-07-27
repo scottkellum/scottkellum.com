@@ -43,7 +43,22 @@ https://github.com/scottkellum/scottkellum.com/
       <%= stylesheet_link_tag "feature/" + data.page.style %>
     <% end %>
 
-    <%= javascript_include_tag  "main" %>
+    <!-- <%= javascript_include_tag  "main" %> -->
+
+    <!-- WEBTYPE -->
+    <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+    <script> 
+     WebFont.load({ 
+      custom: { 
+       families:['Turnip RE'], 
+       urls:['//cloud.webtype.com/css/5fd75aea-fa83-43ad-8fb7-509ad91b9cd7.css']
+      }
+     }); 
+    </script>
+
+    <!-- TYPEKIT -->
+    <script type="text/javascript" src="//use.typekit.net/qfs2thr.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
     <!--[if lt IE 9]>
     <%= javascript_include_tag  "html5shiv" %>

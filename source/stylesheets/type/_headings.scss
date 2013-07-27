@@ -7,12 +7,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font: italic 800 ms(1) $acta;
+  @include acta;
+  font-style: italic;
+  font-weight: 800;
+  font-size: ms(1);
   line-height: 1;
 }
 
 h2 {
-  font: 500 ms(1) $acta;
+  @include acta;
+  font-weight: 500;
+  font-size: ms(1);
   line-height: 1;
   margin: ms(0) 0 ms(-2) 0;
   &.dek {

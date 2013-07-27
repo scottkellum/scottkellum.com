@@ -1,5 +1,4 @@
 @import "compass";
-//@import "jacket";
 @import "toolkit-no-css";
 @import "breakpoint";
 @import "modular-scale";
@@ -26,3 +25,13 @@ $breakpoint-no-query-wrappers: true;
 // Fonts
 $acta: "acta-display", Georgia, serif;
 $turnip: "Turnip RE", Georgia, serif;
+
+%acta {
+	font-family: Georgia, serif;
+	html.wf-active & {
+		font-family: $acta;
+	}
+}
+@mixin acta {
+  @extend %acta;
+}

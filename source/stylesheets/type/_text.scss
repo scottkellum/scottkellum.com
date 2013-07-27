@@ -8,6 +8,19 @@ p {
   }
 }
 
+q {
+	display: block;
+	@include acta;
+	font-style: italic;
+	color: $primary;
+	font-size: ms(1) + ms(-1);
+	line-height: 1;
+	margin: ms(-3) 0;
+	&:before, &:after {
+		content: "";
+	}
+}
+
 code {
   color: darken($primary, 10%);
   font-size: 1.25em;

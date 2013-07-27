@@ -5,7 +5,7 @@ $color: black !default;
 $background: white !default;
 
 $grids: 12;
-$gutters: ms(-2, 1);
+$gutters: ms(-1, 1);
 
 body {
   max-width: none;
@@ -39,7 +39,7 @@ header {
 
 .contain {
   max-width: ms(8);
-  padding: ms(-6, 100%);
+  padding: 0 ms(-6, 100%);
   margin: 0 auto;
   > div {
     width: 100%;
@@ -64,6 +64,7 @@ header {
   background-color: $background;
   @include breakpoint(ms(8)) {
     padding: ms(1);
+    padding-bottom: ms(2);
     p {
       font-size: ms(.5);
     }
@@ -103,6 +104,10 @@ header, article, aside {
       color: darken($color, 10%);
     }
   }
+}
+
+q {
+  color: $color;
 }
 
 code {
