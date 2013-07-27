@@ -1,0 +1,17 @@
+$color: #86cbbd;
+$background: white;
+
+@import "../lib/feature";
+
+header {
+	text-shadow: 0 0 .5em darken($color, 20%);
+	letter-spacing: .1em;
+	background-attachment: fixed;
+	@include breakpoint(ms(7)) {
+		.dek {
+			text-transform: uppercase;
+			font-size: 2em;
+			letter-spacing: .25em;
+		}
+	}
+}

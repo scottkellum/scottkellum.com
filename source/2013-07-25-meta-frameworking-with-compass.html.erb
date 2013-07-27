@@ -1,0 +1,56 @@
+---
+title: Meta frameworking with Compass
+dek: learning, creating, and sharing
+ledeimg: /images/editorial/compass-lede.png
+date: 2013-07-25
+published: false
+layout: layout/_feature
+style: metaframeworking
+---
+
+<div class="lede">
+<p>When talking about <a href="http://compass-style.org/">Compass</a> most people think of it as a mixin library. While Compass has a great mixin library it is really a framework for building frameworks <em>with</em> a mixin library. To put it simply, most people compare <a href="http://bourbon.io/">Bourbon</a> with Compass and while you can install Bourbon with Compass, you can’t install Compass with Bourbon. I’m not going to go deep into either of these mixin libraries. Instead, I am going to do a deep dive into the frameworking capabilities of Compass, show you how to create your own personal framework and how to share that as a Compass extension.</p>
+</div>
+
+<div class="contain">
+<div class="g7-2">
+
+<p>But before going into the technical side of things, lets talk about retaining knowledge. As people who work on the web there are so many places we learn and draw inspriation from. There are so many great blog posts, design books, and ideas in our industry today. With all this great stuff it’s hard to trust our brains to remember it all. Even if we can remember the CSS or design technique how are we souposed to remember how to implement it without going back and looking it up again?</p>
+
+<p>So lets take a look at storing this information in frameworks. Frameworks are libraries of knowledge with the advantage that they can be shared and implemented easily. When I share my framework with my team or with the world they immediately have access to all the tools and techniques I know. As others add to this framework I immediately have access to information they know. This makes a framework an ideal place to store information.</p>
+
+<p>Take a look at resets for example. Resets are one of the most basic components most web developers work with and they are usually the first thing loaded in most frameworks. But imagine the kind of research that goes into making resets with all the various browsers and elements avalible. Getting everything styled consistently in a good reset is incredibly diffucult because someone needs to cross check all these subtle variations. This is the kind of work I really don’t want to do. I will gladly trust people like <a href="http://meyerweb.com/">Eric Meyer</a> and <a href="http://nicolasgallagher.com/">Nicolas Gallagher</a> to handle this stuff for me.</p>
+
+<p>Weather it’s resets, grids, or form styles these small components are often bundled into larger frameowrks of knowledge. Recently we are seeing massive frameworks like <a href="http://twitter.github.io/bootstrap/">Bootstrap</a> and <a href="http://foundation.zurb.com/">Foundation</a> that solve just about every problem ever as well as smaller frameworks made to solve more basic problems like <a href="http://inuitcss.com/">inuitcss</a>. These are all fantastic libraries of information to draw on and they suit the needs of there creators exceedingly well. However every framework has a point of view and makes assumptions on both design and implementation that might not work best for you. For example, just about every large framework uses a 12 column grid which can be subdivided nicely but this doesn’t take into account your unique needs for your project.</p>
+
+<p>So the question arises, how can I execute on my unique project goals and implementation while not having to start everything from scratch? Maybe you like the structure of one framework but the grids in another, how do you win at all the things without compromise?</p>
+
+</div>
+<div class="g4-9">
+	<img src="/images/editorial/compass-lede.png" alt=" ">
+	<q>Frameworks are libraries of knowledge</q>
+</div>
+</div>
+
+<div class="contain">
+<div class="g8-3">
+
+<h2>Package management FTW</h2>
+
+<p>Fortunately today we have package management tools like <a href="http://bower.io/">Bower</a> and <a href="http://compass-style.org/">Compass</a>. These offer us a huge ammount of flexability and control over the components we use on a project by allowing us to break them down into smaller modules and load them in as they are needed. Instead of having to use a massive framework I can use a grid system I like, or a typeogrphic system I like. If I need help with colors or forms there is probably somthing I can pull in later to help me out.</p>
+
+<p>I will mostly be focusing on Compass because it doesn’t only have package management capabilities but it also has robust frameworking tools so you can create your own modules that work locally and it integrates deeply with <a href="http://sass-lang.com/">Sass</a> to compile your stylesheets.</p>
+
+<p>There is a rich ecosystem of <a href="https://github.com/chriseppstein/compass/wiki/Compass-Plugins">Compass plugins</a> from simple <a href="https://github.com/Team-Sass/modular-scale">calculators to help you size your type</a> to Zurb Foundation which is built on Compass. All of these plugins can be pulled in at any point for you to use.</p>
+
+<h2>Rolling your own</h2>
+
+<p>Lets take a step back and focus on your stuff again. If you are anything like me you probably write your own mixins for your projects. Maybe you copy and paste those mixins into new projects as you need them. It’s pretty easy to set up Compass to store these mixins and things in a centralized place so all your Compass goodies will be avalible and up to date on all your projects. This is called a <a href="http://chriseppstein.github.io/blog/2010/08/01/building-a-personal-framework/">Compass personal framework</a> and it’s pretty simple. Lets say I have a directory of projects like this:</p>
+
+<pre><code>+ project-one
++ project-two</code></pre>
+
+<p>Now I can just add a folder called <code>my-framework</code></p>
+
+</div>
+</div>
