@@ -98,10 +98,10 @@ header {
 header, article, aside {
   a {
     &:link, &:visited, &:active {
-      color: $color;
+      color: darken($color, 15%);
     }
     &:hover {
-      color: darken($color, 10%);
+      color: darken($color, 20%);
     }
   }
 }
