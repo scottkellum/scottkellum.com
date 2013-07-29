@@ -45,12 +45,35 @@ style: metaframeworking
 
 <h2>Rolling your own</h2>
 
-<p>Lets take a step back and focus on your stuff again. If you are anything like me you probably write your own mixins for your projects. Maybe you copy and paste those mixins into new projects as you need them. It’s pretty easy to set up Compass to store these mixins and things in a centralized place so all your Compass goodies will be avalible and up to date on all your projects. This is called a <a href="http://chriseppstein.github.io/blog/2010/08/01/building-a-personal-framework/">Compass personal framework</a> and it’s pretty simple. Lets say I have a directory of projects like this:</p>
+<p>Lets take a step back and focus on your stuff again. If you are anything like me you probably write your own mixins for your projects. Maybe you copy and paste those mixins into new projects as you need them. It’s pretty easy to set up Compass to store these mixins and things in a centralized place so all your Compass goodies will be avalible and up to date on all your projects. This is called a <a href="http://chriseppstein.github.io/blog/2010/08/01/building-a-personal-framework/">Compass personal framework</a> and it’s pretty simple to set up. Lets say I have a directory of projects like this:</p>
 
 <pre><code>+ project-one
 + project-two</code></pre>
 
-<p>Now I can just add a folder called <code>my-framework</code></p>
+<p>Now I have a few styles, lets say to style a button I want to share between these two projects. Instead of copying and pasting that code between the projects I can create a new folder that both these projects can reference with all my button styles inside of them.</p>
+
+<pre><code>- my-framework
+  - stylesheets
+    - _button.scss
++ project-one
++ project-two</code></pre>
+
+<p>And inside <code>_button.scss</code> lets write a bit of code for your button:</p>
+
+<pre><code>button {
+  background: red;
+  color: white;
+  border: none;
+  padding: .5em 1em;
+  &:hover {
+    background: lighten(red, 20%);
+  }
+  &:active {
+    background: darken(red, 20%);
+  }
+}</code></pre>
+
+<p>Now this button is here and can be used in all my projects without having</p>
 
 </div>
 </div>
