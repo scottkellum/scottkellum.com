@@ -152,6 +152,7 @@ nav #previous a {
 
 footer {
   background-color: $color;
+  padding: 1em ms(-6, 100%) ms(2) ms(-6, 100%);
   @if $background != white {
     a:link, a:active, a:visited {
       color: $background;
