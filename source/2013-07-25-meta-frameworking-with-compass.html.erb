@@ -43,7 +43,7 @@ style: metaframeworking
 
 <p>There is a rich ecosystem of <a href="https://github.com/chriseppstein/compass/wiki/Compass-Plugins">Compass plugins</a> from simple <a href="https://github.com/Team-Sass/modular-scale">calculators to help you size your type</a> to Zurb Foundation which is built on Compass. All of these plugins can be pulled in at any point for you to use.</p>
 
-<h2>Rolling your own</h2>
+<h2>Rolling your own framework</h2>
 
 <p>Lets take a step back and focus on your stuff again. If you are anything like me you probably write your own mixins for your projects. Maybe you copy and paste those mixins into new projects as you need them. It’s pretty easy to set up Compass to store these mixins and things in a centralized place so all your Compass goodies will be avalible and up to date on all your projects. This is called a <a href="http://chriseppstein.github.io/blog/2010/08/01/building-a-personal-framework/">Compass personal framework</a> and it’s pretty simple to set up. Lets say I have a directory of projects like this:</p>
 
@@ -73,7 +73,15 @@ style: metaframeworking
   }
 }</code></pre>
 
-<p>Now this button is here and can be used in all my projects without having</p>
+<p>Great! Now we have a button we can use in all of our projects. But how do we add it to our project? It’s actually really easy, just add <code>load "my-framework"</code> to your Compass <code>config.rb</code> file and run <code>compass watch project-one</code> from your project directory. Now you can just import those styles anywhere in your project with <code>@import "button";</code>.</p>
+
+<p>So now that you have made your awesome framework of one button I am sure you want to share it with the world so they can see how great it is. All you have to do now is add two files to your project, one is a <a href="https://github.com/scottkellum/meta-frameworking/blob/master/compass-extension/my-extension.gemspec">gemspec</a> and the other is a <a href="https://github.com/scottkellum/meta-frameworking/blob/master/compass-extension/lib/my-extension.rb">simple ruby file</a> of the same name as your extension in a folder called <code>lib</code>. If you just drop these files in all you have to do is run through changing <code>my-exteion</code> to the name of your extension and you are good to go. The last step is running <code>gem build my-extension.gemspec</code> and then <code>gem push my-extension-0.0.1.gem</code> and people can download and install that gem to use in their own projects. I also encourage you also maintain a <a href="https://github.com/scottkellum/meta-frameworking/blob/master/compass-extension/bower.json">Bower</a> version so people have the option to manage their Compass extension through Bowers package management tools.</p>
+
+<h2>Passing on knowldge</h2>
+
+<p>I was having pizza one evning with some typographer friends and we started discussing the importance of design school. <a href="https://twitter.com/litherland">Caren Litherland</a> said that design education isn’t as nessisary because we are learning from our tools now. If we use a grid system we learn about the design qualities of grids and how to construct them. Every Compass extension that you make is a tool that people will learn from and that is a beautiful thing. At the same time be sure to take care and do the research so that people learn correct and good things.</p>
+
+
 
 </div>
 </div>
