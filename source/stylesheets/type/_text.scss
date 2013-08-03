@@ -16,9 +16,14 @@ q {
 	font-size: ms(1) + ms(-1);
 	line-height: 1;
 	margin: ms(-3) 0;
+	@include hyphens(auto);
 	&:before, &:after {
 		content: "";
 	}
+}
+
+pre {
+	overflow: scroll;
 }
 
 code {
