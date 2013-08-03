@@ -50,16 +50,18 @@ h3 {
   border-top: ms(-4) solid $primary;
   padding-top: ms(-2);
   text-transform: uppercase;
-  font: 800 ms(1) $turnip;
   line-height: 1;
+  font-weight: 800;
+  font-size: ms(1);
 }
 
 h4 {
   border-top: ms(-5) solid $primary;
   padding-top: ms(-2);
   text-transform: uppercase;
-  font: 400 ms(1) $turnip;
   line-height: 1;
+  font-weight: 400;
+  font-size: ms(1);
 }
 
 h5 {
