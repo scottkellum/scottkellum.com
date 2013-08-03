@@ -2,9 +2,9 @@
   nav, .FlattrButton, footer, aside {
     display: none;
   }
-
-  a {
-    color: inherit !important;
+  * {
+  	color: #000 !important;
+  	background: none !important;
     text-decoration: none !important;
   }
 }

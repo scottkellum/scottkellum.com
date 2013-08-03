@@ -18,6 +18,10 @@ style: metaframeworking
 <p>Before going into the technical side of things, lets talk about retaining knowledge. As people who work on the web there are so many places we learn and draw inspiration from. There are so many great blog posts, design books, and ideas in our industry today. With all this great stuff it’s hard to trust our brains to remember it all. Even if we can remember the CSS or design technique how are we supposed to remember exactly how to implement the more complicated techniques without going back and looking them up?</p>
 
 <p>Lets take a look at storing this information in frameworks. Frameworks are libraries of knowledge with the advantage that they can be shared and implemented easily. When I share my framework with my team or with the world they immediately have access to all the tools and techniques I know. As others add to this framework I immediately have access to information they know. This makes a framework an ideal place to store information. Because this is knowledge compiled by an individual or a group frameworks also have a voice and option as to how things should be done weather it is how classes are named or where common breakpoints fall many of these solutions are from the perspective of those that make them. Take a look at resets for example; resets are one of the most basic components web developers work with and they are usually the first thing loaded in most frameworks. Now think about the research that goes into making resets with all the various browsers and elements available. Getting everything styled consistently in a good reset is incredibly difficult because someone needs to cross check all these subtle variations. Resets, unlike normalize, make assumptions about how you the developer want page margins and other styles to look. The research part is the kind of work I really don’t want to do to make everything consistent and will gladly trust people like <a href="http://meyerweb.com/">Eric Meyer</a> and <a href="http://nicolasgallagher.com/">Nicolas Gallagher</a> to handle it for me.</p>
+
+<p>Weather it’s a reset, grid, or form styles, these small components are often bundled into larger frameworks of knowledge. Recently we are seeing massive frameworks like <a href="http://twitter.github.io/bootstrap/">Bootstrap</a> and <a href="http://foundation.zurb.com/">Foundation</a> which solve just about every problem ever as well as smaller frameworks made to solve more basic problems and leave the rest to us like <a href="http://inuitcss.com/">inuitcss</a>. These are all fantastic libraries of information to draw on and they suit the needs of there creators exceedingly well. However these frameworks have a point of view and makes assumptions on both design and implementation that might not work best for you. The larger the framework, the more assumptions are made. For example, just about every large framework uses a 12 column grid. 12 column grids are great and work for most people because they can be easily subdivided into nice even units. While this may work great for most people, if my design required a 10 column grid then a 12 column grid would not work very well for my needs.</p>
+
+<p>So the question arises, how can I execute on my unique project goals and implementation while not having to start everything from scratch? How can I build on information and assume knowledge from others without buying into all of their ideas? Maybe you like the structure of one framework but the grids in another, how do you win at all the things without compromise?</p>
 </div>
 <div class="g3-10">
   <img src="/images/editorial/compass-brain.png" alt="brain">
@@ -26,17 +30,7 @@ style: metaframeworking
 </div>
 
 <div class="contain">
-<div class="g8-4">
-<p>Weather it’s a reset, grid, or form styles, these small components are often bundled into larger frameworks of knowledge. Recently we are seeing massive frameworks like <a href="http://twitter.github.io/bootstrap/">Bootstrap</a> and <a href="http://foundation.zurb.com/">Foundation</a> which solve just about every problem ever as well as smaller frameworks made to solve more basic problems and leave the rest to us like <a href="http://inuitcss.com/">inuitcss</a>. These are all fantastic libraries of information to draw on and they suit the needs of there creators exceedingly well. However these frameworks have a point of view and makes assumptions on both design and implementation that might not work best for you. The larger the framework, the more assumptions are made. For example, just about every large framework uses a 12 column grid. 12 column grids are great and work for most people because they can be easily subdivided into nice even units. While this may work great for most people, if my design required a 10 column grid then a 12 column grid would not work very well for my needs.</p>
 
-<p>So the question arises, how can I execute on my unique project goals and implementation while not having to start everything from scratch? How can I build on information and assume knowledge from others without buying into all of their ideas? Maybe you like the structure of one framework but the grids in another, how do you win at all the things without compromise?</p>
-</div>
-<div class="g3-1">
-  <img src="/images/editorial/compass-framework.png" alt="Framework book">
-</div>
-</div>
-
-<div class="contain">
 <div class="g8-3">
 
 <h2 id="haveyourcakeeatittoo">Have your cake, <br>eat it too</h2>
@@ -44,6 +38,12 @@ style: metaframeworking
 <p>Fortunately, today we have package management tools like <a href="http://bower.io/">Bower</a> and <a href="http://compass-style.org/">Compass</a>. These both offer us a huge amount of flexibility and control over the components we use on a project by allowing us to break them down into smaller modules and load them in as they are needed. Instead of having to use a massive framework I can use a grid system or a typographic system I like. If I need help with colors or forms there is probably something I can pull in later to help me out. Instead of buying into every idea and solution someone might have you can selectively use the ideas you like and simply ignore what doesn’t work for your needs.</p>
 
 <p>In this article I will be focusing on Compass because it isn’t just about package management but it also has robust frameworking tools so you can create your own modules that work locally. It integrates deeply with <a href="http://sass-lang.com/">Sass</a> to compile your stylesheets. There is a rich ecosystem of <a href="https://github.com/chriseppstein/compass/wiki/Compass-Plugins">Compass plugins</a> from simple <a href="https://github.com/Team-Sass/modular-scale">calculators to help you size your type</a> to Zurb Foundation which is built on Compass. All of these plugins can be pulled in at any point for you to use.</p>
+
+</div>
+</div>
+
+<div class="contain">
+<div class="g8-3">
 
 <h2 id="rollingyourownframework">Rolling your own framework</h2>
 
@@ -124,7 +124,9 @@ style: metaframeworking
 
 <hr />
 
-<p><em>Based on a talk originally given at <a href="http://environmentsforhumans.com/2013/css-summit/">CSS Summit</a></em></p>
+<div class="footnotes">
+  <p>Based on my talk at <a href="http://environmentsforhumans.com/2013/css-summit/">CSS Summit</a>.</p>
+</div>
 
 
 </div>
