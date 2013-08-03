@@ -3,13 +3,13 @@ $background: white;
 
 @import "../lib/feature";
 
-body, .lede, .lede p:first-child:first-letter {
+body, .lede, footer, .lede p:first-child:first-letter {
 	background-image: url('/images/editorial/compass-background.png');
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	@include background-size(100% 100%);
 }
-.lede p:first-child:first-letter {
+.lede p:first-child:first-letter, footer {
 	background-image: url('/images/editorial/compass-lede.png');
 }
 
