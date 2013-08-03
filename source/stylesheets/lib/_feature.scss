@@ -40,7 +40,7 @@ header {
 .contain {
   max-width: ms(8);
   padding: 0 ms(-6, 100%);
-  margin: 0 auto;
+  margin: 0 auto ms(-1) auto;
   > div {
     width: 100%;
   }
@@ -64,7 +64,7 @@ header {
   background-color: $background;
   @include breakpoint(ms(8)) {
     padding: ms(1);
-    padding-bottom: ms(2);
+    margin-bottom: ms(1);
     p {
       font-size: ms(.5);
     }
@@ -117,6 +117,10 @@ code {
   @else {
     color: darken($color, 10%);
   }
+}
+
+hr {
+  background: $color;
 }
 
 nav #home a {

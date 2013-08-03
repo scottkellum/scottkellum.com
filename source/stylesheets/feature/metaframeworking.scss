@@ -3,6 +3,13 @@ $background: white;
 
 @import "../lib/feature";
 
+body, .lede {
+	background-image: url('/images/editorial/compass-background.png');
+	@include background-size(cover);
+	background-position: center;
+	background-attachment: fixed;
+}
+
 header {
 	text-shadow: 0 0 .5em darken($color, 20%);
 	letter-spacing: .1em;
@@ -13,5 +20,17 @@ header {
 			font-size: 2em;
 			letter-spacing: .25em;
 		}
+	}
+}
+
+.insp img {
+	margin-top: 30%;
+}
+
+@include breakpoint(max-width ms(8.5)) {
+	img {
+		display: block;
+		max-width: 300px;
+		margin: ms(0) auto;
 	}
 }

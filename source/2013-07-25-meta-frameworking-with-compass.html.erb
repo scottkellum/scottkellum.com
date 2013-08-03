@@ -9,43 +9,45 @@ style: metaframeworking
 ---
 
 <div class="lede">
-<p>When talking about <a href="http://compass-style.org/">Compass</a> most people think of it as a mixin library. While Compass has a great mixin library it is really a framework for building frameworks <em>with</em> a mixin library. To put it simply, most people compare <a href="http://bourbon.io/">Bourbon</a> with Compass and while you can install Bourbon with Compass, you can’t install Compass with Bourbon. I’m not going to go deep into either of these mixin libraries. Instead, I am going to do a deep dive into the frameworking capabilities of Compass, show you how to create your own personal framework and how to share that as a Compass extension.</p>
+<p>When talking about <a href="http://compass-style.org/">Compass</a> most people think of it as a mixin library. While Compass has a great mixin library, it is really a framework for building frameworks <em>with</em> a mixin library. While most people compare <a href="http://bourbon.io/">Bourbon</a> with Compass they are two different things. You can install Bourbon with Compass, you can’t install Compass with Bourbon. In this article I’m not going to go deep into either of these mixin libraries. Instead, I am going to do a deep dive into the frameworking capabilities of Compass, show you how to create your own personal framework, and how to share that framework or tool as a Compass extension.</p>
 </div>
 
 <div class="contain">
-<div class="g7-2">
+<div class="g8-2">
 
-<p>But before going into the technical side of things, lets talk about retaining knowledge. As people who work on the web there are so many places we learn and draw inspriation from. There are so many great blog posts, design books, and ideas in our industry today. With all this great stuff it’s hard to trust our brains to remember it all. Even if we can remember the CSS or design technique how are we souposed to remember how to implement it without going back and looking it up again?</p>
+<p>Before going into the technical side of things, lets talk about retaining knowledge. As people who work on the web there are so many places we learn and draw inspiration from. There are so many great blog posts, design books, and ideas in our industry today. With all this great stuff it’s hard to trust our brains to remember it all. Even if we can remember the CSS or design technique how are we supposed to remember exactly how to implement the more complicated techniques without going back and looking them up?</p>
 
-<p>So lets take a look at storing this information in frameworks. Frameworks are libraries of knowledge with the advantage that they can be shared and implemented easily. When I share my framework with my team or with the world they immediately have access to all the tools and techniques I know. As others add to this framework I immediately have access to information they know. This makes a framework an ideal place to store information.</p>
-
-<p>Take a look at resets for example. Resets are one of the most basic components most web developers work with and they are usually the first thing loaded in most frameworks. But imagine the kind of research that goes into making resets with all the various browsers and elements avalible. Getting everything styled consistently in a good reset is incredibly diffucult because someone needs to cross check all these subtle variations. This is the kind of work I really don’t want to do. I will gladly trust people like <a href="http://meyerweb.com/">Eric Meyer</a> and <a href="http://nicolasgallagher.com/">Nicolas Gallagher</a> to handle this stuff for me.</p>
-
-<p>Weather it’s resets, grids, or form styles these small components are often bundled into larger frameowrks of knowledge. Recently we are seeing massive frameworks like <a href="http://twitter.github.io/bootstrap/">Bootstrap</a> and <a href="http://foundation.zurb.com/">Foundation</a> that solve just about every problem ever as well as smaller frameworks made to solve more basic problems like <a href="http://inuitcss.com/">inuitcss</a>. These are all fantastic libraries of information to draw on and they suit the needs of there creators exceedingly well. However every framework has a point of view and makes assumptions on both design and implementation that might not work best for you. For example, just about every large framework uses a 12 column grid which can be subdivided nicely but this doesn’t take into account your unique needs for your project.</p>
-
-<p>So the question arises, how can I execute on my unique project goals and implementation while not having to start everything from scratch? Maybe you like the structure of one framework but the grids in another, how do you win at all the things without compromise?</p>
-
+<p>Lets take a look at storing this information in frameworks. Frameworks are libraries of knowledge with the advantage that they can be shared and implemented easily. When I share my framework with my team or with the world they immediately have access to all the tools and techniques I know. As others add to this framework I immediately have access to information they know. This makes a framework an ideal place to store information. Because this is knowledge compiled by an individual or a group frameworks also have a voice and option as to how things should be done weather it is how classes are named or where common breakpoints fall many of these solutions are from the perspective of those that make them. Take a look at resets for example; resets are one of the most basic components web developers work with and they are usually the first thing loaded in most frameworks. Now think about the research that goes into making resets with all the various browsers and elements available. Getting everything styled consistently in a good reset is incredibly difficult because someone needs to cross check all these subtle variations. Resets, unlike normalize, make assumptions about how you the developer want page margins and other styles to look. The research part is the kind of work I really don’t want to do to make everything consistent and will gladly trust people like <a href="http://meyerweb.com/">Eric Meyer</a> and <a href="http://nicolasgallagher.com/">Nicolas Gallagher</a> to handle it for me.</p>
 </div>
-<div class="g4-9">
-	<img src="/images/editorial/compass-lede.png" alt=" ">
-	<q>Frameworks are libraries of knowledge</q>
+<div class="g3-10">
+  <img src="/images/editorial/compass-brain.png" alt="brain">
+  <q>I immediately have access to information they know</q>
+</div>
+</div>
+
+<div class="contain">
+<div class="g8-4">
+<p>Weather it’s a reset, grid, or form styles, these small components are often bundled into larger frameworks of knowledge. Recently we are seeing massive frameworks like <a href="http://twitter.github.io/bootstrap/">Bootstrap</a> and <a href="http://foundation.zurb.com/">Foundation</a> which solve just about every problem ever as well as smaller frameworks made to solve more basic problems and leave the rest to us like <a href="http://inuitcss.com/">inuitcss</a>. These are all fantastic libraries of information to draw on and they suit the needs of there creators exceedingly well. However these frameworks have a point of view and makes assumptions on both design and implementation that might not work best for you. The larger the framework, the more assumptions are made. For example, just about every large framework uses a 12 column grid. 12 column grids are great and work for most people because they can be easily subdivided into nice even units. While this may work great for most people, if my design required a 10 column grid then a 12 column grid would not work very well for my needs.</p>
+
+<p>So the question arises, how can I execute on my unique project goals and implementation while not having to start everything from scratch? How can I build on information and assume knowledge from others without buying into all of their ideas? Maybe you like the structure of one framework but the grids in another, how do you win at all the things without compromise?</p>
+</div>
+<div class="g3-1">
+  <img src="/images/editorial/compass-framework.png" alt="Framework book">
 </div>
 </div>
 
 <div class="contain">
 <div class="g8-3">
 
-<h2>Package management FTW</h2>
+<h2 id="haveyourcakeeatittoo">Have your cake, <br>eat it too</h2>
 
-<p>Fortunately today we have package management tools like <a href="http://bower.io/">Bower</a> and <a href="http://compass-style.org/">Compass</a>. These offer us a huge ammount of flexability and control over the components we use on a project by allowing us to break them down into smaller modules and load them in as they are needed. Instead of having to use a massive framework I can use a grid system I like, or a typeogrphic system I like. If I need help with colors or forms there is probably somthing I can pull in later to help me out.</p>
+<p>Fortunately, today we have package management tools like <a href="http://bower.io/">Bower</a> and <a href="http://compass-style.org/">Compass</a>. These both offer us a huge amount of flexibility and control over the components we use on a project by allowing us to break them down into smaller modules and load them in as they are needed. Instead of having to use a massive framework I can use a grid system or a typographic system I like. If I need help with colors or forms there is probably something I can pull in later to help me out. Instead of buying into every idea and solution someone might have you can selectively use the ideas you like and simply ignore what doesn’t work for your needs.</p>
 
-<p>I will mostly be focusing on Compass because it doesn’t only have package management capabilities but it also has robust frameworking tools so you can create your own modules that work locally and it integrates deeply with <a href="http://sass-lang.com/">Sass</a> to compile your stylesheets.</p>
+<p>In this article I will be focusing on Compass because it isn’t just about package management but it also has robust frameworking tools so you can create your own modules that work locally. It integrates deeply with <a href="http://sass-lang.com/">Sass</a> to compile your stylesheets. There is a rich ecosystem of <a href="https://github.com/chriseppstein/compass/wiki/Compass-Plugins">Compass plugins</a> from simple <a href="https://github.com/Team-Sass/modular-scale">calculators to help you size your type</a> to Zurb Foundation which is built on Compass. All of these plugins can be pulled in at any point for you to use.</p>
 
-<p>There is a rich ecosystem of <a href="https://github.com/chriseppstein/compass/wiki/Compass-Plugins">Compass plugins</a> from simple <a href="https://github.com/Team-Sass/modular-scale">calculators to help you size your type</a> to Zurb Foundation which is built on Compass. All of these plugins can be pulled in at any point for you to use.</p>
+<h2 id="rollingyourownframework">Rolling your own framework</h2>
 
-<h2>Rolling your own framework</h2>
-
-<p>Lets take a step back and focus on your stuff again. If you are anything like me you probably write your own mixins for your projects. Maybe you copy and paste those mixins into new projects as you need them. It’s pretty easy to set up Compass to store these mixins and things in a centralized place so all your Compass goodies will be avalible and up to date on all your projects. This is called a <a href="http://chriseppstein.github.io/blog/2010/08/01/building-a-personal-framework/">Compass personal framework</a> and it’s pretty simple to set up. Lets say I have a directory of projects like this:</p>
+<p>So lets focus on your needs. If you are anything like me you probably write your own mixins for your own projects. Maybe you copy and paste those mixins into new projects as you need them. It’s pretty easy to set up Compass to store these mixins and things in a centralized place so all your Compass goodies will be available and up to date on all your projects. This is called a <a href="http://chriseppstein.github.io/blog/2010/08/01/building-a-personal-framework/">Compass personal framework</a> and it’s pretty simple to set up. Lets say I have a directory of projects like this:</p>
 
 <pre><code>+ project-one
 + project-two</code></pre>
@@ -65,22 +67,64 @@ style: metaframeworking
   color: white;
   border: none;
   padding: .5em 1em;
-  &:hover {
+  &amp;:hover {
     background: lighten(red, 20%);
   }
-  &:active {
+  &amp;:active {
     background: darken(red, 20%);
   }
 }</code></pre>
 
 <p>Great! Now we have a button we can use in all of our projects. But how do we add it to our project? It’s actually really easy, just add <code>load "my-framework"</code> to your Compass <code>config.rb</code> file and run <code>compass watch project-one</code> from your project directory. Now you can just import those styles anywhere in your project with <code>@import "button";</code>.</p>
 
-<p>So now that you have made your awesome framework of one button I am sure you want to share it with the world so they can see how great it is. All you have to do now is add two files to your project, one is a <a href="https://github.com/scottkellum/meta-frameworking/blob/master/compass-extension/my-extension.gemspec">gemspec</a> and the other is a <a href="https://github.com/scottkellum/meta-frameworking/blob/master/compass-extension/lib/my-extension.rb">simple ruby file</a> of the same name as your extension in a folder called <code>lib</code>. If you just drop these files in all you have to do is run through changing <code>my-exteion</code> to the name of your extension and you are good to go. The last step is running <code>gem build my-extension.gemspec</code> and then <code>gem push my-extension-0.0.1.gem</code> and people can download and install that gem to use in their own projects. I also encourage you also maintain a <a href="https://github.com/scottkellum/meta-frameworking/blob/master/compass-extension/bower.json">Bower</a> version so people have the option to manage their Compass extension through Bowers package management tools.</p>
+<p>So now that you have made your awesome framework of one button I am sure you want to share it with the world so they can see how great it is. All you have to do now is add two files to your project, one is a <a href="https://github.com/scottkellum/meta-frameworking/blob/master/compass-extension/my-extension.gemspec">gemspec</a> and the other is a <a href="https://github.com/scottkellum/meta-frameworking/blob/master/compass-extension/lib/my-extension.rb">simple ruby file</a> of the same name as your extension in a folder called <code>lib</code>. If you just drop these files in, all you have to do is run through changing <code>my-exteion</code> to the name of your extension and you are good to go. The last step is running <code>gem build my-extension.gemspec</code> and then <code>gem push my-extension-0.0.1.gem</code> and people can download and install that gem to use in their own projects. I also encourage you also maintain a <a href="https://github.com/scottkellum/meta-frameworking/blob/master/compass-extension/bower.json">Bower</a> version so people have the option to manage their Compass extension through Bowers package management tools.</p>
 
-<h2>Passing on knowldge</h2>
+<p>Few, that may have been a lot to take in. To make things simpler I consolidated this into a <a href="https://github.com/scottkellum/meta-frameworking">meta-frameworking github repo</a> so you can get started with some working examples.</p>
+</div>
+</div>
 
-<p>I was having pizza one evning with some typographer friends and we started discussing the importance of design school. <a href="https://twitter.com/litherland">Caren Litherland</a> said that design education isn’t as nessisary because we are learning from our tools now. If we use a grid system we learn about the design qualities of grids and how to construct them. Every Compass extension that you make is a tool that people will learn from and that is a beautiful thing. At the same time be sure to take care and do the research so that people learn correct and good things.</p>
+<div class="contain">
+<div class="g3-1 insp">
+<img src="/images/editorial/compass-inspiration.png" alt=" ">
+<q>There is still so much more left out there to be explored and worked on</q>
+</div>
 
+<div class="g7-4">
+<h2 id="whatinspiresme">What inspires me</h2>
+
+<p>My first Compass extension was inspired by <a href="https://twitter.com/nicewebtype">Tim Browns</a> A List Apart article, <em><a href="http://alistapart.com/article/more-meaningful-typography">More Meaningful Typography</a></em>. The article was full of numbers and scales that help create more harmonious typographical arrangements. I glanced through the text and saw all these equations that I didn’t particularly want to do but I thought Sass might be able to handle for me. At the time I knew about mixins so I created a simple mixin that spit out a style with a value.</p>
+
+<pre><code>@mixin modular-scale($style, $value, $base: 16px, $scale: 1.62) {
+  @for $i from 1 through $value {
+    $base: $base * $scale;
+  }
+  #{$style}: $base;
+}</code></pre>
+
+<p>All this mixin does is create a feedback loop, multiplying the numbers over and over again for a set number of iterations. It worked well and I could use it in my projects so I decided to publish it on GitHub for others. Almost immediately there was interest from others like <a href="https://twitter.com/adamstac">Adam Stacoviak</a> and <a href="https://twitter.com/codingdesigner">Mason Wendell</a> to help me out. One of the first things I learned was that I could create my own functions in Sass and at the time my mind was blown with all this new knowledge.</p>
+
+<pre><code>@function modular-scale($value, $base: 16px, $scale: 1.62) {
+  @for $i from 1 through $value {
+    $base: $base * $scale;
+  }
+  @return $base;
+}</code></pre>
+
+<p>Later we kept adding new features and really refined it into an incredibly usable and powerful tool. There is even still room for improvement and because the scope is so narrow it gives us the focus to make something great.</p>
+
+<p>Using a similar formula of research and inspiration resulted in the creation <a href="https://github.com/Team-Sass/Singularity">Singularity</a> from reading about cannons of page design and older grids. <a href="https://twitter.com/snugug">Sam Richard</a> hopped on Singularity and is now a driving force behind it. I got tired of using color tools and created <a href="https://github.com/Team-Sass/color-schemer">color schemer</a> to add that functionality in Sass. <a href="https://github.com/Team-Sass/toolkit#nth-child-for-ie78">nth-child support for IE</a> in toolkit had its beginnings in <a href="https://twitter.com/abouthalf">Michael Barretts</a> incredible <a href="http://abouthalf.com/development/poor-mans-nth-child-selector-for-ie-7-and-8/">blog post on how it’s done</a>. There is still so much more left out there to be explored and worked on.</p>
+</div>
+</div>
+
+<div class="contain">
+  <div class="g8-3">
+<h2 id="passingiton">Passing it on</h2>
+
+<p>I talked about knowledge a lot in this post and I think it is one of the most important things we trade in. It is just as important to learn new things as it is to teach and by creating and sharing you are teaching others. I was discussing design education over pizza with <a href="https://twitter.com/litherland">Caren Litherland</a> one night and she said that design education isn’t as necessary because we are learning from our tools now. If we use a grid system we learn about the design qualities of grids and how to construct them. If we use a modular scale calculator we learn how to typeset better using modular scales. We all learn from using tools. We also learn from creating tools and pouring research into them. Next time you see something that inspires you and can’t wait to use it in your projects build a tool around it and share it with the world. These are things worth spreading.</p>
+
+<hr />
+
+<p><em>Based on a talk originally given at <a href="http://environmentsforhumans.com/2013/css-summit/">CSS Summit</a></em></p>
 
 
 </div>
