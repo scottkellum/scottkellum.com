@@ -3,11 +3,13 @@ $background: white;
 
 @import "../lib/feature";
 
-body, .lede, .lede p:first-child:first-letter {
-	background-image: url('/images/editorial/compass-background.png');
-	@include background-size(cover);
-	background-position: center;
-	background-attachment: fixed;
+@include breakpoint(1025px) {
+	body, .lede, .lede p:first-child:first-letter {
+		background-image: url('/images/editorial/compass-background.png');
+		@include background-size(cover);
+		background-position: center;
+		background-attachment: fixed;
+	}
 }
 
 .lede p:first-child:first-letter {
@@ -17,7 +19,9 @@ body, .lede, .lede p:first-child:first-letter {
 header {
 	text-shadow: 0 0 .5em darken($color, 20%);
 	letter-spacing: .1em;
-	background-attachment: fixed;
+	@include breakpoint(1025px) {
+		background-attachment: fixed;
+	}
 	@include breakpoint(ms(7)) {
 		.dek {
 			text-transform: uppercase;
