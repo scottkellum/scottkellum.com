@@ -3,15 +3,12 @@ $background: white;
 
 @import "../lib/feature";
 
-@include breakpoint(1025px) {
-	body, .lede, .lede p:first-child:first-letter {
-		background-image: url('/images/editorial/compass-background.png');
-		@include background-size(cover);
-		background-position: center;
-		background-attachment: fixed;
-	}
+body, .lede, .lede p:first-child:first-letter {
+	background-image: url('/images/editorial/compass-background.png');
+	@include background-size(cover);
+	background-position: center;
+	background-attachment: fixed;
 }
-
 .lede p:first-child:first-letter {
 	background-image: url('/images/editorial/compass-lede.png');
 }
@@ -19,15 +16,23 @@ $background: white;
 header {
 	text-shadow: 0 0 .5em darken($color, 20%);
 	letter-spacing: .1em;
-	@include breakpoint(1025px) {
-		background-attachment: fixed;
-	}
+	background-attachment: fixed;
 	@include breakpoint(ms(7)) {
 		.dek {
 			text-transform: uppercase;
 			font-size: 2em;
 			letter-spacing: .25em;
 		}
+	}
+}
+
+// iOS shit to take care of
+@media (max-width: 1025px) {
+	body, .lede, header, .lede p:first-child:first-letter {
+		background-attachment: scroll;
+	}
+	body, .lede, .lede p:first-child:first-letter {
+		background-image: none;
 	}
 }
 
