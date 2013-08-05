@@ -7,7 +7,8 @@ body, .lede, footer, .lede p:first-child:first-letter {
 	background-image: url('/images/editorial/compass-background.png');
 	background-attachment: fixed;
 	background-repeat: no-repeat;
-	@include background-size(100% 100%);
+	background-position: center;
+	@include background-size(auto);
 }
 .lede p:first-child:first-letter, footer {
 	background-image: url('/images/editorial/compass-lede.png');
@@ -18,7 +19,7 @@ header {
 	letter-spacing: .1em;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
-	@include background-size(100% 100%);
+	@include background-size(auto);
 	@include breakpoint(ms(7)) {
 		.dek {
 			text-transform: uppercase;
@@ -30,12 +31,18 @@ header {
 
 // iOS shit to take care of
 @media (max-width: 1025px) {
-	body, .lede, header, .lede p:first-child:first-letter {
+	body, .lede, footer, header, .lede p:first-child:first-letter {
 		@include background-size(cover);
 		background-attachment: scroll;
 	}
-	body, .lede, .lede p:first-child:first-letter {
+	body, .lede, footer, .lede p:first-child:first-letter {
 		background-image: none;
+	}
+}
+
+@media (min-width: 1598px), (min-height: 898px) {
+	body, .lede, footer, header, .lede p:first-child:first-letter {
+		@include background-size(100% 100%);
 	}
 }
 
