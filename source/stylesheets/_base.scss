@@ -11,15 +11,19 @@ html, p, q, h1, h2, h3, h4, h5, h6, ul, ol, li {
   padding: 0;
 }
 
+html {
+  background: #fff;
+  font-family: Georgia, serif;
+  &.wf-turnipre-n4-active {
+    font-family: $turnip;
+  }
+}
+
 body {
   margin: 0 auto;
   padding: 1em ms(-6, 100%) 0 ms(-6, 100%);
   max-width: ms(8);
   line-height: ms(1, 1);
-  font-family: Georgia, serif;
-  html.wf-turnipre-n4-active & {
-    font-family: $turnip;
-  }
 }
 
 aside {
