@@ -42,8 +42,10 @@ https://github.com/scottkellum/scottkellum.com/
     <% if data.page.style %>
       <%= stylesheet_link_tag "feature/" + data.page.style %>
     <% end %>
+    <% if data.page.layout == "layout/_portfolio" %>
+      <%= stylesheet_link_tag "pages/portfolio" %>
+    <% end %>
 
-    <!-- <%= javascript_include_tag  "main" %> -->
 
     <!-- WEBTYPE -->
     <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
@@ -65,4 +67,3 @@ https://github.com/scottkellum/scottkellum.com/
     <![endif]-->
 
   </head>
-  <body>

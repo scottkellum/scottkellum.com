@@ -99,11 +99,13 @@ header {
 
 header, article, aside {
   a {
-    &:link, &:visited, &:active {
-      color: darken($color, 15%);
+    color: darken($color, 0%);
+    text-shadow: 0 0 0 $color;
+    &:visited {
+      color: shade($color, 50%);
     }
-    &:hover {
-      color: darken($color, 20%);
+    &:active {
+      color: adjust-hue($color, 180deg);
     }
   }
 }
@@ -127,10 +129,10 @@ hr {
 
 nav #home a {
   background-color: $color;
-  border: ms(-3) solid $background;
-  border-top: none;
   @if $background != white {
     color: $background;
+    border: ms(-3) solid $background;
+    border-top: none;
   }
   &:hover {
     background-color: darken($color, 10%);

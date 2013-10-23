@@ -28,9 +28,15 @@ aside {
 }
 
 header, article, aside, footer {
-  @include clearfix;
-  a:link    {color: darken($primary, 15%);}
-  a:visited {color: tint($primary, 25%);}
-  a:hover   {color: darken($secondary, 15%);}
-  a:active  {color: darken($secondary, 15%);}
+  @include pie-clearfix;
+  a {
+    color: darken($primary, 0%);
+    text-shadow: 0 0 0 $primary;
+    &:visited {
+      color: shade($primary, 50%);
+    }
+    &:active {
+      color: adjust-hue($primary, 180deg);
+    }
+  }
 }

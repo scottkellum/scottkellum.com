@@ -47,12 +47,19 @@ h1 {
 }
 
 h3 {
-  border-top: ms(-4) solid $primary;
-  padding-top: ms(-2);
+  @include acta;
   text-transform: uppercase;
-  line-height: 1;
-  font-weight: 800;
+  font-weight: 500;
+  letter-spacing: .2em;
   font-size: ms(1);
+  line-height: 1;
+  margin: ms(0) 0 ms(-2) 0;
+  &.dek {
+    margin: -1em 0 ms(0) 0;
+  }
+  aside &:first-child {
+    margin-top: ms(-1);
+  }
 }
 
 h4 {

@@ -8,6 +8,8 @@ nav {
     padding: .5em;
     color: #fff;
     text-decoration: none;
+    border: ms(-3) solid white;
+    border-top: none;
     &:hover {
       background: $secondary;
     }
