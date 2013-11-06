@@ -11,3 +11,6 @@ AddOutputFilterByType DEFLATE application/x-javascript
 
 # error handling
 ErrorDocument 404 /404.html
+
+AddType image/svg+xml svg svgz
+AddEncoding gzip svgz

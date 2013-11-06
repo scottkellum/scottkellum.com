@@ -11,47 +11,35 @@
 		white-space: nowrap;
 		overflow: auto;
 		font-family: iconfnt;
-		background: $primary;
 		li {
 			font-family: $turnip;
 			display: inline-block;
+			background: $primary;
+			margin: 2px 1px;
 		}
 		a {
 			padding: .5em 1em;
 			display: block;
 			color: white;
 			text-decoration: none;
-			border: 0 solid darken($primary, 5%);
-			border-width: ms(-2) 0 0 1px;
-			&:hover {
-				background: darken($primary, 5%);
-			}
 		}
-		@include breakpoint(ms(8)) {
+		@include breakpoint(ms(9)) {
 			top: 0;
 			width: ms(6);
 			white-space: normal;
-			left: ms(5) * -1;
-			border-right: ms(-3) solid white;
-			&:hover {
-				left: 0;
-			}
 			li {
 				display: block;
+				margin: 2px;
 			}
-			a {
-				border-width: 0 ms(-1) 1px 0;
-			}
-		}
-		@include breakpoint(ms(9)) {
-			left: 0;
+
 		}
 	}
 	
 	section {
+		@include transition(none);
 		overflow: hidden;
 		position: absolute;
-		padding: 5% 5% 20% 5%;
+		padding: 5%;
 		background-color: white;
 		display: none;
 		left: 0;
@@ -61,9 +49,6 @@
 		}
 		&:target {
 			display: block;
-		}
-		@include breakpoint(ms(8)) {
-			left: ms(6) - ms(5);
 		}
 		@include breakpoint(ms(9)) {
 			left: ms(6);
@@ -80,31 +65,4 @@
 	nav {
 		z-index: 2;
 	}
-
-	img {
-		display: block;
-		margin: 0 0 ms(1) 0;
-	}
-
-	.caption {
-		font-size: ms(-.5);
-		margin: (ms(1) * -1) 0 ms(2) 0;
-		@include breakpoint(ms(8)) {
-			max-width: 50%;
-		}
-	}
-
-	.screenshot {
-		background: $primary url("/images/nav-buttons.svg") top left no-repeat;
-		padding: 18px 0 4px 0;
-		border: 2px solid $primary;
-		border-radius: 10px 10px 3px 3px;
-	}
 }
-
-
-
-
-
-
-
