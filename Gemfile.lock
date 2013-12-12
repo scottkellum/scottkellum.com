@@ -69,6 +69,8 @@ GEM
       middleman-core (>= 3.0.2)
       multi_json (~> 1.0)
       rack-livereload
+    middleman-minify-html (3.1.1)
+      middleman-core (~> 3.0)
     middleman-sprockets (3.2.0)
       middleman-core (~> 3.2)
       sprockets (~> 2.1)
@@ -140,6 +142,7 @@ DEPENDENCIES
   middleman (~> 3.2.0)
   middleman-blog
   middleman-livereload (~> 3.1.0)
+  middleman-minify-html
   modular-scale
   nokogiri
   sass-getunicode
