@@ -1,5 +1,5 @@
 <%= partial "partials/head" %>
-  <body id="layout">    
+  <body id="layout">
     <article class="post" id="main" role="main">
       <h1 class="hed"><%= data.page.title %></h1>
       <% if data.page.dek %>
@@ -8,18 +8,8 @@
 
       <%= yield %>
 
-      <a class="FlattrButton" style="display:none;"
-          title="<%= data.page.title || "Scott Kellum" %>"
-          data-flattr-uid="ScottKellum"
-          data-flattr-category="text"
-          data-flattr-popout="0"
-          data-flattr-button="compact"
-          href="<%= data.page.link %>">
-          Flattr <%= data.page.title || "Scott Kellum" %>
-      </a>
-
     </article>
-    
+
     <aside>
       <h2>Recent Articles</h2>
       <ol>

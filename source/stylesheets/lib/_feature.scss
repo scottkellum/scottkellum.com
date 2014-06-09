@@ -83,12 +83,6 @@ header {
   }
 }
 
-.FlattrButton {
-  margin: ms(2) auto;
-  display: block;
-  float: none;
-}
-
 // color reset
 
 @if lightness($background) < 50% {

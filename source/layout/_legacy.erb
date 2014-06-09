@@ -1,18 +1,9 @@
 <%= partial "partials/head" %>
-  <body id="legacy">    
+  <body id="legacy">
     <article id="main" role="main">
       <%= yield %>
-      <a class="FlattrButton" style="display:none;"
-          title="<%= data.page.title || "Scott Kellum" %>"
-          data-flattr-uid="ScottKellum"
-          data-flattr-category="text"
-          data-flattr-popout="0"
-          data-flattr-button="compact"
-          href="<%= data.page.link %>">
-          Flattr <%= data.page.title || "Scott Kellum" %>
-      </a>
     </article>
-    
+
     <nav>
       <ul>
         <li id="home"><a href="/">home</a></li>

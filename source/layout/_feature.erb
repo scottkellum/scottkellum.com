@@ -1,5 +1,5 @@
 <%= partial "partials/head" %>
-  <body id="feature">    
+  <body id="feature">
     <header
       <% if data.page.ledeimg %>
         style="background-image: url('<%= data.page.ledeimg %>')"
@@ -15,16 +15,6 @@
 
       <%= yield %>
 
-      <a class="FlattrButton" style="display:none;"
-          title="<%= data.page.title || "Scott Kellum" %>"
-          data-flattr-uid="ScottKellum"
-          data-flattr-category="text"
-          data-flattr-popout="0"
-          data-flattr-button="compact"
-          href="<%= data.page.link %>">
-          Flattr <%= data.page.title || "Scott Kellum" %>
-      </a>
-
     </article>
-    
+
 <%= partial "partials/foot" %>
