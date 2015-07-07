@@ -23,12 +23,12 @@ $breakpoint-no-queries: false;
 $breakpoint-no-query-wrappers: true;
 
 // Fonts
-$acta: "acta-display", Georgia, serif;
-$turnip: "Turnip RE", Georgia, serif;
+$acta: "Freight Display Semibold", Georgia, serif;
+$turnip: "Freight Sans", Verdana, sans-serif;
 
 %acta {
 	font-family: Georgia, serif;
-	html.wf-active & {
+	html.wf-freightdisplaysemibold-n4-active & {
 		font-family: $acta;
 	}
 }
