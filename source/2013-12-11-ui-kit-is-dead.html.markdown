@@ -3,6 +3,8 @@ title: UI Kit is dead
 date: 2013-12-11
 ---
 
+NOTE: This has nothing to do with the excellent [uikit](http://getuikit.com/) project. It is unfortunate that I chose such a generic name for my side project.
+
 For a long time I have been thinking about and prototyping various [APIs](https://github.com/Team-Sass/uikit/blob/map-api/stylesheets/_protui.scss) and [patterns](http://codepen.io/scottkellum/pen/hiywr) for a pattern library I was calling UI Kit. Having created a [grid system](https://github.com/Team-Sass/Singularity), [type system](https://github.com/Team-Sass/modular-scale), and numerous other tools with friends at [team-sass](https://github.com/Team-Sass/) a UI kit seemed like the missing link to compete with rapid prototyping frameworks like [Foundation](http://foundation.zurb.com/) and [Bootstrap](http://getbootstrap.com/). The tools I build do not dictate how `HTML` or the design of the site should look but they are instead tools to help you reach your own design ideals. While I came close to making UI Kit as un-opinionated as I possibly could in terms of markup the un-opinionated design was dull and patterns were a little too strict. The more I studied how people use big frameworks the more I notice that most people aren’t re-writing core styles but either just using the styles or overriding them while staying inside the box in terms of what the resulting site should look like and how it should behave.
 
 ## Learn CSS, not the framework
