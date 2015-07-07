@@ -1,33 +1,6 @@
 <!doctype html>
-<!--
 
-
-
-
-
-
-
-
-
-
-
-Viewing souce? Check out the full source:
-https://github.com/scottkellum/scottkellum.com/
-
-
-
-
-
-
-
-
-
-
-
--->
-<!--[if lt IE 9 ]> <html class="ie ltie9 no-js no-mqs" lang="en"> <![endif]-->
-<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="en"> <![endif]-->
-<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<html class="no-js" lang="en">
   <head>
     <title><%= data.page.title || "Scott Kellum" %></title>
     <meta charset="utf-8" />
@@ -38,25 +11,27 @@ https://github.com/scottkellum/scottkellum.com/
     <link rel="shortcut icon" href="/images/favicon.png" />
     <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" />
 
-    <%= stylesheet_link_tag "style" %>
+    <% if environment == :development %>
+      <%= stylesheet_link_tag "style" %>
+    <% else %>
+      <% css_path = sitemap.resources.select { |p| p.source_file.match(/style[.]scss$/) }.first %>
+      <style><%= css_path.render %></style>
+    <% end %>
+
     <% if data.page.style %>
       <%= stylesheet_link_tag "feature/" + data.page.style %>
     <% end %>
 
     <!-- WEBTYPE -->
     <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
-    <script> 
-     WebFont.load({ 
-      custom: { 
-       families:['Turnip RE'], 
-       urls:['//cloud.webtype.com/css/5fd75aea-fa83-43ad-8fb7-509ad91b9cd7.css']
+    <script>
+     WebFont.load({
+      custom: {
+       families:['Freight Sans', 'Freight Display Semibold'],
+       urls:['//cloud.webtype.com/css/3dc5f036-3088-45ce-9af2-1eac1ce6e298.css']
       }
-     }); 
+     });
     </script>
-
-    <!-- TYPEKIT -->
-    <script type="text/javascript" src="//use.typekit.net/qfs2thr.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
     <!--[if lt IE 9]>
     <%= javascript_include_tag  "html5shiv" %>

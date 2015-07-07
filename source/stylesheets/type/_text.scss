@@ -2,10 +2,6 @@ p {
   + p {
     text-indent: ms(2);
   }
-  article.post &:last-of-type:after {
-    content: " #{$symbol}";
-    color: $primary;
-  }
 }
 
 .footnotes p {
@@ -18,7 +14,7 @@ p {
 
 q {
 	display: block;
-	@include acta;
+  font-family: $display;
 	font-style: italic;
 	color: $primary;
 	font-size: ms(1) + ms(-1);

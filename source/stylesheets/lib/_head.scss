@@ -1,5 +1,5 @@
 @import "compass";
-@import "toolkit-no-css";
+@import "toolkit";
 @import "breakpoint";
 @import "modular-scale";
 @import "color-schemer";
@@ -23,15 +23,5 @@ $breakpoint-no-queries: false;
 $breakpoint-no-query-wrappers: true;
 
 // Fonts
-$acta: "acta-display", Georgia, serif;
-$turnip: "Turnip RE", Georgia, serif;
-
-%acta {
-	font-family: Georgia, serif;
-	html.wf-active & {
-		font-family: $acta;
-	}
-}
-@mixin acta {
-  @extend %acta;
-}
+$display: "Freight Display Semibold", Georgia, serif;
+$text: "Freight Sans", Verdana, sans-serif;
