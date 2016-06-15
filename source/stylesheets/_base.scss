@@ -26,6 +26,10 @@ body {
   line-height: ms(1, 1);
 }
 
+img {
+  width: 100%;
+}
+
 aside {
   border-top: ms(-4) solid $primary;
   margin: ms(2) 0 ms(-3, 100%) 0;
@@ -43,4 +47,9 @@ header, article, aside, footer {
       color: adjust-hue($primary, 180deg);
     }
   }
+}
+
+svg {
+  color: $primary;
+  fill: currentColor;
 }

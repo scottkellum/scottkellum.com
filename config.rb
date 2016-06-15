@@ -18,6 +18,7 @@ page "/blog/*", :layout => "layout/_legacy"
 page "/projects/*", :layout => "layout/_legacy"
 page "/portfolio/*", :layout => "layout/_portfolio"
 page "/about-me.html", :layout => "layout/_legacy"
+page "/map.html", :layout => "layout/_legacy"
 page "/colophon.html", :layout => "layout/_legacy"
 
 # Proxy pages (http://middlemanapp.com/dynamic-pages/)
@@ -53,7 +54,7 @@ end
 
 page "/feed.xml", :layout => false
 
-### 
+###
 # Compass
 ###
 
