@@ -1,11 +1,11 @@
 /*! View the full souce here: https://github.com/scottkellum/scottkellum.com/tree/master/source/stylesheets */
 
-@import "lib/head";
+// Compass plugins
+@import 'modularscale';
+@import 'color-schemer';
 
-@import "base";
-@import "type";
-@import "nav";
-@import "widgets";
-@import "pages";
+// Project styles
+@import 'settings';
+@import 'base';
 
-@import "hacks";
+@import 'print';

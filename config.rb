@@ -14,7 +14,6 @@
 page "/*", :layout => "layout/_layout"
 page "/index.html", :layout => "layout/_home"
 page "/404.html", :layout => "layout/_legacy"
-page "/blog/*", :layout => "layout/_legacy"
 page "/projects/*", :layout => "layout/_legacy"
 page "/portfolio/*", :layout => "layout/_portfolio"
 page "/about-me.html", :layout => "layout/_legacy"
@@ -59,11 +58,7 @@ page "/feed.xml", :layout => false
 ###
 
 require 'compass'
-require 'toolkit'
 require 'modular-scale'
-require 'breakpoint'
-require 'color-schemer'
-require 'sass-getunicode'
 
 ###
 # Helpers

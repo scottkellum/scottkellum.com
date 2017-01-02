@@ -1,55 +1,21 @@
-@import "toolkit";
-
-* {
-  @include transition(all .25s);
-}
-
-// soft reset some things
-html, p, q, h1, h2, h3, h4, h5, h6, ul, ol, li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  background: #fff;
-  font-family: Verdana, sans-serif;
-  &.wf-freightsans-n4-active {
-    font-family: $turnip;
-  }
-}
-
 body {
-  margin: 0 auto;
-  padding: 1em ms(-6, 100%) 0 ms(-6, 100%);
-  max-width: ms(8);
-  line-height: ms(1, 1);
+  line-height: calc(1.3em + 1vw);
+  margin: 0;
+  font-family: $font;
+  font-size: 115%;
 }
 
-img {
-  width: 100%;
+article {
+  max-width: $max-width;
+  margin: auto;
+  padding: 4vw;
 }
 
-aside {
-  border-top: ms(-4) solid $primary;
-  margin: ms(2) 0 ms(-3, 100%) 0;
-}
-
-header, article, aside, footer {
-  @include pie-clearfix;
-  a {
-    color: darken($primary, 0%);
-    text-shadow: 0 0 0 $primary;
-    &:visited {
-      color: shade($primary, 50%);
-    }
-    &:active {
-      color: adjust-hue($primary, 180deg);
-    }
-  }
-}
-
-svg {
-  color: $primary;
-  fill: currentColor;
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headline;
+  margin: 0;
+  font-weight: 400;
+  font-size: 3em;
+  line-height: 1;
+  font-size: calc(1.2em + #{($scale-factor * 1vw)});
 }

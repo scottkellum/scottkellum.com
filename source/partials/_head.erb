@@ -11,23 +11,6 @@
     <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" />
 
     <%= stylesheet_link_tag "style" %>
-    <% if data.page.style %>
-      <%= stylesheet_link_tag "feature/" + data.page.style %>
-    <% end %>
-
-    <!-- WEBTYPE -->
-    <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
-    <script>
-     WebFont.load({
-      custom: {
-       families:['Freight Sans', 'Freight Display Semibold'],
-       urls:['//cloud.webtype.com/css/3dc5f036-3088-45ce-9af2-1eac1ce6e298.css']
-      }
-     });
-    </script>
-
-    <!--[if lt IE 9]>
-    <%= javascript_include_tag  "html5shiv" %>
-    <![endif]-->
+    <link href="//cloud.typenetwork.com/projects/854/fontface.css/" rel="stylesheet" type="text/css">
 
   </head>

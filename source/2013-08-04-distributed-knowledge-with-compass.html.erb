@@ -1,19 +1,12 @@
 ---
 title: Distributed knowledge with Compass
-dek: learning, creating, and sharing
-ledeimg: /images/editorial/compass-lede.png
 date: 2013-08-04
 published: true
-layout: layout/_feature
-style: metaframeworking
 ---
 
 <div class="lede">
 <p>People tend to think of <a href="http://compass-style.org/">Compass</a> as simply a mixin library. And while it’s true that Compass contains a great mixin library of the same name, it also provides tools to compile projects and to create frameworks that expand on its inherent capabilities. These frameworks can be used throughout your projects and distributed as <a href="http://compass-style.org/help/tutorials/extensions/">Compass extensions</a>. Although Compass is often compared with <a href="http://bourbon.io/">Bourbon</a>, the two aren’t synonymous — you can load <a href="https://github.com/jedfoster/bourbon-compass">Bourbon into Compass</a>. In this article, I’m not going to delve into either of these mixin libraries. Instead, I’m going to explore the <em>frameworking capabilities</em> of Compass, encourage you to create your own personal framework or tool, and show you how to share what you’ve made as a Compass extension.</p>
 </div>
-
-<div class="contain">
-<div class="g8-2">
 
 <p>But before going into the technical side of things, let’s talk about retaining knowledge. Those of us who work on the web learn and draw inspiration from multiple sources. Blog posts, conferences, design books — information is coming at us faster than we can digest it. How can we trust ourselves to remember it all? And even if we <em>can</em> remember a bit of CSS or a design technique, how are we supposed to remember exactly how to implement a more complicated technique without going back and looking it up?</p>
 
@@ -25,28 +18,13 @@ style: metaframeworking
 
 <p>So the question arises: How can I execute on my unique project goals and implementation while not having to start from scratch? How can I build on information and assume knowledge from others without buying into all of their ideas? Maybe you like the structure of one framework but the grids in another — how can you win without compromising your point of view?</p>
 
-</div>
-<div class="g3-10">
-  <img src="/images/editorial/compass-brain.png" alt="brain">
-  <q>This makes a framework an ideal place to store, and build on, information</q>
-</div>
-</div>
-
-<div class="contain">
-
-<div class="g8-3">
+<q>This makes a framework an ideal place to store, and build on, information</q>
 
 <h2 id="haveyourcakeeatittoo">Have your cake.<br>Eat it, too.</h2>
 
 <p>Fortunately, we have package management tools like <a href="http://bower.io/">Bower</a> and extendable frameworking tools like <a href="http://compass-style.org/">Compass</a>. Compass components are usually distributed through <a href="http://rubygems.org/">RubyGems</a>. (Don’t worry: no Ruby knowledge is required.) These tools offer us a huge amount of flexibility and control over the components we use on a project by allowing us to break them down into smaller modules and load them in as needed. Instead of having to use a massive framework, I can use a grid system or a typographic system I happen to like. If I need help with colors or forms, there is probably something I can pull in later to help me out. Instead of buying into every idea and solution someone might have, I can selectively use the ideas I like and simply ignore what doesn’t work for me.</p>
 
 <p>I want to focus on Compass because it provides a fantastic system for using <a href="https://github.com/chriseppstein/compass/wiki/Compass-Plugins">3rd party extensions</a> and also offers a framework for building a collection of tools you can use locally on all of your projects. It is tightly coupled with <a href="http://sass-lang.com/">Sass</a> to take advantage of some of the best CSS preprocessing capabilities. The tools you can import into Compass range from small components like <a href="https://github.com/Team-Sass/modular-scale">a calculator</a> that can help you generate values to use in your typography and <a href="http://jaredhardy.com/sassy-buttons/">button mixins</a> to <a href="http://foundation.zurb.com/">more massive frameworks</a>. The smaller components remain a little more flexible and focused, but there is no end of stuff out there for you to import and use.</p>
-
-</div>
-</div>
-
-<div class="contain">
-<div class="g8-3">
 
 <h2 id="rollingyourownframework">Roll your own framework</h2>
 
@@ -58,24 +36,24 @@ style: metaframeworking
 <p>Perhaps you have a few styles to, say, style a button that you want to share between your two projects. Instead of copying and pasting the relevant code between your projects, you can create a new folder containing all of your button styles that both of your projects can reference.</p>
 
 <pre><code>- my-framework
-  - stylesheets
-    - _button.scss
+- stylesheets
+- _button.scss
 + project-one
 + project-two</code></pre>
 
 <p>Inside <code>_button.scss</code>, let’s write a bit of code for your button:</p>
 
 <pre><code>button {
-  background: red;
-  color: white;
-  border: none;
-  padding: .5em 1em;
-  &amp;:hover {
-    background: lighten(red, 20%);
-  }
-  &amp;:active {
-    background: darken(red, 20%);
-  }
+background: red;
+color: white;
+border: none;
+padding: .5em 1em;
+&amp;:hover {
+background: lighten(red, 20%);
+}
+&amp;:active {
+background: darken(red, 20%);
+}
 }</code></pre>
 
 <p>Great! Now you have a button you can use across all of your projects. But how do you add it to a project? Easy: just add <code>load "my-framework"</code> to your Compass <code>config.rb</code> file and run <code>compass watch project-one</code> from your project directory. Now you can just import those styles anywhere in your project with <code>@import "button";</code>.</p>
@@ -84,55 +62,37 @@ style: metaframeworking
 
 <p>Phew! That may have been a lot to take in. To make things simpler, I consolidated everything into a <a href="https://github.com/scottkellum/meta-frameworking">metaframeworking github repo</a> so that you can get started with some concrete working examples.</p>
 
-</div>
-</div>
-
-<div class="contain">
-<div class="g3-1 insp">
-<img src="/images/editorial/compass-inspiration.png" alt=" ">
 <q>There is still so much more left out there to be explored and worked on</q>
-</div>
 
-<div class="g7-4">
 <h2 id="whatinspiresme">What inspires me</h2>
 
 <p>My first Compass extension was inspired by <a href="https://twitter.com/nicewebtype">Tim Brown</a>’s A List Apart article, <em><a href="http://alistapart.com/article/more-meaningful-typography">More Meaningful Typography</a></em>. The article was bursting with numbers and scales to help create more harmonious typographic arrangements. When I glanced through the text and saw all of those equations that I didn’t particularly want to do, it occurred to me that Sass might be able to handle them for me. I created a simple mixin that spit out a style with a value.</p>
 
 <pre><code>@mixin modular-scale($style, $value, $base: 16px, $scale: 1.62) {
-  @for $i from 1 through $value {
-    $base: $base * $scale;
-  }
-  #{$style}: $base;
+@for $i from 1 through $value {
+$base: $base * $scale;
+}
+#{$style}: $base;
 }</code></pre>
 
 <p>This mixin simply creates a feedback loop that multiplies the numbers over and over for a set number of iterations. I found that it worked well, and I could use it in my projects, so I decided to publish it on GitHub for others. Almost immediately, people like <a href="https://twitter.com/adamstac">Adam Stacoviak</a> and <a href="https://twitter.com/codingdesigner">Mason Wendell</a> expressed interest in helping me out. One of the very first things I learned was that I could create my own functions in Sass; at the time, my <a href="http://img.pgdn.us/b/mind-blown.gif">mind was blown</a> with all of this new knowledge.</p>
 
 <pre><code>@function modular-scale($value, $base: 16px, $scale: 1.62) {
-  @for $i from 1 through $value {
-    $base: $base * $scale;
-  }
-  @return $base;
+@for $i from 1 through $value {
+$base: $base * $scale;
+}
+@return $base;
 }</code></pre>
 
 <p>We continued to add new features and really refined the mixin into an incredibly usable and powerful tool. There is still room for improvement, of course, and because the scope is so narrow it gives us the focus to make something great.</p>
 
 <p>This combination of research and inspiration prompted me to dive into canonical works on page design and older grids, and resulted in the creation of  <a href="https://github.com/Team-Sass/Singularity">Singularity</a>. <a href="https://twitter.com/snugug">Sam Richard</a> hopped on Singularity and is now a driving force behind it. I got tired of using color tools and created <a href="https://github.com/Team-Sass/color-schemer">color schemer</a> to add that functionality in Sass. <a href="https://github.com/Team-Sass/toolkit#nth-child-for-ie78">nth-child support for IE</a> in Toolkit had its beginnings in <a href="https://twitter.com/abouthalf">Michael Barrett</a>’s incredible <a href="http://abouthalf.com/development/poor-mans-nth-child-selector-for-ie-7-and-8/">blog post on how it’s done</a>. There is still so much more left out there to be explored and worked on.</p>
-</div>
-</div>
 
-<div class="contain">
-  <div class="g8-3">
 <h2 id="passiton">Pass it on</h2>
 
 <p>I talked about knowledge a lot in this post because I think it is one of the most important things we trade in. It is just as important to learn new things as it is to teach, and by creating and sharing you teach others. One night, while discussing design education over pizza with <a href="https://twitter.com/litherland">Caren Litherland</a>, she mused that a formal design education is perhaps becoming less necessary because we learn from our tools now. If we use a grid system, we learn about the design qualities of grids and how to construct them. If we use a modular scale calculator, we learn how to typeset better using modular scales. We all learn from using tools. We also learn from creating tools and pouring research into them. Next time you see something that inspires you and can’t wait to use it in your projects, build a tool around it and share it with the world.</p>
 <hr />
 
-<div class="footnotes">
-  <p>Edited by <a href="https://twitter.com/litherland">Caren Litherland</a>.</p>
-  <p>Additional input from <a href="https://twitter.com/robwierzbowski">Rob Wierzbowski</a>, <a href="https://twitter.com/lolmaus">Андрей Михайлов</a>, and <a href="https://twitter.com/micahgodbolt">Micah Godbolt</a>.</p>
-  <p>Based on my talk at <a href="http://environmentsforhumans.com/2013/css-summit/">CSS Summit</a>.</p>
-</div>
-
-
-</div>
-</div>
+<p>Edited by <a href="https://twitter.com/litherland">Caren Litherland</a>.</p>
+<p>Additional input from <a href="https://twitter.com/robwierzbowski">Rob Wierzbowski</a>, <a href="https://twitter.com/lolmaus">Андрей Михайлов</a>, and <a href="https://twitter.com/micahgodbolt">Micah Godbolt</a>.</p>
+<p>Based on my talk at <a href="http://environmentsforhumans.com/2013/css-summit/">CSS Summit</a>.</p>
