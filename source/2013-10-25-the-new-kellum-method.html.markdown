@@ -3,6 +3,8 @@ title: The new Kellum method
 date: 2013-10-25
 ---
 
+**_This post is no longer fully funcitoning as I have abandon icon fonts on this website_**
+
 It wasn’t that long ago when [Jeffrey Zeldman](https://twitter.com/zeldman) wrote about my [image replacement method](http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/). While I still occasionally use this method, I try to avoid image replacements altogether, but I have been taking a dramatically different approach recently. So what is the goal of image replacement techniques? The goal is to have text without a font showing up. Now that @font-face is supported just about everywhere we can take advantage of it to load a font with characters that have no width and make no marks. Simply calling a font like this will make the text invisible. Early this year [Ken Lunde](https://twitter.com/ken_lunde) and Adobe released [Adobe Blank](http://blogs.adobe.com/typblography/2013/03/introducing-adobe-blank.html) which is just such an invisible font intended to be used during the loading of other CSS fonts. So what does this look like? After initial font include, it’s just one simple line of CSS. For my website the invisible font is `iconfnt` so my CSS for hiding text is just `font-family: iconfnt;`.
 
 <br>
@@ -30,8 +32,8 @@ Image replacement isn’t the only use case for this trick. There are plenty of 
 Without `font-family: iconfnt`:
 
 <div>
- <div style="display: inline-block; background-color: #aaa;">inline-block</div> 
- <div style="display: inline-block; background-color: #aaa;">inline-block</div> 
+ <div style="display: inline-block; background-color: #aaa;">inline-block</div>
+ <div style="display: inline-block; background-color: #aaa;">inline-block</div>
  <div style="display: inline-block; background-color: #aaa;">inline-block</div>
 </div>
 
@@ -39,8 +41,8 @@ Without `font-family: iconfnt`:
 
 With `font-family: iconfnt`:
 <div style="font-family: iconfnt;">
- <div style="display: inline-block; background-color: #aaa; font-family: 'Turnip RE', Georgia, serif">inline-block</div> 
- <div style="display: inline-block; background-color: #aaa; font-family: 'Turnip RE', Georgia, serif">inline-block</div> 
+ <div style="display: inline-block; background-color: #aaa; font-family: 'Turnip RE', Georgia, serif">inline-block</div>
+ <div style="display: inline-block; background-color: #aaa; font-family: 'Turnip RE', Georgia, serif">inline-block</div>
  <div style="display: inline-block; background-color: #aaa; font-family: 'Turnip RE', Georgia, serif">inline-block</div>
 </div>
 

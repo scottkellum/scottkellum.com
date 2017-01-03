@@ -1,11 +1,12 @@
 body {
-  line-height: calc(1.3em + 1vw);
+  line-height: 1.4;
   margin: 0;
   font-family: $font;
-  font-size: 115%;
+  font-size: 100%;
 }
 
-article {
+article,
+aside {
   max-width: $max-width;
   margin: auto;
   padding: 4vw;
@@ -17,5 +18,69 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   font-size: 3em;
   line-height: 1;
-  font-size: calc(1.2em + #{($scale-factor * 1vw)});
+  font-size: calc(1.3em + #{($scale-factor * 1vw)});
+  @media (min-width: $max-width) {
+    font-size: 3em;
+  }
+}
+
+h2 {
+  font-size: calc(1.2em + #{($scale-factor / 2 * 1vw)});
+  @media (min-width: $max-width) {
+    font-size: 2em;
+  }
+}
+
+h3, h4, h5, h6 {
+  font-size: calc(1em + #{($scale-factor / 3 * 1vw)});
+  @media (min-width: $max-width) {
+    font-size: 1.6em;
+  }
+}
+
+q {
+  font-style: italic;
+}
+
+pre {
+  border-left: 2px solid $primary;
+  padding-left: 1em;
+  font-size: .9em;
+  font-family: inherit;
+}
+code {
+  color: darken($primary,10%);
+  font-family: inherit;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background: $primary;
+}
+
+a:link {
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+  background-image: linear-gradient(rgba($primary, .5),rgba($primary, .5));
+  background-repeat: no-repeat;
+  background-position: 0 1.1em;
+  transition: background-position $speed, color $speed;
+}
+a:visited {
+  color: #aaa;
+}
+a:hover {
+  color: #fff;
+  background-position: 0 0;
+  background-image: linear-gradient($primary,$primary);
+}
+
+svg {
+  fill: currentcolor;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  transform: translateY(7%);
 }

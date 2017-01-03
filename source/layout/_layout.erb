@@ -10,6 +10,23 @@
 
     </article>
 
+    <div class="pager-wrap">
+      <% if current_article.next_article %>
+        <div class="pager" id="next">
+          <a href="<%= current_article.next_article.url %>">
+            <%= current_article.next_article.title %> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon points="10,16 14,12 10,8 14,4 10,0 2,8 "/></svg>
+          </a>
+        </div>
+      <% end %>
+      <% if current_article.previous_article %>
+        <div class="pager" id="previous">
+          <a href="<%= current_article.previous_article.url %>">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon points="6 0 2 4 6 8 2 12 6 16 14 8 6 0"/></svg> <%= current_article.previous_article.title %>
+          </a>
+        </div>
+      <% end %>
+    </div>
+
     <aside>
       <h2>Recent Articles</h2>
       <ol>
@@ -21,7 +38,7 @@
       <h2>By Year</h2>
       <ol class="articles-cal">
         <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
-          <li><%= link_to year, blog_year_path(year) %> <span class="count"><%= articles.size %></span></a></li>
+          <li><%= link_to year, blog_year_path(year) %></a></li>
         <% end %>
       </ol>
     </aside>

@@ -2,7 +2,7 @@
 pageable: true
 per_page: 10
 ---
-<h1>Can’t find that, try again</h1>
+<h1>Sorry that page doesn’t exist anymore</h1>
 <% if paginate %>
   <p>Page <%= page_number %> of <%= num_pages %></p>
 
@@ -13,7 +13,6 @@ per_page: 10
 
 <% page_articles.each_with_index do |article, i| %>
   <h2><%= link_to article.title, article %></h2>
-  <%= article.summary(600) %>
 <% end %>
 
 <% if paginate %>

@@ -1,7 +1,13 @@
 // Dimensions
-$scale-factor: 3;
-$max-width: 900px;
+$scale-factor: 4.25;
+$max-width: 40em;
 
 // Typography
 $font: dispatch, Georgia, serif;
 $headline: farnham, serif;
+
+// Colors
+$primary: #00CBC8;
+
+// Animations
+$speed: .2s;

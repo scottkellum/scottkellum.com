@@ -1,0 +1,17 @@
+footer {
+  background: $primary;
+  color: #fff;
+  overflow: hidden;
+  padding: 1em;
+  text-align: right;
+  a:visited {
+    color: mix($primary,#fff,.5);
+  }
+  ul,
+  li {
+    list-style: none;
+    display: inline;
+    margin: 0;
+    padding: 0;
+  }
+}

@@ -1,14 +1,7 @@
-    <nav>
-      <ul>
-        <li id="home"><a href="/">home</a></li>
-         <% if current_article.previous_article %>
-          <li id="previous"><a href="<%= current_article.previous_article.url %>"><%= current_article.previous_article.title %></a></li>
-        <% end %>
-        <% if current_article.next_article %>
-          <li id="next"><a href="<%= current_article.next_article.url %>"><%= current_article.next_article.title %></a></li>
-        <% end %>
-      </ul>
-    </nav>
     <%= partial "partials/footer" %>
+
+    <div id="progress" class="progress"></div>
+
+    <%= javascript_include_tag 'main' %>
   </body>
 </html>

@@ -1,0 +1,39 @@
+.pager a {
+  display: none;
+}
+
+@media (min-width: 50em) {
+  .pager a {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 2em;
+    transform: translateY(-50%) translateX(-100%);
+    padding: .5em .6em .5em 1em;
+    border-radius: 0 1.25em 1.25em 0;
+    background: #fff;
+    color: $primary;
+    line-height: 1;
+    z-index: 1;
+    transition: transform $speed ease-out, background $speed ease-out, color $speed ease-out;
+    &:hover {
+      background: $primary;
+      color: #fff;
+      transform: translateY(-50%) translateX(-2em);
+    }
+  }
+  .pager svg {
+    display: inline-block;
+  }
+
+  #previous a {
+    left: auto;
+    right: 2em;
+    transform: translateY(-50%) translateX(100%);
+    padding: .5em 1em .5em .6em;
+    border-radius: 1.25em 0 0 1.25em;
+    &:hover {
+      transform: translateY(-50%) translateX(2em);
+    }
+  }
+}
