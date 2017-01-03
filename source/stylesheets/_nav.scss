@@ -1,6 +1,8 @@
 nav {
-  background-color: $primary;
   position: fixed;
   top: 0;
-  display: none;
+  padding: 1em;
+  a:link {
+    display: block;
+  }
 }
