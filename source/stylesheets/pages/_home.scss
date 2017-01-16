@@ -1,0 +1,28 @@
+#home {
+  article {
+    background-color: $primary;
+    max-width: none;
+    color: #fff;
+    font-size: 1.3em;
+    @media (min-width: 55em) {
+      padding: 3rem 5% 5% 10rem;
+    }
+    h2 {
+      margin: .5em 0;
+    }
+    a {
+      color: #fff;
+      opacity: .8;
+      background-image: linear-gradient(#fff,#fff);
+      background-position: 0 1.2em;
+      &:hover {
+        color: $primary;
+        opacity: 1;
+        background-position: 0;
+      }
+    }
+  }
+  nav {
+    background-color: #fff;
+  }
+}

@@ -1,14 +1,8 @@
 <%= partial "partials/head" %>
-  <body id="portfolio">    
+  <body id="legacy">
     <article id="main" role="main">
       <%= yield %>
     </article>
-    
-    <nav>
-      <ul>
-        <li id="home"><a href="/">home</a></li>
-      </ul>
-    </nav>
+    <%= partial "partials/footer" %>
   </body>
-  <%= partial "partials/footerjs" %>
 </html>

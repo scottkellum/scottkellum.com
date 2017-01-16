@@ -2,7 +2,68 @@ nav {
   position: fixed;
   top: 0;
   padding: 1em;
-  a:link {
+  a, a:visited {
     display: block;
+    color: inherit;
+  }
+  a:hover {
+    color: #fff;
+  }
+}
+
+.nav-toggle {
+  display: none;
+}
+
+@media (max-width: 55em) {
+  .nav-toggle {
+    background: $primary;
+    display: block;
+    border: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    font-size: 1em;
+    padding: .5em;
+    z-index: 1;
+    transition: all $speed ease-out;
+    font-size: 1.5em;
+    &.active {
+      color: $primary;
+      background: #fff;
+    }
+    svg {
+      display: block;
+      transform: none;
+    }
+  }
+  svg #close {
+    display: none;
+    .nav-toggle.active & {
+      display: block;
+    }
+  }
+  .nav-toggle.active svg rect {
+    display: none;
+  }
+
+  nav {
+    background: $primary;
+    color: #fff;
+    width: 100%;
+    padding: 0;
+    text-align: right;
+    bottom: 0;
+    top: auto;
+    transition: transform $speed ease-in;
+    transform: translateY(100%);
+    .nav-toggle.active + & {
+      transform: none;
+    }
+    a {
+      background: $primary;
+      padding: 1em;
+    }
   }
 }
