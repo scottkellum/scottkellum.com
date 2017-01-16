@@ -3,9 +3,9 @@
 ###
 
 # Change Compass configuration
-# compass_config do |config|
-#   config.output_style = :compact
-# end
+compass_config do |config|
+  config.output_style = :compressed
+end
 
 ###
 # Page options, layouts, aliases and proxies
@@ -13,12 +13,11 @@
 
 page "/*", :layout => "layout/_layout"
 page "/index.html", :layout => "layout/_home"
+page "/projects/*", :layout => "layout/_projects"
 page "/404.html", :layout => "layout/_legacy"
-page "/projects/*", :layout => "layout/_legacy"
-page "/portfolio/*", :layout => "layout/_portfolio"
 page "/about.html", :layout => "layout/_legacy"
 page "/map.html", :layout => "layout/_legacy"
-page "/colophon.html", :layout => "layout/_legacy"
+page "/feed.xml", :layout => false
 
 # Proxy pages (http://middlemanapp.com/dynamic-pages/)
 # proxy "/this-page-has-no-template.html", "/template-file.html", :locals => {
@@ -47,11 +46,9 @@ activate :blog do |blog|
   blog.calendar_template = "calendar.html"
 
   # blog.paginate = true
-  # blog.per_page = 10
+  blog.per_page = 20
   # blog.page_link = "page/:num"
 end
-
-page "/feed.xml", :layout => false
 
 ###
 # Compass

@@ -4,15 +4,6 @@
       <h1>Scott Kellum</h1>
       <%= yield %>
     </article>
-
-    <aside>
-      <h2>By Year</h2>
-      <ol class="articles-cal">
-        <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
-          <li><%= link_to year, blog_year_path(year) %></a></li>
-        <% end %>
-      </ol>
-    </aside>
     <%= partial "partials/footer" %>
   </body>
 
