@@ -3,6 +3,8 @@ title: Scott Kellum
 pageable: true
 per_page: 10
 ---
+<canvas id="c"></canvas>
+<h1>Scott Kellum</h1>
 <% if paginate %>
   <p>Page <%= page_number %> of <%= num_pages %></p>
 
@@ -20,3 +22,54 @@ per_page: 10
     <p><%= link_to 'Next page', next_page %></p>
   <% end %>
 <% end %>
+
+<style>
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+<script>
+  var c = document.getElementById('c');
+  c.width = c.offsetWidth / 2;
+  c.height = c.offsetHeight / 2;
+
+  var freq       = 1;
+  var eraserSize = 1;
+
+  var s = {};
+  s.a = seed();
+  s.b = seed();
+  s.c = seed();
+
+  ctx = c.getContext('2d');
+  ctx.fillStyle = "rgba(255,255,255,.25)";
+  ctx.fillRect(0,0,c.width,c.height);
+
+  pixel(Math.round(c.width * 100));
+
+  var time = setInterval(function(){
+    pixel(freq);
+  },1);
+
+  function seed() {
+    return [Math.round(Math.random()*c.width),Math.round(Math.random()*c.height)];
+  }
+
+  function pixel(f) {
+    for (var j = 0; j < f; j++) {
+      for (var i=0 in s) {
+        s[i][0] = s[i][0] + Math.round(Math.random()*eraserSize*2) - eraserSize;
+        s[i][1] = s[i][1] + Math.round(Math.random()*eraserSize*2) - eraserSize;
+        if (s[i][0] > c.width)  { s[i][0] = c.width; }
+        if (s[i][0] < 0)       { s[i][0] = 0; }
+        if (s[i][1] > c.height) { s[i][1] = c.height; }
+        if (s[i][1] < 0)       { s[i][1] = 0; }
+        ctx.clearRect(s[i][0],s[i][1],eraserSize,eraserSize);
+      }
+    }
+  }
+</script>
