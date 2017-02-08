@@ -45,15 +45,12 @@ per_page: 10
   s.b = seed();
   s.c = seed();
 
+  // 00bfbc
   ctx = c.getContext('2d');
   ctx.fillStyle = "rgba(255,255,255,.25)";
   ctx.fillRect(0,0,c.width,c.height);
 
-  pixel(Math.round(c.width * 100));
-
-  var time = setInterval(function(){
-    pixel(freq);
-  },1);
+  pixel(Math.round(c.width * 200));
 
   function seed() {
     return [Math.round(Math.random()*c.width),Math.round(Math.random()*c.height)];
@@ -62,13 +59,13 @@ per_page: 10
   function pixel(f) {
     for (var j = 0; j < f; j++) {
       for (var i=0 in s) {
-        s[i][0] = s[i][0] + Math.round(Math.random()*eraserSize*2) - eraserSize;
-        s[i][1] = s[i][1] + Math.round(Math.random()*eraserSize*2) - eraserSize;
+        s[i][0] = s[i][0] + Math.round(Math.random()) - .5;
+        s[i][1] = s[i][1] + Math.round(Math.random()) - .5;
         if (s[i][0] > c.width)  { s[i][0] = c.width; }
         if (s[i][0] < 0)       { s[i][0] = 0; }
         if (s[i][1] > c.height) { s[i][1] = c.height; }
         if (s[i][1] < 0)       { s[i][1] = 0; }
-        ctx.clearRect(s[i][0],s[i][1],eraserSize,eraserSize);
+        ctx.clearRect(s[i][0],s[i][1],1,1);
       }
     }
   }
