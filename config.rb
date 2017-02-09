@@ -13,7 +13,7 @@ end
 
 page "/*", :layout => "layout/_layout"
 page "/index.html", :layout => "layout/_home"
-page "/projects/*", :layout => "layout/_projects"
+page "/projects/*", :layout => "layout/_project"
 page "/404.html", :layout => "layout/_legacy"
 page "/about.html", :layout => "layout/_legacy"
 page "/map.html", :layout => "layout/_legacy"
