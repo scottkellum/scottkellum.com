@@ -1,0 +1,18 @@
+.gallery {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-self: stretch;
+  align-items: stretch;
+  box-sizing: border-box;
+  border: 2px solid #fff;
+  img,
+  video {
+    display: block;
+    flex: 1;
+    width: auto;
+    height: 300px;
+    border: 2px solid #fff;
+    object-fit: cover;
+  }
+}

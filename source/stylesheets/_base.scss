@@ -6,9 +6,14 @@ body {
 }
 
 article,
-aside {
+aside,
+section {
   max-width: $max-width;
   margin: auto;
+  padding: 1em 4vw;
+}
+
+article {
   padding: 4vw;
 }
 

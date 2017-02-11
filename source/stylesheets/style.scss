@@ -7,14 +7,17 @@
 @import 'modularscale';
 @import 'color-schemer';
 
-// Project styles
+// Styles
 @import 'base';
 @import 'nav';
 @import 'footer';
 @import 'progress';
 @import 'pager';
 
-// Project pages
+// Components
+@import 'components/gallery';
+
+// Pages
 @import 'pages/home';
 @import 'pages/project';
 
