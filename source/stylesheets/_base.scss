@@ -3,6 +3,8 @@ body {
   margin: 0;
   font-family: $font;
   font-size: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 article,
@@ -11,6 +13,8 @@ section {
   max-width: $max-width;
   margin: auto;
   padding: 1em 4vw;
+  position: relative;
+  background-color: rgba(255,255,255,.9);
 }
 
 article {

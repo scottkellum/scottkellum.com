@@ -6,6 +6,11 @@
   header {
     width: 100%;
     position: relative;
+    @media (max-width: 640px) {
+      width: percentage(16/9);
+      left: 50%;
+      transform: translateX(-50%);
+    }
     img {
       width: 100%;
       display: block;

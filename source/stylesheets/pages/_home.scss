@@ -1,9 +1,10 @@
 #home {
+  background-color: $primary;
   article {
-    background-color: $primary;
-    max-width: none;
     color: #fff;
+    max-width: none;
     font-size: 1.3em;
+    background: none;
     @media (min-width: 55em) {
       padding: 3rem 5% 5% 10rem;
     }
