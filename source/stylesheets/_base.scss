@@ -66,6 +66,22 @@ hr {
   background: $primary;
 }
 
+acronym {
+  cursor: help;
+  &:after {
+    content: '?';
+    font-size: .8em;
+    vertical-align: super;
+    color: darken($primary, 20%);
+    font-weight: 600;
+    margin-top: -100%;
+    display: inline-block;
+  }
+  &:hover:after {
+    content: attr(title);
+  }
+}
+
 a {
   text-decoration: line-through;
   color: inherit;
