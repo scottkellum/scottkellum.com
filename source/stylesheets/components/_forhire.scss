@@ -1,0 +1,45 @@
+.forhire {
+  background: none;
+  margin: 6vh 0 6vh 50%;
+  position: relative;
+  display: table;
+  transform: translateX(-50%);
+  @media (min-width: 60em) {
+    #layout & {
+      position: fixed;
+      left: 50%;
+      margin: 0;
+      transform: none;
+      z-index: 9;
+      transform: translateX(20em);
+      svg {
+        width: 140px;
+        height: 140px;
+      }
+    }
+  }
+  &:hover, &:focus {
+    background: none;
+    svg {
+      fill: darken($primary, 15%);
+    }
+  }
+  svg {
+    fill: darken($primary, 5%);
+    width: 22vw;
+    height: 22vw;
+    min-width: 140px;
+    min-height: 140px;
+    transition: fill .5s ease-in-out;
+  }
+  #home & {
+    opacity: 1;
+    background: none;
+    margin: 0;
+    transform: none;
+    // position: fixed;
+    // top: 2vw;
+    // right: 2vw;
+    // z-index: 9;
+  }
+}
