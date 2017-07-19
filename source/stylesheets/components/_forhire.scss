@@ -22,6 +22,7 @@
     background: none;
     svg {
       fill: darken($primary, 15%);
+      transform: scale(1.1) rotate(-3deg);
     }
   }
   svg {
@@ -30,7 +31,7 @@
     height: 22vw;
     min-width: 140px;
     min-height: 140px;
-    transition: fill .5s ease-in-out;
+    transition: all .25s cubic-bezier(.5, 0, .5, 1.5);
   }
   #home & {
     opacity: 1;

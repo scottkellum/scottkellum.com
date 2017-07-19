@@ -1,11 +1,9 @@
 <%= partial "partials/head" %>
-  <body id="project">
-    <canvas id="c"></canvas>
+  <body id="portfolio">
     <article id="main" role="main">
       <%= yield %>
     </article>
     <%= partial "partials/footer" %>
-    <div id="progress" class="progress"></div>
-    <%= javascript_include_tag 'main' %>
+    <%= javascript_include_tag 'portfolio' %>
   </body>
 </html>

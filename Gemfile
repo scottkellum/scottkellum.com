@@ -14,4 +14,4 @@ gem 'sass', '3.4.23'
 
 # Sass goodies
 gem 'color-schemer'
-gem 'modular-scale', '3.0.0.alpha1'
+gem 'modular-scale', '3.0.2'

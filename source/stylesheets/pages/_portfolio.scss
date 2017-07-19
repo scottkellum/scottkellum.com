@@ -1,0 +1,110 @@
+$thmb-size: 20vw;
+$timing: cubic-bezier(.5, 0, .5, 1.5);
+
+#portfolio {
+  article {
+    max-width: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    perspective: 100vw;
+    overflow: auto;
+    background-color: $primary;
+  }
+  footer {
+    display: none;
+  }
+  .content {
+    max-width: $max-width;
+    margin: auto;
+  }
+
+  section {
+    position: relative;
+    background: none;
+    max-width: none;
+    padding: 0;
+    transform-style: preserve-3d;
+    transition: all .25s $timing;
+    cursor: pointer;
+    &:hover {
+      z-index: 0 !important;
+      transform: translateZ(2vw) !important;
+    }
+    &.active {
+      top: 0 !important;
+      left: 0 !important;
+      right: 0;
+      bottom: 0;
+      width: auto;
+      height: auto;
+      transform: none !important;
+      z-index: 1 !important;
+      &:before {
+        transform: translate(-50%,-50%) scale(12) !important;
+        top: 50%;
+        left: 50%;
+      }
+      .thumbnail {
+        transform: scale(0);
+        opacity: 0;
+      }
+      h1 {
+        max-width: 40rem;
+        position: static;
+        display: block;
+        overflow: visible;
+        outline: none;
+        background: none;
+        margin: 0 auto;
+        transform: none;
+      }
+    }
+  }
+  .thumbnail,
+  section:before {
+    border-radius: 50%;
+    content: '';
+    display: block;
+    width: $thmb-size;
+    height: $thmb-size;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .25s $timing;
+  }
+  section:before {
+    transform: scale(1.1);
+    z-index: -1;
+  }
+  section:hover:before {
+    transform: scale(1.3);
+  }
+  section:not(.active) {
+    width: $thmb-size;
+    height: $thmb-size;
+    position: absolute;
+    top: 0;
+    left: 0;
+    .content {
+      display: none;
+    }
+  }
+  h1 {
+    display: table;
+    position: absolute;
+    top: ($thmb-size / 2);
+    left: ($thmb-size / 2);
+    transform: translate(-50%,-50%);
+    font-size: calc(1em + 2vw);
+    margin: 0;
+    white-space: nowrap;
+    line-height: 1;
+    background-color: #fff;
+    color: $primary;
+    outline: .1em solid #fff;
+  }
+}
