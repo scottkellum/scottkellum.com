@@ -25,12 +25,68 @@ $nav-width: 10rem;
     display: none;
   }
   section {
-    padding: 0;
+    padding: 0 0 5vh;
+    clear: both;
+    background: none;
+    transform-style: preserve-3d;
   }
   article {
     padding: calc(1em + 2vw) calc(1em + 2vw) calc(1em + 5vw);
+    perspective: 100vh;
+    position: absolute;
+    overflow: auto;
+    overflow-x: hidden;
+    max-width: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: none;
     @media (min-width: 55em) {
-      margin-left: $nav-width;
+      left: $nav-width;
+    }
+  }
+  .phone {
+    background-color: rgba(darken($primary, 10%),.3);//darken($primary, 20%);
+    padding: 4% 1%;
+    border-radius: 1vh;
+    max-width: 250px;
+    transform: rotate3d(2,1,-1,45deg) translateY(-10%);
+    transition: transform .25s $timing;
+    margin: 1vh auto;
+    video {
+      width: 100%;
+      height: percentage(670/320);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    @media (min-width: 55em) {
+      margin: 1vh 1em 1vh 0;
+      float: left;
+      transform: rotate3d(.06,.4,-.06,22.5deg);
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  img.perspective {
+    position: relative;
+    left: 50%;
+    width: 175%;
+    transform: translateX(-50%) rotateX(22.5deg);
+  }
+  .athena {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: percentage(960/640);
+    @media (min-width: 659px) {
+      padding-bottom: percentage(590/1060);
+    }
+    iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
     }
   }
 }

@@ -1,0 +1,209 @@
+<div class="athena">
+  <div class="desktop">
+    <a href="javascript:activate(sidebar);" class="dot" style="top:89%;left:65%;"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/467/thumb.png" /></a>
+    <a href="javascript:activate(sidebar);" class="dot" style="top:40%;left:25%;"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/467/thumb.png" /></a>
+    <a href="javascript:activate(sidebar);" class="dot" style="top:19%;left:44%;"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/467/thumb.png" /></a>
+    <a href="javascript:activate(sidebar);" class="dot" style="top:47%;left:43%;"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/467/thumb.png" /></a>
+    <a href="javascript:activate(sidebar);" class="dot" style="top:82%;left:12%;"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/467/thumb.png" /></a>
+    <a href="javascript:activate(sidebar);" class="dot" style="top:30%;left:84%;"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/467/thumb.png" /></a>
+    <a href="javascript:activate(sidebar);" class="dot" style="top:90%;left:36%;"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/467/thumb.png" /></a>
+  </div>
+  <div class="mobile">
+    <a href="javascript:activate(sidebar);" class="dot" style="top:89%;left:65%;"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/467/thumb.png" /></a>
+    <a href="javascript:activate(sidebar);" class="dot" style="top:40%;left:25%;"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/467/thumb.png" /></a>
+    <a href="javascript:activate(sidebar);" class="dot" style="top:19%;left:44%;"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/467/thumb.png" /></a>
+    <a href="javascript:activate(sidebar);" class="dot" style="top:47%;left:43%;"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/467/thumb.png" /></a>
+    <a href="javascript:activate(sidebar);" class="dot" style="top:82%;left:12%;"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/467/thumb.png" /></a>
+    <a href="javascript:activate(sidebar);" class="dot" style="top:45%;left:84%;"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/467/thumb.png" /></a>
+    <a href="javascript:activate(sidebar);" class="dot" style="top:90%;left:36%;"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/467/thumb.png" /></a>
+  </div>
+  <div class="sidebar">
+    <a href="javascript:activate(sidebar);" class="bkg"></a>
+    <a href="javascript:activate(sidebar);" class="close"><svg class="closeSVG" viewBox="0 0 40 40"><title>close</title><line class="a" x1="9.4" y1="9.4" x2="30.6" y2="30.6"/><line class="a" x1="30.6" y1="9.4" x2="9.4" y2="30.6"/></svg></a>
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/467/sidebar.png" alt=" " />
+  </div>
+</div>
+
+<style>
+body {
+  max-width: 1060px;
+  margin: auto;
+}
+
+.desktop {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .desktop {
+    display: block;
+  }
+
+  .mobile {
+    display: none;
+  }
+}
+.athena {
+  width: 100%;
+  height: 0;
+  padding-bottom: 55.66038%;
+  position: relative;
+  background-color: #000;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/467/bkg_copy_copy.png");
+}
+@media (max-width: 600px) {
+  .athena {
+    padding-bottom: 150%;
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/467/mobile-bkg_copy.png");
+  }
+}
+
+.sidebar img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 0.2s ease-out;
+  box-shadow: 0 0 6px #000;
+  z-index: 3;
+}
+@media (max-width: 600px) {
+  .sidebar img {
+    transform: translateY(100%);
+    height: auto;
+    width: 100%;
+  }
+}
+.sidebar .bkg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  transition: all 0.4s ease-out;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+.sidebar .close {
+  position: absolute;
+  top: 2%;
+  right: 38.5%;
+  height: 0;
+  width: 6%;
+  padding-bottom: 6%;
+  background-color: #fff;
+  border-radius: 50%;
+  z-index: 4;
+  transition: all 0.4s cubic-bezier(0.5, 0, 0.4, 1.5);
+  box-shadow: 0 0 6px #000;
+  transform: scale(0);
+  opacity: 0;
+  transition-delay: 0.2s;
+}
+@media (max-width: 600px) {
+  .sidebar .close {
+    right: 2%;
+    top: 6.5%;
+    width: 12%;
+    padding-bottom: 12%;
+  }
+}
+.sidebar.active img {
+  opacity: 1;
+  transform: none;
+}
+.sidebar.active .bkg {
+  pointer-events: auto;
+  opacity: 0.5;
+}
+.sidebar.active .close {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.closeSVG {
+  stroke: #555;
+  stroke-width: 4;
+}
+
+.dot {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border: 20px solid #fff;
+  filter: drop-shadow(0 0 6px #000);
+  border-radius: 50%;
+  transform: translate3d(-50%, -50%, 0) scale(0);
+  transition: all 0.4s cubic-bezier(0.5, 0, 0.4, 1.5);
+  overflow: hidden;
+}
+.dot.active {
+  transform: translate3d(-50%, -50%, 0) scale(0.25);
+}
+.dot img {
+  width: 100%;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.5, 0, 0.4, 1.5);
+}
+.dot:hover {
+  border-width: 2px;
+  transform: translate3d(-50%, -50%, 0) scale(1);
+  z-index: 1;
+}
+.dot:hover img {
+  opacity: 1;
+}
+
+.products {
+  position: absolute;
+  overflow: auto;
+  top: 37.3%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  flex-direction: column;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+@media (max-width: 640px) {
+  .products {
+    display: flex;
+  }
+}
+.products img {
+  flex: 1;
+  height: 50%;
+  max-height: 50%;
+  display: block;
+  float: left;
+}
+</style>
+
+<script>
+var dots = document.querySelectorAll('.dot');
+var sidebar = document.querySelector('.sidebar');
+
+setTimeout(function () {
+  var counter = 0;
+  function next() {
+    if (counter++ < dots.length) {
+      activate(dots[counter - 1]);
+      setTimeout(next, 100);
+    }
+  }
+  next();
+}, 600);
+
+function activate(e) {
+  e.classList.toggle('active');
+}
+</script>
