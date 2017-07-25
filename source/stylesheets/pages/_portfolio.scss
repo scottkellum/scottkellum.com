@@ -17,6 +17,14 @@ $nav-width: 10rem;
     bottom: 0;
     background-color: $primary;
     font-size: .8em;
+    padding: 1rem 0;
+    a {
+      padding: 0 1rem;
+      transition: background .25s ease-in-out;
+    }
+    a:hover {
+      background: darken($primary, 10%);
+    }
     @media (max-width: 55em) {
       display: none;
     }
@@ -47,11 +55,11 @@ $nav-width: 10rem;
     }
   }
   .phone {
-    background-color: rgba(darken($primary, 10%),.3);//darken($primary, 20%);
+    background-color: rgba(darken($primary, 10%),.3);
     padding: 4% 1%;
     border-radius: 1vh;
     max-width: 250px;
-    transform: rotate3d(2,1,-1,45deg) translateY(-10%);
+    transform: rotate3d(2,1,-1,22.5deg) translateY(-10%);
     transition: transform .25s $timing;
     margin: 1vh auto;
     video {
@@ -74,6 +82,28 @@ $nav-width: 10rem;
     left: 50%;
     width: 175%;
     transform: translateX(-50%) rotateX(22.5deg);
+  }
+  .scroller,
+  .window {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 0;
+    padding-bottom: 67%;
+    overflow: hidden;
+    transform: rotate3d(2,1,-1,22.5deg) translateY(-10%) scale(.8);
+    border: 4px solid rgba(darken($primary, 10%),.3);
+    border-top-width: 16px;
+    border-radius: 4px;
+    img,
+    video {
+      border-radius: 3px;
+      width: 100%;
+    }
+  }
+  .window {
+    height: auto;
+    padding: 0;
   }
   .athena {
     position: relative;
