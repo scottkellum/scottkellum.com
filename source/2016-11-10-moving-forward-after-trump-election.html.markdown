@@ -1,6 +1,7 @@
 ---
 title: Moving Forward After the Election
 date: 2016-11-10
+published: false
 ---
 
 The presidential nominee and his vice president ran on a campaign filled with hate and fear. Millions of Americans are left feeling unwelcome in this nation and unrepresented in their government. While Trump won the election, he still has a responsibility to serve everyone he insulted and demeaned during his campaign. I will be budgeting monthly donations to the following charities to help protect those most vulnerable in the coming years and, if you can afford it, recommend you budget monthly donations as well.

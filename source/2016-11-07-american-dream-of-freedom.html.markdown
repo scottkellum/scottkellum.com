@@ -1,6 +1,7 @@
 ---
 title: The American Dream
 date: 2016-11-07
+published: false
 ---
 
 I am a proud American, the son of an immigrant mother from South Africa and on my Fathers’ side, my Quaker ancestors immigrated to this country to escape religious persecution in England. Around the time of the Civil War the Kellums fled North Carolina in opposition to slavery and found affordable land in Indiana. Freedom is our most fundamental American value, a freedom that not only extends to all Americans but people across the globe. For centuries we have taken in immigrants and refugees escaping violence, economic turmoil, and religious persecution. America has been the last beacon of hope for those who have none. These freedoms are what brought my family to America and I don’t take them for granted.
