@@ -95,6 +95,9 @@ $nav-width: 10rem;
     border: 4px solid rgba(darken($primary, 10%),.3);
     border-top-width: 16px;
     border-radius: 4px;
+    &.animate img {
+      animation: 30s scroller infinite ease;
+    }
     img,
     video {
       border-radius: 3px;
@@ -118,5 +121,14 @@ $nav-width: 10rem;
       width: 100%;
       height: 100%;
     }
+  }
+}
+
+@keyframes scroller {
+  80% {
+    transform: translateY(-86%);
+  }
+  95% {
+    transform: none;
   }
 }
