@@ -37,6 +37,13 @@ $nav-width: 10rem;
     clear: both;
     background: none;
     transform-style: preserve-3d;
+    pointer-events: none;
+  }
+  a,
+  .phone,
+  .scroller,
+  .window {
+    pointer-events: all;
   }
   article {
     padding: calc(1em + 2vw) calc(1em + 2vw) calc(1em + 5vw);
