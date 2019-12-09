@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Scott Kellum</title>
+    <style>
+      :root {
+        --pink1: #ffebe5;
+        --pink2: #ffd9ce;
+        --green1: #129681;
+        --green2: #085147;
+        --action: #ed8600;
+        --dark: #142226;
+
+        background: #fff;
+      }
+      body {
+        height: 200vh;
+        margin: 4vw;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+      }
+      .bkg {
+        position: fixed;
+        top: 4vw;
+        bottom: 4vw;
+        left: 4vw;
+        right: 4vw;
+        background: var(--pink1);
+        background-image: linear-gradient(135deg, var(--pink1) 50%, #fff 50%);
+      }
+      .profile {
+        border-radius: 50%;
+        mix-blend-mode: multiply;
+        position: absolute;
+        top: calc(50vh - 150px);
+        left: calc(50vw - 150px);
+        max-width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bkg"></div>
+    <img class="profile" src="profile.png" alt=" " />
+
+    <script>
+      // Copyright 2018-2019 Typetura LLC.
+      // https://github.com/typetura/typetura.js
+
+      function typeturaInit(els) {
+        function typetura() {
+          els.forEach(e => {
+            e.style.setProperty("--tt-bind", e.clientWidth);
+          });
+        }
+        // run twce on init to calculate correctly
+        typetura();
+        typetura();
+
+        // On resize recalculate width
+        window.addEventListener("resize", typetura);
+
+        // Create a stylesheet for typetura's custom properties
+        var stylesheet = document.createElement("style");
+        // Typetura's custom properties
+        stylesheet.innerHTML =
+          ":root{--tt-ease:linear;--tt-max:1600}*,:before,:after,:root{--tt-key:none;animation:var(--tt-key) 1s var(--tt-ease) 1 calc(-1s * var(--tt-bind) / var(--tt-max)) both paused}";
+        // Write typetura proprties to the top of the document head to avoid cascade conflicts
+        document.head.insertBefore(stylesheet, document.head.firstChild);
+      }
+
+      document.onreadystatechange = () => {
+        if (document.readyState === "complete") {
+          var els = document.querySelectorAll([":root", ".typetura"]);
+          typeturaInit(els);
+        }
+      };
+    </script>
+  </body>
+</html>

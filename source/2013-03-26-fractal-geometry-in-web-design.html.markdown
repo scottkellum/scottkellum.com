@@ -1,9 +1,0 @@
----
-title: Fractal geometry in web design
-date: 2013-03-26
-published: false
----
-
-Web design can become incredibly complex. All of the systems we design and build can start to feel like a house of cards after a while. In watching a NOVA program [*Hunting the Hidden Dimension*](http://www.pbs.org/wgbh/nova/physics/hunting-hidden-dimension.html) on fractals, I started looking at ways to apply that geometry to web design. The beauty of fractals is that incredibly complex shapes and relationships can be created with a simple set of rules that are looped. Mountains, trees, even the spacing of joints on our hands are based on these simple repeated patterns. Our eyes scan the world more efficiently as they move in fractal patterns to take in the world.
-
-While fractal geometry is a relatively new thing, using fractals in design is not. The ancient Greeks recognized patterns in leaves, shells, and natural proportions which resulted in the golden section. When subdividing a rectangles based on the golden section by itself, it creates a perfect square and a smaller rectangle with exactly the same proportions. The resulting series of numbers is a modular scale. Sales can be created and used based on a number of proportions. Musical proportion is built around the bisection of sound waves to create octaves. Splitting sound waves at different points can create different musical scales. As a result of music theory relying so heavily on modular scales, many ratios designers use are directly pulled from music theory. Tim Brown and Robert Bringhurst have already elaborated on the points of how modular scales can give designs greater typographic harmony.
