@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Scott Kellum</title>
+    <link rel="stylesheet" href="https://use.typekit.net/gub1iie.css" />
     <style>
       :root {
         --pink1: #ffebe5;
@@ -15,13 +16,16 @@
         --dark: #142226;
 
         background: #fff;
+
+        font-family: Halyard-text, sans-serif;
+        font-weight: 300;
+        color: var(--green2);
+        font-size: 200%;
       }
       body {
         height: 200vh;
-        margin: 4vw;
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+        margin: 0;
+        padding: 0;
       }
       .bkg {
         position: fixed;
@@ -33,18 +37,56 @@
         background-image: linear-gradient(135deg, var(--pink1) 50%, #fff 50%);
       }
       .profile {
+        display: block;
         border-radius: 50%;
         mix-blend-mode: multiply;
-        position: absolute;
-        top: calc(50vh - 150px);
-        left: calc(50vw - 150px);
-        max-width: 300px;
+        margin: calc(50vh - 150px) auto 1rem;
+        max-width: 10rem;
+        position: relative;
+      }
+      article {
+        mix-blend-mode: multiply;
+        position: relative;
+        margin: 1rem auto;
+        max-width: 26em;
+        z-index: 1;
+        padding: 0 4vw 8vw;
+      }
+      a {
+        color: var(--green1);
       }
     </style>
   </head>
   <body>
     <div class="bkg"></div>
     <img class="profile" src="profile.png" alt=" " />
+    <article>
+      <p>
+        Scott is the CEO and co-founder of
+        <a href="https://typetura.com">Typetura</a>, a company focused on
+        digital typesetting. He started Typetura because he was unsatisfied with
+        the current landscape of web typography. Growing up with dyslexia,
+        reading has been a challenge for Scott, but with an affinity for design
+        and a relentless strive for improvement, Scott gravitated towards
+        typography. Having begun his career at the age of 15, he started showing
+        his teachers how to use their early Mac OS X machines, Scott got into
+        type as part of his high school design explorations. He went on to work
+        with some of the most well-known type designers and typographers in the
+        business, including
+        <a href="https://www.dardenstudio.com/">Joshua Darden</a>,
+        <a href="https://www.rogerblack.com/">Roger Black</a>, and
+        <a href="https://tbrown.org/">Tim Brown</a>. With Typetura, he blends
+        his love of web technologies and type together.
+      </p>
+      <p>
+        Say hi on <a href="https://twitter.com/scottkellum">Twitter</a>,
+        <a href="https://www.linkedin.com/in/scott-kellum-961842150/"
+          >LinkedIn</a
+        >, <a href="https://www.instagram.com/scott_kellum/">Instagram</a>,
+        <a rel="me" href="https://kellum.me/@scott">Mastodon</a>, or
+        <a href="mailto:scott@scottkellum.com">just shoot me an email</a>.
+      </p>
+    </article>
 
     <script>
       // Copyright 2018-2019 Typetura LLC.
