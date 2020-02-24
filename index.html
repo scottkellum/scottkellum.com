@@ -1,125 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Scott Kellum</title>
-    <link rel="stylesheet" href="https://use.typekit.net/gub1iie.css" />
-    <style>
-      :root {
-        --pink1: #ffebe5;
-        --pink2: #ffd9ce;
-        --green1: #129681;
-        --green2: #085147;
-        --action: #ed8600;
-        --dark: #142226;
 
-        background: #fff;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Scott Kellum</title>
+  <link rel="stylesheet" href="https://use.typekit.net/gub1iie.css" />
+  <style>
+    :root {
+      --pink1: #ffebe5;
+      --pink2: #ffd9ce;
+      --green1: #129681;
+      --green2: #085147;
+      --action: #ed8600;
+      --dark: #142226;
 
-        font-family: Halyard-text, sans-serif;
-        font-weight: 300;
-        color: var(--green2);
+      background: #fff;
+
+      font-family: Halyard-text, sans-serif;
+      font-weight: 300;
+      color: var(--green2);
+      font-size: 200%;
+      line-height: 1.5;
+
+      --tt-key: root;
+      --tt-max: 800;
+      --tt-ease: cubic-bezier(0.2, 0.6, 0.6, 1);
+    }
+
+    @keyframes root {
+      0% {
+        font-size: 0%;
+        line-height: 1.2;
+      }
+
+      100% {
         font-size: 200%;
+        line-height: 1.5;
       }
-      body {
-        height: 200vh;
-        margin: 0;
-        padding: 0;
-      }
-      .bkg {
-        position: fixed;
-        top: 4vw;
-        bottom: 4vw;
-        left: 4vw;
-        right: 4vw;
-        background: var(--pink1);
-        background-image: linear-gradient(135deg, var(--pink1) 50%, #fff 50%);
-      }
-      .profile {
-        display: block;
-        border-radius: 50%;
-        mix-blend-mode: multiply;
-        margin: calc(50vh - 150px) auto 1rem;
-        max-width: 10rem;
-        position: relative;
-      }
-      article {
-        mix-blend-mode: multiply;
-        position: relative;
-        margin: 1rem auto;
-        max-width: 26em;
-        z-index: 1;
-        padding: 0 4vw 8vw;
-      }
-      a {
-        color: var(--green1);
-      }
-    </style>
-  </head>
-  <body>
-    <div class="bkg"></div>
-    <img class="profile" src="profile.png" alt=" " />
-    <article>
-      <p>
-        Scott is the CEO and co-founder of
-        <a href="https://typetura.com">Typetura</a>, a company focused on
-        digital typesetting. He started Typetura because he was unsatisfied with
-        the current landscape of web typography. Growing up with dyslexia,
-        reading has been a challenge for Scott, but with an affinity for design
-        and a relentless strive for improvement, Scott gravitated towards
-        typography. Having begun his career at the age of 15, he started showing
-        his teachers how to use their early Mac OS X machines, Scott got into
-        type as part of his high school design explorations. He went on to work
-        with some of the most well-known type designers and typographers in the
-        business, including
-        <a href="https://www.dardenstudio.com/">Joshua Darden</a>,
-        <a href="https://www.rogerblack.com/">Roger Black</a>, and
-        <a href="https://tbrown.org/">Tim Brown</a>. With Typetura, he blends
-        his love of web technologies and type together.
-      </p>
-      <p>
-        Say hi on <a href="https://twitter.com/scottkellum">Twitter</a>,
-        <a href="https://www.linkedin.com/in/scott-kellum-961842150/"
-          >LinkedIn</a
-        >, <a href="https://www.instagram.com/scott_kellum/">Instagram</a>,
-        <a rel="me" href="https://kellum.me/@scott">Mastodon</a>, or
-        <a href="mailto:scott@scottkellum.com">just shoot me an email</a>.
-      </p>
-    </article>
+    }
 
-    <script>
-      // Copyright 2018-2019 Typetura LLC.
-      // https://github.com/typetura/typetura.js
+    body {
+      height: 200vh;
+      margin: 0;
+      padding: 0;
+    }
 
-      function typeturaInit(els) {
-        function typetura() {
-          els.forEach(e => {
-            e.style.setProperty("--tt-bind", e.clientWidth);
-          });
-        }
-        // run twce on init to calculate correctly
-        typetura();
-        typetura();
+    .bkg {
+      position: fixed;
+      top: 2vw;
+      bottom: 2vw;
+      left: 2vw;
+      right: 2vw;
+      background: var(--pink1);
+      background-image: linear-gradient(135deg, var(--pink1) 50%, #fff 50%);
+    }
 
-        // On resize recalculate width
-        window.addEventListener("resize", typetura);
+    .profile {
+      display: block;
+      border-radius: 50%;
+      mix-blend-mode: multiply;
+      margin: calc(50vh - 4rem) auto 1rem;
+      width: 8rem;
+      max-width: 67vw;
+      position: relative;
+    }
 
-        // Create a stylesheet for typetura's custom properties
-        var stylesheet = document.createElement("style");
-        // Typetura's custom properties
-        stylesheet.innerHTML =
-          ":root{--tt-ease:linear;--tt-max:1600}*,:before,:after,:root{--tt-key:none;animation:var(--tt-key) 1s var(--tt-ease) 1 calc(-1s * var(--tt-bind) / var(--tt-max)) both paused}";
-        // Write typetura proprties to the top of the document head to avoid cascade conflicts
-        document.head.insertBefore(stylesheet, document.head.firstChild);
+    article {
+      mix-blend-mode: multiply;
+      position: relative;
+      margin: 1rem auto;
+      max-width: 26em;
+      z-index: 1;
+      padding: 0 4vw 50vh;
+    }
+
+    a {
+      color: var(--green1);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bkg"></div>
+  <img class="profile" src="profile.jpg" alt=" " />
+  <article>
+    <p>
+      Scott is the co-founder and CEO of
+      <a href="https://typetura.com">Typetura</a>, a company focused on
+      digital typesetting. He started Typetura because he was unsatisfied with
+      the current landscape of web typography. Growing up with dyslexia,
+      reading has been a challenge for Scott, but with an affinity for design
+      and a relentless strive for improvement, Scott gravitated towards
+      typography. Having begun his career at the age of 15, he started showing
+      his teachers how to use Adobe PageMaker on their early Mac OS X machines, and discovered an affinity for type
+      as part of his high school design explorations. He went on to work
+      with some of the most well-known type designers and typographers in the
+      business, including
+      <a href="https://www.dardenstudio.com/">Joshua Darden</a>,
+      <a href="https://www.rogerblack.com/">Roger Black</a>, and
+      <a href="https://tbrown.org/">Tim Brown</a>. He further honed a craft for editorial and web design at <a
+        href="https://www.voxmedia.com/">Vox Media</a>, where he helped launch/relaunch <a
+        href="https://www.vox.com/">Vox</a>, <a href="https://getchorus.voxmedia.com/">Chorus</a>, <a
+        href="https://www.sbnation.com/">SB Nation</a>, and <a href="https://www.racked.com/">Racked</a>, along with
+      leading editorial design projects
+      at <a href="https://www.theverge.com/">The Verge</a>, <a href="https://www.polygon.com/">Polygon</a>, and <a
+        href="https://www.sbnation.com/">SB Nation</a>. With Typetura, he blends
+      his love of web technologies and type together, creating richer and more effective typographic solutions.
+    </p>
+    <p>
+      Say hi on <a href="https://twitter.com/scottkellum">Twitter</a>,
+      <a href="https://www.linkedin.com/in/scott-kellum-961842150/">LinkedIn</a>, <a
+        href="https://www.instagram.com/scott_kellum/">Instagram</a>,
+      <a rel="me" href="https://kellum.me/@scott">Mastodon</a>, or
+      <a href="mailto:scott@scottkellum.com">just shoot me an email</a>.
+    </p>
+  </article>
+
+  <script>
+    // Copyright 2018-2019 Typetura LLC.
+    // https://github.com/typetura/typetura.js
+
+    function typeturaInit(els) {
+      function typetura() {
+        els.forEach(e => {
+          e.style.setProperty("--tt-bind", e.clientWidth);
+        });
       }
+      // run twce on init to calculate correctly
+      typetura();
+      typetura();
 
-      document.onreadystatechange = () => {
-        if (document.readyState === "complete") {
-          var els = document.querySelectorAll([":root", ".typetura"]);
-          typeturaInit(els);
-        }
-      };
-    </script>
-  </body>
+      // On resize recalculate width
+      window.addEventListener("resize", typetura);
+
+      // Create a stylesheet for typetura's custom properties
+      var stylesheet = document.createElement("style");
+      // Typetura's custom properties
+      stylesheet.innerHTML =
+        ":root{--tt-ease:linear;--tt-max:1600}*,:before,:after,:root{--tt-key:none;animation:var(--tt-key) 1s var(--tt-ease) 1 calc(-1s * var(--tt-bind) / var(--tt-max)) both paused}";
+      // Write typetura proprties to the top of the document head to avoid cascade conflicts
+      document.head.insertBefore(stylesheet, document.head.firstChild);
+    }
+
+    document.onreadystatechange = () => {
+      if (document.readyState === "complete") {
+        var els = document.querySelectorAll([":root", ".typetura"]);
+        typeturaInit(els);
+      }
+    };
+  </script>
+</body>
+
 </html>
