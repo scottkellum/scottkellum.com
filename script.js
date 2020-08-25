@@ -25,7 +25,7 @@ function typeturaInit(els) {
 
 document.onreadystatechange = () => {
   if (document.readyState === "complete") {
-    var els = document.querySelectorAll([":root", ".typetura"]);
+    var els = document.querySelectorAll(["html", ".typetura", "h1", ".text"]);
     typeturaInit(els);
   }
 };
