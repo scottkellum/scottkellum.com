@@ -2,7 +2,7 @@
   --hue: 23;
   --color: hsl(23, 96%, 45%);
   --foreground: hsl(23, 10%, 10%);
-  --background: hsl(23, 22%, 93%);
+  --background: hsl(20deg,80%,90%);
     
   background: var(--background);
   color: var(--foreground);
@@ -20,18 +20,51 @@ img {
   max-width: 30rem;
 }
 
+section {
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
+
+a {
+  color: var(--action);
+}
+
+
+/* /////////////////////////////
+NAV
+///////////////////////////// */
+
+nav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  backdrop-filter: blur(1rem);
+  background: hsla(20deg,80%,90%,0.5);
+  box-shadow: 0 1px 0 0 hsla(20deg,80%,20%,0.2);
+  z-index: 10;
+  justify-content: center;
+}
+
+nav a {
+  display: block;
+  padding: 1rem;
+}
 
 /* /////////////////////////////
 PROFILE
 ///////////////////////////// */
 
 .profile {
-  background-color: hsl(-80deg, 40%, 80%);
-  background-image: conic-gradient(from 0.33turn at 50% 50%, transparent, var(--background), transparent, var(--background), transparent);
+  --primary: hsl(200deg,50%,20%);
+  --action: hsl(35deg,80%,40%);
+  color: var(--primary);
+  background-color: hsl(16deg,50%,90%);
+  background-image: linear-gradient(-45deg, hsl(16deg,50%,90%), hsl(20deg,80%,90%));
   padding: 4%;
   display: grid;
   grid-template-columns: auto clamp(0px,20%,12rem) clamp(0px,20%,12rem) clamp(0px,20%,12rem) clamp(0px,20%,12rem) clamp(0px,20%,12rem) auto;
-  grid-template-rows: auto 22rem auto;
+  grid-template-rows: auto min-content min-content 1fr;
 }
 .profile .text {
   max-width: none;
@@ -39,18 +72,25 @@ PROFILE
 .profile:before {
   content: '';
   display: block;
-  grid-row-start: 1;
+  grid-row-start: 2;
   grid-row-end: span 2;
   grid-column-start: 3;
   grid-column-end: span 3;
   height: 0;
   padding-bottom: 100%;
-  background: hsl(30deg,90%,60%);
+  background: hsl(35deg,100%,65%);
+  background-image: linear-gradient(-45deg, hsl(45deg,100%,70%), hsl(35deg,100%,63%));
   border-radius: 50%;
   box-shadow: 0 1rem 3rem -1rem #55220066;
 }
+.profile .primary-headline {
+  grid-column-start: 1;
+  grid-column-end: span 7;
+  text-align: center;
+  padding: 0.33em 0 0.75em;
+}
 .profile img {
-  grid-row-start: 1;
+  grid-row-start: 2;
   grid-row-end: span 2;
   grid-column-start: 2;
   grid-column-end: span 3;
@@ -59,25 +99,51 @@ PROFILE
   mix-blend-mode: multiply;
   position: relative;
   box-shadow: 0 1rem 3rem -1rem #55220066;
-  border-radius: 0 50% 0 0;
+  border-radius: 0 18rem 0 0;
+  filter: saturate(0) contrast(0.4) brightness(1.4);
+  will-change: filter;
+  transition: filter 1s ease-in-out;
+}
+.profile img:hover {
+  filter: none;
 }
 .profile-card {
-  grid-row-start: 2;
+  grid-row-start: 3;
   grid-row-end: span 2;
   grid-column-start: 4;
   grid-column-end: span 3;
   position: relative;
-  padding: 2rem;
-  background: #ffffffaa;
-  backdrop-filter: blur(3rem);
-  -webkit-backdrop-filter: blur(3rem);
+  padding: 1.25rem 2rem;
+  background: hsla(0deg,0%,10%,0.8);
+  color: hsl(45deg,60%,90%);
+  backdrop-filter: blur(1rem);
   box-shadow: 0 1rem 3rem -1rem #55220066;
   z-index: 4;
+  --action: hsl(35deg,100%,65%);
 }
 .profile .caption {
-  grid-row-start: 3;
+  grid-row-start: 4;
   grid-column-start: 2;
   grid-column-end: span 2;
+  align-self: start;
+}
+
+@media (max-width: 40em) {
+  .profile-card {
+    margin-top: -5rem;
+    grid-row-start: 4;
+    grid-column-start: 3;
+    grid-column-end: span 4;
+  }
+  .profile .caption {
+    grid-column-end: span 1;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    padding: 0 0 0 0.4rem;
+  }
+  .profile .caption:after {
+    display: none;
+  }
 }
 
 /* /////////////////////////////
