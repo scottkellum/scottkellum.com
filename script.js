@@ -1,31 +1,8 @@
-// Copyright 2018-2019 Typetura LLC.
-// https://github.com/typetura/typetura.js
+const photos = [
+  ['<a href="https://anamonroe.com/" target="_blank">Ana Monroe</a>','/profile.jpg'],
+  ['<a href="https://tatebot.com/" target="_blank">Tate-Stefan Tozer</a>','/profile2.jpg']
+];
+const photo = photos[Math.floor(Math.random() * photos.length)];
 
-function typeturaInit(els) {
-  function typetura() {
-    els.forEach(e => {
-      e.style.setProperty("--tt-bind", e.clientWidth);
-    });
-  }
-  // run twce on init to calculate correctly
-  typetura();
-  typetura();
-
-  // On resize recalculate width
-  window.addEventListener("resize", typetura);
-
-  // Create a stylesheet for typetura's custom properties
-  var stylesheet = document.createElement("style");
-  // Typetura's custom properties
-  stylesheet.innerHTML =
-    ":root{--tt-ease:linear;--tt-max:1600}*,:before,:after,:root{--tt-key:none;animation:var(--tt-key) 1s var(--tt-ease) 1 calc(-1s * var(--tt-bind) / var(--tt-max)) both paused}";
-  // Write typetura proprties to the top of the document head to avoid cascade conflicts
-  document.head.insertBefore(stylesheet, document.head.firstChild);
-}
-
-document.onreadystatechange = () => {
-  if (document.readyState === "complete") {
-    var els = document.querySelectorAll(["html", ".typetura", "h1", ".text"]);
-    typeturaInit(els);
-  }
-};
+document.getElementById('photoLink').innerHTML = photo[0];
+document.getElementById('photo').setAttribute('src', photo[1]);

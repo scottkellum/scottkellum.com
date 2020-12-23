@@ -6,6 +6,7 @@
 
   background: var(--background);
   color: var(--foreground);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -20,10 +21,20 @@ img {
   max-width: 30rem;
 }
 
-section {
+section,
+main {
   overflow: hidden;
   position: relative;
   z-index: 0;
+  padding: 4% 4% 8%;
+  display: grid;
+  grid-template-columns: auto clamp(0px,20%,12rem) clamp(0px,20%,12rem) clamp(0px,20%,12rem) clamp(0px,20%,12rem) clamp(0px,20%,12rem) auto;
+  grid-template-rows: auto min-content min-content 1fr;
+  color: var(--primary);
+  background-color: var(--background);
+  --primary: hsl(200deg,50%,20%);
+  --action: hsl(35deg,80%,40%);
+  --background: hsl(16deg,50%,90%);
 }
 
 a {
@@ -60,13 +71,8 @@ PROFILE
 .profile {
   --primary: hsl(200deg,50%,20%);
   --action: hsl(35deg,80%,40%);
-  color: var(--primary);
-  background-color: hsl(16deg,50%,90%);
-  background-image: linear-gradient(-45deg, hsl(16deg,50%,90%), hsl(20deg,80%,90%));
-  padding: 4%;
-  display: grid;
-  grid-template-columns: auto clamp(0px,20%,12rem) clamp(0px,20%,12rem) clamp(0px,20%,12rem) clamp(0px,20%,12rem) clamp(0px,20%,12rem) auto;
-  grid-template-rows: auto min-content min-content 1fr;
+  --background: hsl(16deg,50%,90%);
+  background-image: linear-gradient(-45deg, var(--background), hsl(20deg,80%,90%));
 }
 .profile .text {
   max-width: none;

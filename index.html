@@ -7,21 +7,27 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Scott Kellum</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="script.js"></script>
 
   <!-- Typetura -->
   <script src="https://cdn.typetura.com/typetura.js?apiKey=6HV3QNE-72EMVH7-M6FHTC7-R47N1QF"></script>
-  <link rel="stylesheet" type="text/css" href="https://cdn.typetura.com/armonk/typetura.css?apiKey=6HV3QNE-72EMVH7-M6FHTC7-R47N1QF">
+  <link id="typeturaCSS" rel="stylesheet" type="text/css" href="https://cdn.typetura.com/saint-denis/typetura.css?apiKey=6HV3QNE-72EMVH7-M6FHTC7-R47N1QF">
+  <script>
+    const packages = ['austin','boston','brussels','chapel-hill','flagstaff','kampala','los-angeles','new-haven','new-york','oxford','prague','saint-denis'];
+
+    document.getElementById('typeturaCSS').setAttribute('href', `https://cdn.typetura.com/${packages[Math.floor(Math.random() * packages.length)]}/typetura.css?apiKey=6HV3QNE-72EMVH7-M6FHTC7-R47N1QF`);
+
+  </script>
 </head>
 
 <body>
   <nav>
     <a href="#about">About</a>
     <a href="#typetura">Typetura</a>
-    <a href="#work">Work</a>
+    <a href="#media">Talks and posts</a>
+    <a href="#projects">Projects</a>
     <a href="#photography">Photography</a>
   </nav>
-  <main class="profile" id="profile">
+  <main class="profile" id="about">
     <h1 class="primary-headline">Scott Kellum</h1>
     <div class="profile-card">
       <div class="text">
@@ -41,8 +47,8 @@
         <span class="job">Co-founder and CEO, Typetura</span>
       </div>
     </div>
-    <img src="profile.jpg" alt=" ">
-    <div class="caption">Photographed by <a href="https://anamonroe.com" target="_blank">Ana Monroe</a></div>
+    <img id="photo" src="profile.jpg" alt=" ">
+    <div class="caption">Photographed by <span id="photoLink"><a href="https://anamonroe.com" target="_blank">Ana Monroe</a></span></div>
   </main>
   <section class="typetura" id="typetura">
     <h1 class="primary-headline">Typetura</h1>
@@ -59,8 +65,14 @@
       </p>
     </div>
   </section>
-  <section class="work" id="work">
-    <h1 class="primary-headline">Work</h1>
+  <section class="media" id="media">
+    <h1 class="primary-headline">Talks and posts</h1>
+    <div class="text">
+      <p>Talks and posts</p>
+    </div>
+  </section>
+  <section class="projects" id="projects">
+    <h1 class="primary-headline">Selected projects</h1>
     <div class="text">
       <p>Body of work</p>
     </div>
@@ -68,6 +80,7 @@
   <section class="photography" id="photography">
     <h1 class="primary-headline">Photography</h1>
   </section>
-</body>
 
+  <script src="script.js"></script>
+</body>
 </html>
