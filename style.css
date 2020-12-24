@@ -51,7 +51,7 @@ nav {
   top: 0;
   display: flex;
   backdrop-filter: blur(1rem);
-  box-shadow: 0 1px 0 0 hsla(0deg,0%,4%,0.9);
+  box-shadow: 0 -1rem 1rem 1rem hsla(0deg,0%,4%,0.9);
   z-index: 10;
   justify-content: center;
   background: hsla(0deg,0%,10%,0.8);
@@ -69,7 +69,7 @@ PROFILE
 ///////////////////////////// */
 
 .profile {
-  --primary: hsl(200deg,50%,20%);
+  --primary: hsl(200deg,25%,25%);
   --action: hsl(35deg,80%,40%);
   --background: hsl(16deg,50%,90%);
   background-image: linear-gradient(-45deg, var(--background), hsl(20deg,80%,90%));

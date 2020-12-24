@@ -10,9 +10,9 @@
 
   <!-- Typetura -->
   <script src="https://cdn.typetura.com/typetura.js?apiKey=6HV3QNE-72EMVH7-M6FHTC7-R47N1QF"></script>
-  <link id="typeturaCSS" rel="stylesheet" type="text/css" href="https://cdn.typetura.com/saint-denis/typetura.css?apiKey=6HV3QNE-72EMVH7-M6FHTC7-R47N1QF">
+  <link id="typeturaCSS" rel="stylesheet" type="text/css">
   <script>
-    const packages = ['austin','boston','brussels','chapel-hill','flagstaff','kampala','los-angeles','new-haven','new-york','oxford','prague','saint-denis'];
+    const packages = ['boston','madrid','kampala','los-angeles','prague','saint-denis'];
 
     document.getElementById('typeturaCSS').setAttribute('href', `https://cdn.typetura.com/${packages[Math.floor(Math.random() * packages.length)]}/typetura.css?apiKey=6HV3QNE-72EMVH7-M6FHTC7-R47N1QF`);
 
@@ -47,8 +47,18 @@
         <span class="job">Co-founder and CEO, Typetura</span>
       </div>
     </div>
-    <img id="photo" src="profile.jpg" alt=" ">
-    <div class="caption">Photographed by <span id="photoLink"><a href="https://anamonroe.com" target="_blank">Ana Monroe</a></span></div>
+    <img id="photo" alt=" ">
+    <div class="caption">Photographed by <span id="photoLink"></span></div>
+    <script>
+      const photos = [
+        ['<a href="https://anamonroe.com/" target="_blank">Ana Monroe</a>','/profile.jpg'],
+        ['<a href="https://tatebot.com/" target="_blank">Tate-Stefan Tozer</a>','/profile2.jpg']
+      ];
+      const photo = photos[Math.floor(Math.random() * photos.length)];
+
+      document.getElementById('photoLink').innerHTML = photo[0];
+      document.getElementById('photo').setAttribute('src', photo[1]);
+    </script>
   </main>
   <section class="typetura" id="typetura">
     <h1 class="primary-headline">Typetura</h1>
