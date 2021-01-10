@@ -41,6 +41,10 @@ a {
   color: var(--action);
 }
 
+.filter {
+  display: none;
+}
+
 
 /* /////////////////////////////
 NAV

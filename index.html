@@ -20,10 +20,20 @@
 </head>
 
 <body>
+  <svg class="filter" width="0" height="0"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink">
+    <filter id="distort">
+      <feTurbulence type="fractalNoise" baseFrequency=".0067 .0067" numOctaves="1" result="noise1"></feTurbulence>
+      <feColorMatrix in="noise1" type="hueRotate" values="0" result="noise2">
+      </feColorMatrix>
+      <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="50" in="SourceGraphic" in2="noise2" />
+    </filter>
+  </svg>
   <nav>
     <a href="#about">About</a>
     <a href="#typetura">Typetura</a>
-    <a href="#media">Talks and posts</a>
+    <a href="#media">Talks and Articles</a>
     <a href="#projects">Projects</a>
     <a href="#photography">Photography</a>
   </nav>
@@ -76,7 +86,7 @@
     </div>
   </section>
   <section class="media" id="media">
-    <h1 class="primary-headline">Talks and posts</h1>
+    <h1 class="primary-headline">Talks and Articles</h1>
     <div class="text">
       <a href="https://youtu.be/LvJHyj74qcs?t=8625" target="_blank">
         <h1 class="section-headline">Tipografia México</h1>
