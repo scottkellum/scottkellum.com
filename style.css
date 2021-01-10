@@ -18,7 +18,7 @@ img {
 }
 
 .text {
-  max-width: 30rem;
+  max-width: 36rem;
 }
 
 section,
@@ -69,7 +69,7 @@ PROFILE
 ///////////////////////////// */
 
 .profile {
-  --primary: hsl(200deg,25%,25%);
+  --primary: hsl(200deg,14%,35%);
   --action: hsl(35deg,80%,40%);
   --background: hsl(16deg,50%,90%);
   background-image: linear-gradient(-45deg, var(--background), hsl(20deg,80%,90%));
@@ -95,7 +95,9 @@ PROFILE
   grid-column-start: 1;
   grid-column-end: span 7;
   text-align: center;
-  padding: 0.33em 0 0.75em;
+  padding: 0.33em 0 0;
+  margin-bottom: -0.2em !important;
+  mix-blend-mode: multiply;
 }
 .profile img {
   grid-row-start: 2;
@@ -161,8 +163,39 @@ TYPETURA
 .typetura {
   --background: hsl(150, 45%, 16%);
   --foreground: hsl(40, 38%, 87%);
-  background: var(--background);
+  background-image: radial-gradient(circle at 100% 100%, var(--background), #129681aa);
   color: var(--foreground);
+}
+
+.typetura .primary-headline {
+  grid-column-start: 2;
+  grid-column-end: span 5;
+}
+
+.typetura .text {
+  grid-column-start: 3;
+  grid-column-end: span 4;
+}
+
+
+/* /////////////////////////////
+MEDIA
+///////////////////////////// */
+
+.media {
+  --background: hsl(190deg, 2%, 88%);
+  --foreground: hsl(40, 10%, 8%);
+  color: var(--foreground);
+}
+
+.media .primary-headline {
+  grid-column-start: 2;
+  grid-column-end: span 5;
+}
+
+.media .text {
+  grid-column-start: 3;
+  grid-column-end: span 4;
 }
 
 
