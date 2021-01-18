@@ -1,109 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Scott Kellum</title>
+    <link rel="stylesheet" href="style.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Scott Kellum</title>
-  <link rel="stylesheet" href="style.css" />
+    <!-- Typetura -->
+    <script src="https://cdn.typetura.com/typetura.js?apiKey=6HV3QNE-72EMVH7-M6FHTC7-R47N1QF"></script>
+    <link id="typeturaCSS" rel="stylesheet" type="text/css" />
+    <script>
+      const packages = [
+        "boston",
+        "madrid",
+        "kampala",
+        "los-angeles",
+        "prague",
+        "saint-denis",
+      ];
 
-  <!-- Typetura -->
-  <script src="https://cdn.typetura.com/typetura.js?apiKey=6HV3QNE-72EMVH7-M6FHTC7-R47N1QF"></script>
-  <link id="typeturaCSS" rel="stylesheet" type="text/css">
-  <script>
-    const packages = ['boston','madrid','kampala','los-angeles','prague','saint-denis'];
+      document
+        .getElementById("typeturaCSS")
+        .setAttribute(
+          "href",
+          `https://cdn.typetura.com/${
+            packages[Math.floor(Math.random() * packages.length)]
+          }/typetura.css?apiKey=6HV3QNE-72EMVH7-M6FHTC7-R47N1QF`
+        );
+    </script>
+  </head>
 
-    document.getElementById('typeturaCSS').setAttribute('href', `https://cdn.typetura.com/${packages[Math.floor(Math.random() * packages.length)]}/typetura.css?apiKey=6HV3QNE-72EMVH7-M6FHTC7-R47N1QF`);
+  <body>
+    <svg
+      class="filter"
+      width="0"
+      height="0"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <filter id="distort">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency=".0067 .0067"
+          numOctaves="1"
+          result="noise1"
+        ></feTurbulence>
+        <feColorMatrix
+          in="noise1"
+          type="hueRotate"
+          values="0"
+          result="noise2"
+        ></feColorMatrix>
+        <feDisplacementMap
+          xChannelSelector="R"
+          yChannelSelector="G"
+          scale="50"
+          in="SourceGraphic"
+          in2="noise2"
+        />
+      </filter>
+    </svg>
+    <main class="profile" id="about">
+      <h1 class="primary-headline">Scott Kellum</h1>
+      <div class="profile-card">
+        <div class="text">
+          <p>
+            Scott Kellum is the founder of Typetura, a typography as a service
+            company offering both bespoke and ready-made typographic solutions
+            for both web and print. With over 15 years of design experience
+            across type, editorial, digital, and print design; Scott’s
+            experience gives him a unique perspective on the typographic
+            challenges and opportunities in the design industry. He has invented
+            multiple web technologies and projects at Vox Media, Darden Studio,
+            and Roger Black Studio. These accomplishments include inventing new
+            high impact ad formats, parallax techniques, and the fluid
+            typesetting technology that powers Typetura itself.
+          </p>
+        </div>
+        <div class="small">
+          <a href="mailto:scott@scottkellum.com">scott@scottkellum.com</a><br />
+          <span class="location">Los Angeles, California</span><br />
+          <span class="job">Co-founder and CEO, Typetura</span>
+        </div>
+      </div>
+      <img id="photo" alt=" " />
+      <div class="caption photo-caption">
+        Photographed by <span id="photoLink"></span>
+      </div>
+      <div class="runner meta">
+        Design leadership • Design direction • Design innovation • Creative
+        technologist
+      </div>
+      <script>
+        const photos = [
+          [
+            '<a href="https://anamonroe.com/" target="_blank">Ana Monroe</a>',
+            "/profile.jpg",
+          ],
+          [
+            '<a href="https://tatebot.com/" target="_blank">Tate-Stefan Tozer</a>',
+            "/profile2.jpg",
+          ],
+        ];
+        const photo = photos[Math.floor(Math.random() * photos.length)];
 
-  </script>
-</head>
-
-<body>
-  <svg class="filter" width="0" height="0"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink">
-    <filter id="distort">
-      <feTurbulence type="fractalNoise" baseFrequency=".0067 .0067" numOctaves="1" result="noise1"></feTurbulence>
-      <feColorMatrix in="noise1" type="hueRotate" values="0" result="noise2">
-      </feColorMatrix>
-      <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="50" in="SourceGraphic" in2="noise2" />
-    </filter>
-  </svg>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#typetura">Typetura</a>
-    <a href="#media">Talks and Articles</a>
-    <a href="#projects">Projects</a>
-    <a href="#photography">Photography</a>
-  </nav>
-  <main class="profile" id="about">
-    <h1 class="primary-headline">Scott Kellum</h1>
-    <div class="profile-card">
+        document.getElementById("photoLink").innerHTML = photo[0];
+        document.getElementById("photo").setAttribute("src", photo[1]);
+      </script>
+    </main>
+    <section class="typetura" id="typetura">
+      <h1 class="primary-headline">Typetura</h1>
       <div class="text">
         <p>
-          Scott Kellum is the founder of Typetura, a typography as a service company offering both bespoke and ready-made
-          typographic solutions for both web and print. With over 15 years of design experience across type, editorial,
-          digital, and print design; Scott’s experience gives him a unique perspective on the typographic challenges and
-          opportunities in the design industry. He has invented multiple web technologies and projects at Vox Media,
-          Darden
-          Studio, and Roger Black Studio. These accomplishments include inventing new high impact ad formats, parallax
-          techniques, and the fluid typesetting technology that powers Typetura itself.
+          Typetura is a company created to deliver better typography to the web.
+          We developed a new technology that enables designers and developers to
+          define text proportion and hierarchy as opposed to explicit
+          properties. This enables — non iusto ipsa autem, harum illum dolor
+          vitae dolorem, perspiciatis dignissimos voluptates! Dignissimos nemo
+          quos voluptatum ratione, consectetur earum! Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Voluptatum nihil, delectus, in ad cumque
+          dolor aliquid corrupti consequatur eaque fugit quod magnam quo. Eos
+          nobis dolores iste, quibusdam quidem voluptas.
         </p>
       </div>
-      <div class="small">
-        <a href="mailto:scott@scottkellum.com">scott@scottkellum.com</a><br>
-        <span class="location">Los Angeles, California</span><br>
-        <span class="job">Co-founder and CEO, Typetura</span>
+    </section>
+    <section class="media" id="media">
+      <h1 class="primary-headline">Talks and Articles</h1>
+      <div class="text">
+        <a href="https://youtu.be/LvJHyj74qcs?t=8625" target="_blank">
+          <h1 class="section-headline">Tipografia México</h1>
+          <p class="small">
+            Intrinsic Typogrpahy with Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit. Porro, similique architecto temporibus veritatis
+            impedit magni rem earum enim explicabo voluptate libero blanditiis
+            in, magnam eius at quis nemo, eveniet accusantium.
+          </p>
+        </a>
       </div>
-    </div>
-    <img id="photo" alt=" ">
-    <div class="caption">Photographed by <span id="photoLink"></span></div>
-    <script>
-      const photos = [
-        ['<a href="https://anamonroe.com/" target="_blank">Ana Monroe</a>','/profile.jpg'],
-        ['<a href="https://tatebot.com/" target="_blank">Tate-Stefan Tozer</a>','/profile2.jpg']
-      ];
-      const photo = photos[Math.floor(Math.random() * photos.length)];
+    </section>
+    <section class="projects" id="projects">
+      <h1 class="primary-headline">Selected projects</h1>
+      <div class="text">
+        <p>Body of work</p>
+      </div>
+    </section>
+    <section class="photography" id="photography">
+      <h1 class="primary-headline">Photography</h1>
+    </section>
 
-      document.getElementById('photoLink').innerHTML = photo[0];
-      document.getElementById('photo').setAttribute('src', photo[1]);
-    </script>
-  </main>
-  <section class="typetura" id="typetura">
-    <h1 class="primary-headline">Typetura</h1>
-    <div class="text">
-      <p>
-        Some stuff about Typetura Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto molestias
-        blanditiis
-        non iusto ipsa autem, harum illum dolor vitae dolorem, perspiciatis dignissimos voluptates! Dignissimos nemo
-        quos
-        voluptatum ratione, consectetur earum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-        nihil,
-        delectus, in ad cumque dolor aliquid corrupti consequatur eaque fugit quod magnam quo. Eos nobis dolores iste,
-        quibusdam quidem voluptas.
-      </p>
-    </div>
-  </section>
-  <section class="media" id="media">
-    <h1 class="primary-headline">Talks and Articles</h1>
-    <div class="text">
-      <a href="https://youtu.be/LvJHyj74qcs?t=8625" target="_blank">
-        <h1 class="section-headline">Tipografia México</h1>
-        <p class="small">Intrinsic Typogrpahy with Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, similique architecto temporibus veritatis impedit magni rem earum enim explicabo voluptate libero blanditiis in, magnam eius at quis nemo, eveniet accusantium.</p>
-      </a>
-    </div>
-  </section>
-  <section class="projects" id="projects">
-    <h1 class="primary-headline">Selected projects</h1>
-    <div class="text">
-      <p>Body of work</p>
-    </div>
-  </section>
-  <section class="photography" id="photography">
-    <h1 class="primary-headline">Photography</h1>
-  </section>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

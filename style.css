@@ -2,7 +2,7 @@
   --hue: 23;
   --color: hsl(23, 96%, 45%);
   --foreground: hsl(23, 10%, 10%);
-  --background: hsl(20deg,80%,90%);
+  --background: hsl(20deg, 80%, 90%);
 
   background: var(--background);
   color: var(--foreground);
@@ -28,13 +28,15 @@ main {
   z-index: 0;
   padding: 4% 4% 8%;
   display: grid;
-  grid-template-columns: auto clamp(0px,20%,12rem) clamp(0px,20%,12rem) clamp(0px,20%,12rem) clamp(0px,20%,12rem) clamp(0px,20%,12rem) auto;
+  grid-template-columns:
+    auto clamp(0px, 20%, 12rem) clamp(0px, 20%, 12rem) clamp(0px, 20%, 12rem)
+    clamp(0px, 20%, 12rem) clamp(0px, 20%, 12rem) auto;
   grid-template-rows: auto min-content min-content 1fr;
   color: var(--primary);
   background-color: var(--background);
-  --primary: hsl(200deg,50%,20%);
-  --action: hsl(35deg,80%,40%);
-  --background: hsl(16deg,50%,90%);
+  --primary: hsl(200deg, 50%, 20%);
+  --action: hsl(35deg, 80%, 40%);
+  --background: hsl(16deg, 50%, 90%);
 }
 
 a {
@@ -42,30 +44,7 @@ a {
 }
 
 .filter {
-  display: none;
-}
-
-
-/* /////////////////////////////
-NAV
-///////////////////////////// */
-
-nav {
-  position: sticky;
-  top: 0;
-  display: flex;
-  backdrop-filter: blur(1rem);
-  box-shadow: 0 -1rem 1rem 1rem hsla(0deg,0%,4%,0.9);
-  z-index: 10;
-  justify-content: center;
-  background: hsla(0deg,0%,10%,0.8);
-}
-
-nav a {
-  display: block;
-  padding: 1rem;
-  color: hsl(45deg,60%,90%);
-  text-decoration: none;
+  position: absolute;
 }
 
 /* /////////////////////////////
@@ -73,16 +52,20 @@ PROFILE
 ///////////////////////////// */
 
 .profile {
-  --primary: hsl(200deg,14%,35%);
-  --action: hsl(35deg,80%,40%);
-  --background: hsl(16deg,50%,90%);
-  background-image: linear-gradient(-45deg, var(--background), hsl(20deg,80%,90%));
+  --primary: hsl(220deg, 60%, 40%);
+  --action: hsl(35deg, 80%, 40%);
+  --background: hsl(45deg, 100%, 68%);
+  background-image: linear-gradient(
+    -45deg,
+    hsl(40deg, 80%, 58%),
+    hsl(45deg, 100%, 68%)
+  );
 }
 .profile .text {
   max-width: none;
 }
 .profile:before {
-  content: '';
+  content: "";
   display: block;
   grid-row-start: 2;
   grid-row-end: span 2;
@@ -90,18 +73,32 @@ PROFILE
   grid-column-end: span 3;
   height: 0;
   padding-bottom: 100%;
-  background: hsl(35deg,100%,65%);
-  background-image: linear-gradient(-45deg, hsl(45deg,100%,70%), hsl(35deg,100%,63%));
+  background: hsl(35deg, 100%, 65%);
+  background-image: linear-gradient(
+    -45deg,
+    hsl(16deg, 50%, 100%),
+    hsl(20deg, 80%, 85%)
+  );
   border-radius: 50%;
   box-shadow: 0 1rem 3rem -1rem #55220066;
 }
 .profile .primary-headline {
+  grid-row-start: 1;
   grid-column-start: 1;
   grid-column-end: span 7;
   text-align: center;
   padding: 0.33em 0 0;
-  margin-bottom: -0.2em !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
   mix-blend-mode: multiply;
+  transform: translateY(33%);
+  text-shadow: 1px 1px 0 var(--primary), 2px 2px 0 var(--primary),
+    3px 3px 0 var(--primary), 4px 4px 0 var(--primary), 5px 5px 0 var(--primary),
+    6px 6px 0 var(--primary), 7px 7px 0 var(--primary), 8px 8px 0 var(--primary),
+    9px 9px 0 var(--primary), 10px 10px 0 var(--primary),
+    11px 11px 0 var(--primary), 12px 12px 0 var(--primary),
+    13px 13px 0 var(--primary), 14px 14px 0 var(--primary);
+  color: #fff;
 }
 .profile img {
   grid-row-start: 2;
@@ -114,7 +111,7 @@ PROFILE
   position: relative;
   box-shadow: 0 1rem 3rem -1rem #55220066;
   border-radius: 0 18rem 0 0;
-  filter: saturate(0) contrast(0.4) brightness(1.4);
+  filter: saturate(0) contrast(0.4) brightness(1.6);
   will-change: filter;
   transition: filter 1s ease-in-out;
 }
@@ -128,18 +125,33 @@ PROFILE
   grid-column-end: span 3;
   position: relative;
   padding: 1.25rem 2rem;
-  background: hsla(0deg,0%,10%,0.8);
-  color: hsl(45deg,60%,90%);
+  background: hsla(0deg, 0%, 10%, 0.8);
+  color: hsl(45deg, 60%, 90%);
   backdrop-filter: blur(1rem);
   box-shadow: 0 1rem 3rem -1rem #55220066;
   z-index: 4;
-  --action: hsl(35deg,100%,65%);
+  --action: hsl(35deg, 100%, 65%);
 }
-.profile .caption {
+.profile .photo-caption {
   grid-row-start: 4;
   grid-column-start: 2;
   grid-column-end: span 2;
   align-self: start;
+  color: hsla(0deg, 0%, 10%, 0.8);
+}
+.profile .photo-caption a {
+  color: hsla(0deg, 0%, 10%, 0.8);
+}
+
+.profile .runner {
+  writing-mode: vertical-lr;
+  grid-column-start: 7;
+  grid-row-start: 2;
+  grid-row-end: span 3;
+  mix-blend-mode: multiply;
+  color: hsl(20deg, 10%, 70%);
+  margin-left: 0.5em;
+  --tt-bind: 20 !important;
 }
 
 @media (max-width: 40em) {
@@ -165,9 +177,9 @@ TYPETURA
 ///////////////////////////// */
 
 .typetura {
-  --background: hsl(150, 45%, 16%);
-  --foreground: hsl(40, 38%, 87%);
-  background-image: radial-gradient(circle at 100% 100%, var(--background), #129681aa);
+  --background: #ffebe5;
+  --foreground: #085147;
+  --action: #129681;
   color: var(--foreground);
 }
 
@@ -180,7 +192,6 @@ TYPETURA
   grid-column-start: 3;
   grid-column-end: span 4;
 }
-
 
 /* /////////////////////////////
 MEDIA
@@ -202,20 +213,16 @@ MEDIA
   grid-column-end: span 4;
 }
 
-
 /* /////////////////////////////
 WORK
 ///////////////////////////// */
 
 .work {
-
 }
-
 
 /* /////////////////////////////
 PHOTOGRAPHY
 ///////////////////////////// */
 
 .photography {
-
 }
