@@ -47,6 +47,41 @@ a {
   position: absolute;
 }
 
+.cta {
+  display: table;
+  text-decoration: none;
+  background-color: var(--action);
+  color: #fff;
+  mix-blend-mode: multiply;
+  line-height: 1 !important;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+.cta:after {
+  display: table-cell;
+  content: "";
+  width: 2em;
+  height: 1em;
+  background-image: url("/lib/arrow.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  border-left: 1em solid var(--action);
+  transition: width 0.5s ease-in-out;
+}
+.cta:hover:after,
+.cta:focus:after {
+  width: 7em;
+}
+
+.canvas {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 /* /////////////////////////////
 PROFILE
 ///////////////////////////// */
@@ -137,21 +172,11 @@ PROFILE
   grid-column-start: 2;
   grid-column-end: span 2;
   align-self: start;
-  color: hsla(0deg, 0%, 10%, 0.8);
+  color: hsl(20deg, 10%, 70%);
+  mix-blend-mode: multiply;
 }
 .profile .photo-caption a {
-  color: hsla(0deg, 0%, 10%, 0.8);
-}
-
-.profile .runner {
-  writing-mode: vertical-lr;
-  grid-column-start: 7;
-  grid-row-start: 2;
-  grid-row-end: span 3;
-  mix-blend-mode: multiply;
   color: hsl(20deg, 10%, 70%);
-  margin-left: 0.5em;
-  --tt-bind: 20 !important;
 }
 
 @media (max-width: 40em) {
@@ -179,18 +204,69 @@ TYPETURA
 .typetura {
   --background: #ffebe5;
   --foreground: #085147;
-  --action: #129681;
+  --action: #ed8600;
   color: var(--foreground);
 }
 
 .typetura .primary-headline {
   grid-column-start: 2;
   grid-column-end: span 5;
+  color: #129681;
+  mix-blend-mode: multiply;
 }
 
 .typetura .text {
   grid-column-start: 3;
   grid-column-end: span 4;
+}
+
+.typetura .canvas {
+  z-index: -1;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  transform: scale(3);
+  overflow: hidden;
+}
+.typetura .canvas * {
+  color: #ffd9ce;
+  display: inline-block;
+  animation-delay: calc(-1s * var(--input));
+  animation-play-state: paused;
+  animation-duration: 1s;
+  grid-column-end: span 1;
+  grid-row-end: span 1;
+  margin: 0;
+  padding: 1rem;
+}
+.typetura .canvas *:nth-child(1) {
+  --input: calc(var(--clientx) / var(--viewportwidth));
+  justify-self: end;
+  align-self: end;
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+.typetura .canvas *:nth-child(2) {
+  --input: calc(var(--clienty) / var(--viewportheight));
+  justify-self: start;
+  align-self: end;
+  writing-mode: vertical-lr;
+}
+.typetura .canvas *:nth-child(3) {
+  --input: calc(
+    calc(var(--viewportheight) - var(--clienty)) / var(--viewportheight)
+  );
+  justify-self: end;
+  align-self: start;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+}
+.typetura .canvas *:nth-child(4) {
+  --input: calc(
+    calc(var(--viewportwidth) - var(--clientx)) / var(--viewportwidth)
+  );
+  justify-self: start;
+  align-self: start;
 }
 
 /* /////////////////////////////
