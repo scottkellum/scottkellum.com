@@ -1,0 +1,31 @@
+---
+import XElement from 'astro-xelement'
+const { H1 } = XElement
+---
+
+<H1 @resize={() => { this.style.setProperty('--bind', this.clientWidth) }}>
+    <slot />
+</H1>
+
+<style>
+h1 {
+    /* Typetura animation function */
+    animation: 1s linear calc(-1s * var(--bind) / var(--max)) 1 both paused none;
+
+    /* Your styles */
+    animation-name: h1;
+    --max: 1000;
+    font-family: var(--font-display);
+    color: var(--primary);
+    line-height: 1;
+    word-wrap: break-word;
+}
+@keyframes h1 {
+    0% {
+        font-size: 1rem;
+    }
+    100% {
+        font-size: 6rem;
+    }
+}
+</style>

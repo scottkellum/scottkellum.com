@@ -1,6 +1,9 @@
 ---
 // Component Imports
 import BaseHead from '../components/BaseHead.astro';
+import Shape from '../components/Shape.astro';
+import Marquee from '../components/Marquee.astro';
+import H1 from '../components/type/H1.astro';
 // import BlogHeader from '../components/BlogHeader.astro';
 // import BlogPostPreview from '../components/BlogPostPreview.astro';
 
@@ -27,14 +30,29 @@ allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(
 
 <html lang="en">
 	<head>
-		<BaseHead {title} {description} {permalink} />
+		<BaseHead />
+		<style>
+			html {
+				background: var(--background);
+				color: var(--text);
+			}
+		</style>
 	</head>
 
 	<body>
-		<main class="content">
+		<main>
 			<article>
-				Hello
-				<h1>World!</h1>
+				<H1>Scott Kellum</H1>
+				<Marquee>Founder • Product designer • Inventor • Innovator • Speaker • </Marquee>
+				<section class="about">
+					<p>Scott Kellum is the founder of Typetura, a typography as a service company offering both bespoke and ready-made typographic solutions for both web and print. With over 15 years of design experience across type, editorial, digital, and print design; Scott’s experience gives him a unique perspective on the typographic challenges and opportunities in the design industry. He has invented multiple web technologies and projects at Vox Media, Darden Studio, and Roger Black Studio. These accomplishments include inventing new high impact ad formats, parallax techniques, and the fluid typesetting technology that powers Typetura itself.</p>
+					<p><a href="https://twitter.com/scottkellum">Say hi on Twitter</a> or <a href="mailto:scott@scottkellum.com">shoot me an email</a>.</p>
+				</section>
+				<figure class="image">
+					<img src="/img/profile.jpg" alt="">
+					<figcaption>Photographed by Tate Tozer</figcaption>
+				</figure>
+				<Shape />
 			</article>
 		</main>
 	</body>
