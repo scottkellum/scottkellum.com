@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "Arnold";
+  src: url("/assets/fonts/arnold-regular.woff2") format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Arnold";
+  src: url("/assets/fonts/arnold-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Nostrav";
+  src: url("/assets/fonts/nostrav-sett.woff2") format("woff2");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "Nostrav";
+  src: url("/assets/fonts/nostrav-stream.woff2") format("woff2");
+  font-weight: 200;
+}
+
+html {
+  --font: "Arnold", ui-monospace, Menlo, Monaco, "Cascadia Mono",
+    "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace",
+    "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+  --font-display: "Nostrav", var(--font);
+  --blend: multiply;
+
+  font-family: "Arnold";
+}
+
+h1 {
+  font-family: "Nostrav";
+}
+
+body {
+  margin: 0;
+}
