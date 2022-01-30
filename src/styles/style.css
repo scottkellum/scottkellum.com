@@ -27,7 +27,7 @@ html {
   --font-display: "Nostrav", var(--font);
   --blend: multiply;
 
-  --background: #f9f7f3;
+  --background: #ffefea;
   --background-alt: #ffffff;
   --text: #43220f;
   --primary: #ff6c4b;
@@ -45,7 +45,7 @@ img {
   width: 100%;
 }
 
-a:link {
+a {
   color: var(--primary);
 }
 

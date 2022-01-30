@@ -3,9 +3,11 @@
 import BaseHead from '../components/BaseHead.astro';
 import Shape from '../components/Shape.astro';
 import Marquee from '../components/Marquee.astro';
-import H1 from '../components/type/H1.astro';
 // import BlogHeader from '../components/BlogHeader.astro';
 // import BlogPostPreview from '../components/BlogPostPreview.astro';
+
+import XElement from 'astro-xelement'
+const { H1 } = XElement
 
 interface MarkdownFrontmatter {
 	publishDate: number;
@@ -31,28 +33,124 @@ allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(
 <html lang="en">
 	<head>
 		<BaseHead />
-		<style>
+		<style global>
 			html {
 				background: var(--background);
 				color: var(--text);
+			}
+
+			main {
+				width: 100%;
+				overflow: hidden;
+			}
+
+			.lede {
+				width: min(90vw, 40rem);
+				margin-inline: auto;
+				position: relative;
+			}
+			.image {
+				width: calc(40% + 3rem);
+				float: right;
+				margin-inline-start: 1rem;
+				margin-inline-end: -3rem;
+				margin-block-end: 1rem;
+				margin-block-start: -8rem;
+				mix-blend-mode: multiply;
+				position: relative;
+			}
+			img {
+				opacity: 0.85;
+				mix-blend-mode: multiply;
+			}
+			.image::before {
+				content: '';
+				position: absolute;
+				inset: -100% 3rem 0 auto;
+				width: 1px;
+				background: var(--primary);
+				mix-blend-mode: multiply;
+			}
+			figure figcaption {
+				color: var(--primary);
+				font-size: 0.8rem;
+				margin-block-start: -1em;
+				margin-inline-start: 1em;
+				mix-blend-mode: multiply;
+				font-style: italic;
+			}
+			h1 {
+				font-size: calc(1px * var(--bind) / 7.22);
+				font-family: var(--font-display);
+				color: var(--primary);
+				line-height: 1;
+				word-wrap: break-word;
+				margin-block-start: 15rem;
+				margin-block-end: 1em;
+				position: relative;
+				overflow: hidden;
+				transform: scale(1.3);
+				mix-blend-mode: multiply;
+			}
+			.marquee {
+				position: absolute;
+				width: 100vw;
+				inset-block-start: 3.5rem;
+				transform: translateX(-30%);
+				mix-blend-mode: multiply;
+				white-space: nowrap;
+				animation: marquee 30s linear infinite;
+				font-style: italic;
+			}
+			@keyframes marquee {
+				100% {
+					transform: translateX(calc(-30% - 48.75rem));
+				}
+			}
+			.shape {
+				position: absolute;
+				inset-block-start: -10rem;
+				inset-inline-end: -10rem;
+
+				width: 100%;
+				color: var(--background-alt);
+				mix-blend-mode: normal;
+				z-index: -1;
+				animation: 30s linear infinite shape;
+			}
+			@keyframes shape {
+				0% {
+					transform: rotate(0deg);
+				}
+				100% {
+					transform: rotate(180deg);
+				}
 			}
 		</style>
 	</head>
 
 	<body>
 		<main>
-			<article>
-				<H1>Scott Kellum</H1>
-				<Marquee>Founder • Product designer • Inventor • Innovator • Speaker • </Marquee>
+			<article class="lede">
+				<figure class="image">
+					<img src="/img/profile.jpg" alt="A photograph of Scott casually sitting on a curb">
+					<figcaption>Photographed by <a href="https://tatebot.com/">Tate Tozer</a></figcaption>
+				</figure>
+				<H1 @resize={() => { this.style.setProperty('--bind', this.clientWidth) }}>
+					Scott Kellum
+				</H1>
+				<p class="marquee">Inventor • Innovator • Founder • Product designer • Typographer • Speaker • </p>
+				<script>
+					const marquee = document.querySelector('.marquee');
+					marquee.innerHTML = marquee.innerText + `<span aria-hidden="true">${marquee.innerText + marquee.innerText + marquee.innerText + marquee.innerText}</span>`
+				</script>
 				<section class="about">
-					<p>Scott Kellum is the founder of Typetura, a typography as a service company offering both bespoke and ready-made typographic solutions for both web and print. With over 15 years of design experience across type, editorial, digital, and print design; Scott’s experience gives him a unique perspective on the typographic challenges and opportunities in the design industry. He has invented multiple web technologies and projects at Vox Media, Darden Studio, and Roger Black Studio. These accomplishments include inventing new high impact ad formats, parallax techniques, and the fluid typesetting technology that powers Typetura itself.</p>
+					<p>Scott Kellum is the founder of <a href="https://typetura.com">Typetura</a>, a typography as a service company offering both bespoke and ready-made typographic solutions. With over 15 years of design experience across type, editorial, digital, and print design; Scott’s experience gives him a unique perspective on the typographic challenges and opportunities in the design industry. He has invented multiple web technologies, holds two patents, and has contributed to major projects at <a href="https://voxmedia.com/">Vox Media</a>, <a href="https://www.dardenstudio.com/">Darden Studio</a>, and Roger Black Studio. These accomplishments include inventing <a href="https://patents.google.com/patent/US10769348B1/en">dynamic typographic systems</a>, <a href="https://www.adweek.com/programmatic/why-vox-media-chose-to-build-not-buy-a-programmatic-stack/">high impact ad formats</a>, <a href="https://developers.google.com/web/updates/2016/12/performant-parallaxing">new parallax techniques</a>, and the <a href="https://typetura.scottkellum.com/typetura-js">fluid typesetting technology</a> that powers Typetura itself.</p>
 					<p><a href="https://twitter.com/scottkellum">Say hi on Twitter</a> or <a href="mailto:scott@scottkellum.com">shoot me an email</a>.</p>
 				</section>
-				<figure class="image">
-					<img src="/img/profile.jpg" alt="">
-					<figcaption>Photographed by Tate Tozer</figcaption>
-				</figure>
-				<Shape />
+				<svg class="shape" viewBox="0 0 444 494" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M190 9.4752C209.802 -1.95729 234.198 -1.95729 254 9.47521L411.703 100.525C431.504 111.957 443.703 133.085 443.703 155.95V338.05C443.703 360.915 431.504 382.043 411.703 393.475L254 484.525C234.198 495.957 209.802 495.957 190 484.525L32.2975 393.475C12.4958 382.043 0.297501 360.915 0.297501 338.05V155.95C0.297501 133.085 12.4958 111.957 32.2975 100.525L190 9.4752Z" fill="currentColor"/>
+				</svg>
 			</article>
 		</main>
 	</body>
