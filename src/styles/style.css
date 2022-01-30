@@ -30,11 +30,19 @@ html {
   --background: #ffefea;
   --background-alt: #ffffff;
   --text: #43220f;
-  --primary: #ff6c4b;
+  --primary: #bd2e0e;
 
   font-family: "Arnold";
-  font-size: 125%;
+  font-size: 115%;
   line-height: 1.5;
+
+  animation: 1s cubic-bezier(0, 0.5, 0.5, 1) calc(-1s * var(--bind, 600) / 600)
+    1 both paused html;
+}
+@keyframes html {
+  0% {
+    font-size: 0;
+  }
 }
 
 body {
