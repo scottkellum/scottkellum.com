@@ -1,0 +1,38 @@
+---
+// Component Imports
+import BaseHead from '../components/BaseHead.astro';
+import Filmstrip from '../components/Filmstrip.astro';
+
+let title = 'Scott Kellum';
+let description = 'Founder, inventor, product designer, typographer, teacher, speaker, and photographer';
+let permalink = 'https://scottkellum.com/';
+---
+
+<html lang="en" onresize="console.log('resize')">
+	<head>
+		<BaseHead />
+		<style>
+			html {
+        background: #1A1512;
+			}
+		</style>
+		<script>
+			if (typeof ResizeObserver !== 'undefined') {
+				const resizeObserver = new ResizeObserver(entries => {
+					for (let entry of entries) {
+						document.documentElement.style.setProperty('--bind', Math.round(entry.contentRect.width));
+					}
+				});
+				resizeObserver.observe(document.documentElement);
+			}
+		</script>
+	</head>
+
+	<body>
+		<main>
+      <Filmstrip />
+      <Filmstrip />
+      <Filmstrip />
+		</main>
+	</body>
+</html>
