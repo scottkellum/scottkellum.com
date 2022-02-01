@@ -2,11 +2,16 @@
 import photos from '../data/photos.json'
 
 let rolls = photos.rolls;
-console.log(rolls);
+
+function titleTransform(t) {
+  t = t.replaceAll('[', '<strong>');
+  t = t.replaceAll(']', '</strong>');
+  return t;
+}
 ---
 
 {rolls.map((roll) => (
-  <article class="filmstrip" style="color: {roll.color}">
+  <article class="filmstrip" style="color: ${roll.color}" onscroll="{this.style.setProperty('--scroll',this.scrollLeft); this.style.setProperty('--width',screen.width - this.offsetWidth)}">
     <div class="meta">
       <span class="date">{roll.date}</span>
       <span class="date">{roll.location}</span>
@@ -20,34 +25,14 @@ console.log(rolls);
         <path d="M29.7324 15L7.43317 27.8744L7.43317 2.12548L29.7324 15Z" fill="currentcolor"/>
       </svg>
     </div>
+    <h1>{titleTransform(roll.title)}</h1>
+    {roll.photos.map((photo) => (
+      <img src="/photos/${photo.src}" alt={photo.alt}>
+    ))}
   </article>
 ))}
 
-
-<article class="filmstrip">
-  <div class="meta">
-    <span class="date">1/16/2022</span>
-    <span class="camera">Leica M3</span>
-    <span class="lens">Vöigtlander 50mm f/1.5 Nokton MC II</span>
-    <span class="stock">Portra 400</span>
-    <svg width="143" height="30" viewBox="0 0 143 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g style="mix-blend-mode:screen">
-      <path d="M142.929 15L120.63 27.8744L120.63 2.12548L142.929 15Z" fill="currentcolor"/>
-      <path d="M105.197 15L82.8975 27.8744L82.8975 2.12548L105.197 15Z" fill="currentcolor"/>
-      <path d="M67.4648 15L45.1656 27.8744L45.1656 2.12548L67.4648 15Z" fill="currentcolor"/>
-      <path d="M29.7324 15L7.43317 27.8744L7.43317 2.12548L29.7324 15Z" fill="currentcolor"/>
-      </g>
-    </svg>
-  </div>
-  <h1>Our <strong>big adventure</strong> in <strong>Big Sur</strong></h1>
-  <img src="/photos/2019-03-24-089.jpg" alt=" ">
-  <img src="/photos/2019-03-10-058.jpg" alt=" ">
-  <img src="/photos/2019-03-24-074.jpg" alt=" ">
-  <img src="/photos/2019-04-13-115.jpg" alt=" ">
-  <img src="/photos/2019-03-10-061.jpg" alt=" ">
-</article>
-
-<style>
+<style global>
 .filmstrip {
   color: #1AE8DB;
   writing-mode: sideways-lr;
@@ -58,14 +43,14 @@ console.log(rolls);
   scrollbar-width: thin;
   scrollbar-color: currentcolor transparent;
 }
-img {
+.filmstrip img {
   inline-size: 36rem;
   block-size: auto;
   display: block;
   margin-block-end: 3rem;
   margin-inline-end: 1.4rem;
 }
-h1 {
+.filmstrip h1 {
   writing-mode: horizontal-tb;
   width: min-content;
   font-family: var(--font-display);
@@ -79,17 +64,22 @@ h1 {
   margin-inline-start: 2.5rem;
   margin-inline-end: -2.5rem;
 }
-h1 strong {
+.filmstrip h1 strong {
   font-weight: 700;
 }
-.meta {
+.filmstrip .meta {
+  width: calc(100% - 2rem + (var(--scroll, 0) * 0.2px));
+  overflow: hidden;
   writing-mode: horizontal-tb;
   position: absolute;
   mix-blend-mode: screen;
-  margin-inline-start: 2rem;
   white-space: nowrap;
   display: flex;
   align-items: center;
   gap: 2rem;
+  margin-inline-start: calc((var(--scroll, 0) * -0.2px) + 2rem);
+}
+.filmstrip svg {
+  min-width: 8rem;
 }
 </style>

@@ -25,7 +25,7 @@
       "lens": "Vöigtlander 50mm f/1.5 Nokton MC II",
       "stock": "Portra 400",
       "location": "Los Angeles",
-      "color": "#FF6C4B",
+      "color": "lightpink",
       "title": "[At home] and [away]",
       "photos":[
         {
@@ -33,7 +33,7 @@
           "alt": "Photo of a black and white cat"
         },
         {
-          "src": "public/photos/2019-03-10-059.jpg",
+          "src": "2019-03-10-059.jpg",
           "alt": "Photo of a black and white cat"
         },
         {
