@@ -1,0 +1,46 @@
+{
+  "rolls":[
+    {
+      "date": "1/19/2022",
+      "camera": "Leica M3",
+      "lens": "Vöigtlander 50mm f/1.5 Nokton MC II",
+      "stock": "Portra 400",
+      "location": "Los Angeles",
+      "color": "#FF6C4B",
+      "title": "Our [big adventure] in [Big Sur]",
+      "photos":[
+        {
+          "src": "2022-01-19-124.jpg",
+          "alt": "A black and white cat looking into the camera"
+        },
+        {
+          "src": "2022-01-19-122.jpg",
+          "alt": "A child’s toy"
+        }
+      ]
+    },
+    {
+      "date": "1/19/2022",
+      "camera": "Vöigtlander Bessa",
+      "lens": "Vöigtlander 50mm f/1.5 Nokton MC II",
+      "stock": "Portra 400",
+      "location": "Los Angeles",
+      "color": "#FF6C4B",
+      "title": "[At home] and [away]",
+      "photos":[
+        {
+          "src": "2019-03-10-061.jpg",
+          "alt": "Photo of a black and white cat"
+        },
+        {
+          "src": "public/photos/2019-03-10-059.jpg",
+          "alt": "Photo of a black and white cat"
+        },
+        {
+          "src": "2019-03-24-099.jpg",
+          "alt": "Photo of a black and white cat"
+        }
+      ]
+    }
+  ]
+}
