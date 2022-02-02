@@ -10,8 +10,15 @@ function titleTransform(t) {
 }
 ---
 
+<script>
+function filmScroll() {
+  this.style.setProperty('--scroll', this.scrollLeft);
+  this.style.setProperty('--rate', screen.width / this.offsetWidth);
+}
+</script>
+
 {rolls.map((roll) => (
-  <article class="filmstrip" style="color: ${roll.color}" onscroll="{this.style.setProperty('--scroll',this.scrollLeft); this.style.setProperty('--width',screen.width - this.offsetWidth)}">
+  <article class="filmstrip" style="color: ${roll.color}" onscroll="this.style.setProperty('--scroll', this.scrollLeft)">
     <div class="meta">
       <span class="date">{roll.date}</span>
       <span class="date">{roll.location}</span>
@@ -34,50 +41,68 @@ function titleTransform(t) {
 
 <style global>
 .filmstrip {
+  position: relative;
   color: #1AE8DB;
-  writing-mode: sideways-lr;
-  width: 100%;
+  inline-size: 100%;
+  white-space: nowrap;
   overflow: auto;
-  inline-size: min-content;
-  margin-inline: 4rem;
+  overflow-y: hidden;
+  margin-block: 4rem;
   scrollbar-width: thin;
+  scrollbar-height: thin;
   scrollbar-color: currentcolor transparent;
 }
+.filmstrip::-webkit-scrollbar {
+  inline-size: 0.333rem;
+  block-size: 0.333rem;
+  background-color: transparent;
+}
+.filmstrip::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: currentColor;
+}
+
 .filmstrip img {
-  inline-size: 36rem;
-  block-size: auto;
-  display: block;
-  margin-block-end: 3rem;
-  margin-inline-end: 1.4rem;
+  block-size: min(36rem, 80vh);
+  inline-size: auto;
+  display: inline-block;
+  margin-inline-end: 3rem;
+  margin-block-start: 0.815rem;
 }
 .filmstrip h1 {
-  writing-mode: horizontal-tb;
-  width: min-content;
+  max-block-size: min(36rem, 80vh);
+  inline-size: min-content;
+  display: inline-block;
   font-family: var(--font-display);
   font-weight: 200;
-  font-size: 5rem;
+  font-size: min(5rem, 16vh);
   line-height: 1;
-  margin: 0;
   mix-blend-mode: screen;
+  white-space: initial;
   position: relative;
-  z-index: 1;
-  margin-inline-start: 2.5rem;
-  margin-inline-end: -2.5rem;
+  margin-block: 0;
+  margin-inline-start: 2rem;
+  margin-inline-end: -0.5ch;
+  animation: 1s var(--tt-ease, linear) calc(-1s * var(--tt-bind, 500) / var(--tt-max, 1000)) 1 both paused var(--tt-key, none);
+  --tt-key: filmstrip-h1;
+  --tt-max: 1600;
+  --tt-ease: cubic-bezier(0.1,0.4,0.7,1);
+}
+@keyframes filmstrip-h1 {
+  0% {
+    font-size: 1rem;
+  }
 }
 .filmstrip h1 strong {
   font-weight: 700;
 }
 .filmstrip .meta {
-  width: calc(100% - 2rem + (var(--scroll, 0) * 0.2px));
-  overflow: hidden;
-  writing-mode: horizontal-tb;
   position: absolute;
   mix-blend-mode: screen;
-  white-space: nowrap;
   display: flex;
-  align-items: center;
   gap: 2rem;
-  margin-inline-start: calc((var(--scroll, 0) * -0.2px) + 2rem);
+  margin-inline-start: 2rem;
+  transform: translateX(calc((var(--scroll, 0) * -0.15px)));
 }
 .filmstrip svg {
   min-width: 8rem;

@@ -161,14 +161,9 @@ allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(
 			}
 		</style>
 		<script>
-			if (typeof ResizeObserver !== 'undefined') {
-				const resizeObserver = new ResizeObserver(entries => {
-					for (let entry of entries) {
-						document.documentElement.style.setProperty('--bind', Math.round(entry.contentRect.width));
-					}
-				});
-				resizeObserver.observe(document.documentElement);
-			}
+			function resize() {
+					document.documentElement.style.setProperty("--tt-bind", window.innerWidth)
+			} resize(); window.onresize = resize;
 		</script>
 	</head>
 

@@ -8,23 +8,27 @@ let description = 'Founder, inventor, product designer, typographer, teacher, sp
 let permalink = 'https://scottkellum.com/';
 ---
 
-<html lang="en" onresize="console.log('resize')">
+<html lang="en">
 	<head>
 		<BaseHead />
-		<style>
-			html {
+		<style global>
+			:root {
         background: #1A1512;
+        animation: 1s var(--tt-ease, linear) calc(-1s * var(--tt-bind, 500) / var(--tt-max, 1000)) 1 both paused var(--tt-key, none);
+        --tt-key: photos-html;
+        --tt-max: 800;
+        --tt-ease: cubic-bezier(0,0.5,0.5,1);
 			}
+      @keyframes photos-html {
+        0% {
+          font-size: 0%;
+        }
+      }
 		</style>
 		<script>
-			if (typeof ResizeObserver !== 'undefined') {
-				const resizeObserver = new ResizeObserver(entries => {
-					for (let entry of entries) {
-						document.documentElement.style.setProperty('--bind', Math.round(entry.contentRect.width));
-					}
-				});
-				resizeObserver.observe(document.documentElement);
-			}
+			function resize() {
+					document.documentElement.style.setProperty("--tt-bind", window.innerWidth)
+			} resize(); window.onresize = resize;
 		</script>
 	</head>
 
