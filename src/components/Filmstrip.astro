@@ -8,6 +8,13 @@ function titleTransform(t) {
   t = t.replaceAll(']', '</strong>');
   return t;
 }
+
+function rollID(t) {
+  t = t.replaceAll('[', '');
+  t = t.replaceAll(']', '');
+  t = t.replaceAll(' ', '-');
+  return t;
+}
 ---
 
 <script>
@@ -18,7 +25,7 @@ function filmScroll() {
 </script>
 
 {rolls.map((roll) => (
-  <article class="filmstrip" style="color: ${roll.color}" onscroll="this.style.setProperty('--scroll', this.scrollLeft)">
+  <article class="filmstrip" id={rollID(roll.title)} style="color: ${roll.color}" onscroll="this.style.setProperty('--scroll', this.scrollLeft)">
     <div class="meta">
       <span class="date">{roll.date}</span>
       <span class="date">{roll.location}</span>

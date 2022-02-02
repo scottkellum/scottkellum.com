@@ -5,12 +5,23 @@ import Shape from '../components/Shape.astro';
 import Marquee from '../components/Marquee.astro';
 // import BlogHeader from '../components/BlogHeader.astro';
 // import BlogPostPreview from '../components/BlogPostPreview.astro';
+import photos from '../data/photos.json'
+import XElement from 'astro-xelement';
 
-import XElement from 'astro-xelement'
+
+let rolls = photos.rolls;
+
 const { H1 } = XElement
 
 interface MarkdownFrontmatter {
 	publishDate: number;
+}
+
+function rollID(t) {
+  t = t.replaceAll('[', '');
+  t = t.replaceAll(']', '');
+  t = t.replaceAll(' ', '-');
+  return t;
 }
 
 // Component Script:
@@ -71,7 +82,7 @@ allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(
 				mix-blend-mode: multiply;
 				font-style: italic;
 			}
-			h1 {
+			.head {
 				font-size: calc(1px * var(--bind) / 7.22);
 				width: 90vw;
 				font-family: var(--font-display);
@@ -92,6 +103,53 @@ allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(
 				white-space: nowrap;
 				font-style: italic;
 				color: var(--primary);
+			}
+			.section {
+				white-space: nowrap;
+				overflow: auto;
+				overflow-y: none;
+				margin-block: 4rem;
+				display: flex;
+				align-items: center;
+				scrollbar-color: var(--primary) transparent;
+			}
+			.section::-webkit-scrollbar {
+				inline-size: 0.333rem;
+				block-size: 0.333rem;
+				background-color: transparent;
+			}
+			.section::-webkit-scrollbar-thumb {
+				border-radius: 1rem;
+				background: var(--primary);
+			}
+			.section img {
+				block-size: min(30rem, 80vh);
+				inline-size: auto;
+				margin-inline-end: 2rem;
+				filter: none;
+			}
+			.section-head {
+				font-family: var(--font-display);
+				color: var(--primary);
+				line-height: 1;
+				text-decoration: none;
+				margin-inline-start: 2rem;
+				margin-inline-end: -0.5ch;
+				margin-block: 0;
+				display: inline-block;
+				font-size: min(5rem, 12vh);
+				animation: 1s var(--tt-ease, linear) calc(-1s * var(--tt-bind, 500) / var(--tt-max, 1000)) 1 both paused var(--tt-key, none);
+				--tt-key: section-head;
+				--tt-max: 1600;
+				--tt-ease: cubic-bezier(0.1,0.4,0.7,1);
+			}
+			@keyframes section-head {
+				0% {
+					font-size: 1rem;
+				}
+			}
+			.section-head a {
+				text-decoration: none;
 			}
 			@media (prefers-reduced-motion: no-preference) {
 				.marquee {
@@ -150,7 +208,7 @@ allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(
 					inset-block-start: 3.5rem;
 					color: var(--text);
 				}
-				h1 {
+				.head {
 					width: auto;
 					margin-block-start: 10rem;
 					margin-block-end: 1em;
@@ -174,7 +232,7 @@ allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(
 					<img src="/img/profile.jpg" alt="A photograph of Scott casually sitting on a curb">
 					<figcaption>Photograph by <a href="https://tatebot.com/">Tate Tozer</a></figcaption>
 				</figure>
-				<H1 @resize={() => { this.style.setProperty('--bind', this.clientWidth) }}>
+				<H1 class="head" @resize={() => { this.style.setProperty('--bind', this.clientWidth) }}>
 					Scott Kellum
 				</H1>
 				<p class="marquee">Invention • Innovation • Typography • Teaching • Editorial design • Design leadership • Photography • Product design • Design systems • Speaking •&nbsp;</p>
@@ -190,6 +248,17 @@ allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(
 					<path d="M190 9.4752C209.802 -1.95729 234.198 -1.95729 254 9.47521L411.703 100.525C431.504 111.957 443.703 133.085 443.703 155.95V338.05C443.703 360.915 431.504 382.043 411.703 393.475L254 484.525C234.198 495.957 209.802 495.957 190 484.525L32.2975 393.475C12.4958 382.043 0.297501 360.915 0.297501 338.05V155.95C0.297501 133.085 12.4958 111.957 32.2975 100.525L190 9.4752Z" fill="currentColor"/>
 				</svg>
 			</article>
+
+			<section class="section photos">
+				<h1 class="section-head">
+					<a href="/photos">Photos</a>
+				</h1>
+				{rolls.map((roll) => (
+					<a href="/photos#${rollID(roll.title)}">
+						<img src="/photos/${roll.photos[0].src}" alt={roll.photos[0].alt}>
+					</a>
+				))}
+			</section>
 		</main>
 	</body>
 </html>

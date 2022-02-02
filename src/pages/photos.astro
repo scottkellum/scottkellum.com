@@ -24,6 +24,22 @@ let permalink = 'https://scottkellum.com/';
           font-size: 0%;
         }
       }
+      a.home {
+        text-decoration: none;
+        position: fixed;
+        top: 0;
+        right: 2rem;
+        mix-blend-mode: screen;
+        writing-mode: vertical-lr;
+        z-index: 2;
+        letter-spacing: 0.1em;
+        color: hsl(175deg 100% 60%);
+        opacity: 0.6;
+        transition: opacity 0.5s ease-in-out;
+      }
+      a.home:hover {
+        opacity: 1;
+      }
 		</style>
 		<script>
 			function resize() {
@@ -33,6 +49,15 @@ let permalink = 'https://scottkellum.com/';
 	</head>
 
 	<body>
+    <a href="/" class="home">
+      <svg width="30" height="60" viewBox="0 0 30 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g style="mix-blend-mode:screen">
+      <path d="M14.8662 -8L27.7407 14.2993H1.99169L14.8662 -8Z" fill="currentColor"/>
+      <path d="M14.8662 29.7323L27.7407 52.0316L1.99169 52.0316L14.8662 29.7323Z" fill="currentColor"/>
+      </g>
+      </svg>
+      HOME
+    </a>
 		<main>
 	      <Filmstrip />
 		</main>
