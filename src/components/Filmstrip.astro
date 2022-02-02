@@ -41,7 +41,7 @@ function filmScroll() {
     </div>
     <h1>{titleTransform(roll.title)}</h1>
     {roll.photos.map((photo) => (
-      <img src="/photos/${photo.src}" alt={photo.alt}>
+      <img loading="lazy" src="/photos/${photo.src}" alt={photo.alt}>
     ))}
   </article>
 ))}

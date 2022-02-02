@@ -127,6 +127,11 @@ allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(
 				inline-size: auto;
 				margin-inline-end: 2rem;
 				filter: none;
+				opacity: 0.66;
+				transition: opacity 0.5s ease-in-out;
+			}
+			.section img:hover {
+				opacity: 1;
 			}
 			.section-head {
 				font-family: var(--font-display);
@@ -137,11 +142,11 @@ allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(
 				margin-inline-end: -0.5ch;
 				margin-block: 0;
 				display: inline-block;
-				font-size: min(5rem, 12vh);
+				font-size: min(3rem, 8vh);
 				animation: 1s var(--tt-ease, linear) calc(-1s * var(--tt-bind, 500) / var(--tt-max, 1000)) 1 both paused var(--tt-key, none);
 				--tt-key: section-head;
-				--tt-max: 1600;
-				--tt-ease: cubic-bezier(0.1,0.4,0.7,1);
+				--tt-max: 1200;
+				--tt-ease: cubic-bezier(0,0,0.7,1);
 			}
 			@keyframes section-head {
 				0% {
@@ -229,7 +234,7 @@ allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(
 		<main>
 			<article class="lede">
 				<figure class="image">
-					<img src="/img/profile.jpg" alt="A photograph of Scott casually sitting on a curb">
+					<img loading="lazy" src="/img/profile.jpg" alt="A photograph of Scott casually sitting on a curb">
 					<figcaption>Photograph by <a href="https://tatebot.com/">Tate Tozer</a></figcaption>
 				</figure>
 				<H1 class="head" @resize={() => { this.style.setProperty('--bind', this.clientWidth) }}>
@@ -255,7 +260,7 @@ allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(
 				</h1>
 				{rolls.map((roll) => (
 					<a href="/photos#${rollID(roll.title)}">
-						<img src="/photos/${roll.photos[0].src}" alt={roll.photos[0].alt}>
+						<img loading="lazy" src="/photos/${roll.photos[0].src}" alt={roll.photos[0].alt}>
 					</a>
 				))}
 			</section>

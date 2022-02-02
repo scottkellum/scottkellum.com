@@ -1,44 +1,293 @@
 {
   "rolls":[
     {
-      "date": "1/19/2022",
-      "camera": "Leica M3",
-      "lens": "Vöigtlander 50mm f/1.5 Nokton MC II",
-      "stock": "Portra 400",
-      "location": "Los Angeles",
-      "color": "#FF6C4B",
-      "title": "Our [big adventure] in [Big Sur]",
+      "date": "3/24/2019",
+      "camera": "Vöigtlander Bessa R2",
+      "lens": "Vöigtlander 40mm f/1.4 Nokton SC",
+      "stock": "Delta 3200",
+      "location": "New York",
+      "color": "#ccc",
+      "title": "[After Dark] in [New York]",
       "photos":[
         {
-          "src": "2022-01-19-124.jpg",
-          "alt": "A black and white cat looking into the camera"
+          "src": "2019-03-24-061.jpg",
+          "alt": "Late night trash train in the subway station"
         },
         {
-          "src": "2022-01-19-122.jpg",
-          "alt": "A child’s toy"
+          "src": "2019-03-24-063.jpg",
+          "alt": "Utility area of the subway"
+        },
+        {
+          "src": "2019-03-24-064.jpg",
+          "alt": "Closed laundromat"
+        },
+        {
+          "src": "2019-03-24-062.jpg",
+          "alt": "Closed laundromat"
         }
       ]
     },
     {
-      "date": "1/19/2022",
-      "camera": "Vöigtlander Bessa",
-      "lens": "Vöigtlander 50mm f/1.5 Nokton MC II",
-      "stock": "Portra 400",
+      "date": "3/24/2019",
+      "camera": "Vöigtlander Bessa R2",
+      "lens": "Vöigtlander 40mm f/1.4 Nokton SC",
+      "stock": "HP5+ 400",
       "location": "Los Angeles",
-      "color": "lightpink",
-      "title": "[At home] and [away]",
+      "color": "#fa3",
+      "title": "[In] and Around [Los Angeles]",
       "photos":[
         {
-          "src": "2019-03-10-061.jpg",
-          "alt": "Photo of a black and white cat"
+          "src": "2019-03-24-058.jpg",
+          "alt": "LACMA exposed stairway"
         },
         {
-          "src": "2019-03-10-059.jpg",
-          "alt": "Photo of a black and white cat"
+          "src": "2019-03-24-059.jpg",
+          "alt": "LACMA exhibitions building"
         },
         {
-          "src": "2019-03-24-099.jpg",
-          "alt": "Photo of a black and white cat"
+          "src": "2019-03-24-057.jpg",
+          "alt": "My wife at the street light piece outside LACMA"
+        },
+        {
+          "src": "2019-03-24-056.jpg",
+          "alt": "My wife at the street light piece outside LACMA"
+        },
+        {
+          "src": "2019-03-24-060.jpg",
+          "alt": "Chimney sticking above building"
+        },
+        {
+          "src": "2019-03-24-055.jpg",
+          "alt": "Delapodated building"
+        },
+        {
+          "src": "2019-03-24-054.jpg",
+          "alt": "Trees over the sidewalk"
+        },
+        {
+          "src": "2019-03-24-053.jpg",
+          "alt": "Entry way to a building"
+        },
+        {
+          "src": "2019-03-24-052.jpg",
+          "alt": "LAPD car turning the corner into the frame of an intersection"
+        }
+      ]
+    },
+    {
+      "date": "10/3/2019",
+      "camera": "Vöigtlander Bessa R2",
+      "lens": "Vöigtlander 40mm f/1.4 Nokton SC",
+      "stock": "Portra 400",
+      "location": "Vasquez Rocks, CA",
+      "color": "#FF6C4B",
+      "title": "[Vasquez Rocks] in the [Sun]",
+      "photos":[
+        {
+          "src": "2019-03-10-051.jpg",
+          "alt": "Rocks in the sun"
+        },
+        {
+          "src": "2019-03-10-050.jpg",
+          "alt": "Rocky hillside"
+        },
+        {
+          "src": "2019-03-10-048.jpg",
+          "alt": "Portrait of my wife on the rocks"
+        }
+      ]
+    },
+    {
+      "date": "3/6/2017",
+      "camera": "Lumix GX1",
+      "lens": "Lumix 14-42",
+      "stock": "digital",
+      "location": "Hawaii",
+      "color": "lightpink",
+      "title": "A [Beautiful] Hawaiian [Adventure]",
+      "photos":[
+        {
+          "src": "2017-03-08-030.jpg",
+          "alt": "Clear blue water and beautiful rocks underneath"
+        },
+        {
+          "src": "2017-03-10-039.jpg",
+          "alt": "Volcanic steam rising from the ground"
+        },
+        {
+          "src": "2017-03-10-038.jpg",
+          "alt": "A friend looking out over a field of tall grass"
+        },
+        {
+          "src": "2017-03-10-037.jpg",
+          "alt": "Waterfall over a cliff"
+        },
+        {
+          "src": "2017-03-10-036.jpg",
+          "alt": "Black and white photo of a church"
+        },
+        {
+          "src": "2017-03-10-035.jpg",
+          "alt": "four friends on a curb"
+        },
+        {
+          "src": "2017-03-10-034.jpg",
+          "alt": "Sunset and a purple sky"
+        },
+        {
+          "src": "2017-03-08-032.jpg",
+          "alt": "Ocean spray and black cliffs"
+        },
+        {
+          "src": "2017-03-08-029.jpg",
+          "alt": "Sun setting over the ocean"
+        },
+        {
+          "src": "2017-03-07-028.jpg",
+          "alt": "A field of grass overlooking the ocean"
+        },
+        {
+          "src": "2017-03-07-027.jpg",
+          "alt": "Field of grass"
+        },
+        {
+          "src": "2017-03-07-026.jpg",
+          "alt": "Rusted beams near the water"
+        },
+        {
+          "src": "2017-03-07-025.jpg",
+          "alt": "Black and white photo of a rocky shore"
+        },
+        {
+          "src": "2017-03-07-024.jpg",
+          "alt": "Beautiful Hawaiian shore"
+        },
+        {
+          "src": "2017-03-07-022.jpg",
+          "alt": "Friends looking out over the water"
+        },
+        {
+          "src": "2017-03-07-021.jpg",
+          "alt": "Dark rocky and mossy shore"
+        },
+        {
+          "src": "2017-03-06-020.jpg",
+          "alt": "A friend with a boogie board under his arm"
+        },
+        {
+          "src": "2017-03-06-019.jpg",
+          "alt": "Rocky beach shore"
+        },
+        {
+          "src": "2017-03-06-018.jpg",
+          "alt": "Aeroplane landing over the beach"
+        },
+        {
+          "src": "2017-03-06-017.jpg",
+          "alt": "Friends along a lush boardwalk"
+        },
+        {
+          "src": "2017-03-06-016.jpg",
+          "alt": "A sea turtle wading in the water"
+        },
+        {
+          "src": "2017-03-06-015.jpg",
+          "alt": "A friend pointing down a lush path"
+        },
+        {
+          "src": "2017-03-06-014.jpg",
+          "alt": "Bright red flower"
+        },
+        {
+          "src": "2017-03-06-013.jpg",
+          "alt": "Waves against a dark rocky shore"
+        },
+        {
+          "src": "2017-03-06-012.jpg",
+          "alt": "Crystal clear water"
+        },
+        {
+          "src": "2017-03-06-011.jpg",
+          "alt": "A walkway between buildings by the beach"
+        },
+        {
+          "src": "2017-03-06-010.jpg",
+          "alt": "A portrait of a friend on the beach"
+        },
+        {
+          "src": "2017-03-06-009.jpg",
+          "alt": "Waves crashing on the shore"
+        },
+        {
+          "src": "2017-03-12-046.jpg",
+          "alt": "Ladders down the cliffside"
+        },
+        {
+          "src": "2017-03-12-045.jpg",
+          "alt": "A friend cliffside"
+        },
+        {
+          "src": "2017-03-12-044.jpg",
+          "alt": "Man diving into a hole in the cliffs"
+        },
+        {
+          "src": "2017-03-10-043.jpg",
+          "alt": "Shore"
+        },
+        {
+          "src": "2017-03-10-040.jpg",
+          "alt": "Kilauea crater one"
+        },
+        {
+          "src": "2017-03-10-041.jpg",
+          "alt": "Kilauea crater two"
+        },
+        {
+          "src": "2017-03-10-042.jpg",
+          "alt": "Kilauea crater three"
+        },
+        {
+          "src": "2017-03-07-023.jpg",
+          "alt": "Gecko throguh the leaves"
+        },
+        {
+          "src": "2017-03-06-008.jpg",
+          "alt": "Gecko in the sun"
+        }
+      ]
+    },
+    {
+      "date": "7/18/2016",
+      "camera": "Lumix GX1",
+      "lens": "Lumix 14-42",
+      "stock": "digital",
+      "location": "Banff Canada",
+      "color": "#9af",
+      "title": "The [Canadian Rockies]",
+      "photos":[
+        {
+          "src": "2016-07-18-004.jpg",
+          "alt": "Layered sedimentary rock layers in the cliffside of the mountian"
+        },
+        {
+          "src": "2016-07-18-007.jpg",
+          "alt": "Waterfall in a canyon"
+        },
+        {
+          "src": "2016-07-18-006.jpg",
+          "alt": "Waterfall in a canyon"
+        },
+        {
+          "src": "2016-07-18-005.jpg",
+          "alt": "Whitewater stream in a canyon"
+        },
+        {
+          "src": "2016-07-18-003.jpg",
+          "alt": "Rocky mountian bluffs"
+        },
+        {
+          "src": "2016-07-18-002.jpg",
+          "alt": "Rocky mountian peaks"
         }
       ]
     }
