@@ -266,7 +266,7 @@
       ]
     },
     {
-      "date": "8/27/2020",
+      "date": "4/13/2019",
       "camera": "Vöigtlander Bessa R2",
       "lens": "Vöigtlander 40mm f/1.4 Nokton SC",
       "stock": "HP5+ 400",
@@ -275,11 +275,27 @@
       "title": "[High Line] High Life",
       "photos":[
         {
-          "src": "",
-          "alt": ""
+          "src": "2019-04-13-103.jpg",
+          "alt": "Peering through the buildings at “The Vessel”"
+        },
+        {
+          "src": "2019-04-13-102.jpg",
+          "alt": "People walking under “The Vessel”"
+        },
+        {
+          "src": "2019-04-13-101.jpg",
+          "alt": "Looking up at “The Vessel”"
+        },
+        {
+          "src": "2019-04-13-104.jpg",
+          "alt": "The department of transportation rail yard on the West Side"
         },
         {
           "src": "2020-08-27-303.jpg",
+          "alt": "Construction alongside the High Line"
+        },
+        {
+          "src": "2019-04-13-105.jpg",
           "alt": "Construction alongside the High Line"
         }
       ]
