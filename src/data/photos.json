@@ -95,11 +95,201 @@
       ]
     },
     {
+      "date": "12/21/2020",
+      "camera": "Olympus Trip AF30",
+      "lens": "34mm f5.6",
+      "stock": "HP5+ 400",
+      "location": "Vasquez Rocks, CA",
+      "color": "#ccc",
+      "title": "[Point and Shoot] at [Vasquez Rocks]",
+      "photos":[
+        {
+          "src": "2020-12-21-321.jpg",
+          "alt": "A path on the ridge of the rocks"
+        },
+        {
+          "src": "2020-12-21-320.jpg",
+          "alt": "Looking down the rocky cliff"
+        },
+        {
+          "src": "2020-12-21-316.jpg",
+          "alt": "A trail marker near the rocky outcropping"
+        },
+        {
+          "src": "2020-12-21-315.jpg",
+          "alt": "Small bushes with the rocks sticking out of the landscape in the distance"
+        },
+        {
+          "src": "2020-12-21-317.jpg",
+          "alt": "Rocks jutting out of the hillside"
+        },
+        {
+          "src": "2020-12-21-319.jpg",
+          "alt": "Rocks sticking up amongust the small shrubs"
+        }
+      ]
+    },
+    {
+      "date": "12/21/2020",
+      "camera": "Vöigtlander Bessa R2",
+      "lens": "Vöigtlander 40mm f/1.4 Nokton SC",
+      "stock": "HP5+ 400",
+      "location": "Los Angeles",
+      "color": "#ccc",
+      "title": "A [Shot] in the [Park]",
+      "photos":[
+        {
+          "src": "2020-12-21-313.jpg",
+          "alt": "My wife wearing round sunglasses in the park"
+        },
+        {
+          "src": "2020-12-21-310.jpg",
+          "alt": "My wife wearing round sunglasses in the park"
+        },
+        {
+          "src": "2020-12-21-308.jpg",
+          "alt": "My wife wearing round sunglasses in the park"
+        },
+        {
+          "src": "2020-12-21-312.jpg",
+          "alt": "A cat relaxing on a rug"
+        },
+        {
+          "src": "2020-12-21-311.jpg",
+          "alt": "A still life with an upholstered chair in a living room"
+        }
+      ]
+    },
+    {
+      "date": "12/21/2020",
+      "camera": "Vöigtlander Bessa R2",
+      "lens": "Vöigtlander 40mm f/1.4 Nokton SC",
+      "stock": "HP5+ 400",
+      "location": "Malibu State Park",
+      "color": "#ccc",
+      "title": "[MASH] in [Malibu]",
+      "photos":[
+        {
+          "src": "2020-12-21-306.jpg",
+          "alt": "Truck from the TV show MASH"
+        },
+        {
+          "src": "2020-12-21-307.jpg",
+          "alt": "Rocky bluffs of Malubu State Park"
+        },
+        {
+          "src": "2020-12-21-305.jpg",
+          "alt": "Rocky bluffs of Malubu State Park"
+        }
+      ]
+    },
+    {
+      "date": "8/27/2020",
+      "camera": "Vöigtlander Bessa R2",
+      "lens": "Vöigtlander 40mm f/1.4 Nokton SC",
+      "stock": "Portra 400",
+      "location": "Glacier National Park",
+      "color": "#FF6C4B",
+      "title": "Beautiful [Glacier National Park]",
+      "photos":[
+        {
+          "src": "2020-08-26-288.jpg",
+          "alt": "A lake in the early morning as the sun just came up"
+        },
+        {
+          "src": "2020-08-26-287.jpg",
+          "alt": "Early morning twilight over a lake"
+        },
+        {
+          "src": "2020-08-26-301.jpg",
+          "alt": "Ripples from a lake against rocks"
+        },
+        {
+          "src": "2020-08-26-283.jpg",
+          "alt": "Sun streaming down through clouds and against mountains"
+        },
+        {
+          "src": "2020-08-26-282.jpg",
+          "alt": "Sun streaming down through clouds and against mountains"
+        },
+        {
+          "src": "2020-08-26-281.jpg",
+          "alt": "A bright red canoue on the lake shore with a pile of clothes nearby. In the distance you can see someones head sticking above the water"
+        },
+        {
+          "src": "2020-08-26-298.jpg",
+          "alt": "A woman in a kaftan amongst pine trees"
+        },
+        {
+          "src": "2020-08-26-299.jpg",
+          "alt": "A woman in a kaftan looking across a lake with mountians in the background"
+        },
+        {
+          "src": "2020-08-26-285.jpg",
+          "alt": "A rocky mountian peak sticking above treelined mountians"
+        },
+        {
+          "src": "2020-08-26-284.jpg",
+          "alt": "A rocky mountian peak sticking above treelined mountians"
+        },
+        {
+          "src": "2020-08-26-279.jpg",
+          "alt": "Sun setting and dusk falling over a lake"
+        }
+      ]
+    },
+    {
+      "date": "8/27/2020",
+      "camera": "Vöigtlander Bessa R2",
+      "lens": "Vöigtlander 40mm f/1.4 Nokton SC",
+      "stock": "Portra 400",
+      "location": "Craters of the Moon",
+      "color": "#FF6C4B",
+      "title": "[Craters] of the [Moon]",
+      "photos":[
+        {
+          "src": "2020-08-26-297.jpg",
+          "alt": "Barren volcanic landscape"
+        },
+        {
+          "src": "2020-08-26-296.jpg",
+          "alt": "A gnarled tree in a volcanic landscape"
+        },
+        {
+          "src": "2020-08-26-295.jpg",
+          "alt": "A gnarled tree in a volcanic landscape"
+        },
+        {
+          "src": "2020-08-26-294.jpg",
+          "alt": "A woman standing in front of a volcanic pillar"
+        }
+      ]
+    },
+    {
+      "date": "8/27/2020",
+      "camera": "Vöigtlander Bessa R2",
+      "lens": "Vöigtlander 40mm f/1.4 Nokton SC",
+      "stock": "HP5+ 400",
+      "location": "New York City",
+      "color": "#ccc",
+      "title": "[High Line] High Life",
+      "photos":[
+        {
+          "src": "",
+          "alt": ""
+        },
+        {
+          "src": "2020-08-27-303.jpg",
+          "alt": "Construction alongside the High Line"
+        }
+      ]
+    },
+    {
       "date": "3/24/2019",
       "camera": "Vöigtlander Bessa R2",
       "lens": "Vöigtlander 40mm f/1.4 Nokton SC",
       "stock": "Delta 3200",
-      "location": "New York",
+      "location": "New York City",
       "color": "#ccc",
       "title": "[After Dark] in [New York]",
       "photos":[
