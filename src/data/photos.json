@@ -1,9 +1,60 @@
 {
   "rolls":[
     {
+      "date": "2/4/2022",
+      "camera": "Leica M3",
+      "lens": "Vöigtlander 50mm <i>f</i>1.5 Nokton MC II",
+      "stock": "HP5+ 400",
+      "location": "Los Angeles",
+      "color": "#ccc",
+      "title": "A [walk] with [Ben]",
+      "photos":[
+        {
+          "src": "2022-02-04-001.jpg",
+          "alt": "Ben taking a photo of a house"
+        },
+        {
+          "src": "2022-02-04-002.jpg",
+          "alt": "Looking down a sidewalk with vegitation on either side"
+        },
+        {
+          "src": "2022-02-04-003.jpg",
+          "alt": "The roofline of a dilapidated house"
+        },
+        {
+          "src": "2022-02-04-004.jpg",
+          "alt": "The side corner of a stucco appartment"
+        },
+        {
+          "src": "2022-02-04-005.jpg",
+          "alt": "Plants in potters next to a building"
+        },
+        {
+          "src": "2022-02-04-006.jpg",
+          "alt": "Balconies off an appartment building"
+        },
+        {
+          "src": "2022-02-04-007.jpg",
+          "alt": "Bamboo next to a car port gate"
+        },
+        {
+          "src": "2022-02-04-011.jpg",
+          "alt": "Sun dappled living room"
+        },
+        {
+          "src": "2022-02-04-012.jpg",
+          "alt": "A cat on a messy rug"
+        },
+        {
+          "src": "2022-02-04-013.jpg",
+          "alt": "Portrait of my wife in the park wearing a straw hat"
+        }
+      ]
+    },
+    {
       "date": "1/19/2022",
       "camera": "Leica M3",
-      "lens": "Vöigtlander 50mm f/1.5 Nokton MC II",
+      "lens": "Vöigtlander 50mm <i>f</i>1.5 Nokton MC II",
       "stock": "HP5+ 400",
       "location": "Los Angeles",
       "color": "#ccc",
@@ -46,7 +97,7 @@
     {
       "date": "12/28/2021",
       "camera": "Leica M3",
-      "lens": "Vöigtlander 40mm f/1.4 Nokton SC",
+      "lens": "Vöigtlander 40mm <i>f</i>1.4 Nokton SC",
       "stock": "Portra 400",
       "location": "Malibu",
       "color": "#FF6C4B",
@@ -97,7 +148,7 @@
     {
       "date": "12/21/2020",
       "camera": "Olympus Trip AF30",
-      "lens": "34mm f5.6",
+      "lens": "34mm <i>f</i>5.6",
       "stock": "HP5+ 400",
       "location": "Vasquez Rocks, CA",
       "color": "#ccc",
@@ -132,7 +183,7 @@
     {
       "date": "12/21/2020",
       "camera": "Vöigtlander Bessa R2",
-      "lens": "Vöigtlander 40mm f/1.4 Nokton SC",
+      "lens": "Vöigtlander 40mm <i>f</i>1.4 Nokton SC",
       "stock": "HP5+ 400",
       "location": "Los Angeles",
       "color": "#ccc",
@@ -163,7 +214,7 @@
     {
       "date": "12/21/2020",
       "camera": "Vöigtlander Bessa R2",
-      "lens": "Vöigtlander 40mm f/1.4 Nokton SC",
+      "lens": "Vöigtlander 40mm <i>f</i>1.4 Nokton SC",
       "stock": "HP5+ 400",
       "location": "Malibu State Park",
       "color": "#ccc",
@@ -186,7 +237,7 @@
     {
       "date": "8/27/2020",
       "camera": "Vöigtlander Bessa R2",
-      "lens": "Vöigtlander 40mm f/1.4 Nokton SC",
+      "lens": "Vöigtlander 40mm <i>f</i>1.4 Nokton SC",
       "stock": "Portra 400",
       "location": "Glacier National Park",
       "color": "#FF6C4B",
@@ -241,7 +292,7 @@
     {
       "date": "8/27/2020",
       "camera": "Vöigtlander Bessa R2",
-      "lens": "Vöigtlander 40mm f/1.4 Nokton SC",
+      "lens": "Vöigtlander 40mm <i>f</i>1.4 Nokton SC",
       "stock": "Portra 400",
       "location": "Craters of the Moon",
       "color": "#FF6C4B",
@@ -268,7 +319,7 @@
     {
       "date": "4/13/2019",
       "camera": "Vöigtlander Bessa R2",
-      "lens": "Vöigtlander 40mm f/1.4 Nokton SC",
+      "lens": "Vöigtlander 40mm <i>f</i>1.4 Nokton SC",
       "stock": "HP5+ 400",
       "location": "New York City",
       "color": "#ccc",
@@ -303,7 +354,7 @@
     {
       "date": "3/24/2019",
       "camera": "Vöigtlander Bessa R2",
-      "lens": "Vöigtlander 40mm f/1.4 Nokton SC",
+      "lens": "Vöigtlander 40mm <i>f</i>1.4 Nokton SC",
       "stock": "Delta 3200",
       "location": "New York City",
       "color": "#ccc",
@@ -330,7 +381,7 @@
     {
       "date": "3/24/2019",
       "camera": "Vöigtlander Bessa R2",
-      "lens": "Vöigtlander 40mm f/1.4 Nokton SC",
+      "lens": "Vöigtlander 40mm <i>f</i>1.4 Nokton SC",
       "stock": "HP5+ 400",
       "location": "Los Angeles",
       "color": "#ccc",
@@ -377,7 +428,7 @@
     {
       "date": "10/3/2019",
       "camera": "Vöigtlander Bessa R2",
-      "lens": "Vöigtlander 40mm f/1.4 Nokton SC",
+      "lens": "Vöigtlander 40mm <i>f</i>1.4 Nokton SC",
       "stock": "Portra 400",
       "location": "Vasquez Rocks, CA",
       "color": "#FF6C4B",
