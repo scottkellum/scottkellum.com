@@ -58,6 +58,7 @@ function filmScroll() {
   scrollbar-width: thin;
   scrollbar-height: thin;
   scrollbar-color: currentcolor transparent;
+  scroll-snap-type: x mandatory;
 }
 .filmstrip::-webkit-scrollbar {
   inline-size: 0.333rem;
@@ -70,14 +71,17 @@ function filmScroll() {
 }
 
 .filmstrip img {
-  block-size: min(36rem, 80vh);
+  block-size: min(36rem, 90vh);
   inline-size: auto;
   display: inline-block;
   margin-inline-end: 3rem;
   margin-block-start: 0.815rem;
+  max-width: 100vw;
+  object-fit: cover;
+  scroll-snap-align: start;
 }
 .filmstrip h1 {
-  max-block-size: min(36rem, 80vh);
+  max-block-size: min(36rem, 90vh);
   inline-size: min-content;
   display: inline-block;
   font-family: var(--font-display);
@@ -91,6 +95,8 @@ function filmScroll() {
   margin-inline-start: 2rem;
   margin-inline-end: -0.5ch;
   animation: 1s var(--tt-ease, linear) calc(-1s * var(--tt-bind, 500) / var(--tt-max, 1000)) 1 both paused var(--tt-key, none);
+  scroll-snap-align: start;
+  scroll-margin-inline-start: 2rem;
   --tt-key: filmstrip-h1;
   --tt-max: 1600;
   --tt-ease: cubic-bezier(0.1,0.4,0.7,1);
@@ -114,6 +120,6 @@ function filmScroll() {
 .filmstrip svg {
   height: auto;
   width: 8rem;
-  min-width: 8rem;
+  height: 1.6rem;
 }
 </style>

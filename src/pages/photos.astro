@@ -15,9 +15,10 @@ let permalink = 'https://scottkellum.com/';
 			:root {
         background: #1A1512;
         animation: 1s var(--tt-ease, linear) calc(-1s * var(--tt-bind, 500) / var(--tt-max, 1000)) 1 both paused var(--tt-key, none);
+        scroll-snap-type: y mandatory;
         --tt-key: photos-html;
-        --tt-max: 800;
-        --tt-ease: cubic-bezier(0,0.5,0.5,1);
+        --tt-max: 1000;
+        --tt-ease: cubic-bezier(0,0,0.67,1);
 			}
       @keyframes photos-html {
         0% {
@@ -31,14 +32,17 @@ let permalink = 'https://scottkellum.com/';
         right: 2rem;
         mix-blend-mode: screen;
         writing-mode: vertical-lr;
-        z-index: 2;
+        z-index: 9;
         letter-spacing: 0.1em;
         color: #FF6C4B;
       }
       a.home svg {
-        width: 1.67rem;
-        min-width: 1.67rem;
-        height: auto;
+        width: 1.6rem;
+        height: 3rem;
+      }
+      .filmstrip {
+        scroll-snap-align: start;
+        scroll-margin-block-start: 2vh;
       }
 		</style>
 		<script>
