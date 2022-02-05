@@ -54,11 +54,13 @@ function filmScroll() {
   white-space: nowrap;
   overflow: auto;
   overflow-y: hidden;
-  margin-block: 4rem;
+  margin-block: 2vh;
   scrollbar-width: thin;
   scrollbar-height: thin;
   scrollbar-color: currentcolor transparent;
   scroll-snap-type: x mandatory;
+  scroll-snap-align: start;
+  scroll-margin-block-start: 2vh;
 }
 .filmstrip::-webkit-scrollbar {
   inline-size: 0.333rem;
