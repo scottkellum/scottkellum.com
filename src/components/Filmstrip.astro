@@ -58,9 +58,13 @@ function filmScroll() {
   scrollbar-width: thin;
   scrollbar-height: thin;
   scrollbar-color: currentcolor transparent;
-  scroll-snap-type: x mandatory;
   scroll-snap-align: start;
   scroll-margin-block-start: 2vh;
+}
+@media (max-width: 80em) {
+  .filmstrip {
+    scroll-snap-type: x mandatory;
+  }
 }
 .filmstrip::-webkit-scrollbar {
   inline-size: 0.333rem;

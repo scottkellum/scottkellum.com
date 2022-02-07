@@ -15,11 +15,15 @@ let permalink = 'https://scottkellum.com/';
 			:root {
         background: #000;
         animation: 1s var(--tt-ease, linear) calc(-1s * var(--tt-bind, 500) / var(--tt-max, 1000)) 1 both paused var(--tt-key, none);
-        scroll-snap-type: y mandatory;
         --tt-key: photos-html;
         --tt-max: 1000;
         --tt-ease: cubic-bezier(0,0,0.67,1);
 			}
+      @media (max-height: 60em) {
+        :root {
+          scroll-snap-type: y mandatory;
+        }
+      }
       @keyframes photos-html {
         0% {
           font-size: 0%;
