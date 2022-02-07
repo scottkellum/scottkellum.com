@@ -7,20 +7,8 @@
       "stock": "HP5+ 400",
       "location": "Los Angeles",
       "color": "#ccc",
-      "title": "A [walk] with [Ben]",
+      "title": "At [home] with [Ana]",
       "photos":[
-        {
-          "src": "2022-02-04-001.jpg",
-          "alt": "Ben taking a photo of a house"
-        },
-        {
-          "src": "2022-02-04-002.jpg",
-          "alt": "Looking down a sidewalk with vegitation on either side"
-        },
-        {
-          "src": "2022-02-04-003.jpg",
-          "alt": "The roofline of a dilapidated house"
-        },
         {
           "src": "2022-02-04-004.jpg",
           "alt": "The side corner of a stucco appartment"
@@ -28,14 +16,6 @@
         {
           "src": "2022-02-04-005.jpg",
           "alt": "Plants in potters next to a building"
-        },
-        {
-          "src": "2022-02-04-006.jpg",
-          "alt": "Balconies off an appartment building"
-        },
-        {
-          "src": "2022-02-04-007.jpg",
-          "alt": "Bamboo next to a car port gate"
         },
         {
           "src": "2022-02-04-011.jpg",
@@ -48,6 +28,77 @@
         {
           "src": "2022-02-04-013.jpg",
           "alt": "Portrait of my wife in the park wearing a straw hat"
+        },
+        {
+          "src": "2022-02-07-006.jpg",
+          "alt": "My wife looking up at some flowers"
+        },
+        {
+          "src": "2022-02-07-007.jpg",
+          "alt": "Sun against a stucco house"
+        },
+        {
+          "src": "2022-02-07-008.jpg",
+          "alt": "My wife looking down at a classic American car"
+        },
+        {
+          "src": "2022-02-07-009.jpg",
+          "alt": "Vegitation next to stairs leading up to a hosue"
+        },
+        {
+          "src": "2022-02-07-010.jpg",
+          "alt": "A steep one-way street leading up to an overgown median at an intersection"
+        }
+      ]
+    },
+    {
+      "date": "2/4/2022",
+      "camera": "Leica M3",
+      "lens": "Vöigtlander 50mm <i>f</i>1.5 Nokton MC II",
+      "stock": "HP5+ 400",
+      "location": "Los Angeles",
+      "color": "#ccc",
+      "title": "A [walk] with [Ben]",
+      "photos":[
+        {
+          "src": "2022-02-07-001.jpg",
+          "alt": "Ben and myself in a curved mirror"
+        },
+        {
+          "src": "2022-02-04-002.jpg",
+          "alt": "Looking down a sidewalk with vegitation on either side"
+        },
+        {
+          "src": "2022-02-04-006.jpg",
+          "alt": "Balconies off an appartment building"
+        },
+        {
+          "src": "2022-02-04-007.jpg",
+          "alt": "Bamboo next to a car port gate"
+        },
+        {
+          "src": "2022-02-04-003.jpg",
+          "alt": "The roofline of a dilapidated house"
+        },
+        {
+          "src": "2022-02-04-001.jpg",
+          "alt": "Ben taking a photo of a house"
+        },
+        {
+          "src": "2022-02-07-002.jpg",
+          "alt": "A BMW parked on the street"
+        },
+        {
+          "src": "2022-02-07-003.jpg",
+          "alt": "Ben kneeling on the other side of a fence to get a shot"
+        },
+        {
+          "src": "2022-02-07-004.jpg",
+          "alt": "A tree-covered median amongst hilly LA streets"
+        },
+        {
+          "src": "2022-02-07-005.jpg",
+          "alt": "Excessive crosswalk signage in LA"
         }
       ]
     },
