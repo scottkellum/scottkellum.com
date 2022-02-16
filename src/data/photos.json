@@ -1,6 +1,57 @@
 {
   "rolls":[
     {
+      "date": "2/16/2022",
+      "camera": "Leica M3",
+      "lens": "Vöigtlander 50mm <i>f</i>1.5 Nokton MC II",
+      "stock": "Ektar100",
+      "location": "Los Angeles",
+      "color": "#FF6C4B",
+      "title": "A walk through [Huntington Gardens]",
+      "photos":[
+        {
+          "src": "2022-02-16-003.jpg",
+          "alt": "A crystal clear pond with moss growing on the bottom"
+        },
+        {
+          "src": "2022-02-16-001.jpg",
+          "alt": "Koi fish swiming in a pond"
+        },
+        {
+          "src": "2022-02-16-004.jpg",
+          "alt": "A large tree with massive roots"
+        },
+        {
+          "src": "2022-02-16-005.jpg",
+          "alt": "Landscape of the populated area of the Japanese Gardens at Huntington Gardens"
+        },
+        {
+          "src": "2022-02-16-006.jpg",
+          "alt": "Corridor in the Japanese house at the Huntington Gardens"
+        },
+        {
+          "src": "2022-02-16-007.jpg",
+          "alt": "A wooden walkway in Huntington Gardens"
+        },
+        {
+          "src": "2022-02-16-008.jpg",
+          "alt": "Some growth in a pond at Huntington Gardens"
+        },
+        {
+          "src": "2022-02-16-009.jpg",
+          "alt": "Broad leaves backlit by the sun"
+        },
+        {
+          "src": "2022-02-16-010.jpg",
+          "alt": "At home some light is hitting the wall and a lamp"
+        },
+        {
+          "src": "2022-02-16-011.jpg",
+          "alt": "At home with some light hitting a chair"
+        }
+      ]
+    },
+    {
       "date": "2/4/2022",
       "camera": "Leica M3",
       "lens": "Vöigtlander 50mm <i>f</i>1.5 Nokton MC II",
