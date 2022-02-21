@@ -419,6 +419,110 @@
       ]
     },
     {
+      "date": "8/26/2020",
+      "camera": "Olympus Trip AF30",
+      "lens": "34mm <i>f</i>5.6",
+      "stock": "Portra 400",
+      "location": "San Diego",
+      "color": "#FF6C4B",
+      "title": "[San Diego] in [Color]",
+      "photos":[
+        {
+          "src": "2020-08-26-289.jpg",
+          "alt": "A beautiful craftsman house in San Diego"
+        },
+        {
+          "src": "2020-08-26-290.jpg",
+          "alt": "A beautiful craftsman house in San Diego"
+        },
+        {
+          "src": "2020-08-26-291.jpg",
+          "alt": "On the street of San Diego during a Black Lives Matter protest"
+        },
+        {
+          "src": "2020-08-26-292.jpg",
+          "alt": "My wife standing next to her surf board backlit by the sun"
+        }
+      ]
+    },
+    {
+      "date": "8/27/2020",
+      "camera": "Vöigtlander Bessa R2",
+      "lens": "Vöigtlander 40mm <i>f</i>1.4 Nokton SC",
+      "stock": "HP5+ 400",
+      "location": "Mexico City",
+      "color": "#ccc",
+      "title": "[Mexico City] in [Black and White]",
+      "photos":[
+        {
+          "src": "2020-05-17-225.jpg",
+          "alt": ""
+        },
+        {
+          "src": "2020-05-17-228.jpg",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "date": "8/27/2020",
+      "camera": "Hasselblad 500c",
+      "lens": "Zeiss Distagon CF 50mm <i>f</i>4",
+      "stock": "Portra 400",
+      "location": "Mexico City",
+      "color": "#FF6C4B",
+      "title": "[Mexico City] on [Medium Format]",
+      "photos":[
+        {
+          "src": "2020-03-10-139.jpg",
+          "alt": ""
+        },
+        { 
+          "src": "2020-03-10-140.jpg",
+          "alt": ""
+        },
+        {
+          "src": "2020-03-10-141.jpg",
+          "alt": ""
+        },
+        {
+          "src": "2020-03-10-142.jpg",
+          "alt": ""
+        },
+        {
+          "src": "2020-03-10-143.jpg",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "date": "8/27/2020",
+      "camera": "Vöigtlander Bessa R2",
+      "lens": "Vöigtlander 40mm <i>f</i>1.4 Nokton SC",
+      "stock": "Portra 400",
+      "location": "Mexico City",
+      "color": "#FF6C4B",
+      "title": "[Mexico City] in [Color]",
+      "photos":[
+        {
+          "src": "2020-04-04-148.jpg",
+          "alt": ""
+        },
+        {
+          "src": "2020-03-10-144.jpg",
+          "alt": ""
+        },
+        {
+          "src": "2020-03-10-129.jpg",
+          "alt": ""
+        },
+        {
+          "src": "2020-03-10-128.jpg",
+          "alt": ""
+        }
+      ]
+    },
+    {
       "date": "4/13/2019",
       "camera": "Vöigtlander Bessa R2",
       "lens": "Vöigtlander 40mm <i>f</i>1.4 Nokton SC",
