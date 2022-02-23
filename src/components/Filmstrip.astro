@@ -16,14 +16,6 @@ function rollID(t) {
   return t;
 }
 ---
-
-<script>
-function filmScroll() {
-  this.style.setProperty('--scroll', this.scrollLeft);
-  this.style.setProperty('--rate', screen.width / this.offsetWidth);
-}
-</script>
-
 {rolls.map((roll) => (
   <article class="filmstrip" id={rollID(roll.title)} style="color: ${roll.color}" onscroll="this.style.setProperty('--scroll', this.scrollLeft)">
     <div class="meta">
@@ -39,9 +31,9 @@ function filmScroll() {
         <path d="M29.7324 15L7.43317 27.8744L7.43317 2.12548L29.7324 15Z" fill="currentcolor"/>
       </svg>
     </div>
-    <h1>{titleTransform(roll.title)}</h1>
+    <h1 class="title">{titleTransform(roll.title)}</h1>
     {roll.photos.map((photo) => (
-      <img loading="lazy" src="/photos/${photo.src}" alt={photo.alt}>
+      <img class="image" loading="lazy" src="/photos/${photo.src}" alt={photo.alt} onclick="currentPhoto(this)">
     ))}
   </article>
 ))}
@@ -86,6 +78,15 @@ function filmScroll() {
   object-fit: cover;
   scroll-snap-align: center;
 }
+.filmstrip .image {
+  transition: opacity 0.25s ease-in-out;
+}
+.keyNav .filmstrip .image {
+  opacity: 0.5;
+}
+.keyNav .filmstrip .current {
+  opacity: 1;
+}
 .filmstrip h1 {
   max-block-size: min(36rem, 90vh);
   inline-size: min-content;
@@ -129,3 +130,53 @@ function filmScroll() {
   height: 1.6rem;
 }
 </style>
+
+<script>
+function filmScroll() {
+  this.style.setProperty('--scroll', this.scrollLeft);
+  this.style.setProperty('--rate', screen.width / this.offsetWidth);
+}
+
+let current = document.querySelector(".title");
+
+function currentPhoto(e) {
+  current.classList.remove("current");
+  current = e;
+  e.classList.add("current")
+  e.scrollIntoView({behavior: "smooth", inline: "center", block: "nearest"});
+}
+
+document.addEventListener('keydown', logKey);
+document.addEventListener("mousemove", keyOff);
+
+function keyOff() {
+  document.documentElement.classList.remove("keyNav");
+}
+
+function logKey(e) {
+  if(e.key === "ArrowRight") {
+    document.documentElement.classList.add("keyNav");
+    if(current.nextElementSibling.classList) {
+      currentPhoto(current.nextElementSibling);
+    }
+  }
+  if(e.key === "ArrowLeft") {
+    document.documentElement.classList.add("keyNav");
+    if(current.previousElementSibling.classList) {
+      currentPhoto(current.previousElementSibling);
+    }
+  }
+  if(e.key === "ArrowUp") {
+    document.documentElement.classList.add("keyNav");
+    if(current.closest(".filmstrip").previousSibling.classList) {
+      currentPhoto(current.closest(".filmstrip").previousSibling.querySelector(".title"));
+    }
+  }
+  if(e.key === "ArrowDown") {
+    document.documentElement.classList.add("keyNav");
+    if(current.closest(".filmstrip").nextSibling) {
+      currentPhoto(current.closest(".filmstrip").nextSibling.querySelector(".title"));
+    }
+  }
+}
+</script>
