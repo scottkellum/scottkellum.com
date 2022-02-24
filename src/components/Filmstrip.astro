@@ -33,7 +33,12 @@ function rollID(t) {
     </div>
     <h1>{titleTransform(roll.title)}</h1>
     {roll.photos.map((photo) => (
-      <img class="image" loading="lazy" src="/photos/${photo.src}" alt={photo.alt} onclick="currentPhoto(this)">
+      <section class="image" onclick="currentPhoto(this)">
+        <img loading="lazy" src="/photos/${photo.src}" alt={photo.alt}>
+        {photo.sterio && (
+          <img class="sterio" loading="lazy" src="/photos/${photo.sterio}" alt=" ">
+        )}
+      </section>
     ))}
   </article>
 ))}
@@ -68,15 +73,39 @@ function rollID(t) {
   background: currentColor;
 }
 
-.filmstrip img {
+.filmstrip img,
+.filmstrip .image {
   block-size: min(36rem, 90vh);
   inline-size: auto;
-  display: inline-block;
-  margin-inline-end: 3rem;
-  margin-block-start: 0.815rem;
   max-width: 100vw;
+  display: inline-block;
   object-fit: cover;
   scroll-snap-align: center;
+}
+.filmstrip .image {
+  margin-inline-end: 3rem;
+  margin-block-start: 0.815rem;
+  position: relative;
+}
+.filmstrip .sterio {
+  display: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .filmstrip .sterio {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    with: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: sterio 0.4s steps(1) infinite;
+  }
+}
+@keyframes sterio {
+  50% {
+    opacity: 0;
+  }
 }
 .filmstrip .image {
   transition: opacity 0.25s ease-in-out;
@@ -84,8 +113,14 @@ function rollID(t) {
 .keyNav .filmstrip .image {
   opacity: 0.5;
 }
+.keyNav .filmstrip .sterio {
+  display: none;
+}
 .keyNav .filmstrip .current {
   opacity: 1;
+}
+.keyNav .filmstrip .current .sterio {
+  display: block;
 }
 .filmstrip h1 {
   max-block-size: min(36rem, 90vh);
