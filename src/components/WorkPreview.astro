@@ -1,0 +1,68 @@
+---
+import H1 from '../components/type/H1.astro';
+import Meta from '../components/type/Meta.astro';
+
+export interface Props {
+	post: any;
+}
+
+function titleTransform(t) {
+  t = t.replaceAll('[', '<strong>');
+  t = t.replaceAll(']', '</strong>');
+  return t;
+}
+
+const { post } = Astro.props;
+---
+
+<article class="item work-preview">
+	<header>
+		{post.heroImage && <img width="720" height="420" class="hero-image" loading="lazy" src={post.heroImage} alt={post.alt} />}
+		<a href={post.url} class="post-link"><H1 class="title">{titleTransform(post.title)}</H1></a>
+	</header>
+</article>
+
+<style global>
+.work-preview {
+	border-radius: 0.5rem;
+	background-color: var(--background-alt);
+	padding: 2rem;
+	margin: 1rem 2rem 1rem 0;
+	position: relative;
+	z-index: 0;
+	width: calc(90vw - 4rem);
+	min-width: min(30rem, 90vw - 4rem);
+	overflow: visible;
+	white-space: normal;
+	min-height: min(22rem, 80vh);
+}
+.post-link {
+	text-decoration: none;
+}
+.post-link::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	border-radius: 0.5rem;
+	outline: 0px solid var(--primary);
+	transition: outline 0.25s ease-in-out;
+}
+.work-preview .Meta {
+	margin-block-start: -0.67rem;
+	position: relative;
+	z-index: 1;;
+}
+.work-preview .post-link:focus::after,
+.work-preview .post-link:hover::after {
+	outline: 0.25rem solid var(--primary);
+}
+.work-preview img {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	filter: contrast(0.6) brightness(3) grayscale(1);
+	mix-blend-mode: multiply;
+}
+</style>

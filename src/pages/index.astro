@@ -5,6 +5,7 @@ import Shape from '../components/Shape.astro';
 import Marquee from '../components/Marquee.astro';
 // import BlogHeader from '../components/BlogHeader.astro';
 import BlogPostPreview from '../components/BlogPostPreview.astro';
+import WorkPreview from '../components/WorkPreview.astro';
 import photos from '../data/photos.json'
 import XElement from 'astro-xelement';
 
@@ -274,18 +275,18 @@ allWork = allWork.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.
 				</svg>
 			</article>
 
-			<section class="section photos">
+			<section class="section">
 				<h1 class="section-head">
 					Blog
 				</h1>
 				{allPosts.map((p) => <BlogPostPreview post={p} />)}
 			</section>
 
-			<section class="section photos">
+			<section class="section">
 				<h1 class="section-head">
 					Work
 				</h1>
-				{allWork.map((p) => <BlogPostPreview post={p} />)}
+				{allWork.map((p) => <WorkPreview post={p} />)}
 			</section>
 
 			<section class="section photos">
