@@ -34,61 +34,37 @@ const { title, author, publishDate, heroImage, alt } = Astro.props;
 	</article>
 </div>
 
-<style>
-	.hero-image {
-		width: 100vw;
-		object-fit: cover;
-		object-position: center;
-		margin-top: 2rem;
-		margin-bottom: 4rem;
-		max-width: 1280px;
+<style global>
+	article {
+		width: max(100% - 5.5rem, 5vw);
+		max-width: 80rem;
+		margin-inline: auto;
+		margin-block: 2.75rem;
 	}
-
-	@media (max-width: 50em) {
-		.hero-image {
-			height: 260px;
-			margin-top: 0;
-			margin-bottom: 2rem;
-		}
-	}
-
-	.content {
-		margin-bottom: 8rem;
-	}
-
-	.content :global(main > * + *) {
-		margin-top: 1rem;
-	}
-
-	.content :global(h2) {
-		margin-top: 4rem;
-	}
-
 	header {
-		display: flex;
-		flex-direction: column;
-		text-align: center;
-		align-items: center;
-		justify-content: center;
-
-		padding-bottom: 2rem;
-		margin-bottom: 2rem;
-		border-bottom: 4px solid var(--theme-divider);
+		position: relative;
 	}
-
-	.title,
-	.author,
-	.publish-date {
-		margin: 0;
+	.hero-image {
+		width: 60%;
+		height: auto;
+		max-height: 70%;
+		position: absolute;
+		inset: 0;
+		margin: auto;
+		z-index: -1;
+		object-fit: cover;
+		filter: brightness(5) contrast(0.8) grayscale(1);
+		mix-blend-mode: multiply;
 	}
-
-	.publish-date,
-	.author {
-		color: var(--theme-text-lighter);
+	.H1 {
+		mix-blend-mode: multiply;
 	}
-
-	.title {
-		font-size: 2.25rem;
-		font-weight: 700;
+	.Meta {
+		position: absolute;
+		top: 3rem;
+		left: -1rem;
+	}
+	.main {
+		max-width: ;
 	}
 </style>

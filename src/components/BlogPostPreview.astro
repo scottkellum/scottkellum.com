@@ -30,8 +30,9 @@ const { post } = Astro.props;
 	padding: 0 2rem 1rem;
 	margin: 1rem 2rem 1rem 0;
 	position: relative;
+	z-index: 0;
 	width: calc(90vw - 4rem);
-	min-width: min(40rem, 90vw - 4rem);
+	min-width: min(30rem, 90vw - 4rem);
 	overflow: visible;
 	white-space: normal;
 }
@@ -42,8 +43,17 @@ const { post } = Astro.props;
 	content: '';
 	position: absolute;
 	inset: 0;
+	border-radius: 0.5rem;
+	outline: 0px solid var(--primary);
+	transition: outline 0.25s ease-in-out;
 }
 .post-preview .Meta {
 	margin-block-start: -0.67rem;
+	position: relative;
+	z-index: 1;;
+}
+.post-preview .post-link:focus::after,
+.post-preview .post-link:hover::after {
+	outline: 0.25rem solid var(--primary);
 }
 </style>

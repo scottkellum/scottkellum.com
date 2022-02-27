@@ -10,7 +10,7 @@ const { H1 } = XElement
 <style global>
 .H1 {
     /* Typetura animation function */
-    animation: 1s linear calc(-1s * var(--bind, 0) / var(--max, 1000)) 1 both paused h1;
+    animation: 1s var(--tt-ease, linear) calc(-1s * var(--bind, 0) / var(--max, 1000)) 1 both paused h1;
 
     /* Your styles */
     font-family: var(--font-display);
@@ -20,6 +20,7 @@ const { H1 } = XElement
     font-weight: 200;
 
     margin: 0.5rem 0;
+    --tt-ease: cubic-bezier(0.7,0,0.85,1);
 }
 .H1 strong {
     font-weight: 700;
@@ -29,7 +30,7 @@ const { H1 } = XElement
         font-size: 1rem;
     }
     100% {
-        font-size: 3rem;
+        font-size: 7rem;
     }
 }
 </style>
