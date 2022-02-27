@@ -43,7 +43,7 @@ allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(
 
 <html lang="en">
 	<head>
-		<BaseHead />
+		<BaseHead {title} {description} {permalink} />
 		<style global>
 			html {
 				background: var(--background);

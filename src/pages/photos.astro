@@ -3,14 +3,14 @@
 import BaseHead from '../components/BaseHead.astro';
 import Filmstrip from '../components/Filmstrip.astro';
 
-let title = 'Scott Kellum';
-let description = 'Founder, inventor, product designer, typographer, teacher, speaker, and photographer';
-let permalink = 'https://scottkellum.com/';
+let title = 'Scott Kellum’s Photographs';
+let description = 'Photos taken by Scott Kellum. Most on Ilford HP5+ film with my Leica M3 and Vöigtlander 50mm f1.5 Nokton MC II';
+let permalink = 'https://scottkellum.com/photos';
 ---
 
 <html lang="en">
 	<head>
-		<BaseHead />
+		<BaseHead {title} {description} {permalink} />
 		<style global>
 			:root {
         background: #000;
