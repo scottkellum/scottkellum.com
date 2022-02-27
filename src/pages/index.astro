@@ -4,7 +4,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Shape from '../components/Shape.astro';
 import Marquee from '../components/Marquee.astro';
 // import BlogHeader from '../components/BlogHeader.astro';
-// import BlogPostPreview from '../components/BlogPostPreview.astro';
+import BlogPostPreview from '../components/BlogPostPreview.astro';
 import photos from '../data/photos.json'
 import XElement from 'astro-xelement';
 
@@ -110,8 +110,9 @@ allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(
 				overflow-y: none;
 				margin-block: 4rem;
 				display: flex;
-				align-items: center;
+				align-items: stretch;
 				scrollbar-color: var(--primary) transparent;
+		    scroll-snap-type: x mandatory;
 			}
 			.section::-webkit-scrollbar {
 				inline-size: 0.333rem;
@@ -122,16 +123,15 @@ allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(
 				border-radius: 1rem;
 				background: var(--primary);
 			}
+			.section .item {
+				scroll-snap-align: center;
+			}
 			.section img {
 				block-size: min(30rem, 80vh);
 				inline-size: auto;
 				margin-inline-end: 2rem;
 				filter: none;
-				opacity: 0.66;
-				transition: opacity 0.5s ease-in-out;
-			}
-			.section img:hover {
-				opacity: 1;
+				border-radius: 0.5rem;
 			}
 			.section-head {
 				font-family: var(--font-display);
@@ -140,9 +140,12 @@ allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(
 				text-decoration: none;
 				margin-inline-start: 2rem;
 				margin-inline-end: -0.5ch;
-				margin-block: 0;
+				margin-block: 2rem;
+				position: relative;
+				z-index: 9;
 				display: inline-block;
 				font-size: min(3rem, 8vh);
+				mix-blend-mode: multiply;
 				animation: 1s var(--tt-ease, linear) calc(-1s * var(--tt-bind, 500) / var(--tt-max, 1000)) 1 both paused var(--tt-key, none);
 				--tt-key: section-head;
 				--tt-max: 1200;
@@ -255,11 +258,18 @@ allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(
 			</article>
 
 			<section class="section photos">
-				<h1 class="section-head">
+				<h1 class="section-head item">
+					Blog
+				</h1>
+				{allPosts.map((p) => <BlogPostPreview post={p} />)}
+			</section>
+
+			<section class="section photos">
+				<h1 class="section-head item">
 					<a href="/photos">Photos</a>
 				</h1>
 				{rolls.map((roll) => (
-					<a href="/photos#${rollID(roll.title)}">
+					<a class="item" href="/photos#${rollID(roll.title)}">
 						<img loading="lazy" src="/photos/${roll.photos[0].src}" alt={roll.photos[0].alt}>
 					</a>
 				))}

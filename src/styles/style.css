@@ -61,6 +61,10 @@ a {
   color: var(--primary);
 }
 
+p {
+  margin-block: 1em;
+}
+
 figure,
 figcaption {
   margin: 0;

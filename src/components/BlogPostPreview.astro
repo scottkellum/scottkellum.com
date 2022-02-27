@@ -1,55 +1,49 @@
 ---
+import H1 from '../components/type/H1.astro';
+import Meta from '../components/type/Meta.astro';
+
 export interface Props {
 	post: any;
+}
+
+function titleTransform(t) {
+  t = t.replaceAll('[', '<strong>');
+  t = t.replaceAll(']', '</strong>');
+  return t;
 }
 
 const { post } = Astro.props;
 ---
 
-<article class="post-preview">
+<article class="item post-preview">
 	<header>
-		<p class="publish-date">{post.publishDate}</p>
-		<a href={post.url}><h1 class="title">{post.title}</h1></a>
+		<Meta>{post.publishDate}</Meta>
+		<a href={post.url} class="post-link"><H1 class="title">{titleTransform(post.title)}</H1></a>
 	</header>
 	<p>{post.description}</p>
-	<a href={post.url}>Read more</a>
 </article>
 
-<style>
-	.content :global(main > * + *) {
-		margin-top: 1rem;
-	}
-
-	.post-preview {
-		padding-bottom: 2rem;
-		margin-bottom: 2rem;
-		border-bottom: 4px solid var(--theme-divider);
-	}
-
-	header {
-		align-items: flex-start;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		padding-bottom: 2rem;
-		text-align: left;
-	}
-
-	.title,
-	.author,
-	.publish-date {
-		margin: 0;
-	}
-
-	.publish-date,
-	.author {
-		font-size: 1.25rem;
-		color: var(--theme-text-lighter);
-	}
-
-	.title {
-		font-size: 2.25rem;
-		font-weight: 700;
-		color: var(--theme-text);
-	}
+<style global>
+.post-preview {
+	border-radius: 0.5rem;
+	background-color: var(--background-alt);
+	padding: 0 2rem 1rem;
+	margin: 1rem 2rem 1rem 0;
+	position: relative;
+	width: calc(90vw - 4rem);
+	min-width: min(40rem, 90vw - 4rem);
+	overflow: visible;
+	white-space: normal;
+}
+.post-link {
+	text-decoration: none;
+}
+.post-link::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+}
+.post-preview .Meta {
+	margin-block-start: -0.67rem;
+}
 </style>
