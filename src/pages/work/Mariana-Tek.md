@@ -1,11 +1,11 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-title: "[Typetura]"
+title: "[Mariana Tek]"
 publishDate: September 12, 2021
 name: Scott Kellum
 description: Another post with some other stuff in it I guess! This is so cool! Let’s see how it looks with some longer text? Does it ever truncate? Am I even spelling this correctly?
-heroImage: /work/typetura.com.png
+heroImage: /work/mariana-tek.png
 ---
 
 Joshua Tree, California is a very sci-fi place. Year-round, the area’s population remains very low. The air is desiccated, the sunrises are violent. At almost 800,000 acres, it is abundant with surreal and empty space. This is the same kind of blank canvas Cate Le Bon tends to make music in, her songs like strange buildings in the middle of the desert. It is also where the Welsh-born artist has been residing for the last year and change, since finishing her forthcoming sixth solo album, Pompeii.

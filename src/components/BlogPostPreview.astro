@@ -1,6 +1,5 @@
 ---
 import H1 from '../components/type/H1.astro';
-import Meta from '../components/type/Meta.astro';
 
 export interface Props {
 	post: any;
@@ -17,7 +16,6 @@ const { post } = Astro.props;
 
 <article class="item post-preview">
 	<header>
-		<Meta>{post.publishDate}</Meta>
 		<a href={post.url} class="post-link"><H1 class="title">{titleTransform(post.title)}</H1></a>
 	</header>
 	<p>{post.description}</p>
@@ -27,7 +25,7 @@ const { post } = Astro.props;
 .post-preview {
 	border-radius: 0.5rem;
 	background-color: var(--background-alt);
-	padding: 0 2rem 1rem;
+	padding: 1rem 2rem;
 	margin: 1rem 2rem 1rem 0;
 	position: relative;
 	z-index: 0;
@@ -46,11 +44,6 @@ const { post } = Astro.props;
 	border-radius: 0.5rem;
 	outline: 0px solid var(--primary);
 	transition: outline 0.25s ease-in-out;
-}
-.post-preview .Meta {
-	margin-block-start: -0.67rem;
-	position: relative;
-	z-index: 1;;
 }
 .post-preview .post-link:focus::after,
 .post-preview .post-link:hover::after {
