@@ -1,6 +1,5 @@
 ---
 import H1 from '../components/type/H1.astro';
-import Meta from '../components/type/Meta.astro';
 
 export interface Props {
 	post: any;
@@ -25,8 +24,8 @@ const { post } = Astro.props;
 <style global>
 .work-preview {
 	border-radius: 0.5rem;
-	background-color: var(--background-alt);
-	padding: 2rem;
+	background-color: var(--background);
+	padding: 2rem 2rem 2rem 0;
 	margin: 1rem 2rem 1rem 0;
 	position: relative;
 	z-index: 0;
@@ -35,6 +34,11 @@ const { post } = Astro.props;
 	overflow: visible;
 	white-space: normal;
 	min-height: min(22rem, 80vh);
+}
+.H1 {
+	position: relative;
+	mix-blend-mode: multiply;
+	transform: translateX(-0.5ch);
 }
 .post-link {
 	text-decoration: none;
@@ -47,11 +51,6 @@ const { post } = Astro.props;
 	outline: 0px solid var(--primary);
 	transition: outline 0.25s ease-in-out;
 }
-.work-preview .Meta {
-	margin-block-start: -0.67rem;
-	position: relative;
-	z-index: 1;;
-}
 .work-preview .post-link:focus::after,
 .work-preview .post-link:hover::after {
 	outline: 0.25rem solid var(--primary);
@@ -62,7 +61,7 @@ const { post } = Astro.props;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	filter: contrast(0.6) brightness(3) grayscale(1);
+	filter: grayscale(0.7) contrast(0.4) brightness(1.5) sepia(0.3);
 	mix-blend-mode: multiply;
 }
 </style>
