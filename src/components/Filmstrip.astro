@@ -166,6 +166,58 @@ function rollID(t) {
   width: 8rem;
   height: 1.6rem;
 }
+
+@media print {
+  html {
+    background: none !important;
+  }
+  .home {
+    display: none;
+  }
+  .filmstrip {
+    display: grid;
+    white-space: normal;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    width: auto;
+    margin: 1rem 1rem 6rem;
+    gap: 1rem;
+  }
+  .filmstrip img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: contain;
+  }
+  .filmstrip .image {
+    block-size: auto;
+    margin: 0;
+  }
+  .filmstrip h1 {
+    font-size: 1.5rem;
+    --tt-key: none;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    margin: 0;
+  }
+  .filmstrip .meta {
+    display: block;
+    position: relative;
+    transform: none;
+    grid-column-start: 2;
+    grid-row-start: 1;
+    margin: 0;
+  }
+  .filmstrip .meta span {
+    display: block;
+  }
+  .filmstrip svg {
+    display: none;
+  }
+  * {
+    mix-blend-mode: normal !important;
+    color: #000 !important;
+  }
+}
 </style>
 
 <script>
