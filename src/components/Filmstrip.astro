@@ -170,7 +170,7 @@ function rollID(t) {
 @media print {
   html {
     background: none !important;
-    font-size: 12pt !important;
+    font-size: 9pt !important;
   }
   .home {
     display: none;
@@ -196,19 +196,25 @@ function rollID(t) {
     margin: 0;
   }
   .filmstrip h1 {
-    font-size: 1rem !important;
+    font: inherit !important;
+    font-weight: 400 !important;
     animation: none;
     grid-column-start: 1;
     grid-row-start: 1;
     margin: 0;
+    inline-size: 100%;
+  }
+  .filmstrip h1 strong {
+    font-weight: 400 !important;
   }
   .filmstrip .meta {
     display: block;
     position: relative;
     transform: none;
-    grid-column-start: 2;
+    grid-column-start: 1;
     grid-row-start: 1;
     margin: 0;
+    align-self: end;
   }
   .filmstrip .meta span {
     display: block;
