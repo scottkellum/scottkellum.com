@@ -244,6 +244,16 @@ function currentPhoto(e) {
   e.classList.add("current")
   e.scrollIntoView({behavior: "smooth", block: "nearest", inline: "center"});
   e.closest(".filmstrip").scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
+  let id = current.closest(".filmstrip").id;
+  if(window.location.hash != `#${id}`) {
+    console.log(window.location.hash, id);
+    if(history.pushState) {
+      history.pushState(null, null, `/photos#${id}`);
+    }
+    else {
+      window.location.hash= id;
+    }
+  }
 }
 
 document.addEventListener('keydown', logKey);
