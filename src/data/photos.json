@@ -2,6 +2,42 @@
   "rolls":[
     {
       "date": "3/4/2022",
+      "camera": "Stereo Realist",
+      "lens": "35mm <i>f</i>3.5",
+      "stock": "HP5+ 400",
+      "location": "Los Angeles",
+      "color": "#ccc",
+      "title": "[Life] in [Stereo]",
+      "photos":[
+        {
+          "src": "2022-03-09-002.jpg",
+          "alt": "A woman in a dim room holding a planner and looking down at it",
+          "stereo": "2022-03-09-001.jpg"
+        },
+        {
+          "src": "2022-03-09-003.jpg",
+          "alt": "A woman in a dim room holding a planner and looking down at it",
+          "stereo": "2022-03-09-004.jpg"
+        },
+        {
+          "src": "2022-03-09-005.jpg",
+          "alt": "A woman in a dim room holding a planner and looking down at it",
+          "stereo": "2022-03-09-006.jpg"
+        },
+        {
+          "src": "2022-03-09-007.jpg",
+          "alt": "A woman in a dim room holding a planner and looking down at it",
+          "stereo": "2022-03-09-008.jpg"
+        },
+        {
+          "src": "2022-03-09-010.jpg",
+          "alt": "A woman in a dim room holding a planner and looking down at it",
+          "stereo": "2022-03-09-009.jpg"
+        }
+      ]
+    },
+    {
+      "date": "3/4/2022",
       "camera": "Leica M3",
       "lens": "Vöigtlander 50mm <i>f</i>1.5 Nokton MC II",
       "stock": "Portra 400",
