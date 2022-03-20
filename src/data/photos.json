@@ -25,16 +25,31 @@
           "stereo": "2022-03-09-006.jpg"
         },
         {
+            "src": "2022-03-09-012.jpg",
+            "alt": "A large potted succulent plant next to a window in a home",
+            "stereo": "2022-03-09-011.jpg"
+          },
+        {
           "src": "2022-03-09-007.jpg",
           "alt": "An overlook from an elevated path over the ocean",
           "stereo": "2022-03-09-008.jpg"
         },
         {
-          "src": "2022-03-09-010.jpg",
+          "src": "2022-03-09-013.jpg",
           "alt": "A large potted succulent plant next to a window in a home",
-          "stereo": "2022-03-09-009.jpg"
-        }
-      ]
+          "stereo": "2022-03-09-014.jpg"
+        },
+        {
+          "src": "2022-03-09-016.jpg",
+          "alt": "A large potted succulent plant next to a window in a home",
+          "stereo": "2022-03-09-015.jpg"
+      },
+        {
+            "src": "2022-03-09-010.jpg",
+            "alt": "A large potted succulent plant next to a window in a home",
+            "stereo": "2022-03-09-009.jpg"
+          }
+        ]
     },
     {
       "date": "3/4/2022",
