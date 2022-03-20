@@ -1,7 +1,7 @@
 {
   "rolls":[
     {
-      "date": "3/4/2022",
+      "date": "3/9/2022",
       "camera": "Stereo Realist",
       "lens": "35mm <i>f</i>3.5",
       "stock": "HP5+ 400",
@@ -65,12 +65,24 @@
           "alt": "Lemons lined up alongside a stove with a coffee maker"
         },
         {
+            "src": "2022-03-04-009.jpg",
+            "alt": "A woman and baby take a nap together on the floor"
+        },
+        {
           "src": "2022-03-04-002.jpg",
           "alt": "A woman wearing gardening gloves moving potted herbs"
         },
         {
+            "src": "2022-03-04-010.jpg",
+            "alt": "A baby standing up reaching for a door knob"
+        },
+        {
           "src": "2022-03-04-003.jpg",
           "alt": "A woman on stairs wearing gardening gloves planting something"
+        },
+        {
+            "src": "2022-03-04-008.jpg",
+            "alt": "A woman and a baby sitting at a garden party"
         },
         {
           "src": "2022-03-04-004.jpg",
@@ -175,6 +187,10 @@
           "alt": "Broad leaves backlit by the sun"
         },
         {
+            "src": "2022-02-16-012.jpg",
+            "alt": "A baby standing next to a window as the sun streams in"
+        },
+        {
           "src": "2022-02-16-010.jpg",
           "alt": "At home some light is hitting the wall and a lamp"
         },
@@ -204,6 +220,10 @@
         {
           "src": "2022-02-04-011.jpg",
           "alt": "Sun dappled living room"
+        },
+        {
+            "src": "2022-02-04-014.jpg",
+            "alt": "A baby sitting in a living room looking into the camera"
         },
         {
           "src": "2022-02-04-012.jpg",
@@ -310,6 +330,22 @@
         {
           "src": "2022-01-19-343.jpg",
           "alt": "Kids toys on the carpet"
+        },
+        {
+            "src": "2022-01-19-002.jpg",
+            "alt": "A woman and child playing on a living room floor"
+        },
+        {
+            "src": "2022-01-19-003.jpg",
+            "alt": "A woman and child playing on a living room floor"
+        },
+        {
+            "src": "2022-01-19-004.jpg",
+            "alt": "A woman and child playing on a living room floor"
+        },
+        {
+            "src": "2022-01-19-005.jpg",
+            "alt": "A woman and child playing on a living room floor"
         },
         {
           "src": "2022-01-19-344.jpg",
