@@ -246,7 +246,6 @@ function currentPhoto(e) {
   e.closest(".filmstrip").scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
   let id = current.closest(".filmstrip").id;
   if(window.location.hash != `#${id}`) {
-    console.log(window.location.hash, id);
     if(history.pushState) {
       history.pushState(null, null, `/photos#${id}`);
     }
