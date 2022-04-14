@@ -1,6 +1,73 @@
 {
   "rolls": [
     {
+      "date": "3/4/2022",
+      "camera": "Leica M3",
+      "lens": "Vöigtlander 50mm <i>f</i>1.5 Nokton MC II",
+      "stock": "Portra 400",
+      "location": "Santa Rosa",
+      "color": "#FF6C4B",
+      "title": "[Trip] to [Santa Rosa] in Color",
+      "photos": [
+        {
+          "src": "2022-04-13-005.jpg",
+          "alt": "A red barn amidst a windswept costal landscape"
+        },
+        {
+          "src": "2022-04-13-006.jpg",
+          "alt": "A woman walking into a landscape along a wide dirt path carrying a backpack and camera"
+        },
+        {
+          "src": "2022-04-13-007.jpg",
+          "alt": "A boat anchor leaning against a wooden building"
+        },
+        {
+          "src": "2022-04-13-008.jpg",
+          "alt": "An eroded cliff filled with vegitation next to the ocean"
+        },
+        {
+          "src": "2022-04-13-009.jpg",
+          "alt": "A big puddle on a small dirt road amidst a field of grasses and wildflowers. In the distance are slow rolling hills and clouds above."
+        },
+        {
+          "src": "2022-04-13-010.jpg",
+          "alt": "A white house in the distance amidst a grassy costal landscape"
+        },
+        {
+          "src": "2022-04-13-011.jpg",
+          "alt": "Yellow wildflowers atop a cliff near the ocean"
+        },
+        {
+          "src": "2022-04-13-012.jpg",
+          "alt": "An eroded cliff filled with vegitation next to the ocean"
+        },
+        {
+          "src": "2022-04-13-013.jpg",
+          "alt": "Grass grows atop the ocean bluffs"
+        },
+        {
+          "src": "2022-04-13-014.jpg",
+          "alt": "An eroded cliff filled with vegitation next to the ocean"
+        },
+        {
+          "src": "2022-04-13-001.jpg",
+          "alt": "A woman looking into the camera out a window"
+        },
+        {
+          "src": "2022-04-13-002.jpg",
+          "alt": "A young toddler climbs on a playground"
+        },
+        {
+          "src": "2022-04-13-003.jpg",
+          "alt": "A young toddler looking back while playing on the playground"
+        },
+        {
+          "src": "2022-04-13-004.jpg",
+          "alt": "A young toddler standing in the middle of a largely empty playground"
+        }
+      ]
+    },
+    {
       "date": "4/6/2022",
       "camera": "Leica M3",
       "lens": "Vöigtlander 50mm <i>f</i>1.5 Nokton MC II",
