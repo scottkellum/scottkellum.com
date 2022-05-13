@@ -1,6 +1,37 @@
 {
   "rolls": [
     {
+      "date": "5/13/2022",
+      "camera": "Hasselblad 500C",
+      "lens": "Carl Zeiss Sonnar 150mm <i>f</i>4",
+      "stock": "TMAX 400",
+      "location": "Los Angeles",
+      "color": "#CCC",
+      "title": "[Second Roll] on the [Hassy]",
+      "photos": [
+        {
+          "src": "2022-05-13-001.jpg",
+          "alt": "A small child smiling while eating"
+        },
+        {
+          "src": "2022-05-13-002.jpg",
+          "alt": "A small child with a messy face and finger in their mouth"
+        },
+        {
+          "src": "2022-05-13-003.jpg",
+          "alt": "A small child with a messy face and finger in their mouth"
+        },
+        {
+          "src": "2022-05-13-005.jpg",
+          "alt": "Sunlight flooding through a window onto a stuffed chair and ottoman"
+        },
+        {
+          "src": "2022-05-13-004.jpg",
+          "alt": "A cat on a desk enjoying the sunlight"
+        }
+      ]
+    },
+    {
       "date": "5/1/2022",
       "camera": "Hasselblad 500C",
       "lens": "Carl Zeiss Sonnar 150mm <i>f</i>4",
