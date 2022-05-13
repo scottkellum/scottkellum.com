@@ -31,7 +31,7 @@ function rollID(t) {
         <path d="M29.7324 15L7.43317 27.8744L7.43317 2.12548L29.7324 15Z" fill="currentcolor"/>
       </svg>
     </div>
-    <h1>{titleTransform(roll.title)}</h1>
+    <h1 set:html=titleTransform(roll.title)></h1>
     {roll.photos.map((photo) => (
       <section class="image" onclick="currentPhoto(this)">
         <img loading="lazy" src="/photos/${photo.src}" alt={photo.alt}>
