@@ -12,5 +12,8 @@
     "@astrojs/preact": "^0.1.2",
     "astro": "^1.0.0-beta.27",
     "astro-xelement": "^3.2.0"
+  },
+  "dependencies": {
+    "astro-imagetools": "^0.6.4"
   }
 }
