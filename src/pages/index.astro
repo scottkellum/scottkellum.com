@@ -83,7 +83,7 @@ allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(
 				font-style: italic;
 			}
 			.head {
-				font-size: calc(1px * var(--bind) / 7.22);
+				font-size: calc(1px * var(--tt-bind) / 7.22);
 				width: 90vw;
 				font-family: var(--font-display);
 				color: var(--primary);
@@ -237,7 +237,7 @@ allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(
 					<img loading="lazy" src="/img/profile.jpg" alt="A photograph of Scott casually sitting on a curb">
 					<figcaption>Photograph by <a href="https://tatebot.com/">Tate Tozer</a></figcaption>
 				</figure>
-				<H1 class="head" @resize={() => { this.style.setProperty('--bind', this.clientWidth) }}>
+				<H1 class="head" @resize={() => { this.style.setProperty('--tt-bind', this.clientWidth) }}>
 					Scott Kellum
 				</H1>
 				<p class="marquee">Invention • Innovation • Typography • Teaching • Editorial design • Design leadership • Photography • Product design • Design systems • Speaking •&nbsp;</p>
