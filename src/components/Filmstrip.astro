@@ -24,7 +24,7 @@ function rollID(t) {
       <span class="date">{roll.date}</span>
       <span class="date">{roll.location}</span>
       <span class="camera">{roll.camera}</span>
-      <span class="lens">{roll.lens}</span>
+      <span class="lens" set:html=roll.lens></span>
       <span class="stock">{roll.stock}</span>
       <svg width="143" height="30" viewBox="0 0 143 30" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M142.929 15L120.63 27.8744L120.63 2.12548L142.929 15Z" fill="currentcolor"/>
