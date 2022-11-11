@@ -4,7 +4,8 @@ import BaseHead from '../components/BaseHead.astro';
 import Shape from '../components/Shape.astro';
 import Marquee from '../components/Marquee.astro';
 // import BlogHeader from '../components/BlogHeader.astro';
-// import BlogPostPreview from '../components/BlogPostPreview.astro';
+import BlogPostPreview from '../components/BlogPostPreview.astro';
+// import WorkPreview from '../components/WorkPreview.astro';
 import photos from '../data/photos.json'
 
 
@@ -31,8 +32,9 @@ let permalink = 'https://scottkellum.com/';
 
 // Data Fetching: List all Markdown posts in the repo.
 
-let allPosts = await Astro.glob('./posts/*.md');
-allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf());
+const posts = (await Astro.glob('./posts/*.{md,mdx}')).sort(
+	(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
+);
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -41,7 +43,7 @@ allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(
 <html lang="en">
 	<head>
 		<BaseHead {title} {description} {permalink} />
-		<style global>
+		<style is:global>
 			html {
 				background: var(--background);
 				color: var(--text);
@@ -102,13 +104,16 @@ allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(
 				color: var(--primary);
 			}
 			.section {
+				position: relative;
 				white-space: nowrap;
 				overflow: auto;
 				overflow-y: none;
 				margin-block: 4rem;
+				padding-inline-end: 50vw;
 				display: flex;
-				align-items: center;
+				align-items: stretch;
 				scrollbar-color: var(--primary) transparent;
+		    scroll-snap-type: x mandatory;
 			}
 			.section::-webkit-scrollbar {
 				inline-size: 0.333rem;
@@ -119,16 +124,27 @@ allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(
 				border-radius: 1rem;
 				background: var(--primary);
 			}
+			.section .item {
+				scroll-snap-align: center;
+				margin-block: 3rem 1rem;
+				margin-inline-end: 2rem;
+			}
+			a.item {
+				display: block;
+				border-radius: 0.5rem;
+				outline: 0px solid var(--primary);
+				transition: outline 0.25s ease-in-out;
+			}
+			a.item:focus,
+			a.item:hover {
+				outline: 0.25rem solid var(--primary);
+			}
 			.section img {
 				block-size: min(30rem, 80vh);
 				inline-size: auto;
-				margin-inline-end: 2rem;
 				filter: none;
-				opacity: 0.66;
-				transition: opacity 0.5s ease-in-out;
-			}
-			.section img:hover {
-				opacity: 1;
+				border-radius: 0.5rem;
+				display: block;
 			}
 			.section-head {
 				font-family: var(--font-display);
@@ -136,10 +152,13 @@ allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(
 				line-height: 1;
 				text-decoration: none;
 				margin-inline-start: 2rem;
-				margin-inline-end: -0.5ch;
+				margin-inline-end: -2.5ch;
 				margin-block: 0;
+				position: sticky;
+				inset: 0 0 0 2rem;
 				display: inline-block;
-				font-size: min(3rem, 8vh);
+				font-size: min(8rem, 12vh);
+				mix-blend-mode: multiply;
 				animation: 1s var(--tt-ease, linear) calc(-1s * var(--tt-bind, 500) / var(--tt-max, 1000)) 1 both paused var(--tt-key, none);
 				--tt-key: section-head;
 				--tt-max: 1200;
@@ -251,12 +270,31 @@ allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(
 				</svg>
 			</article>
 
+			<section class="section">
+				<h1 class="section-head">
+					Blog
+				</h1>
+				{
+					posts.map((post) => (
+						<BlogPostPreview post={post} />
+					))
+				}
+			<!-- {allPosts.map((p) => <BlogPostPreview post={p} />)} -->
+			</section>
+
+			<!-- <section class="section">
+				<h1 class="section-head">
+					Work
+				</h1>
+				{allWork.map((p) => <WorkPreview post={p} />)}
+			</section> -->
+
 			<section class="section photos">
 				<h1 class="section-head">
 					<a href="/photos">Photos</a>
 				</h1>
 				{rolls.map((roll) => (
-					<a href="/photos#${rollID(roll.title)}">
+					<a class="item" href="/photos#${rollID(roll.title)}">
 						<img loading="lazy" src="/photos/${roll.photos[0].src}" alt={roll.photos[0].alt}>
 					</a>
 				))}

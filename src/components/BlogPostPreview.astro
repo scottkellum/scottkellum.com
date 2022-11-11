@@ -1,55 +1,55 @@
 ---
+import H1 from '../components/type/H1.astro';
+
 export interface Props {
 	post: any;
+}
+
+function titleTransform(t) {
+  t = t.replaceAll('[', '<strong>');
+  t = t.replaceAll(']', '</strong>');
+  return t;
 }
 
 const { post } = Astro.props;
 ---
 
-<article class="post-preview">
+<article class="item post-preview">
 	<header>
-		<p class="publish-date">{post.publishDate}</p>
-		<a href={post.url}><h1 class="title">{post.title}</h1></a>
+		<a href={post.url} class="post-link"><H1 class="title" set:html="titleTransform(post.frontmatter.title)"></H1></a>
 	</header>
-	<p>{post.description}</p>
-	<a href={post.url}>Read more</a>
+	<p>{post.frontmatter.description}</p>
 </article>
 
-<style>
-	.content :global(main > * + *) {
-		margin-top: 1rem;
-	}
-
-	.post-preview {
-		padding-bottom: 2rem;
-		margin-bottom: 2rem;
-		border-bottom: 4px solid var(--theme-divider);
-	}
-
-	header {
-		align-items: flex-start;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		padding-bottom: 2rem;
-		text-align: left;
-	}
-
-	.title,
-	.author,
-	.publish-date {
-		margin: 0;
-	}
-
-	.publish-date,
-	.author {
-		font-size: 1.25rem;
-		color: var(--theme-text-lighter);
-	}
-
-	.title {
-		font-size: 2.25rem;
-		font-weight: 700;
-		color: var(--theme-text);
-	}
+<style is:global>
+.post-preview {
+	border-radius: 0.5rem;
+	background-color: var(--background-alt);
+	padding: 1rem 2rem;
+	margin: 1rem 2rem 1rem 0;
+	position: relative;
+	z-index: 0;
+	width: calc(90vw - 4rem);
+	min-width: min(30rem, 90vw - 4rem);
+	overflow: visible;
+	white-space: normal;
+}
+.post-preview header {
+	position: static;
+}
+.post-link {
+	text-decoration: none;
+}
+.post-link::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	border-radius: 0.5rem;
+	outline: 0px solid var(--primary);
+	transition: outline 0.25s ease-in-out;
+}
+.post-preview .post-link:focus::after,
+.post-preview .post-link:hover::after {
+	outline: 0.25rem solid var(--primary);
+}
 </style>

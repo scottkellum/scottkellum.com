@@ -4,6 +4,13 @@ export interface Props {
 	description: string;
 	permalink: string;
 }
+
+function rollTitle(t) {
+  t = t.replaceAll('[', '');
+  t = t.replaceAll(']', '');
+  return t;
+}
+
 const { title, description, permalink } = Astro.props;
 ---
 
@@ -13,8 +20,8 @@ const { title, description, permalink } = Astro.props;
 <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
 <!-- Primary Meta Tags -->
-<title>{title}</title>
-<meta name="title" content={title} />
+<title>{rollTitle(title)}</title>
+<meta name="title" content={rollTitle(title)} />
 <meta name="description" content={description} />
 
 <!-- iOS -->
@@ -24,18 +31,18 @@ const { title, description, permalink } = Astro.props;
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content={permalink} />
-<meta property="og:title" content={title} />
+<meta property="og:title" content={rollTitle(title)} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content="/social.jpg" />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={permalink} />
-<meta property="twitter:title" content={title} />
+<meta property="twitter:title" content={rollTitle(title)} />
 <meta property="twitter:description" content={description} />
 <meta property="og:image" content="/social.jpg" />
 
 <!-- Styles -->
-<style global>
+<style is:global>
 	@import "../styles/style.css";
 </style>

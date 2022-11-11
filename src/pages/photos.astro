@@ -2,6 +2,7 @@
 // Component Imports
 import BaseHead from '../components/BaseHead.astro';
 import Filmstrip from '../components/Filmstrip.astro';
+import HomeLink from '../components/HomeLink.astro';
 
 let title = 'Scott Kellum’s Photographs';
 let description = 'Photos taken by Scott Kellum. Most on Ilford HP5+ film with my Leica M3 and Vöigtlander 50mm f1.5 Nokton MC II';
@@ -18,6 +19,8 @@ let permalink = 'https://scottkellum.com/photos';
         --tt-key: photos-html;
         --tt-max: 1000;
         --tt-ease: cubic-bezier(0,0,0.67,1);
+        --blend: screen;
+        --primary: #FF6C4B;
 			}
       @media (max-height: 60em) {
         :root {
@@ -29,21 +32,6 @@ let permalink = 'https://scottkellum.com/photos';
           font-size: 0%;
         }
       }
-      a.home {
-        text-decoration: none;
-        position: fixed;
-        top: 0;
-        right: 2rem;
-        mix-blend-mode: screen;
-        writing-mode: vertical-lr;
-        z-index: 9;
-        letter-spacing: 0.1em;
-        color: #FF6C4B;
-      }
-      a.home svg {
-        width: 1.6rem;
-        height: 3rem;
-      }
 		</style>
 		<script>
 			function resize() {
@@ -53,15 +41,7 @@ let permalink = 'https://scottkellum.com/photos';
 	</head>
 
 	<body>
-    <a href="/" class="home">
-      <svg width="30" height="60" viewBox="0 0 30 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g style="mix-blend-mode:screen">
-      <path d="M14.8662 -8L27.7407 14.2993H1.99169L14.8662 -8Z" fill="currentColor"/>
-      <path d="M14.8662 29.7323L27.7407 52.0316L1.99169 52.0316L14.8662 29.7323Z" fill="currentColor"/>
-      </g>
-      </svg>
-      HOME
-    </a>
+    <HomeLink />
 		<main>
 	      <Filmstrip />
 		</main>

@@ -3,27 +3,34 @@ import XElement from 'astro-xelement'
 const { H1 } = XElement
 ---
 
-<H1 @resize={() => { this.style.setProperty('--bind', this.clientWidth) }}>
+<H1 class="H1" @resize={() => { this.style.setProperty('--bind', this.clientWidth) }}>
     <slot />
 </H1>
 
-<style>
-h1 {
+<style global>
+.H1 {
     /* Typetura animation function */
-    animation: 1s linear calc(-1s * var(--bind, 0) / var(--max, 1000)) 1 both paused h1;
+    animation: 1s var(--tt-ease, linear) calc(-1s * var(--bind, 0) / var(--max, 1000)) 1 both paused h1;
 
     /* Your styles */
     font-family: var(--font-display);
     color: var(--primary);
-    line-height: 1;
+    line-height: 0.85;
     word-wrap: break-word;
+    font-weight: 200;
+
+    margin: 0.5rem 0;
+    --tt-ease: cubic-bezier(0.7,0,0.85,1);
+}
+.H1 strong {
+    font-weight: 700;
 }
 @keyframes h1 {
     0% {
         font-size: 1rem;
     }
     100% {
-        font-size: 3rem;
+        font-size: 5.55rem;
     }
 }
 </style>

@@ -1,0 +1,65 @@
+---
+export interface Props {
+	post: any;
+}
+
+function titleTransform(t) {
+  t = t.replaceAll('[', '<strong>');
+  t = t.replaceAll(']', '</strong>');
+  return t;
+}
+
+const { post } = Astro.props;
+---
+
+<article class="item work-preview">
+	<header>
+		<a href={post.url} class="post-link"><h1 class="title">{titleTransform(post.title)}</h1></a>
+		{post.heroImage && <img width="720" height="420" class="hero-image" loading="lazy" src={post.heroImage} alt={post.alt} />}
+	</header>
+</article>
+
+<style is:global>
+.work-preview {
+	position: relative;
+	min-width: min(30rem, 90vw - 1rem);
+	white-space: normal;
+}
+.work-preview h1 {
+	color: var(--text);
+	position: absolute;
+	top: 2rem;
+	left: -2.33rem;
+	z-index: 9;
+	mix-blend-mode: multiply;
+	writing-mode: vertical-lr;
+	transform: rotate(180deg);
+}
+.work-preview .post-link {
+	text-decoration: none;
+}
+.work-preview .post-link::after {
+	content: '';
+	position: absolute;
+	z-index: 1;
+	inset: 0;
+	border-radius: 0.5rem;
+	outline: 0px solid var(--primary);
+	transition: outline 0.25s ease-in-out;
+}
+.work-preview img {
+	width: 100%;
+	height: auto;
+	filter: grayscale(0.2) contrast(0.8) brightness(1.3) sepia(0.15);
+	mix-blend-mode: multiply;
+	transition: filter 0.25s ease-in-out;
+}
+.work-preview .post-link:focus::after,
+.work-preview .post-link:hover::after {
+	outline: 0.25rem solid var(--primary);
+}
+.work-preview .post-link:focus + img,
+.work-preview .post-link:hover + img {
+	filter: none;
+}
+</style>

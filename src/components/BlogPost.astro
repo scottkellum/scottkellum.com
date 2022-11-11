@@ -1,5 +1,6 @@
 ---
-import Author from './Author.astro';
+import H1 from '../components/type/H1.astro';
+import Meta from '../components/type/Meta.astro';
 
 export interface Props {
 	title: string;
@@ -7,6 +8,12 @@ export interface Props {
 	publishDate: string;
 	heroImage: string;
 	alt: string;
+}
+
+function titleTransform(t) {
+  t = t.replaceAll('[', '<strong>');
+  t = t.replaceAll(']', '</strong>');
+  return t;
 }
 
 const { title, author, publishDate, heroImage, alt } = Astro.props;
@@ -17,72 +24,83 @@ const { title, author, publishDate, heroImage, alt } = Astro.props;
 		<div>
 			<header>
 				{heroImage && <img width="720" height="420" class="hero-image" loading="lazy" src={heroImage} alt={alt} />}
-				<p class="publish-date">{publishDate}</p>
-				<h1 class="title">{title}</h1>
-				<Author name="@FredKSchott" href="https://twitter.com/FredKSchott" />
+				<Meta class="publish-date">{publishDate}</Meta>
+				<H1 class="title" set:html="titleTransform(title)"></H1>
 			</header>
-			<main>
+			<main class="article-content">
 				<slot />
 			</main>
 		</div>
 	</article>
 </div>
 
-<style>
-	.hero-image {
-		width: 100vw;
-		object-fit: cover;
-		object-position: center;
-		margin-top: 2rem;
-		margin-bottom: 4rem;
-		max-width: 1280px;
+<style is:global>
+	article {
+		width: max(90%, 5vw);
+		max-width: 50rem;
+		margin-inline: auto;
+		margin-block: 2.75rem 30vh;
 	}
-
-	@media (max-width: 50em) {
-		.hero-image {
-			height: 260px;
-			margin-top: 0;
-			margin-bottom: 2rem;
+	header {
+		position: relative;
+		margin-bottom: 2rem;
+	}
+	.hero-image {
+		width: 60%;
+		height: auto;
+		max-height: 70%;
+		position: absolute;
+		inset: 0;
+		margin: auto;
+		z-index: 1;
+		object-fit: cover;
+		filter: brightness(4) contrast(0.4) brightness(2) grayscale(1);
+		mix-blend-mode: multiply;
+		transition: filter 1s ease-in-out;
+	}
+	.hero-image:hover {
+		filter: none;
+	}
+	.H1 {
+		mix-blend-mode: multiply;
+	}
+	.Meta {
+		font-size: 0.8rem;
+		line-height: 1;
+	}
+	.article-content p {
+		margin-block: 0;
+	}
+	.article-content p + p {
+		text-indent: max(20%, 3rem);
+	}
+	.article-content h2 {
+		font-size: 2rem;
+		margin: 1.5rem 0;
+		font-weight: 400;
+		line-height: 1;
+		font-style: italic;
+		color: var(--primary);
+    word-wrap: break-word;
+	}
+	@media (min-width: 40em) {
+		.article-content h2 {
+			text-indent: -1ch;
 		}
 	}
-
-	.content {
-		margin-bottom: 8rem;
+	.article-content code {
+		background: #fff;
+		font: inherit;
+		color: var(--primary);
+		padding-inline: 0.2em;
+		border-radius: 0.2em;
 	}
-
-	.content :global(main > * + *) {
-		margin-top: 1rem;
+	.astro-code {
+		padding: 1rem;
+		border-radius: 0.5rem;
 	}
-
-	.content :global(h2) {
-		margin-top: 4rem;
-	}
-
-	header {
-		display: flex;
-		flex-direction: column;
-		text-align: center;
-		align-items: center;
-		justify-content: center;
-
-		padding-bottom: 2rem;
-		margin-bottom: 2rem;
-		border-bottom: 4px solid var(--theme-divider);
-	}
-
-	.title,
-	.author,
-	.publish-date {
-		margin: 0;
-	}
-
-	.publish-date,
-	.author {
-		color: var(--theme-text-lighter);
-	}
-
-	.title {
-		font-size: 2.25rem;
-		font-weight: 700;
+	.astro-code code {
+		background: none;
+		padding: 0;
 	}
 </style>
