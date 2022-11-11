@@ -1,15 +1,59 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-title: "[Yet Another Post] wow so many"
+title: "[The root] of your [font problems]"
 publishDate: September 12, 2021
 name: Scott Kellum
-description: Another post with some other stuff in it I guess! This is so cool! Let’s see how it looks with some longer text? Does it ever truncate? Am I even spelling this correctly?
-heroImage: /photos/2022-02-16-003.jpg
+description: A good foundation makes for excellent typography. To create a solid foundation I never put font styles on body, instead I always make sure they are placed on the root of my document, the html. When to apply styles to body or html is confusing. Styles in both places seem to behave in an identical fashion so why does this even matter? It comes down to three things — managing inheritance, consolidation of inherited styles with viewport styles, and rem sizing.
+heroImage: /img/root-of-font-problem.jpg
 ---
 
-Joshua Tree, California is a very sci-fi place. Year-round, the area’s population remains very low. The air is desiccated, the sunrises are violent. At almost 800,000 acres, it is abundant with surreal and empty space. This is the same kind of blank canvas Cate Le Bon tends to make music in, her songs like strange buildings in the middle of the desert. It is also where the Welsh-born artist has been residing for the last year and change, since finishing her forthcoming sixth solo album, Pompeii.
+A good foundation makes for excellent typography. To create a solid foundation I never put font styles on `body`, instead I always make sure they are placed on the root of my document, the `html`. Deciding when to apply styles to either `body` or `html` can be confusing. Styles in both places seem to behave in an identical fashion so why does this even matter? It comes down to three things: managing inheritance, consolidation of inherited styles with viewport styles, and `rem` sizing.
 
-Art-glam and Dadaist in nature, both as a musician and a producer for others, Le Bon creates with the discipline of a designer, rigorously constructing and reconstructing sound until it commands all sense of space and time. Listening to her lopsided rock and cool-toned avant-pop over the last decade, the parallels between music and architectural design—their shared desire to turn the abstract into something solid with texture, rhythm, harmony, and pattern—becomes apparent. Where the poet Johann Wolfgang von Goethe once described architecture as “frozen music,” Le Bon’s music could similarly be described today as liquid architecture.
+## Consolidation of inherited and viewport styles
 
-Le Bon lives with the musician and visual artist Tim Presley, with whom she also collaborates under the name DRINKS. Their home in JT resembles a desert ski lodge with its wooden interiors, abstract paintings, and fireplace straight out of The Muppet Christmas Carol. A large, empty vase looms in the living room, dried flowers hang in the kitchen. When I visit in late November, there’s a deep sense of calm in the house, a genuine ease. Le Bon and Presley are both attentive in a way that’s almost waiterly, the kind of people who ask whether you’d like a refill when you’re two-thirds into a drink. Wearing a black sports jacket with Burberry sunglasses atop her head, Le Bon gracefully exhibits a sense of total self-possession and wholeness. In most other circumstances, being around that energy might feel intimidating, prone to making one feel fractured and neurotic in comparison. But in Le Bon’s case, her sheer magnetism leaves only a contact high.
+`html` and `body` are unusual elements. `html` is the root of your document and `body` holds content that is meant to be rendered. Both follow the box-model and can be given margins, padding, borders, and dimensions, but backgrounds and scroll behavior will be applied to the viewport instead of the boxes drawn the page. That is, unless backgrounds and scroll behavior are defined in both places at which point the `body` will change to behave more like any other block level element. As a result of this strange behavior, [it’s a best practice to always put viewport styles on `html` and not `body`](https://twitter.com/TerribleMia/status/1380310383588646916). Additionally inherited styles start at the root of your document, your `html`. As you should already have a ruleset for `html` to put your page background and any scroll behavior you might have, putting your inherited styles like `font` on `html` makes sense.
+
+## Rem sizing
+
+The unit `rem` stands for “Root EM” and it’s equal to the font size at the root of your document. It’s a CSS constant you can set and then use throughout your design. Setting `font-size` on `html` defines a `rem` but setting `font-size` on `body` does nothing to define a `rem`. A defined rem equal to your body font size can be extremely valuable to in maintaining typographic proportion or in consistently scaling an interface at different breakpoints.
+
+## Managing inheritance
+
+As CSS authors we talk about specificity a lot, but inheritance can cause more headaches when not managed. It doesn’t matter how `!important` we make a style if a child doesn’t inherit it. When inspecting an element to see where a style is coming from, it’s helpful to have as few layers of inheritance as possible, and the most foundational level is the root of the document, your `html`. Unfortunately when a CSS library decides that `body` should be the foundational level to build on, it will steamroll any other styles on `html` and if viewport level styles are defined that conflict with styles on `html`, visual bugs will be created. On projects where inheritance is an issue I write `body { font: inherit !important }` to ensure there are no issues here.
+
+## Font sizing and line height
+
+It’s important to use relative units for your font sizes. As using `rem` to define your `font-size` on `html` would be a little strange because it’s self-referential, use a percentage instead.
+
+```css
+html {
+  font-size: 100%;
+}
+```
+
+If you think in pixels, you can convert pixels to a percentage by taking the number of pixels out of a default font size of `16` and multiplying that by `100%`.
+
+```css
+html {
+  font-size: calc(20 / 16 * 100%);
+}
+```
+
+Line height should be set as a proportion instead of a fixed pixel based value. This ensures your text will have consistent spacing even when it is a different font size. _Always_ use a unit-less value for `line-height` and it will save you so much pain in the future.
+
+```css
+html {
+  font-size: calc(20 / 16 * 100%);
+  line-height: 1.3;
+}
+```
+
+Again, if you think in pixels then calc is here to help! Line height / font size will do the trick.
+
+```css
+html {
+  font-size: calc(20 / 16 * 100%);
+  line-height: calc(26 / 20);
+}
+```

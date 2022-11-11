@@ -16,12 +16,12 @@ const { post } = Astro.props;
 
 <article class="item post-preview">
 	<header>
-		<a href={post.url} class="post-link"><H1 class="title">{titleTransform(post.title)}</H1></a>
+		<a href={post.url} class="post-link"><H1 class="title" set:html="titleTransform(post.frontmatter.title)"></H1></a>
 	</header>
-	<p>{post.description}</p>
+	<p>{post.frontmatter.description}</p>
 </article>
 
-<style global>
+<style is:global>
 .post-preview {
 	border-radius: 0.5rem;
 	background-color: var(--background-alt);
@@ -33,6 +33,9 @@ const { post } = Astro.props;
 	min-width: min(30rem, 90vw - 4rem);
 	overflow: visible;
 	white-space: normal;
+}
+.post-preview header {
+	position: static;
 }
 .post-link {
 	text-decoration: none;

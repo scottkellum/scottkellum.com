@@ -1,7 +1,5 @@
 ---
 import photos from '../data/photos.json'
-// https://astro-imagetools-docs.vercel.app/en/introduction
-// import { Img } from "astro-imagetools/components";
 
 let rolls = photos.rolls;
 
@@ -45,7 +43,7 @@ function rollID(t) {
   </article>
 ))}
 
-<style global>
+<style is:global>
 .filmstrip {
   position: relative;
   color: #1AE8DB;

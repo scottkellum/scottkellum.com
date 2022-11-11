@@ -25,24 +25,25 @@ const { title, author, publishDate, heroImage, alt } = Astro.props;
 			<header>
 				{heroImage && <img width="720" height="420" class="hero-image" loading="lazy" src={heroImage} alt={alt} />}
 				<Meta class="publish-date">{publishDate}</Meta>
-				<H1 class="title">{titleTransform(title)}</H1>
+				<H1 class="title" set:html="titleTransform(title)"></H1>
 			</header>
-			<main>
+			<main class="article-content">
 				<slot />
 			</main>
 		</div>
 	</article>
 </div>
 
-<style global>
+<style is:global>
 	article {
-		width: max(100% - 5.5rem, 5vw);
-		max-width: 80rem;
+		width: max(90%, 5vw);
+		max-width: 50rem;
 		margin-inline: auto;
-		margin-block: 2.75rem;
+		margin-block: 2.75rem 30vh;
 	}
 	header {
 		position: relative;
+		margin-bottom: 2rem;
 	}
 	.hero-image {
 		width: 60%;
@@ -51,20 +52,55 @@ const { title, author, publishDate, heroImage, alt } = Astro.props;
 		position: absolute;
 		inset: 0;
 		margin: auto;
-		z-index: -1;
+		z-index: 1;
 		object-fit: cover;
-		filter: brightness(5) contrast(0.8) grayscale(1);
+		filter: brightness(4) contrast(0.4) brightness(2) grayscale(1);
 		mix-blend-mode: multiply;
+		transition: filter 1s ease-in-out;
+	}
+	.hero-image:hover {
+		filter: none;
 	}
 	.H1 {
 		mix-blend-mode: multiply;
 	}
 	.Meta {
-		position: absolute;
-		top: 3rem;
-		left: -1rem;
+		font-size: 0.8rem;
+		line-height: 1;
 	}
-	.main {
-		max-width: ;
+	.article-content p {
+		margin-block: 0;
+	}
+	.article-content p + p {
+		text-indent: max(20%, 3rem);
+	}
+	.article-content h2 {
+		font-size: 2rem;
+		margin: 1.5rem 0;
+		font-weight: 400;
+		line-height: 1;
+		font-style: italic;
+		color: var(--primary);
+    word-wrap: break-word;
+	}
+	@media (min-width: 40em) {
+		.article-content h2 {
+			text-indent: -1ch;
+		}
+	}
+	.article-content code {
+		background: #fff;
+		font: inherit;
+		color: var(--primary);
+		padding-inline: 0.2em;
+		border-radius: 0.2em;
+	}
+	.astro-code {
+		padding: 1rem;
+		border-radius: 0.5rem;
+	}
+	.astro-code code {
+		background: none;
+		padding: 0;
 	}
 </style>
