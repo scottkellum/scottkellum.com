@@ -1,5 +1,437 @@
 {
-  "rolls":[
+  "rolls": [
+    {
+      "date": "5/13/2022",
+      "camera": "Hasselblad 500C",
+      "lens": "Carl Zeiss Sonnar 150mm <i>f</i>4",
+      "stock": "TMAX 400",
+      "location": "Los Angeles",
+      "color": "#CCC",
+      "title": "[Second Roll] on the [Hassy]",
+      "photos": [
+        {
+          "src": "2022-05-13-001.jpg",
+          "alt": "A small child smiling while eating"
+        },
+        {
+          "src": "2022-05-13-002.jpg",
+          "alt": "A small child with a messy face and finger in their mouth"
+        },
+        {
+          "src": "2022-05-13-003.jpg",
+          "alt": "A small child with a messy face and finger in their mouth"
+        },
+        {
+          "src": "2022-05-13-005.jpg",
+          "alt": "Sunlight flooding through a window onto a stuffed chair and ottoman"
+        },
+        {
+          "src": "2022-05-13-004.jpg",
+          "alt": "A cat on a desk enjoying the sunlight"
+        }
+      ]
+    },
+    {
+      "date": "5/1/2022",
+      "camera": "Hasselblad 500C",
+      "lens": "Carl Zeiss Sonnar 150mm <i>f</i>4",
+      "stock": "TMAX 400",
+      "location": "Los Angeles",
+      "color": "#CCC",
+      "title": "[First Roll] on the [Hassy]",
+      "photos": [
+        {
+          "src": "2022-05-01-001-hassy.jpg",
+          "alt": "A woman sitting on the floor in a room filled with natural light looking off into the distance"
+        },
+        {
+          "src": "2022-05-01-002-hassy.jpg",
+          "alt": "A baby outside in the garden"
+        },
+        {
+          "src": "2022-05-01-003-hassy.jpg",
+          "alt": "A baby asleep on his mother’s lap"
+        },
+        {
+          "src": "2022-05-01-004-hassy.jpg",
+          "alt": "A woman seated in the garden with a baby asleep on her lap"
+        }
+      ]
+    },
+    {
+      "date": "5/1/2022",
+      "camera": "Leica M3",
+      "lens": "Vöigtlander 50mm <i>f</i>1.5 Nokton MC II",
+      "stock": "Delta 100",
+      "location": "Santa Rosa",
+      "color": "#CCC",
+      "title": "[Trip] to [Santa Rosa] in B+W",
+      "photos": [
+        {
+          "src": "2022-05-01-001.jpg",
+          "alt": "A grassy coastal field with a path that leads off into the distance"
+        },
+        {
+          "src": "2022-05-01-002.jpg",
+          "alt": "An old barbed wire fence alongside a path throguh grassy coastal fields"
+        },
+        {
+          "src": "2022-05-01-003.jpg",
+          "alt": "A remote path leading to some houses in the distance"
+        },
+        {
+          "src": "2022-05-01-004.jpg",
+          "alt": "A dirt path through a grassy field leading up to a large hill"
+        },
+        {
+          "src": "2022-05-01-005.jpg",
+          "alt": "Puddles on a path towards some remote houses"
+        },
+        {
+          "src": "2022-05-01-006.jpg",
+          "alt": "A metal gate on a wooden fence along a dirt path"
+        },
+        {
+          "src": "2022-05-01-007.jpg",
+          "alt": "Delapodated wooden fences along a narrow dirt path"
+        },
+        {
+          "src": "2022-05-01-008.jpg",
+          "alt": "Farmhouses in a remote field"
+        },
+        {
+          "src": "2022-05-01-009.jpg",
+          "alt": "A hiking sign on a wooden fence along a grassy coastal trail with docks in the distance"
+        },
+        {
+          "src": "2022-05-01-010.jpg",
+          "alt": "A grassy field leads up to a rocky hill"
+        },
+        {
+          "src": "2022-05-01-011.jpg",
+          "alt": "A baby in overalls plays on a living room floor"
+        },
+        {
+          "src": "2022-05-01-012.jpg",
+          "alt": "An art decco building with two palm trees out front in San Diego"
+        },
+        {
+          "src": "2022-05-01-013.jpg",
+          "alt": "A shaded sidewalk in San Diego"
+        },
+        {
+          "src": "2022-05-01-014.jpg",
+          "alt": "A baby drinking milk from a sippy cup at a dining room table"
+        },
+        {
+          "src": "2022-05-01-015.jpg",
+          "alt": "A baby playing with a balancing pole on the playground"
+        },
+        {
+          "src": "2022-05-01-016.jpg",
+          "alt": "A baby trying to crawl up a slide on the playgound"
+        },
+        {
+          "src": "2022-05-01-017.jpg",
+          "alt": "A baby trying to crawl up a slide on the playgound"
+        },
+        {
+          "src": "2022-05-01-018.jpg",
+          "alt": "A baby trying to crawl up a slide on the playgound"
+        }
+      ]
+    },
+    {
+      "date": "4/13/2022",
+      "camera": "Leica M3",
+      "lens": "Vöigtlander 50mm <i>f</i>1.5 Nokton MC II",
+      "stock": "Portra 400",
+      "location": "Santa Rosa",
+      "color": "#FF6C4B",
+      "title": "[Trip] to [Santa Rosa] in Color",
+      "photos": [
+        {
+          "src": "2022-04-13-005.jpg",
+          "alt": "A red barn amidst a windswept costal landscape"
+        },
+        {
+          "src": "2022-04-13-006.jpg",
+          "alt": "A woman walking into a landscape along a wide dirt path carrying a backpack and camera"
+        },
+        {
+          "src": "2022-04-13-007.jpg",
+          "alt": "A boat anchor leaning against a wooden building"
+        },
+        {
+          "src": "2022-04-13-008.jpg",
+          "alt": "An eroded cliff filled with vegitation next to the ocean"
+        },
+        {
+          "src": "2022-04-13-009.jpg",
+          "alt": "A big puddle on a small dirt road amidst a field of grasses and wildflowers. In the distance are slow rolling hills and clouds above."
+        },
+        {
+          "src": "2022-04-13-010.jpg",
+          "alt": "A white house in the distance amidst a grassy costal landscape"
+        },
+        {
+          "src": "2022-04-13-011.jpg",
+          "alt": "Yellow wildflowers atop a cliff near the ocean"
+        },
+        {
+          "src": "2022-04-13-012.jpg",
+          "alt": "An eroded cliff filled with vegitation next to the ocean"
+        },
+        {
+          "src": "2022-04-13-013.jpg",
+          "alt": "Grass grows atop the ocean bluffs"
+        },
+        {
+          "src": "2022-04-13-014.jpg",
+          "alt": "An eroded cliff filled with vegitation next to the ocean"
+        },
+        {
+          "src": "2022-04-13-001.jpg",
+          "alt": "A woman looking into the camera out a window"
+        },
+        {
+          "src": "2022-04-13-002.jpg",
+          "alt": "A young toddler climbs on a playground"
+        },
+        {
+          "src": "2022-04-13-003.jpg",
+          "alt": "A young toddler looking back while playing on the playground"
+        },
+        {
+          "src": "2022-04-13-004.jpg",
+          "alt": "A young toddler standing in the middle of a largely empty playground"
+        }
+      ]
+    },
+    {
+      "date": "4/6/2022",
+      "camera": "Leica M3",
+      "lens": "Vöigtlander 50mm <i>f</i>1.5 Nokton MC II",
+      "stock": "PANF+ 50",
+      "location": "Santa Rosa",
+      "color": "#ccc",
+      "title": "[Day Trip] to [Santa Rosa]",
+      "photos": [
+        {
+          "src": "2022-04-06-001.jpg",
+          "alt": "a windswept beach with a single person on it and steep dark bluffs"
+        },
+        {
+          "src": "2022-04-06-002.jpg",
+          "alt": "a path down from the bluffs onto the sandy beach"
+        },
+        {
+          "src": "2022-04-06-003.jpg",
+          "alt": "the dark jagged texture of a rocky bluff in the foreground with the windswept beach in the mid and background"
+        },
+        {
+          "src": "2022-04-06-004.jpg",
+          "alt": "A field of grass and a curved path leading up to a hill in the distance"
+        },
+        {
+          "src": "2022-04-06-005.jpg",
+          "alt": "A woman and baby enjoying the beach"
+        },
+        {
+          "src": "2022-04-06-006.jpg",
+          "alt": "A woman and baby walking along the shore"
+        },
+        {
+          "src": "2022-04-06-007.jpg",
+          "alt": "A large dune against a dark rocky bluff"
+        },
+        {
+          "src": "2022-04-06-008.jpg",
+          "alt": "A sandy beach with lots of texture"
+        },
+        {
+          "src": "2022-04-06-009.jpg",
+          "alt": "A field of wild grass near the ocean"
+        },
+        {
+          "src": "2022-04-06-010.jpg",
+          "alt": "A field of grass and a bush next to the ocean"
+        },
+        {
+          "src": "2022-04-06-011.jpg",
+          "alt": "A baby playing in the grass next to a bag"
+        },
+        {
+          "src": "2022-04-06-012.jpg",
+          "alt": "A baby playing in a field"
+        },
+        {
+          "src": "2022-04-06-013.jpg",
+          "alt": "A muddy patch through a field with a mountian and path in the background"
+        },
+        {
+          "src": "2022-04-06-014.jpg",
+          "alt": "A field of tall grass in front of the ocean, and a windsock in the distant center of frame"
+        },
+        {
+          "src": "2022-04-06-015.jpg",
+          "alt": "A feild in front of the ocean, with a pier in the distance"
+        },
+        {
+          "src": "2022-04-06-016.jpg",
+          "alt": "A sandy textured beach with dark rocky bluffs"
+        },
+        {
+          "src": "2022-04-06-017.jpg",
+          "alt": "A sandy textured beach with water rushing towards the shore"
+        }
+      ]
+    },
+    {
+      "date": "3/9/2022",
+      "camera": "Stereo Realist",
+      "lens": "35mm <i>f</i>3.5",
+      "stock": "HP5+ 400",
+      "location": "Los Angeles",
+      "color": "#ccc",
+      "title": "[Life] in [Stereo]",
+      "photos": [
+        {
+          "src": "2022-03-09-002.jpg",
+          "alt": "A woman in a dim room holding a planner and looking down at it",
+          "stereo": "2022-03-09-001.jpg"
+        },
+        {
+          "src": "2022-03-09-003.jpg",
+          "alt": "A cactus next to a ravine",
+          "stereo": "2022-03-09-004.jpg"
+        },
+        {
+          "src": "2022-03-09-005.jpg",
+          "alt": "A cactus next to a ravine",
+          "stereo": "2022-03-09-006.jpg"
+        },
+        {
+          "src": "2022-03-09-012.jpg",
+          "alt": "A large potted succulent plant next to a window in a home",
+          "stereo": "2022-03-09-011.jpg"
+        },
+        {
+          "src": "2022-03-09-007.jpg",
+          "alt": "An overlook from an elevated path over the ocean",
+          "stereo": "2022-03-09-008.jpg"
+        },
+        {
+          "src": "2022-03-09-013.jpg",
+          "alt": "A large potted succulent plant next to a window in a home",
+          "stereo": "2022-03-09-014.jpg"
+        },
+        {
+          "src": "2022-03-09-016.jpg",
+          "alt": "A large potted succulent plant next to a window in a home",
+          "stereo": "2022-03-09-015.jpg"
+        },
+        {
+          "src": "2022-03-09-010.jpg",
+          "alt": "A large potted succulent plant next to a window in a home",
+          "stereo": "2022-03-09-009.jpg"
+        }
+      ]
+    },
+    {
+      "date": "3/4/2022",
+      "camera": "Leica M3",
+      "lens": "Vöigtlander 50mm <i>f</i>1.5 Nokton MC II",
+      "stock": "Portra 400",
+      "location": "Los Angeles",
+      "color": "#FF6C4B",
+      "title": "[Snapshots] of [Life] 2",
+      "photos": [
+        {
+          "src": "2022-03-04-001.jpg",
+          "alt": "Lemons lined up alongside a stove with a coffee maker"
+        },
+        {
+          "src": "2022-03-04-009.jpg",
+          "alt": "A woman and baby take a nap together on the floor"
+        },
+        {
+          "src": "2022-03-04-002.jpg",
+          "alt": "A woman wearing gardening gloves moving potted herbs"
+        },
+        {
+          "src": "2022-03-04-010.jpg",
+          "alt": "A baby standing up reaching for a door knob"
+        },
+        {
+          "src": "2022-03-04-003.jpg",
+          "alt": "A woman on stairs wearing gardening gloves planting something"
+        },
+        {
+          "src": "2022-03-04-008.jpg",
+          "alt": "A woman and a baby sitting at a garden party"
+        },
+        {
+          "src": "2022-03-04-004.jpg",
+          "alt": "Palm trees over an apartiment complex and the Hollywood hills in the distance"
+        },
+        {
+          "src": "2022-03-05-005.jpg",
+          "alt": "A bright red flower next to a residential street"
+        },
+        {
+          "src": "2022-03-07-006.jpg",
+          "alt": "A woman walking a scruffy and very good dog across a street"
+        },
+        {
+          "src": "2022-03-07-007.jpg",
+          "alt": "A small, scruffy, and very good dog going for a very good walk"
+        }
+      ]
+    },
+    {
+      "date": "2/25/2022",
+      "camera": "Leica M3",
+      "lens": "Vöigtlander 50mm <i>f</i>1.5 Nokton MC II",
+      "stock": "HP5+ 400",
+      "location": "Los Angeles",
+      "color": "#ccc",
+      "title": "[Snapshots] of [Life] 1",
+      "photos": [
+        {
+          "src": "2022-02-25-004.jpg",
+          "alt": "My wife in the kitchen. A light leak washed out part of the image in an artistic way."
+        },
+        {
+          "src": "2022-02-25-003.jpg",
+          "alt": "My wife in the kitchen"
+        },
+        {
+          "src": "2022-02-25-002.jpg",
+          "alt": "A cat relaxing on the carpet, looking at the camera"
+        },
+        {
+          "src": "2022-02-25-001.jpg",
+          "alt": "A cat relaxing on the carpet"
+        },
+        {
+          "src": "2022-02-28-005.jpg",
+          "alt": "A house with a steep gable, pickett fence, and cacti growing in the garden"
+        },
+        {
+          "src": "2022-02-28-006.jpg",
+          "alt": "People at the crosswalk in LA"
+        },
+        {
+          "src": "2022-02-28-007.jpg",
+          "alt": "My wife reclined on the sidewalk wearing sunglasses"
+        },
+        {
+          "src": "2022-02-28-008.jpg",
+          "alt": "A silhouette of my wife under an arcade of vegitation."
+        }
+      ]
+    },
     {
       "date": "2/16/2022",
       "camera": "Leica M3",
@@ -8,7 +440,7 @@
       "location": "Los Angeles",
       "color": "#FF6C4B",
       "title": "A walk through [Huntington Gardens]",
-      "photos":[
+      "photos": [
         {
           "src": "2022-02-16-003.jpg",
           "alt": "A crystal clear pond with moss growing on the bottom"
@@ -42,6 +474,10 @@
           "alt": "Broad leaves backlit by the sun"
         },
         {
+          "src": "2022-02-16-012.jpg",
+          "alt": "A baby standing next to a window as the sun streams in"
+        },
+        {
           "src": "2022-02-16-010.jpg",
           "alt": "At home some light is hitting the wall and a lamp"
         },
@@ -59,7 +495,7 @@
       "location": "Los Angeles",
       "color": "#ccc",
       "title": "At [home] with [Ana]",
-      "photos":[
+      "photos": [
         {
           "src": "2022-02-04-004.jpg",
           "alt": "The side corner of a stucco appartment"
@@ -71,6 +507,10 @@
         {
           "src": "2022-02-04-011.jpg",
           "alt": "Sun dappled living room"
+        },
+        {
+          "src": "2022-02-04-014.jpg",
+          "alt": "A baby sitting in a living room looking into the camera"
         },
         {
           "src": "2022-02-04-012.jpg",
@@ -110,7 +550,7 @@
       "location": "Los Angeles",
       "color": "#ccc",
       "title": "A [walk] with [Ben]",
-      "photos":[
+      "photos": [
         {
           "src": "2022-02-07-001.jpg",
           "alt": "Ben and myself in a curved mirror"
@@ -161,7 +601,7 @@
       "location": "Los Angeles",
       "color": "#ccc",
       "title": "Winter [afternoons] in [Los Angeles]",
-      "photos":[
+      "photos": [
         {
           "src": "2022-01-19-001.jpg",
           "alt": "Huntington Gardens"
@@ -177,6 +617,22 @@
         {
           "src": "2022-01-19-343.jpg",
           "alt": "Kids toys on the carpet"
+        },
+        {
+          "src": "2022-01-19-002.jpg",
+          "alt": "A woman and child playing on a living room floor"
+        },
+        {
+          "src": "2022-01-19-003.jpg",
+          "alt": "A woman and child playing on a living room floor"
+        },
+        {
+          "src": "2022-01-19-004.jpg",
+          "alt": "A woman and child playing on a living room floor"
+        },
+        {
+          "src": "2022-01-19-005.jpg",
+          "alt": "A woman and child playing on a living room floor"
         },
         {
           "src": "2022-01-19-344.jpg",
@@ -204,7 +660,7 @@
       "location": "Malibu",
       "color": "#FF6C4B",
       "title": "[First Roll] on the [New Camera]",
-      "photos":[
+      "photos": [
         {
           "src": "2021-12-28-330.jpg",
           "alt": "Lush river valley"
@@ -255,7 +711,7 @@
       "location": "Vasquez Rocks, CA",
       "color": "#ccc",
       "title": "[Point and Shoot] at [Vasquez Rocks]",
-      "photos":[
+      "photos": [
         {
           "src": "2020-12-21-321.jpg",
           "alt": "A path on the ridge of the rocks"
@@ -290,7 +746,7 @@
       "location": "Los Angeles",
       "color": "#ccc",
       "title": "A [Shot] in the [Park]",
-      "photos":[
+      "photos": [
         {
           "src": "2020-12-21-313.jpg",
           "alt": "My wife wearing round sunglasses in the park"
@@ -321,7 +777,7 @@
       "location": "Malibu State Park",
       "color": "#ccc",
       "title": "[MASH] in [Malibu]",
-      "photos":[
+      "photos": [
         {
           "src": "2020-12-21-306.jpg",
           "alt": "Truck from the TV show MASH"
@@ -344,7 +800,7 @@
       "location": "Glacier National Park",
       "color": "#FF6C4B",
       "title": "Beautiful [Glacier National Park]",
-      "photos":[
+      "photos": [
         {
           "src": "2020-08-26-288.jpg",
           "alt": "A lake in the early morning as the sun just came up"
@@ -399,7 +855,7 @@
       "location": "Craters of the Moon",
       "color": "#FF6C4B",
       "title": "[Craters] of the [Moon]",
-      "photos":[
+      "photos": [
         {
           "src": "2020-08-26-297.jpg",
           "alt": "Barren volcanic landscape"
@@ -426,7 +882,7 @@
       "location": "San Diego",
       "color": "#FF6C4B",
       "title": "[San Diego] in [Color]",
-      "photos":[
+      "photos": [
         {
           "src": "2020-08-26-289.jpg",
           "alt": "A beautiful craftsman house in San Diego"
@@ -453,7 +909,7 @@
       "location": "Big Sur",
       "color": "#FF6C4B",
       "title": "[Get away] to [Big Sur]",
-      "photos":[
+      "photos": [
         {
           "src": "2020-05-02-167.jpg",
           "alt": "A woman taking a photograph off the bluffs"
@@ -572,7 +1028,7 @@
       "location": "Mexico City",
       "color": "#ccc",
       "title": "[Mexico City] in [Black and White]",
-      "photos":[
+      "photos": [
         {
           "src": "2020-05-17-228.jpg",
           "alt": "Strings of lights illuminated in the dark of night"
@@ -675,7 +1131,7 @@
       "location": "Mexico City",
       "color": "#ccc",
       "title": "[Mexico City] in [Point and Shoot]",
-      "photos":[
+      "photos": [
         {
           "src": "2020-05-17-250.jpg",
           "alt": "A desert landscape with many cacti"
@@ -706,12 +1162,12 @@
       "location": "Mexico City",
       "color": "#FF6C4B",
       "title": "[Mexico City] on [Medium Format]",
-      "photos":[
+      "photos": [
         {
           "src": "2020-03-10-139.jpg",
           "alt": "A close up of a woman atop a Teotihuacan pyramid"
         },
-        { 
+        {
           "src": "2020-03-10-140.jpg",
           "alt": "A close up of a woman atop a Teotihuacan pyramid"
         },
@@ -737,7 +1193,7 @@
       "location": "Mexico City",
       "color": "#FF6C4B",
       "title": "[Mexico City] in [Color]",
-      "photos":[
+      "photos": [
         {
           "src": "2020-04-04-148.jpg",
           "alt": ""
@@ -764,7 +1220,7 @@
       "location": "Sacramento",
       "color": "#ccc",
       "title": "[Sacramento] on [Film]",
-      "photos":[
+      "photos": [
         {
           "src": "2020-05-17-216.jpg",
           "alt": ""
@@ -819,7 +1275,7 @@
       "location": "Antelope Valley",
       "color": "#FF6C4B",
       "title": "Antelope Valley [Poppy Reserve]",
-      "photos":[
+      "photos": [
         {
           "src": "2020-05-02-176.jpg",
           "alt": ""
@@ -846,7 +1302,7 @@
       "location": "Porto Portugal",
       "color": "#ccc",
       "title": "[Porto] Portugal",
-      "photos":[
+      "photos": [
         {
           "src": "2020-05-17-212.jpg",
           "alt": ""
@@ -889,7 +1345,7 @@
       "location": "Washington DC",
       "color": "#ccc",
       "title": "The [National Arboretum]",
-      "photos":[
+      "photos": [
         {
           "src": "2020-05-17-231.jpg",
           "alt": ""
@@ -936,7 +1392,7 @@
       "location": "LA Area",
       "color": "#ccc",
       "title": "Misc [LA] B+W",
-      "photos":[
+      "photos": [
         {
           "src": "2020-05-17-275.jpg",
           "alt": ""
@@ -967,7 +1423,7 @@
       "location": "LA Area",
       "color": "#FF6C4B",
       "title": "Misc [LA] Color",
-      "photos":[
+      "photos": [
         {
           "src": "2020-05-02-175.jpg",
           "alt": ""
@@ -1038,7 +1494,7 @@
       "location": "NYC",
       "color": "#FF6C4B",
       "title": "Misc [NYC] Color",
-      "photos":[
+      "photos": [
         {
           "src": "2019-05-03-118.jpg",
           "alt": ""
@@ -1077,7 +1533,7 @@
       "location": "Washington DC Area",
       "color": "#ccc",
       "title": "Misc [DMV] B+W",
-      "photos":[
+      "photos": [
         {
           "src": "2020-05-17-198.jpg",
           "alt": ""
@@ -1176,7 +1632,7 @@
       "location": "Washington DC Area",
       "color": "#FF6C4B",
       "title": "Misc [DMV] Color",
-      "photos":[
+      "photos": [
         {
           "src": "2019-04-16-111.jpg",
           "alt": ""
@@ -1243,7 +1699,7 @@
       "location": "Jersey Shore",
       "color": "#ccc",
       "title": "[Jersey] Shore",
-      "photos":[
+      "photos": [
         {
           "src": "2020-05-17-268.jpg",
           "alt": ""
@@ -1278,7 +1734,7 @@
       "location": "New York City",
       "color": "#ccc",
       "title": "[High Line] High Life",
-      "photos":[
+      "photos": [
         {
           "src": "2019-04-13-103.jpg",
           "alt": "Peering through the buildings at “The Vessel”"
@@ -1313,7 +1769,7 @@
       "location": "New York City",
       "color": "#ccc",
       "title": "[New York] After Dark",
-      "photos":[
+      "photos": [
         {
           "src": "2019-03-24-061.jpg",
           "alt": "Late night trash train in the subway station"
@@ -1340,7 +1796,7 @@
       "location": "Los Angeles",
       "color": "#ccc",
       "title": "[In] and Around [Los Angeles]",
-      "photos":[
+      "photos": [
         {
           "src": "2019-03-24-058.jpg",
           "alt": "LACMA exposed stairway"
@@ -1387,7 +1843,7 @@
       "location": "Vasquez Rocks, CA",
       "color": "#FF6C4B",
       "title": "[Vasquez Rocks] in the [Sun]",
-      "photos":[
+      "photos": [
         {
           "src": "2019-03-10-051.jpg",
           "alt": "Rocks in the sun"
@@ -1410,7 +1866,7 @@
       "location": "Hawaii",
       "color": "lightpink",
       "title": "A [Beautiful] Hawaiian [Adventure]",
-      "photos":[
+      "photos": [
         {
           "src": "2017-03-08-030.jpg",
           "alt": "Clear blue water and beautiful rocks underneath"
@@ -1569,7 +2025,7 @@
       "location": "Banff Canada",
       "color": "lightpink",
       "title": "The [Canadian Rockies]",
-      "photos":[
+      "photos": [
         {
           "src": "2016-07-18-004.jpg",
           "alt": "Layered sedimentary rock layers in the cliffside of the mountian"

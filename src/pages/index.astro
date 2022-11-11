@@ -7,12 +7,9 @@ import Marquee from '../components/Marquee.astro';
 import BlogPostPreview from '../components/BlogPostPreview.astro';
 import WorkPreview from '../components/WorkPreview.astro';
 import photos from '../data/photos.json'
-import XElement from 'astro-xelement';
 
 
 let rolls = photos.rolls;
-
-const { H1 } = XElement
 
 interface MarkdownFrontmatter {
 	publishDate: number;
@@ -35,7 +32,7 @@ let permalink = 'https://scottkellum.com/';
 
 // Data Fetching: List all Markdown posts in the repo.
 
-let allPosts = await Astro.fetchContent('./posts/*.md');
+let allPosts = await Astro.glob('./posts/*.md');
 allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf());
 
 let allWork = await Astro.fetchContent('./work/*.md');
@@ -87,7 +84,7 @@ allWork = allWork.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.
 				font-style: italic;
 			}
 			.head {
-				font-size: calc(1px * var(--bind) / 7.22);
+				font-size: min(calc(1px * var(--tt-bind) / 7.22), 3.2rem);
 				width: 90vw;
 				font-family: var(--font-display);
 				color: var(--primary);
@@ -258,9 +255,9 @@ allWork = allWork.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.
 					<img loading="lazy" src="/img/profile.jpg" alt="A photograph of Scott casually sitting on a curb">
 					<figcaption>Photograph by <a href="https://tatebot.com/">Tate Tozer</a></figcaption>
 				</figure>
-				<H1 class="head" @resize={() => { this.style.setProperty('--bind', this.clientWidth) }}>
+				<h1 class="head">
 					Scott Kellum
-				</H1>
+				</h1>
 				<p class="marquee">Invention • Innovation • Typography • Teaching • Editorial design • Design leadership • Photography • Product design • Design systems • Speaking •&nbsp;</p>
 				<script>
 					const marquee = document.querySelector('.marquee');
@@ -268,7 +265,7 @@ allWork = allWork.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.
 				</script>
 				<section class="about">
 					<p>Scott Kellum is the founder of <a href="https://typetura.com">Typetura</a>, a typography as a service company offering both bespoke and ready-made typographic solutions. With over 15 years of design experience across type, editorial, digital, and print design; Scott’s experience gives him a unique perspective on the typographic challenges and opportunities in the design industry. He has invented multiple web technologies, holds two patents, and has contributed to major projects at <a href="https://voxmedia.com/">Vox Media</a>, <a href="https://www.dardenstudio.com/">Darden Studio</a>, and Roger Black Studio. These accomplishments include inventing <a href="https://patents.google.com/patent/US10769348B1/en">dynamic typographic systems</a>, <a href="https://www.adweek.com/programmatic/why-vox-media-chose-to-build-not-buy-a-programmatic-stack/">high impact ad formats</a>, <a href="https://developers.google.com/web/updates/2016/12/performant-parallaxing">new parallax techniques</a>, and the <a href="https://typetura.scottkellum.com/typetura-js">fluid typesetting technology</a> that powers Typetura itself.</p>
-					<p><a href="https://twitter.com/scottkellum">Say hi on Twitter</a> or <a href="mailto:scott@scottkellum.com">shoot me an email</a>.</p>
+					<p><a rel="me" href="https://toot.typetura.com/@scott">Say hi on Mastodon</a> or <a href="mailto:scott@scottkellum.com">shoot me an email</a>.</p>
 				</section>
 				<svg class="shape" viewBox="0 0 444 494" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M190 9.4752C209.802 -1.95729 234.198 -1.95729 254 9.47521L411.703 100.525C431.504 111.957 443.703 133.085 443.703 155.95V338.05C443.703 360.915 431.504 382.043 411.703 393.475L254 484.525C234.198 495.957 209.802 495.957 190 484.525L32.2975 393.475C12.4958 382.043 0.297501 360.915 0.297501 338.05V155.95C0.297501 133.085 12.4958 111.957 32.2975 100.525L190 9.4752Z" fill="currentColor"/>

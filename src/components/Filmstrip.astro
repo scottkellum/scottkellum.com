@@ -1,5 +1,7 @@
 ---
 import photos from '../data/photos.json'
+// https://astro-imagetools-docs.vercel.app/en/introduction
+// import { Img } from "astro-imagetools/components";
 
 let rolls = photos.rolls;
 
@@ -22,7 +24,7 @@ function rollID(t) {
       <span class="date">{roll.date}</span>
       <span class="date">{roll.location}</span>
       <span class="camera">{roll.camera}</span>
-      <span class="lens">{roll.lens}</span>
+      <span class="lens" set:html=roll.lens></span>
       <span class="stock">{roll.stock}</span>
       <svg width="143" height="30" viewBox="0 0 143 30" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M142.929 15L120.63 27.8744L120.63 2.12548L142.929 15Z" fill="currentcolor"/>
@@ -31,12 +33,12 @@ function rollID(t) {
         <path d="M29.7324 15L7.43317 27.8744L7.43317 2.12548L29.7324 15Z" fill="currentcolor"/>
       </svg>
     </div>
-    <h1>{titleTransform(roll.title)}</h1>
+    <h1 set:html=titleTransform(roll.title)></h1>
     {roll.photos.map((photo) => (
       <section class="image" onclick="currentPhoto(this)">
         <img loading="lazy" src="/photos/${photo.src}" alt={photo.alt}>
-        {photo.sterio && (
-          <img class="sterio" loading="lazy" src="/photos/${photo.sterio}" alt=" ">
+        {photo.stereo && (
+          <img aria-hidden="true" class="stereo" loading="lazy" src="/photos/${photo.stereo}" alt=" ">
         )}
       </section>
     ))}
@@ -87,11 +89,11 @@ function rollID(t) {
   margin-block-start: 0.815rem;
   position: relative;
 }
-.filmstrip .sterio {
+.filmstrip .stereo {
   display: none;
 }
 @media (prefers-reduced-motion: no-preference) {
-  .filmstrip .sterio {
+  .filmstrip .stereo {
     display: block;
     position: absolute;
     top: 0;
@@ -99,10 +101,10 @@ function rollID(t) {
     with: 100%;
     height: 100%;
     object-fit: cover;
-    animation: sterio 0.4s steps(1) infinite;
+    animation: stereo 0.6s steps(1) infinite;
   }
 }
-@keyframes sterio {
+@keyframes stereo {
   50% {
     opacity: 0;
   }
@@ -113,13 +115,13 @@ function rollID(t) {
 .keyNav .filmstrip .image {
   opacity: 0.5;
 }
-.keyNav .filmstrip .sterio {
+.keyNav .filmstrip .stereo {
   display: none;
 }
 .keyNav .filmstrip .current {
   opacity: 1;
 }
-.keyNav .filmstrip .current .sterio {
+.keyNav .filmstrip .current .stereo {
   display: block;
 }
 .filmstrip h1 {
@@ -166,6 +168,68 @@ function rollID(t) {
   width: 8rem;
   height: 1.6rem;
 }
+
+@media print {
+  html {
+    background: none !important;
+    font-size: 9pt !important;
+  }
+  .home {
+    display: none;
+  }
+  .filmstrip {
+    display: grid;
+    white-space: normal;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    width: auto;
+    margin: 1rem 1rem 6rem;
+    gap: 1rem;
+    page-break-after: always;
+  }
+  .filmstrip img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: contain;
+    page-break-inside: avoid;
+  }
+  .filmstrip .image {
+    block-size: auto;
+    margin: 0;
+    opacity: 1 !important;
+  }
+  .filmstrip h1 {
+    font: inherit !important;
+    font-weight: 400 !important;
+    animation: none;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    margin: 0;
+    inline-size: 100%;
+  }
+  .filmstrip h1 strong {
+    font-weight: 400 !important;
+  }
+  .filmstrip .meta {
+    display: block;
+    position: relative;
+    transform: none;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    margin: 0;
+    align-self: end;
+  }
+  .filmstrip .meta span {
+    display: block;
+  }
+  .filmstrip svg {
+    display: none;
+  }
+  * {
+    mix-blend-mode: normal !important;
+    color: #000 !important;
+  }
+}
 </style>
 
 <script>
@@ -182,6 +246,15 @@ function currentPhoto(e) {
   e.classList.add("current")
   e.scrollIntoView({behavior: "smooth", block: "nearest", inline: "center"});
   e.closest(".filmstrip").scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
+  let id = current.closest(".filmstrip").id;
+  if(window.location.hash != `#${id}`) {
+    if(history.pushState) {
+      history.pushState(null, null, `/photos#${id}`);
+    }
+    else {
+      window.location.hash= id;
+    }
+  }
 }
 
 document.addEventListener('keydown', logKey);
