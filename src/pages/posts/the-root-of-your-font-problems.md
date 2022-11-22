@@ -16,7 +16,7 @@ A good foundation makes for excellent typography. To create a solid foundation I
 
 ## Rem sizing
 
-The unit `rem` stands for “Root EM” and it’s equal to the font size at the root of your document. It’s a CSS constant you can set and then use throughout your design. Setting `font-size` on `html` defines a `rem` but setting `font-size` on `body` does nothing to define a `rem`. A defined rem equal to your body font size can be extremely valuable to in maintaining typographic proportion or in consistently scaling an interface at different breakpoints.
+The unit `rem` stands for “Root EM” and it’s equal to the font size at the root of your document. It’s a CSS constant you can set and then use throughout your design. Setting `font-size` on `html` defines a `rem` but setting `font-size` on `body` does nothing to define a `rem`. A defined rem equal to your body font size can be extremely valuable to in maintaining typographic proportion or in consistently scaling an interface at different breakpoints. This latter point of consistent scaling of the interface I have found extremely helpful as screen sizes become increasingly more diverse. This allows you to easily scale a website down to the size of a watch or up to the size of a large screen with minimal additional styling.
 
 ## Managing inheritance
 
@@ -58,4 +58,4 @@ html {
 }
 ```
 
-That’s it! That’s the post. I hope you have found this helpful.
+Along with font family, and maybe weight and [width](https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch), this provides a rock solid foundation for your typography. Elsewhere on your page you can use `rem`  for sizing and everything will remain proportional to the base font size you have set.
