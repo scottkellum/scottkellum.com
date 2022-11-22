@@ -40,6 +40,8 @@ html {
   font-size: 115%;
   line-height: 1.5;
   accent-color: var(--primary);
+  width: 100%;
+  overflow-x: hidden;
 
   animation: 1s cubic-bezier(0, 0.5, 0.5, 1) calc(-1s * var(--bind, 600) / 600)
     1 both paused html;
