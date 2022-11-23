@@ -83,15 +83,26 @@ const posts = (await Astro.glob('./posts/*.{md,mdx}')).sort(
 			}
 			.head {
 				font-size: min(calc(1px * var(--tt-bind) / 7.22), 3.2rem);
-				width: 90vw;
+				width: 100vw;
+				width: 100svw;
+				left: 50%;
+				transform: translateX(-50%);
 				font-family: var(--font-display);
 				color: var(--primary);
 				line-height: 1;
 				top: 1em;
 				position: absolute;
 				overflow: hidden;
-				transform: scale(1.15);
 				mix-blend-mode: multiply;
+			}
+			.artifacts {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				width: 100%;
+				height: 100vw;
+				overflow-x: hidden;
 			}
 			.marquee {
 				position: absolute;
@@ -228,6 +239,10 @@ const posts = (await Astro.glob('./posts/*.{md,mdx}')).sort(
 				}
 			}
 			@media (min-width: 45.5em) {
+				.artifacts {
+					position: static;
+					height: 0;
+				}
 				.image {
 					width: calc(40% + 3rem);
 					float: right;
@@ -258,6 +273,7 @@ const posts = (await Astro.glob('./posts/*.{md,mdx}')).sort(
 					position: relative;
 					transform: scale(1.3);
 					top: 0;
+					left: 0;
 				}
 			}
 		</style>
@@ -278,7 +294,12 @@ const posts = (await Astro.glob('./posts/*.{md,mdx}')).sort(
 				<h1 class="head">
 					Scott Kellum
 				</h1>
-				<p class="marquee">Invention • Innovation • Typography • Teaching • Editorial design • Design leadership • Photography • Product design • Design systems • Speaking •&nbsp;</p>
+				<div class="artifacts">
+					<p class="marquee">Invention • Innovation • Typography • Teaching • Editorial design • Design leadership • Photography • Product design • Design systems • Speaking •&nbsp;</p>
+					<svg class="shape" viewBox="0 0 444 494" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M190 9.4752C209.802 -1.95729 234.198 -1.95729 254 9.47521L411.703 100.525C431.504 111.957 443.703 133.085 443.703 155.95V338.05C443.703 360.915 431.504 382.043 411.703 393.475L254 484.525C234.198 495.957 209.802 495.957 190 484.525L32.2975 393.475C12.4958 382.043 0.297501 360.915 0.297501 338.05V155.95C0.297501 133.085 12.4958 111.957 32.2975 100.525L190 9.4752Z" fill="currentColor"/>
+					</svg>
+				</div>
 				<script is:inline>
 					const marquee = document.querySelector('.marquee');
 					marquee.innerHTML = marquee.innerText + `<span aria-hidden="true">${marquee.innerText}</span>`
@@ -291,9 +312,6 @@ const posts = (await Astro.glob('./posts/*.{md,mdx}')).sort(
 						<li><a href="https://beyondtellerrand.com/events/dusseldorf-2023">Beyond Tellerrand</a><br>April 17-18, 2023<br>Düsseldorf, Germany</li>
 					</ul>
 				</section>
-				<svg class="shape" viewBox="0 0 444 494" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M190 9.4752C209.802 -1.95729 234.198 -1.95729 254 9.47521L411.703 100.525C431.504 111.957 443.703 133.085 443.703 155.95V338.05C443.703 360.915 431.504 382.043 411.703 393.475L254 484.525C234.198 495.957 209.802 495.957 190 484.525L32.2975 393.475C12.4958 382.043 0.297501 360.915 0.297501 338.05V155.95C0.297501 133.085 12.4958 111.957 32.2975 100.525L190 9.4752Z" fill="currentColor"/>
-				</svg>
 			</article>
 
 			<section class="section">
