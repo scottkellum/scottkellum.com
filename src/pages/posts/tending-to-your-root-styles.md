@@ -59,3 +59,8 @@ html {
 ```
 
 Along with font family, and maybe weight and [width](https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch), this provides a rock solid foundation for your typography. Elsewhere on your page you can use `rem`  for sizing and everything will remain proportional to the base font size you have set.
+
+## A foundation to build on
+
+With this foundation you can efficiently make changes that will scale all your type styles at once or specific instances while reducing repetitive styles and inheritance complications. On small screens, scaling all your text down uniformly is just a matter of changing the root font size for a small breakpoints. And because you have considered defaults, overrides can be used sparingly where they are necessary.
+
