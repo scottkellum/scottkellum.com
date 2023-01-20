@@ -1,14 +1,14 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-title: "[The root] of your [font problems]"
+title: "[Tending] to your [Root Styles]"
 publishDate: November 11, 2022
 name: Scott Kellum
-description: A good foundation makes for excellent typography. To create a solid foundation I never put font styles on body, instead I always make sure they are placed on the root of my document, the html. Deciding when to apply styles to either body or html can be confusing. Styles in both places seem to behave in an identical fashion so why does this even matter? It comes down to three things — managing inheritance, consolidation of inherited styles with viewport styles, and rem sizing.
+description: A good foundation makes for excellent typography. To create a solid foundation, put font styles on the root of your document, the html. Deciding when to apply styles to either body or html can be confusing. Styles in both places seem to behave in an identical fashion so why does this even matter? It comes down to three things — managing inheritance, consolidation of inherited styles with viewport styles, and rem sizing.
 heroImage: /img/root-of-font-problem.jpg
 ---
 
-A good foundation makes for excellent typography. To create a solid foundation I never put font styles on `body`, instead I always make sure they are placed on the root of my document, the `html`. Deciding when to apply styles to either `body` or `html` can be confusing. Styles in both places seem to behave in an identical fashion so why does this even matter? It comes down to three things: managing inheritance, consolidation of inherited styles with viewport styles, and `rem` sizing.
+A good foundation makes for excellent typography. To create a solid foundation, put font styles on the root of your document, the `html`. Deciding when to apply styles to either `body` or `html` can be confusing. Styles in both places seem to behave in an identical fashion so why does this even matter? It comes down to three things: managing inheritance, consolidation of inherited styles with viewport styles, and `rem` sizing.
 
 ## Consolidation of inherited and viewport styles
 
