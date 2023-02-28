@@ -6,8 +6,10 @@ export interface Props {
 }
 
 function titleTransform(t) {
-  t = t.replaceAll('[', '<strong>');
-  t = t.replaceAll(']', '</strong>');
+  if (t) {
+	t = t.replaceAll('[', '<strong>');
+	t = t.replaceAll(']', '</strong>');
+  }
   return t;
 }
 
@@ -16,7 +18,7 @@ const { post } = Astro.props;
 
 <article class="item post-preview">
 	<header>
-		<a href={post.url} class="post-link"><H1 class="title" set:html="titleTransform(post.frontmatter.title)"></H1></a>
+		<a href={post.url} class="post-link"><H1 class="title" set:html={titleTransform(post.frontmatter.title)}></H1></a>
 	</header>
 	<p>{post.frontmatter.description}</p>
 </article>
