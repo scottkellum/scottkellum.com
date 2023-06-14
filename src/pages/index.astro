@@ -257,7 +257,7 @@ const posts = (await Astro.glob('./posts/*.{md,mdx}')).sort(
 				.image::before {
 					content: '';
 					position: absolute;
-					inset: -100% 3rem 0 auto;
+					inset: -100% 3rem -2rem auto;
 					width: 1px;
 					background: var(--primary);
 					mix-blend-mode: multiply;
@@ -289,7 +289,6 @@ const posts = (await Astro.glob('./posts/*.{md,mdx}')).sort(
 			<article class="lede">
 				<figure class="image">
 					<img loading="lazy" src="/img/profile.jpg" alt="A photograph of Scott casually sitting on a curb">
-					<figcaption>Photograph by <a href="https://tatebot.com/">Tate Tozer</a></figcaption>
 				</figure>
 				<h1 class="head">
 					Scott Kellum
@@ -309,7 +308,7 @@ const posts = (await Astro.glob('./posts/*.{md,mdx}')).sort(
 					<p><a rel="me" href="https://typetura.social/@scott">Say hi on Mastodon</a> or <a href="mailto:scott@scottkellum.com">shoot me an email</a>.</p>
 					<h2 class="sub-head">Upcoming talks</h2>
 					<ul>
-						<li><a href="https://beyondtellerrand.com/events/dusseldorf-2023">Beyond Tellerrand</a><br>April 17-18, 2023<br>Düsseldorf, Germany</li>
+						<li><a href="https://www.css.cafe/">CSS Café</a><br>June 6, 2023</li>
 					</ul>
 				</section>
 			</article>
