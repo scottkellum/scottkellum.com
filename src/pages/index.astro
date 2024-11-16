@@ -308,6 +308,17 @@ const posts = (await Astro.glob('./posts/*.{md,mdx}')).sort(
 					<p><a rel="me" href="https://typetura.social/@scott">Say hi on Mastodon</a> or <a href="mailto:scott@scottkellum.com">shoot me an email</a>.</p>
 				</section>
 			</article>
+			
+			<section class="section photos">
+				<h1 class="section-head">
+					<a href="/photos">Photos</a>
+				</h1>
+				{rolls.map((roll) => (
+					<a class="item" href="/photos#${rollID(roll.title)}">
+						<img loading="lazy" src="/photos/${roll.photos[0].src}" alt={roll.photos[0].alt}>
+					</a>
+				))}
+			</section>
 
 			<section class="section">
 				<h1 class="section-head">
@@ -328,16 +339,6 @@ const posts = (await Astro.glob('./posts/*.{md,mdx}')).sort(
 				{allWork.map((p) => <WorkPreview post={p} />)}
 			</section> -->
 
-			<section class="section photos">
-				<h1 class="section-head">
-					<a href="/photos">Photos</a>
-				</h1>
-				{rolls.map((roll) => (
-					<a class="item" href="/photos#${rollID(roll.title)}">
-						<img loading="lazy" src="/photos/${roll.photos[0].src}" alt={roll.photos[0].alt}>
-					</a>
-				))}
-			</section>
 		</main>
 	</body>
 </html>
