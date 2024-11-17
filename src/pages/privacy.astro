@@ -1,0 +1,24 @@
+---
+import Landing from '../layouts/Landing.astro';
+import Nav from '../components/Nav.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<Landing title={`Privacy | ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
+
+	<section class="lede wrapper">
+		<div class="content tt">
+			<h1 class="page-head">Privacy</h1>
+		</div>
+	</section>
+	
+	<Nav />
+
+	<main class="main wrapper">
+		<div class="content">
+			<p>You might have noticed this website doesn’t have an annoying cookie popup. Refreshing isn’t it? You might also be pleased to learn that we don’t track you at all using cookies. We do not track, sell, trade, or otherwise consume any information about you without your consent.</p>
+			<p>We still need to do business with customers, and part of that involves keeping records of sales, setting up email lists, and using 3rd party platforms with their own privacy policies. We reserve the right to use 3rd party products and platforms to conduct our business and reach our customers. If you suspect we might have data in our system and wish to have it erased, contact us and we will do so. Erasure of license records will void any and all license(s) you have with us.</p>
+			<p>If you have any questions or requests, contact us at <a href="mailto:info@typetura.com?subject=Privacy">info@typetura.com</a></p>
+		</div>
+	</main>
+</Landing>

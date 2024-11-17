@@ -1,0 +1,209 @@
+---
+import Landing from '../layouts/Landing.astro';
+import Nav from '../components/Nav.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Card from '../components/Card.astro';
+
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('blog')).sort(
+	(b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+---
+
+<Landing title="Typetura — Beautiful Websites for Your Content" description={SITE_DESCRIPTION}>
+
+	<section class="lede wrapper">
+		<div class="content tt">
+			<h1 class="page-head">Oops!</h1>
+			<p>We’re sorry we couldn’t find that page.</p>
+		</div>
+	</section>
+	
+	<Nav />
+
+	<main class="main wrapper" id="solutions">
+		<div class="content">
+
+			<div class="card-container">
+				<Card link="/editorial" head="Editorial">
+					<p>You have articles you are passionate about, we help present them to the world. By crafting a brand image your audience resonates with along with typesetting your content with a clear visual narrative we can increase your pageviews and get your articles the recognition they deserve.</p>
+				</Card>
+				<Card link="/ecommerce" head="Ecommerce">
+					<p>You put passion and care into crafting high quality products. We put passion and care into making high quality websites. You deserve a website that is built with the same level of care and craft you put into your business.</p>
+				</Card>
+			</div>
+			<div class="card-container">
+				<Card link="/federal" head="Federal">
+					<p>Federal websites need to communicate their content clearly and directly to The American Public. This is the practice of typography. We can deliver on that promise to federal websites. Websites that are HTML first, 21st Century IDEA compliant, and built on modern, accessible, and fast architectures.</p>
+				</Card>
+				<Card link="/solutions-and-ip" head="Solutions and IP">
+					<p>To deliver excellence to our clients we push the boundaries of what is possible. As a result we have invented and developed new technologies and approaches to typesetting on the web. We would love to work with you to implement these solutions into your next project.</p>
+				</Card>
+			</div>
+
+
+		</div>
+
+		<section class="featured" id="featured-work">
+			<hr>
+			<h2 class="featured-head">Featured work</h2>
+
+			<ul class="featured-list">
+				{
+					posts.map((post) => (
+						<li class="featured-post">
+								<img src={post.data.heroImage} alt={post.data.alt} width="441" height="441" />
+								<div class="work-container">
+									<h3 class="head">
+									<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+								</h3>
+								<p class="description">
+									{post.data.description}
+								</p>
+							</div>
+						</li>
+					))
+				}
+			</ul>
+
+			<a class="more-work" href="/blog/">More work and updates</a>
+
+		</section>
+
+</main>
+</Landing>
+
+<style>
+	@media (min-width: 40em) {
+		.card-container {
+			width: calc(100% + 2rem);
+			display: flex;
+			gap: 1em;
+			margin-inline: -1rem;
+			margin-block: 2rem;
+		}
+	}
+
+	.featured {
+		grid-column: 2 / 3;
+		/* text-align: center; */
+	}
+
+	.featured-list {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		list-style: none;
+	}
+
+	.featured-post {
+		margin: 0;
+		margin-block: 2rem;
+		gap: 1rem;
+		width: 100%;
+		position: relative;
+	}
+	.featured-post::before,
+	.featured-post::after {
+		content: '';
+		position: absolute;
+		display: block;
+		top: -0.5px;
+		right: 100%;
+		width: 50vw;
+		height: 1px;
+		background-color: var(--accent-dark);
+		transition: background-color var(--speed) ease-in-out;
+	}
+	.featured-post::after {
+		top: -3rem;
+		left: -0.5px;
+		width: 1px;
+		height: 3rem;
+		color: var(--accent-dark);
+		background: linear-gradient(0deg, currentcolor, transparent);
+		transition: color var(--speed) ease-in-out;
+	}
+	.featured-post > * {
+		flex: 1;
+	}
+
+	.featured-post img {
+		width: 100%;
+		margin: 0.5px;
+		outline: 1px solid var(--accent-dark);
+		object-fit: cover;
+		transition: outline-color var(--speed) ease-in-out;
+	}
+	.featured-post:has(a:hover) .work-container {
+		border-color: var(--action-neutral);
+	}
+	.featured-post:has(a:hover)::before {
+		background-color: var(--action-neutral);
+	}
+	.featured-post:has(a:hover)::after {
+		color: var(--action-neutral);
+	}
+	.featured-post:has(a:hover) img {
+		outline-color: var(--action-neutral);
+	}
+
+	.featured-post a {
+		position: static !important;
+		text-decoration: none;
+		transition: color var(--speed) ease-in-out;
+	}
+	.featured-post a:hover {
+		color: var(--action);
+	}
+	.featured-post a::after {
+		content: '';
+		position: absolute;
+		display: block;
+		inset: 0;
+	}
+	.featured-post a:focus::before {
+		border-start-end-radius: 4rem;
+		border-end-start-radius: 4rem;
+	}
+
+	@media (min-width: 40em) {
+		.featured-post {
+			margin-block: 1rem 3rem;
+			display: flex;
+		}
+		.featured-post img {
+			width: 1px;
+			border-radius: 0.1px 4rem 0.1px 4rem;
+		}
+		.featured-post .work-container {
+			align-self: flex-end;
+			border-bottom: 1px solid var(--accent-dark);
+			margin-block-end: -0.5px;
+			margin-inline-end: 1rem;
+			transition: border-color var(--speed) ease-in-out;
+		}
+	}
+
+  .more-work {
+    font-family: var(--gamay);
+    color: var(--primary-dark);
+    transition: color var(--speed) ease-in-out;
+    mix-blend-mode: var(--blend);
+		display: block;
+		width: fit-content;
+		margin-inline: auto 1rem;
+  }
+	@media (max-width: 40em) {
+		.more-work {
+			margin-inline: auto;
+		}
+	}
+
+  .more-work:hover,
+  .more-work:focus,
+  .more-work:active {
+    text-decoration: underline;
+    text-decoration-color: var(--action-neutral);
+  }
+</style>

@@ -1,0 +1,19 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Grid from '../components/Grid.astro';
+
+const { title, description = 'At Typetura, we know that your words are the frame through which your ideas are seen. Their power to communicate is amplified by being the most easily shared, translated, and understood medium.', image = '/preview.png', fedi = '@typetura@typetura.social' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} image={image} fedi={fedi} />
+	</head>
+	<body>
+    <slot />
+		<Footer />
+		<Grid />
+	</body>
+</html>

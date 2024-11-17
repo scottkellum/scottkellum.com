@@ -1,5 +1,6 @@
 {
+  "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    "moduleResolution": "node"
+    "strictNullChecks": true
   }
 }

@@ -1,51 +1,55 @@
 ---
-export interface Props {
+// Import the global.css file here so that it is included on
+// all pages through the use of the <BaseHead /> component.
+import '../styles/global.css';
+import '../styles/typetura.css';
+
+
+interface Props {
 	title: string;
 	description: string;
-	permalink: string;
+	image?: string;
+	fedi?: string;
 }
 
-function rollTitle(t) {
-  t = t.replaceAll('[', '');
-  t = t.replaceAll(']', '');
-  return t;
-}
-
-const { title, description, permalink } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const { title, description, image, fedi } = Astro.props;
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="disable-adaptations" content="watch">
-<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="generator" content={Astro.generator} />
+
+<!-- Font preloads -->
+<link rel="preload" href="/roslindale.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/gamay-expanded-medium.woff2" as="font" type="font/woff2" crossorigin />
+<!-- <link rel="preload" href="/arnold.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/arnold-italic.woff2" as="font" type="font/woff2" crossorigin /> -->
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
 
 <!-- Primary Meta Tags -->
-<title>{rollTitle(title)}</title>
-<meta name="title" content={rollTitle(title)} />
-<meta name="description" content={description} />
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description ? description : ''} />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://typetura.com/rss.xml">
 
-<!-- iOS -->
-<meta name="apple-mobile-web-app-capable" content="yes">
-<link rel="apple-touch-icon-precomposed" sizes="512x512" href="/icon.png" />
+<!-- App icons -->
+<link rel="apple-touch-icon" sizes="512x512" href="/icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
 
-<!-- Open Graph / Facebook -->
+<!-- Mastodon verification links -->
+<link rel="me" href="https://typetura.social/@typetura">
+<link rel="me" href="https://typetura.social/@scott">
+<link rel="me" href="https://typetura.social/@anatecture">
+<meta name="fediverse:creator" content="@typetura@typetura.social" />
+
+	<!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content={permalink} />
-<meta property="og:title" content={rollTitle(title)} />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={`${title}`} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content="/social.jpg" />
-
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={permalink} />
-<meta property="twitter:title" content={rollTitle(title)} />
-<meta property="twitter:description" content={description} />
-<meta property="og:image" content="/social.jpg" />
-
-<!-- Styles -->
-<style is:global>
-	@import "../styles/style.css";
-</style>
-
-<script is:inline src="/typetura.js"></script>
+<meta property="og:image" content={image ? new URL(image, Astro.url) : ''} />

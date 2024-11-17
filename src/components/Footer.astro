@@ -1,0 +1,108 @@
+---
+import IconLinkedIn from '../components/IconLinkedIn.astro';
+import IconMastodon from '../components/IconMastodon.astro';
+import IconGithub from '../components/IconGithub.astro';
+import IconBluesky from '../components/IconBluesky.astro';
+import IconThreads from '../components/IconThreads.astro';
+import IconRSS from '../components/IconRSS.astro';
+import IconInstagram from './IconInstagram.astro';
+const today = new Date();
+---
+
+<footer class="footer wrapper">
+
+	<div class="content">
+		<div class="link-wrapper">
+			<div class="cta links">
+				<a href="mailto:info@typetura.com" target="_blank">Get in touch</a>
+				<a href="https://calendly.com/typetura/30min" target="_blank">Book a call</a>
+			</div>
+			<div class="internal links">
+				<a href="/editorial">Editorial</a>
+				<a href="/ecommerce">Ecommerce</a>
+				<a href="/federal">Federal</a>
+				<a href="/solutions-and-ip">Solutions and IP</a>
+				<a href="/blog">News and Updates</a>
+				<a href="/about">About us</a>
+				<a href="/patents">Patents</a>
+				<a href="/privacy">Privacy</a>
+				<!-- <a href="https://store.typetura.com/">Packages</a> -->
+			</div>
+			<div class="social links">
+				<a href="https://typetura.social/@typetura" target="_blank" rel="noopener noreferrer"><IconMastodon /> Mastodon</a>
+				<a href="https://www.instagram.com/typeturadesign/" target="_blank" rel="noopener noreferrer"><IconInstagram /> Instagram</a>
+				<a href="https://bsky.app/profile/typetura.com" target="_blank" rel="noopener noreferrer"><IconBluesky />Bluesky</a>
+				<a href="https://www.threads.net/@typeturadesign" target="_blank" rel="noopener noreferrer"><IconThreads /> Threads</a>
+				<a href="https://www.linkedin.com/company/typetura/" target="_blank" rel="noopener noreferrer"><IconLinkedIn /> LinkedIn</a>
+				<a href="https://github.com/typetura" target="_blank" rel="noopener noreferrer"><IconGithub /> Github</a>
+				<a href="/rss.xml" target="_blank"><IconRSS /> RSS</a>
+			</div>
+		</div>
+
+		<div class="copyright">
+			&copy; {today.getFullYear()} Typetura LLC. All rights reserved.
+		</div>
+
+	</div>
+</footer>
+
+<style>
+	.footer {
+		padding: 0;
+		overflow: hidden;
+		background-color: var(--background);
+		border-block-start: 1px solid var(--accent-dark);
+		font-family: var(--gamay);
+		font-size: 0.8rem;
+	}
+	.content {
+		outline: 1px dashed var(--accent-dark);
+		margin-inline: 0.5px;
+		padding-block: 2rem 1rem;
+		width: calc(100% - 1px);
+	}
+	.link-wrapper {
+		display: flex;
+		margin-block: 1rem 3rem;
+		gap: 1rem;
+		justify-content: center;
+	}
+	.links {
+		display: flex;
+		flex-direction: column;
+		margin: 0 1em;
+		gap: 0.5em;
+	}
+	.links a {
+		display: flex;
+		align-items: center;
+		gap: 0.5em;
+		text-decoration: none;
+	}
+	.links a:hover {
+		text-decoration: underline;
+	}
+
+	.cta {
+		color: var(--action);
+	}
+	.copyright {
+		margin-block: 1rem;
+		text-align: center;
+		color: var(--primary-dark);
+		text-wrap: balance;
+	}
+
+	@media (max-width: 30em) {
+		.footer {
+			font-size: 1rem;
+		}
+		.link-wrapper {
+			flex-direction: column;
+			gap: 1rem;
+		}
+		.copyright {
+			font-size: 0.8rem;
+		}
+	}
+</style>

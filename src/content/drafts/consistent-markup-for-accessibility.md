@@ -1,0 +1,3 @@
+# Consistent HTML markup for accessibility
+
+With the rise of React and similar frameworks I’ve been expereancing a unique accessibility issue. It has become increasingly difficult to adapt a website to one’s own needs with plugins. There are some websites that are too cluttered or have obtrusive overlays that make them difficult to use, and for the ones I frequent I write a little browser plugin to aleviate the offending markup.

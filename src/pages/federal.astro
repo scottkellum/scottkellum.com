@@ -1,0 +1,31 @@
+---
+import Landing from '../layouts/Landing.astro';
+import Nav from '../components/Nav.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<Landing title={`Federal | ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
+
+	<section class="lede wrapper">
+		<div class="content tt">
+			<h1 class="page-head">Federal</h1>
+			<p>Federal websites need to communicate their content clearly and directly to The American Public. This is the practice of typography. We can deliver on that promise to federal websites. Websites that are HTML first, 21st Century IDEA compliant, and built on modern, accessible, and fast architectures.</p>
+		</div>
+	</section>
+	
+	<Nav />
+
+	<main class="main wrapper">
+		<div class="content">
+			<p class="eyebrow">Introduction</p>
+			<p>Our mission is to provide outstanding customer expereance and value to The American Public. We know you strive for excellence in what you deliver and we can help you achieve your goals.</p>
+			<iframe src="https://www.youtube-nocookie.com/embed/S8qIaBquQv8?si=u91ApyJNRmtTmRtb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		</div>
+	</main>
+</Landing>
+
+<style>
+	iframe {
+		margin-block: 2rem;
+	}
+</style>

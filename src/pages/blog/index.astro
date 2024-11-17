@@ -1,0 +1,170 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Grid from '../../components/Grid.astro';
+import Nav from '../../components/Nav.astro';
+
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../../components/FormattedDate.astro';
+
+const posts = (await getCollection('blog')).sort(
+	(b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="Typetura News and Updates" description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<section class="lede wrapper">
+			<div class="content tt">
+				<h1 class="page-head">News <em>&</em> Updates</h1>
+			</div>
+		</section>
+		
+		<Nav />
+
+		<main class="main wrapper">
+			<div class="content">
+				<ul class="post-list">
+					{
+						posts.map((post) => (
+							<li class="post-post">
+									<img src={post.data.heroImage} alt={post.data.alt} width="441" height="441" />
+									<div class="work-container">
+										<h2 class="head">
+										<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+									</h2>
+									<p class="description">
+										{post.data.description}
+									</p>
+								</div>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+		</main>
+
+		<Footer />
+		<Grid />
+	</body>
+</html>
+
+
+<style>
+
+	.main > .content :not(div, iframe) {
+		max-width: none;
+	}	
+
+	.post {
+		grid-column: 2 / 3;
+	}
+
+	.post-list {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		list-style: none;
+		margin-block-end: 4rem;
+	}
+
+	.post-post {
+		margin: 0;
+		margin-block: 2rem;
+		gap: 1rem;
+		width: 100%;
+		position: relative;
+	}
+	.post-post::before,
+	.post-post::after {
+		content: '';
+		position: absolute;
+		display: block;
+		top: -0.5px;
+		right: 100%;
+		width: 50vw;
+		height: 1px;
+		background-color: var(--accent-dark);
+		transition: background-color var(--speed) ease-in-out;
+	}
+	.post-post::after {
+		top: -3rem;
+		left: -0.5px;
+		width: 1px;
+		height: 3rem;
+		color: var(--accent-dark);
+		background: linear-gradient(0deg, currentcolor, transparent);
+		transition: color var(--speed) ease-in-out;
+	}
+	.post-post > * {
+		flex: 1;
+	}
+
+	.post-post img {
+		width: 100%;
+		margin: 0.5px;
+		outline: 1px solid var(--accent-dark);
+		object-fit: cover;
+		transition: outline-color var(--speed) ease-in-out;
+	}
+	.post-post:has(a:hover) .work-container {
+		border-color: var(--action-neutral);
+	}
+	.post-post:has(a:hover)::before {
+		background-color: var(--action-neutral);
+	}
+	.post-post:has(a:hover)::after {
+		color: var(--action-neutral);
+	}
+	.post-post:has(a:hover) img {
+		outline-color: var(--action-neutral);
+	}
+
+	.post-post a {
+		position: static !important;
+		text-decoration: none;
+		transition: color var(--speed) ease-in-out;
+	}
+	.post-post a:hover {
+		color: var(--action);
+	}
+	.post-post a::after {
+		content: '';
+		position: absolute;
+		display: block;
+		inset: 0;
+	}
+	.post-post a:focus::before {
+		border-start-end-radius: 4rem;
+		border-end-start-radius: 4rem;
+	}
+
+	@media (min-width: 40em) {
+		.post-post {
+			margin-block: 1rem 3rem;
+			display: flex;
+		}
+		.post-post img {
+			width: 1px;
+			border-radius: 0.1px 4rem 0.1px 4rem;
+		}
+		.post-post .work-container {
+			align-self: flex-end;
+			border-bottom: 1px solid var(--accent-dark);
+			margin-block-end: -0.5px;
+			margin-inline-end: 1rem;
+			transition: border-color var(--speed) ease-in-out;
+		}
+	}
+
+	.date {
+		font-size: 0.7rem;
+		color: var(--primary);
+		font-family: var(--gamay);
+	}
+</style>

@@ -1,0 +1,25 @@
+---
+import Landing from '../layouts/Landing.astro';
+import Nav from '../components/Nav.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<Landing title={`Ecommerce | ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
+
+	<section class="lede wrapper">
+		<div class="content tt">
+			<h1 class="page-head">Ecommerce</h1>
+			<p>We’re excited to get into the Ecom space and help grow your brand with a high quality web presence.</p>
+		</div>
+	</section>
+	
+	<Nav />
+
+	<main class="main wrapper">
+		<div class="content">
+			<p>We’re motivated to get started in this space.</p>
+			<p>Get in touch to take advantage of our low prices as we built up our case studies.</p>
+			<p><a href="mailto:info@typetura.com">info@typetura.com</a></p>
+		</div>
+	</main>
+</Landing>

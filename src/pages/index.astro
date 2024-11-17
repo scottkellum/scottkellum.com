@@ -1,344 +1,221 @@
 ---
-// Component Imports
-import BaseHead from '../components/BaseHead.astro';
-import Shape from '../components/Shape.astro';
-import Marquee from '../components/Marquee.astro';
-// import BlogHeader from '../components/BlogHeader.astro';
-import BlogPostPreview from '../components/BlogPostPreview.astro';
-// import WorkPreview from '../components/WorkPreview.astro';
-import photos from '../data/photos.json'
+import Landing from '../layouts/Landing.astro';
+import Nav from '../components/Nav.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Card from '../components/Card.astro';
 
-
-let rolls = photos.rolls;
-
-interface MarkdownFrontmatter {
-	publishDate: number;
-}
-
-function rollID(t) {
-  t = t.replaceAll('[', '');
-  t = t.replaceAll(']', '');
-  t = t.replaceAll(' ', '-');
-  return t;
-}
-
-// Component Script:
-// You can write any JavaScript/TypeScript that you'd like here.
-// It will run during the build, but never in the browser.
-// All variables are available to use in the HTML template below.
-let title = 'Scott Kellum';
-let description = 'Founder, inventor, product designer, typographer, teacher, speaker, and photographer';
-let permalink = 'https://scottkellum.com/';
-
-// Data Fetching: List all Markdown posts in the repo.
-
-const posts = (await Astro.glob('./posts/*.{md,mdx}')).sort(
-	(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
+import { getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+const posts = (await getCollection('blog')).sort(
+	(b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+const pinnedPosts = posts.filter((post) => post.data.pinned);
 ---
 
-<html lang="en">
-	<head>
-		<BaseHead {title} {description} {permalink} />
-		<style is:global>
-			html {
-				background: var(--background);
-				color: var(--text);
-			}
+<Landing title="Typetura — a human centered and technology driven design studio" description={SITE_DESCRIPTION}>
 
-			body {
-				width: 100%;
-				overflow-x: hidden;
-			}
+	<section class="lede wrapper">
+		<div class="content tt">
+			<h1 class="page-head">Typetura — human centered and technology driven design</h1>
+			<p>Typetura is a studio where we know that, as humans, our words are the frame through which ideas are seen. Their power to communicate is amplified by being the most easily shared, translated, and understood medium.</p>
+			<p>How do you present the ideas you care about? How do you design in a way that makes them stand-out? Let’s discuss.</p>
+		</div>
+	</section>
+	
+	<Nav />
 
-			main {
-				width: 100%;
-				overflow: hidden;
-			}
+	<main class="main wrapper" id="solutions">
+		<section class="featured" id="featured-work">
+			<hr>
+			<h2 class="featured-head">Featured work</h2>
 
-			.lede {
-				width: min(90vw, 40rem);
-				margin-inline: auto;
-			}
-			.image {
-				width: 80%;
-				margin-inline: auto;
-				mix-blend-mode: multiply;
-				position: relative;
-			}
-			img {
-				filter: contrast(0.6) brightness(1.3);
-				mix-blend-mode: multiply;
-			}
-			figure figcaption {
-				color: var(--primary);
-				font-size: 0.8rem;
-				margin-block-start: -1em;
-				margin-inline-start: 1em;
-				mix-blend-mode: multiply;
-				font-style: italic;
-			}
-			.head {
-				font-size: min(calc(1px * var(--tt-bind) / 7.22), 3.2rem);
-				width: 100vw;
-				width: 100svw;
-				left: 50%;
-				transform: translateX(-50%);
-				font-family: var(--font-display);
-				color: var(--primary);
-				line-height: 1;
-				top: 1em;
-				position: absolute;
-				overflow: hidden;
-				mix-blend-mode: multiply;
-			}
-			.artifacts {
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				width: 100%;
-				height: 100vw;
-				overflow-x: hidden;
-			}
-			.marquee {
-				position: absolute;
-				width: 100vw;
-				inset-block-start: 0;
-				transform: translateX(-30%);
-				mix-blend-mode: multiply;
-				white-space: nowrap;
-				font-style: italic;
-				color: var(--primary);
-			}
-			.section {
-				position: relative;
-				white-space: nowrap;
-				overflow: auto;
-				overflow-y: none;
-				margin-block: 4rem;
-				padding-inline-end: 50vw;
-				display: flex;
-				align-items: stretch;
-				scrollbar-color: var(--primary) transparent;
-		    scroll-snap-type: x mandatory;
-			}
-			.section::-webkit-scrollbar {
-				inline-size: 0.333rem;
-				block-size: 0.333rem;
-				background-color: transparent;
-			}
-			.section::-webkit-scrollbar-thumb {
-				border-radius: 1rem;
-				background: var(--primary);
-			}
-			.section .item {
-				scroll-snap-align: center;
-				margin-block: 3rem 1rem;
-				margin-inline-end: 2rem;
-			}
-			a.item {
-				display: block;
-				border-radius: 0.5rem;
-				outline: 0px solid var(--primary);
-				transition: outline 0.25s ease-in-out;
-			}
-			a.item:focus,
-			a.item:hover {
-				outline: 0.25rem solid var(--primary);
-			}
-			.section img {
-				block-size: min(30rem, 80vh);
-				inline-size: auto;
-				filter: none;
-				border-radius: 0.5rem;
-				display: block;
-			}
-			.section-head {
-				font-family: var(--font-display);
-				color: var(--primary);
-				line-height: 1;
-				text-decoration: none;
-				margin-inline-start: 2rem;
-				margin-inline-end: -2.5ch;
-				margin-block: 0;
-				position: sticky;
-				inset: 0 0 0 2rem;
-				display: inline-block;
-				font-size: min(8rem, 12vh);
-				mix-blend-mode: multiply;
-				animation: 1s var(--tt-ease, linear) calc(-1s * var(--tt-bind, 500) / var(--tt-max, 1000)) 1 both paused var(--tt-key, none);
-				--tt-key: section-head;
-				--tt-max: 1200;
-				--tt-ease: cubic-bezier(0,0,0.7,1);
-			}
-			@keyframes section-head {
-				0% {
-					font-size: 1rem;
-				}
-			}
-			.section-head a {
-				text-decoration: none;
-			}
-			@media (prefers-reduced-motion: no-preference) {
-				.marquee {
-					animation: marquee 30s linear infinite;
-				}
-			}
-			@keyframes marquee {
-				100% {
-					transform: translateX(calc(-30% - 95.6rem));
-				}
-			}
-			.shape {
-				position: absolute;
-				inset-block-start: -10rem;
-				inset-inline-end: -10rem;
-
-				width: 100%;
-				color: var(--background-alt);
-				mix-blend-mode: normal;
-				z-index: -1;
-			}
-			.sub-head {
-				font-size: 2rem;
-				margin: 1.5rem 0;
-				font-weight: 400;
-				line-height: 1;
-				font-style: italic;
-				color: var(--primary);
-				word-wrap: break-word;
-			}
-			@media (min-width: 40em) {
-				.sub-head {
-					text-indent: -1ch;
-				}
-			}
-			ul, li {
-				margin: 0;
-				padding: 0;
-				list-style: none;
-			}
-			li {
-				margin-block: 1rem;
-			}
-			@media (prefers-reduced-motion: no-preference) {
-				.shape {
-					animation: 30s linear infinite shape;
-				}
-			}
-			@keyframes shape {
-				0% {
-					transform: rotate(0deg);
-				}
-				100% {
-					transform: rotate(180deg);
-				}
-			}
-			@media (min-width: 45.5em) {
-				.artifacts {
-					position: static;
-					height: 0;
-				}
-				.image {
-					width: calc(40% + 3rem);
-					float: right;
-					margin-inline-start: 1rem;
-					margin-inline-end: -3rem;
-					margin-block-end: 1rem;
-					margin-block-start: -8rem;
-				}
-				.lede {
-					position: relative;
-				}
-				.image::before {
-					content: '';
-					position: absolute;
-					inset: -100% 3rem -2rem auto;
-					width: 1px;
-					background: var(--primary);
-					mix-blend-mode: multiply;
-				}
-				.marquee {
-					inset-block-start: 3.5rem;
-					color: var(--text);
-				}
-				.head {
-					width: auto;
-					margin-block-start: 10rem;
-					margin-block-end: 1em;
-					position: relative;
-					transform: scale(1.3);
-					top: 0;
-					left: 0;
-				}
-			}
-		</style>
-		<script>
-			function resize() {
-					document.documentElement.style.setProperty("--tt-bind", window.innerWidth)
-			} resize(); window.onresize = resize;
-		</script>
-	</head>
-
-	<body>
-		<main>
-			<article class="lede">
-				<figure class="image">
-					<img loading="lazy" src="/img/profile.jpg" alt="A photograph of Scott casually sitting on a curb">
-				</figure>
-				<h1 class="head">
-					Scott Kellum
-				</h1>
-				<div class="artifacts">
-					<p class="marquee">Invention • Innovation • Typography • Teaching • Editorial design • Design leadership • Photography • Product design • Design systems • Speaking •&nbsp;</p>
-					<svg class="shape" viewBox="0 0 444 494" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M190 9.4752C209.802 -1.95729 234.198 -1.95729 254 9.47521L411.703 100.525C431.504 111.957 443.703 133.085 443.703 155.95V338.05C443.703 360.915 431.504 382.043 411.703 393.475L254 484.525C234.198 495.957 209.802 495.957 190 484.525L32.2975 393.475C12.4958 382.043 0.297501 360.915 0.297501 338.05V155.95C0.297501 133.085 12.4958 111.957 32.2975 100.525L190 9.4752Z" fill="currentColor"/>
-					</svg>
-				</div>
-				<script is:inline>
-					const marquee = document.querySelector('.marquee');
-					marquee.innerHTML = marquee.innerText + `<span aria-hidden="true">${marquee.innerText}</span>`
-				</script>
-				<section class="about">
-					<p>Scott Kellum is the founder of <a href="https://typetura.com">Typetura</a>, a typography as a service company offering both bespoke and ready-made typographic solutions. With over 15 years of design experience across type, editorial, digital, and print design; Scott’s experience gives him a unique perspective on the typographic challenges and opportunities in the design industry. He has invented multiple web technologies, holds two patents, and has contributed to major projects at <a href="https://voxmedia.com/">Vox Media</a>, <a href="https://www.dardenstudio.com/">Darden Studio</a>, and <a href="https://www.rogerblack.com/">Roger Black Studio</a>. These accomplishments include inventing <a href="https://patents.google.com/patent/US10769348B1/en">dynamic typographic systems</a>, <a href="https://www.adweek.com/programmatic/why-vox-media-chose-to-build-not-buy-a-programmatic-stack/">high impact ad formats</a>, <a href="https://developers.google.com/web/updates/2016/12/performant-parallaxing">new parallax techniques</a>, and the <a href="https://typetura.scottkellum.com/typetura-js">fluid typesetting technology</a> that powers Typetura itself.</p>
-					<p><a rel="me" href="https://typetura.social/@scott">Say hi on Mastodon</a> or <a href="mailto:scott@scottkellum.com">shoot me an email</a>.</p>
-				</section>
-			</article>
-			
-			<section class="section photos">
-				<h1 class="section-head">
-					<a href="/photos">Photos</a>
-				</h1>
-				{rolls.map((roll) => (
-					<a class="item" href="/photos#${rollID(roll.title)}">
-						<img loading="lazy" src="/photos/${roll.photos[0].src}" alt={roll.photos[0].alt}>
-					</a>
-				))}
-			</section>
-
-			<section class="section">
-				<h1 class="section-head">
-					Blog
-				</h1>
+			<ul class="featured-list">
 				{
-					posts.map((post) => (
-						<BlogPostPreview post={post} />
+					pinnedPosts.map((post) => (
+						<li class="featured-post">
+								<img src={post.data.heroImage} alt={post.data.alt} width="441" height="441" />
+								<div class="work-container">
+									<h3 class="head">
+									<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+								</h3>
+								<p class="description">
+									{post.data.description}
+								</p>
+							</div>
+						</li>
 					))
 				}
-			<!-- {allPosts.map((p) => <BlogPostPreview post={p} />)} -->
-			</section>
+			</ul>
 
-			<!-- <section class="section">
-				<h1 class="section-head">
-					Work
-				</h1>
-				{allWork.map((p) => <WorkPreview post={p} />)}
-			</section> -->
+			<a class="more-work" href="/blog/">More work and updates</a>
 
-		</main>
-	</body>
-</html>
+		</section>
+
+</main>
+</Landing>
+
+<style>
+	.lede > .content {
+		font-size: 2rem;
+		line-height: 1.35;
+		animation-name: home-lede-content;
+	}
+	@keyframes home-lede-content {
+		0% {
+			font-size: 1rem;
+		}
+		100% {
+			font-size: 2rem;
+		}
+	}
+
+	.lede .page-head,
+	.featured-head {
+		font-size: 0.8rem;
+		font-family: var(--gamay);
+		animation-name: none;
+		color: var(--primary-dark);
+		letter-spacing: 0.05em;
+		font-weight: 400;
+	}
+
+	@media (min-width: 40em) {
+		.card-container {
+			width: calc(100% + 2rem);
+			display: flex;
+			gap: 1em;
+			margin-inline: -1rem;
+			margin-block: 2rem;
+		}
+	}
+
+	.featured {
+		grid-column: 2 / 3;
+		/* text-align: center; */
+	}
+
+	.featured-list {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		list-style: none;
+	}
+
+	.featured-post {
+		margin: 0;
+		margin-block: 2rem;
+		gap: 1rem;
+		width: 100%;
+		position: relative;
+	}
+	.featured-post::before,
+	.featured-post::after {
+		content: '';
+		position: absolute;
+		display: block;
+		top: -0.5px;
+		right: 100%;
+		width: 50vw;
+		height: 1px;
+		background-color: var(--accent-dark);
+		transition: background-color var(--speed) ease-in-out;
+	}
+	.featured-post::after {
+		top: -3rem;
+		left: -0.5px;
+		width: 1px;
+		height: 3rem;
+		color: var(--accent-dark);
+		background: linear-gradient(0deg, currentcolor, transparent);
+		transition: color var(--speed) ease-in-out;
+	}
+	.featured-post > * {
+		flex: 1;
+	}
+
+	.featured-post img {
+		width: 100%;
+		height: auto;
+		aspect-ratio: 1;
+		margin: 0.5px;
+		outline: 1px solid var(--accent-dark);
+		object-fit: cover;
+		transition: outline-color var(--speed) ease-in-out;
+	}
+	.featured-post:has(a:hover) .work-container {
+		border-color: var(--action-neutral);
+	}
+	.featured-post:has(a:hover)::before {
+		background-color: var(--action-neutral);
+	}
+	.featured-post:has(a:hover)::after {
+		color: var(--action-neutral);
+	}
+	.featured-post:has(a:hover) img {
+		outline-color: var(--action-neutral);
+	}
+
+	.featured-post a {
+		position: static !important;
+		text-decoration: none;
+		transition: color var(--speed) ease-in-out;
+	}
+	.featured-post a:hover {
+		color: var(--action);
+	}
+	.featured-post a::after {
+		content: '';
+		position: absolute;
+		display: block;
+		inset: 0;
+	}
+	.featured-post a:focus::before {
+		border-start-end-radius: 4rem;
+		border-end-start-radius: 4rem;
+	}
+
+	@media (min-width: 40em) {
+		.featured-post {
+			margin-block: 1rem 3rem;
+			display: flex;
+		}
+		.featured-post img {
+			width: 1px;
+			border-radius: 0.1px 4rem 0.1px 4rem;
+		}
+		.featured-post .work-container {
+			align-self: flex-end;
+			border-bottom: 1px solid var(--accent-dark);
+			margin-block-end: -0.5px;
+			margin-inline-end: 1rem;
+			transition: border-color var(--speed) ease-in-out;
+		}
+	}
+
+  .more-work {
+    font-family: var(--gamay);
+    color: var(--primary-dark);
+    transition: color var(--speed) ease-in-out;
+    mix-blend-mode: var(--blend);
+		display: block;
+		width: fit-content;
+		margin-inline: auto 1rem;
+  }
+	@media (max-width: 40em) {
+		.more-work {
+			margin-inline: auto;
+		}
+	}
+	@media (min-width: 40em) {
+		.more-work {
+			margin-block-end: 2rem;
+		}
+	}
+
+  .more-work:hover,
+  .more-work:focus,
+  .more-work:active {
+    text-decoration: underline;
+    text-decoration-color: var(--action-neutral);
+  }
+</style>

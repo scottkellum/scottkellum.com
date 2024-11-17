@@ -1,0 +1,46 @@
+---
+import Landing from '../layouts/Landing.astro';
+import Nav from '../components/Nav.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<Landing title={`Patents | ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
+
+	<section class="lede wrapper">
+		<div class="content tt">
+			<h1 class="page-head">Patents</h1>
+			<p>To protect the work we have put into research and development of our typesetting technologies we have taken the steps to build a patent portfolio around our inventions. If you are interested in licencing our portfolio go to the <a href="/solutions-and-ip">Solutions and IP</a> page for more info or contact <a href="mailto:info@typetura.com?subject=Patents">info@typetura.com</a></p>
+		</div>
+	</section>
+	
+	<Nav />
+
+	<main class="main wrapper">
+		<div class="content">
+			<ul>
+				<li>US Patent 10769348</li>
+				<li>US Patent 10592087</li>
+				<li>EU Patent Application No. 20867991.0</li>
+				<li>AU Patent Application No. 2020352890</li>
+				<li>CA Patent Application No. 3155636</li>
+				<li>Korean Patent No. 10-2574306</li>
+				<li>Japan Patent Application No. 2022-530152</li>
+				<li>Singapore Patent Application No. 11202202937X</li>
+				<li>HK Patent Application No. 62023069733.1</li>
+				<li>China Patent Application No. 202080080651.X</li>
+			</ul>
+		</div>
+	</main>
+</Landing>
+
+<style>
+	ul {
+		list-style-type: none;
+		padding: 0;
+		font-family: var(--gamay);
+	}
+
+	li {
+		margin-block: 0.2rem;
+	}
+</style>

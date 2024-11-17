@@ -1,0 +1,114 @@
+---
+let ring = "Starts Oct 8 2024 • Cooper Union • Worldwide via Zoom •";
+let newRing = "";
+
+for (let i = 0; i < ring.length; i++) {
+  newRing += `<span style="--i: ${i}">${ring[i]}</span>`;
+}
+---
+
+<section class="cooper-type">
+  <div class="center">
+    <h2><a href="https://coopertype.org/events/typography-on-the-web-2" target="_blank">Web Typography Class</a></h2>
+    <!-- <p class="date">Oct. 8 2024</p> -->
+  </div>
+  <p class="ring" set:html={newRing}></p>
+</section>
+
+<style>
+  .cooper-type {
+    --size: 10rem;
+    z-index: 9;
+    width: var(--size);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--background);
+    border: 1px solid var(--accent-dark);
+    display: grid;
+    place-content: center;
+    transform: rotate(10deg);
+    grid-area: callout;
+
+    margin: auto;
+    margin-block: 2rem;
+  }
+  .center {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: min-content;
+    gap: 0;
+    aspect-ratio: 1;
+    padding: 0.5rem;
+    border: 1px solid var(--accent-dark);
+    border-radius: 50%;
+  }
+  .cooper-type:has(a:hover),
+  .center:has(a:hover) {
+    border-color: var(--action-neutral);
+  }
+  h2 {
+    padding: 0;
+    font-size: 1.1rem;
+  }
+  a::after {
+    position: absolute;
+    content: "";
+    inset: 0;
+    border-radius: 50%;
+    z-index: 9;
+  }
+  a::before {
+    border-radius: 50%;
+  }
+  a:focus {
+    position: static !important;
+  }
+  .ring {
+    font-family: var(--mono);
+    font-size: 0.67rem;
+    font-style: italic;
+    position: absolute;
+  }
+  @media (min-width: 40em) {
+    .cooper-type {
+      position: sticky;
+      right: 0;
+      left: calc(100% - (var(--size) / 2.125) - var(--margin));
+      top: -2rem;
+      bottom: -2rem;
+      margin: 0;
+      margin-block: calc(var(--size) / -2 - 1px);
+    }
+  }
+</style>
+
+<style is:global>
+  .cooper-type .ring span {
+    text-transform: uppercase;
+    position: fixed;
+    transform: translate(-0.5ch, -1.2em) rotate(calc(var(--i) * 6.42deg)) translateY(calc(var(--size) / -2 + 0.8em));
+    top: calc(var(--size) / 2);
+    left: calc(var(--size) / 2);;
+    line-height: 1;
+    font-family: var(--mono);
+    color: var(--primary);
+    z-index: 9;
+  }
+  .cooper-type .ring {
+    animation: cooper-type-ring 30s linear infinite;
+    /* transform-origin: calc(var(--size) / 2 + 1em) calc(var(--size) / 2 - 1em); */
+    /* transform: rotate(180deg); */
+    transform-origin: calc(var(--size) / 2 - 0px) calc(var(--size) / 2 - 1ch - 1px);
+  }
+  @keyframes cooper-type-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+</style>

@@ -1,0 +1,114 @@
+---
+const { link, head, plain } = Astro.props;
+
+const classList = [
+  'card',
+  plain ? 'plain' : 'fancy',
+].join(' ');
+---
+
+<section class={classList}>
+  <h2 class="head"><a href={link}>{head}</a></h2>
+  <div class="content">
+    <slot />
+  </div>
+  <div class="learn-more">Learn more</div>
+</section>
+
+<style>
+  .card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    flex: 1;
+    position: relative;
+    transition: border-color var(--speed) ease-in-out;
+    margin-block: 4rem 2rem;
+    z-index: 0;
+  }
+
+  .head {
+    margin-block: -0.5em 0;
+    width: 100%;
+  }
+
+  .head a {
+    text-decoration: none;
+  }
+
+  a::after {
+    content: '';
+    display: block;
+    position: absolute;
+    inset: -1px;
+    inset-block-start: -2rem;
+    cursor: pointer;
+    z-index: 9;
+  }
+  a::before {
+    display: none;
+  }
+  a:focus {
+    outline: none !important;
+    background: none;
+    position: static;
+  }
+
+  @media (min-width: 40em) {
+    .card.fancy {
+      border: 1px solid var(--accent-dark);
+      border-radius: 0.25rem;
+      padding: 0 1rem 1rem;
+      backdrop-filter: blur(1rem);
+      margin-block: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .card.fancy::before,
+    .card.fancy::after {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+    }
+    .card.fancy::before {
+      background-color: var(--background);
+      opacity: 0.5;
+      border-radius: 0.25rem;
+    }
+    .card.fancy::after {
+      inset-inline: calc(1rem - 0.5px);
+      outline: 1px dashed var(--accent-dark);
+      transition: outline-color var(--speed) ease-in-out;
+    }
+  }
+  
+  .card:has(:hover),
+  .card:has(:focus),
+  .card:has(:active) {
+    --accent-dark: var(--action-neutral);
+    --primary: var(--action);
+    --primary-dark: var(--action);
+  }
+
+  .content {
+    flex: 1;
+  }
+
+  .learn-more {
+    font-family: var(--gamay);
+    text-align: right;
+    color: var(--primary-dark);
+    transition: color var(--speed) ease-in-out;
+    mix-blend-mode: var(--blend);
+    pointer-events: none;
+  }
+
+  .card:hover .learn-more,
+  .card:focus .learn-more,
+  .card:active .learn-more {
+    text-decoration: underline;
+    text-decoration-color: var(--action-neutral);
+  }

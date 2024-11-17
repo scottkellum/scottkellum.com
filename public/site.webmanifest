@@ -1,0 +1,12 @@
+{
+  "short_name": "Typetura",
+  "name": "Typetura — Beautiful Websites for Your Content",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "."
+}

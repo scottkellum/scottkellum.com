@@ -1,0 +1,91 @@
+---
+import Logo from '../components/Logo.astro';
+import IconMastodon from '../components/IconMastodon.astro';
+import IconInstagram from './IconInstagram.astro';
+---
+
+<nav class="nav wrapper">
+  <div class="content">
+    <a href="/" class="logo tt">
+      <Logo />
+      <span class="hidden">Typetura</span>
+    </a>
+    <a href="mailto:info@typetura.com">Get in touch</a>
+    <a href="https://calendly.com/typetura/30min">Book a call</a>
+		<div class="social-container">
+			<div class="social">
+				<a href="https://typetura.social/@typetura" target="_blank" rel="noopener noreferrer"><IconMastodon /><span class="hidden">Mastodon</span></a>
+				<a href="https://www.instagram.com/typeturadesign/" target="_blank" rel="noopener noreferrer"><IconInstagram /><span class="hidden">Instagram</span></a>
+			</div>
+		</div>
+  </div>
+</nav>
+
+<style>
+  .nav {
+		position: sticky;
+		top: 0;
+		mix-blend-mode: var(--blend);
+		z-index: 2;
+	}
+	.nav > .content {
+		display: flex;
+		gap: 1rem;
+		height: 2rem;
+		align-items: center;
+		font-family: var(--gamay);
+		font-weight: 500;
+		font-stretch: expanded;
+		color: var(--primary-dark);
+		animation-name: nav-content;
+		animation-timing-function: ease-in;
+		--to: 50rem;
+	}
+	@keyframes nav-content {
+		0% {
+			font-size: 0.25rem;
+		}
+		100% {
+			font-size: 1rem;
+		}
+	}
+	.social-container {
+		height: 1rem;
+	}
+	.nav .social {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.5rem;
+		align-items: center;
+		color: var(--primary);
+		height: 1rem;
+		transition: all 0.5s;
+	}
+  .social a:hover {
+    color: var(--action);
+  }
+	.nav .logo {
+		margin-left: -0.5em;
+		font-size: 3em;
+		color: var(--primary);
+		animation-name: logo;
+		animation-timing-function: ease-in;
+		--to: 50rem;
+	}
+	@keyframes logo {
+		0% {
+			font-size: 1rem;
+		}
+		100% {
+			font-size: 4rem;
+		}
+	}
+	.nav a {
+		text-decoration: none;
+		text-wrap: balance;
+		line-height: 1;
+	}
+	.nav a:hover {
+		text-decoration: underline;
+	}
+</style>

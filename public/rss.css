@@ -1,0 +1,119 @@
+@font-face {
+	font-family: 'Roslindale';
+	src: url('/roslindale.woff2') format('woff2-variations');
+	font-weight: 200 800;
+	font-stretch: 75% 100%;
+	font-style: normal italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Gamay';
+	src: url('/gamay-expanded-medium.woff2') format('woff2');
+	font-weight: 500;
+	font-stretch: expanded;
+	font-style: normal;
+	font-display: swap;
+}
+
+:root {
+	--foreground: #142226;
+	--background: #fff;
+
+	--primary: #129681;
+	--primary-dark: #085147;
+	--accent: #fff3f0;
+	--accent-dark: #ffe3dc;
+
+	--actoin-light: #ffbc64;
+	--action-dark: #8e5000;
+	--action-neutral: #f5920f;
+	--action: var(--action-dark);
+	--warning: #ba0d04;
+	--pink: #E01C82;
+	--blue: #0FA1CF;
+
+	--blend: multiply;
+
+	--width: 50rem;
+
+	--font: Roslindale, serif;
+	--gamay: Gamay, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+	font-family: var(--font);
+	color: var(--foreground);
+	background-color: var(--background);
+	font-size: 115%;
+	line-height: 1.45;
+
+  width: 90%;
+  max-width: var(--width);
+  margin: 2rem auto;
+
+	font-variation-settings: 'opsz' 10;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--foreground: #fff;
+		--background: #080f0e;
+	
+		--primary: #FFD9CE;
+		--primary-dark: #FFEBE5;
+		--accent: #08201d;
+		--accent-dark: #00473a;
+	
+		--action: var(--actoin-light);
+		--warning: #ff827b;
+		--pink: #E01C82;
+		--blue: #0FA1CF;
+
+		--blend: screen;
+	}
+}
+
+code {
+	font-family: var(--mono);
+}
+
+rss * {
+  display: block;
+  margin-block: 0.5rem;
+}
+
+guid,
+item :last-child {
+  display: none;
+}
+
+title {
+  color: var(--primary-dark);
+  font-size: 1rem;
+  font-family: var(--gamay);
+	font-variation-settings: normal;
+}
+
+item {
+  border-block-start: 1px solid var(--accent-dark);
+  margin-block: 2rem;
+  padding: 0;
+}
+
+item title {
+  font-family: var(--font);
+  font-size: 2rem;
+  font-weight: 700;
+  font-stretch: 70%;
+  line-height: 1.1;
+  margin-block-start: 0.5rem;
+}
+
+pubDate,
+link {
+  color: var(--primary-dark);
+  font-size: 0.7rem;
+  font-family: var(--gamay);
+}
+
+link {
+  color: var(--action);
+}
