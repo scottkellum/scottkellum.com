@@ -151,51 +151,7 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"blog": {
-"darden-studio-creating-artifacts-with-fonts.md": {
-	id: "darden-studio-creating-artifacts-with-fonts.md";
-  slug: "darden-studio-creating-artifacts-with-fonts";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"golds-guide-luxe-website-design.md": {
-	id: "golds-guide-luxe-website-design.md";
-  slug: "golds-guide-luxe-website-design";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"lauren-kaplan-art-tours-artistry-art-and-design.md": {
-	id: "lauren-kaplan-art-tours-artistry-art-and-design.md";
-  slug: "lauren-kaplan-art-tours-artistry-art-and-design";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"showcasing-roslindale-specimen-microsite.md": {
-	id: "showcasing-roslindale-specimen-microsite.md";
-  slug: "showcasing-roslindale-specimen-microsite";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"unit-division-with-css-and-fallbacks.md": {
-	id: "unit-division-with-css-and-fallbacks.md";
-  slug: "unit-division-with-css-and-fallbacks";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"we-distribute.md": {
-	id: "we-distribute.md";
-  slug: "we-distribute";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-};
-"drafts": {
+		"drafts": {
 "Shifting the control mindset from measures to proportion.md": {
 	id: "Shifting the control mindset from measures to proportion.md";
   slug: "shifting-the-control-mindset-from-measures-to-proportion";
@@ -244,6 +200,50 @@ declare module 'astro:content' {
   body: string;
   collection: "drafts";
   data: any
+} & { render(): Render[".md"] };
+};
+"work": {
+"darden-studio-creating-artifacts-with-fonts.md": {
+	id: "darden-studio-creating-artifacts-with-fonts.md";
+  slug: "darden-studio-creating-artifacts-with-fonts";
+  body: string;
+  collection: "work";
+  data: InferEntrySchema<"work">
+} & { render(): Render[".md"] };
+"golds-guide-luxe-website-design.md": {
+	id: "golds-guide-luxe-website-design.md";
+  slug: "golds-guide-luxe-website-design";
+  body: string;
+  collection: "work";
+  data: InferEntrySchema<"work">
+} & { render(): Render[".md"] };
+"lauren-kaplan-art-tours-artistry-art-and-design.md": {
+	id: "lauren-kaplan-art-tours-artistry-art-and-design.md";
+  slug: "lauren-kaplan-art-tours-artistry-art-and-design";
+  body: string;
+  collection: "work";
+  data: InferEntrySchema<"work">
+} & { render(): Render[".md"] };
+"showcasing-roslindale-specimen-microsite.md": {
+	id: "showcasing-roslindale-specimen-microsite.md";
+  slug: "showcasing-roslindale-specimen-microsite";
+  body: string;
+  collection: "work";
+  data: InferEntrySchema<"work">
+} & { render(): Render[".md"] };
+"unit-division-with-css-and-fallbacks.md": {
+	id: "unit-division-with-css-and-fallbacks.md";
+  slug: "unit-division-with-css-and-fallbacks";
+  body: string;
+  collection: "work";
+  data: InferEntrySchema<"work">
+} & { render(): Render[".md"] };
+"we-distribute.md": {
+	id: "we-distribute.md";
+  slug: "we-distribute";
+  body: string;
+  collection: "work";
+  data: InferEntrySchema<"work">
 } & { render(): Render[".md"] };
 };
 

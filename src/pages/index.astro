@@ -6,10 +6,25 @@ import Card from '../components/Card.astro';
 
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
-const posts = (await getCollection('blog')).sort(
+import photos from '../data/photos.json'
+
+let rolls = photos.rolls;
+
+interface MarkdownFrontmatter {
+	publishDate: number;
+}
+
+function rollID(t) {
+  t = t.replaceAll('[', '');
+  t = t.replaceAll(']', '');
+  t = t.replaceAll(' ', '-');
+  return t;
+}
+
+const work = (await getCollection('work')).sort(
 	(b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
-const pinnedPosts = posts.filter((post) => post.data.pinned);
+const pinnedPosts = work.filter((post) => post.data.pinned);
 ---
 
 <Landing title="Scott Kellum — Human centered and technology driven design" description={SITE_DESCRIPTION}>
@@ -27,6 +42,15 @@ const pinnedPosts = posts.filter((post) => post.data.pinned);
 	<main class="main wrapper" id="solutions">
 		<section class="featured" id="featured-work">
 			<hr>
+			<h2 class="featured-head">Photography</h2>
+			<div class="home-filmstrip">
+				{rolls.map((roll) => (
+					<a class="item" href={`/photos#${rollID(roll.title)}`}>
+						<img loading="lazy" src={`/photos/${roll.photos[0].src}`} alt={roll.photos[0].alt}>
+					</a>
+				))}
+			</div>
+		<hr>
 			<h2 class="featured-head">Featured work</h2>
 
 			<ul class="featured-list">
@@ -47,7 +71,7 @@ const pinnedPosts = posts.filter((post) => post.data.pinned);
 				}
 			</ul>
 
-			<a class="more-work" href="/blog/">More work and updates</a>
+			<a class="more-work" href="/work/">More work and updates</a>
 
 		</section>
 
@@ -67,6 +91,31 @@ const pinnedPosts = posts.filter((post) => post.data.pinned);
 		100% {
 			font-size: 2rem;
 		}
+	}
+
+	.home-filmstrip {
+		width: 100%;
+		overflow: auto;
+		margin-block: 1rem;
+		writing-mode: vertical-lr;
+		margin: 0;
+		padding: 1rem 0;	
+		scrollbar-width: thin;
+		scrollbar-color: var(--primary) transparent;
+	}
+	.home-filmstrip img {
+		height: 10rem;
+		width: auto;
+		display: block;
+		margin: 0;
+	}
+	.home-filmstrip a {
+		display: block;
+		text-decoration: none;
+		margin: 0;
+		margin-block-end: 0.5rem;
+		border-radius: 0.5rem;
+		overflow: hidden;
 	}
 
 	.lede .page-head,
