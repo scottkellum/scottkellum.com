@@ -7,16 +7,16 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import Grid from '../components/Grid.astro';
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<'work'>['data'];
 let { title, description, pubDate, heroImage, alt } = Astro.props;
 
-const posts = (await getCollection('blog')).sort(
+const work = (await getCollection('work')).sort(
 	(b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 
-let nextPost = posts[0]; // Get the next post
+let nextPost = work[0]; // Get the next post
 if (nextPost.data.title === title) {
-	nextPost = posts[1]; // Get the next post
+	nextPost = work[1]; // Get the next post
 }
 
 let author = 'Scott Kellum';
@@ -58,16 +58,6 @@ let author = 'Scott Kellum';
 					</div>
 				</div>
 			</div>
-
-			<section class="end">
-				<div class="content clients">
-					<div class="prose">
-						<h2>Website or brand feeling a little stale?</h2>
-						<p>We get it! We can help you with a variety of projects from large branding exercises and website builds to quick fixes and design refreshes. We’ve worked with individuals, editorial clients, government agencies, type foundries, and educational institutions. We’d love to work with you too.</p>
-					</div>
-					<a href="https://calendly.com/typetura/30min" target="_blank" class="cta">Schedule a quick call</a>
-				</div>
-			</section>
 		</main>
 
 		<Footer />
@@ -141,27 +131,6 @@ let author = 'Scott Kellum';
 		margin: 0;
 		padding: 0;
 		line-height: 1;
-	}
-
-	.end {
-		grid-column-end: span 3;
-		background-color: var(--background);
-		border-top: 1px solid var(--accent-dark);
-		display: grid;
-		grid-template-columns: subgrid;
-		margin-block: 2rem -2rem;
-	}
-	@media (min-width: 40em) {
-		.end {
-			margin-block: 3rem -4rem;
-		}
-	}
-	.end .content {
-		outline: 1px dashed var(--accent-dark);
-		margin-inline: 0.5px;
-		width: calc(100% - 1px);
-		box-sizing: border-box;
-		padding: 3rem 1rem;
 	}
 
 	.clients {

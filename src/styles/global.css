@@ -62,7 +62,7 @@ html {
 	--primary: #d32c07;
 	--primary-dark: #691300;
 	--accent: #fcf9f7;
-	--accent-dark: #ffe3dc;
+	--accent-dark: #ffebe6;
 
 	--action-light: #ffad82;
 	--action-dark: #943600;
@@ -600,19 +600,18 @@ hr {
 
 .bento .value {
 	font-size: 50cqi;
-	font-weight: 700;
+	font-weight: 400;
 	color: transparent;
-	font-variation-settings: 'wght' 600, 'opsz' 48, 'wdth' 75;
 	background-image: linear-gradient(var(--primary-dark), var(--primary));
 	-webkit-background-clip: text;
 	background-clip: text;
+	font-family: var(--display);
+	font-stretch: 60%;
 }
 .bento .label {
 	font-size: 0.8rem;
 	color: var(--action);
-	font-family: var(--font);
 	font-weight: 500;
-	font-stretch: expanded;
 }
 @media (max-width: 600px) {
 	.bento .bento {
