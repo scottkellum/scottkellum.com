@@ -2,10 +2,7 @@
 import IconLinkedIn from '../components/IconLinkedIn.astro';
 import IconMastodon from '../components/IconMastodon.astro';
 import IconGithub from '../components/IconGithub.astro';
-import IconBluesky from '../components/IconBluesky.astro';
-import IconThreads from '../components/IconThreads.astro';
 import IconRSS from '../components/IconRSS.astro';
-import IconInstagram from './IconInstagram.astro';
 const today = new Date();
 ---
 
@@ -14,33 +11,23 @@ const today = new Date();
 	<div class="content">
 		<div class="link-wrapper">
 			<div class="cta links">
-				<a href="mailto:info@typetura.com" target="_blank">Get in touch</a>
+				<a href="mailto:scott@scottkellum.com" target="_blank">Get in touch</a>
 				<a href="https://calendly.com/typetura/30min" target="_blank">Book a call</a>
 			</div>
 			<div class="internal links">
-				<a href="/editorial">Editorial</a>
-				<a href="/ecommerce">Ecommerce</a>
-				<a href="/federal">Federal</a>
-				<a href="/solutions-and-ip">Solutions and IP</a>
-				<a href="/blog">News and Updates</a>
-				<a href="/about">About us</a>
-				<a href="/patents">Patents</a>
-				<a href="/privacy">Privacy</a>
-				<!-- <a href="https://store.typetura.com/">Packages</a> -->
+				<a href="/photos">Photos</a>
+				<a href="/work">Work</a>
 			</div>
 			<div class="social links">
-				<a href="https://typetura.social/@typetura" target="_blank" rel="noopener noreferrer"><IconMastodon /> Mastodon</a>
-				<a href="https://www.instagram.com/typeturadesign/" target="_blank" rel="noopener noreferrer"><IconInstagram /> Instagram</a>
-				<a href="https://bsky.app/profile/typetura.com" target="_blank" rel="noopener noreferrer"><IconBluesky />Bluesky</a>
-				<a href="https://www.threads.net/@typeturadesign" target="_blank" rel="noopener noreferrer"><IconThreads /> Threads</a>
-				<a href="https://www.linkedin.com/company/typetura/" target="_blank" rel="noopener noreferrer"><IconLinkedIn /> LinkedIn</a>
-				<a href="https://github.com/typetura" target="_blank" rel="noopener noreferrer"><IconGithub /> Github</a>
+				<a href="https://typetura.social/@scottkellum" target="_blank" rel="noopener noreferrer"><IconMastodon /> Mastodon</a>
+				<a href="https://github.com/scottkellum" target="_blank" rel="noopener noreferrer"><IconGithub /> Github</a>
+				<a href="https://www.linkedin.com/in/scott-kellum/" target="_blank" rel="noopener noreferrer"><IconLinkedIn /> LinkedIn</a>
 				<a href="/rss.xml" target="_blank"><IconRSS /> RSS</a>
 			</div>
 		</div>
 
 		<div class="copyright">
-			&copy; {today.getFullYear()} Typetura LLC. All rights reserved.
+			&copy; {today.getFullYear()} Scott Kellum. All rights reserved.
 		</div>
 
 	</div>

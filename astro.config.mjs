@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://typetura.com',
+	site: 'https://scottkellum.com',
 	integrations: [mdx(), sitemap({
     serialize(item) {
       if (/editorial/.test(item.url)) {

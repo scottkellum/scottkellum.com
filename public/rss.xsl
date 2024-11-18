@@ -6,7 +6,7 @@
   <xsl:template match="/">
     <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
       <head>
-        <title>Typetura’s RSS styles</title>
+        <title>Scott’s RSS styles</title>
         <meta name="viewport" content="width=device-width"/>
 				<meta name="color-scheme" content="dark light"/>
 				<style>
@@ -159,8 +159,8 @@
       </head>
       <body>
 				<header>
-					<h1>Typetura’s RSS Feed</h1>
-          <code onClick="navigator.clipboard.writeText('https://typetura.com/rss.xml')">https://typetura.com/rss.xml</code>
+					<h1>Scott Kellum’s RSS Feed</h1>
+          <code onClick="navigator.clipboard.writeText('https://scottkellum.com/rss.xml')">https://scottkellum.com/rss.xml</code>
 					<p><xsl:value-of select="/rss/channel/description"/></p>
 					<a class="homelink">
 						<xsl:attribute name="href">

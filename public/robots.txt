@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /drafts/
 
-Sitemap: https://www.typetura.com/sitemap-0.xml
+Sitemap: https://www.scottkellum.com/sitemap-0.xml
