@@ -1,0 +1,291 @@
+---
+import photos from '../data/photos.json'
+
+let rolls = photos.rolls;
+
+function rollID(t) {
+  t = t.replaceAll('[', '');
+  t = t.replaceAll(']', '');
+  t = t.replaceAll(' ', '-');
+  return t;
+}
+---
+{rolls.map((roll) => (
+  <article class="filmstrip" id={rollID(roll.title)} style={`color: ${roll.color}`} onscroll="this.style.setProperty('--scroll', this.scrollLeft)">
+    <div class="meta">
+      <span class="date">{roll.date}</span>
+      <span class="date">{roll.location}</span>
+      <span class="camera">{roll.camera}</span>
+      <span class="lens" set:html={roll.lens}></span>
+      <span class="stock">{roll.stock}</span>
+      <svg width="143" height="30" viewBox="0 0 143 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M142.929 15L120.63 27.8744L120.63 2.12548L142.929 15Z" fill="currentcolor"/>
+        <path d="M105.197 15L82.8975 27.8744L82.8975 2.12548L105.197 15Z" fill="currentcolor"/>
+        <path d="M67.4648 15L45.1656 27.8744L45.1656 2.12548L67.4648 15Z" fill="currentcolor"/>
+        <path d="M29.7324 15L7.43317 27.8744L7.43317 2.12548L29.7324 15Z" fill="currentcolor"/>
+      </svg>
+    </div>
+    <h1>{roll.title}</h1>
+    {roll.photos.map((photo) => (
+      <section class="image" onclick="currentPhoto(this)">
+        <img loading="lazy" src={`/photos/${photo.src}`} alt={photo.alt}>
+        {photo.stereo && (
+          <img aria-hidden="true" class="stereo" loading="lazy" src={`/photos/${photo.stereo}`} alt=" ">
+        )}
+      </section>
+    ))}
+  </article>
+))}
+
+<style is:global>
+  .filmstrip {
+    position: relative;
+    color: #1AE8DB;
+    width: 100cqi;
+    white-space: nowrap;
+    overflow: auto;
+    overflow-y: hidden;
+    margin-block: 2vh;
+    scrollbar-width: thin;
+    scrollbar-height: thin;
+    scrollbar-color: currentcolor transparent;
+    scroll-snap-align: start;
+    scroll-margin-block-start: 2vh;
+    font-family: var(--mono);
+  }
+  @media (max-width: 80em) {
+    .filmstrip {
+      scroll-snap-type: x mandatory;
+    }
+  }
+  .filmstrip::-webkit-scrollbar {
+    inline-size: 0.333rem;
+    block-size: 0.333rem;
+    background-color: transparent;
+  }
+  .filmstrip::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background: currentColor;
+  }
+
+  .filmstrip img,
+  .filmstrip .image {
+    block-size: min(36rem, 90vh);
+    inline-size: auto;
+    max-width: 100vw;
+    display: inline-block;
+    object-fit: cover;
+    scroll-snap-align: center;
+  }
+  .filmstrip .image {
+    margin-inline-end: 3rem;
+    margin-block-start: 0.815rem;
+    position: relative;
+  }
+  .filmstrip .stereo {
+    display: none;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .filmstrip .stereo {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      with: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: stereo 0.6s steps(1) infinite;
+    }
+  }
+  @keyframes stereo {
+    50% {
+      opacity: 0;
+    }
+  }
+  .filmstrip .image {
+    transition: opacity 0.25s ease-in-out;
+  }
+  .keyNav .filmstrip .image {
+    opacity: 0.5;
+  }
+  .keyNav .filmstrip .stereo {
+    display: none;
+  }
+  .keyNav .filmstrip .current {
+    opacity: 1;
+  }
+  .keyNav .filmstrip .current .stereo {
+    display: block;
+  }
+  .filmstrip h1 {
+    max-block-size: min(36rem, 90vh);
+    inline-size: min-content;
+    display: inline-block;
+    font-family: var(--display);
+    font-weight: 700;
+    font-stretch: 200%;
+    font-size: min(5rem, 16vh);
+    line-height: 1;
+    mix-blend-mode: screen;
+    white-space: initial;
+    position: relative;
+    margin-block: 0;
+    margin-inline-start: 2rem;
+    margin-inline-end: -0.5ch;
+    animation: 1s var(animation-timing-function, linear) calc(-1s * var(--tt-bind, 500) / var(--to, 1000)) 1 both paused var(animation-name, none);
+    scroll-snap-align: start;
+    scroll-margin-inline-start: 2rem;
+    z-index: 9;
+    animation-name: filmstrip-h1;
+    --to: 1600;
+    animation-timing-function: cubic-bezier(0.1,0.4,0.7,1);
+  }
+  @keyframes filmstrip-h1 {
+    0% {
+      font-size: 1rem;
+    }
+  }
+  .filmstrip h1 strong {
+    font-weight: 700;
+  }
+  .filmstrip .meta {
+    position: absolute;
+    mix-blend-mode: screen;
+    display: flex;
+    gap: 2rem;
+    margin-inline-start: 2rem;
+    transform: translateX(calc((var(--scroll, 0) * 0.5px)));
+    z-index: 9;
+  }
+  .filmstrip svg {
+    height: auto;
+    width: 8rem;
+    height: 1.6rem;
+  }
+
+  @media print {
+    html {
+      background: none !important;
+      font-size: 9pt !important;
+    }
+    .home {
+      display: none;
+    }
+    .filmstrip {
+      display: grid;
+      white-space: normal;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      width: auto;
+      margin: 1rem 1rem 6rem;
+      gap: 1rem;
+      page-break-after: always;
+    }
+    .filmstrip img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+      object-fit: contain;
+      page-break-inside: avoid;
+    }
+    .filmstrip .image {
+      block-size: auto;
+      margin: 0;
+      opacity: 1 !important;
+    }
+    .filmstrip h1 {
+      font: inherit !important;
+      font-weight: 400 !important;
+      animation: none;
+      grid-column-start: 1;
+      grid-row-start: 1;
+      margin: 0;
+      inline-size: 100%;
+    }
+    .filmstrip h1 strong {
+      font-weight: 400 !important;
+    }
+    .filmstrip .meta {
+      display: block;
+      position: relative;
+      transform: none;
+      grid-column-start: 1;
+      grid-row-start: 1;
+      margin: 0;
+      align-self: end;
+    }
+    .filmstrip .meta span {
+      display: block;
+    }
+    .filmstrip svg {
+      display: none;
+    }
+    * {
+      mix-blend-mode: normal !important;
+      color: #000 !important;
+    }
+  }
+</style>
+
+<script>
+function filmScroll() {
+  this.style.setProperty('--scroll', this.scrollLeft);
+  this.style.setProperty('--rate', screen.width / this.offsetWidth);
+}
+
+let current = document.querySelector(".image");
+
+function currentPhoto(e) {
+  current.classList.remove("current");
+  current = e;
+  e.classList.add("current")
+  e.scrollIntoView({behavior: "smooth", block: "nearest", inline: "center"});
+  e.closest(".filmstrip").scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
+  let id = current.closest(".filmstrip").id;
+  if(window.location.hash != `#${id}`) {
+    if(history.pushState) {
+      history.pushState(null, null, `/photos#${id}`);
+    }
+    else {
+      window.location.hash= id;
+    }
+  }
+}
+
+document.addEventListener('keydown', logKey);
+document.addEventListener("mousemove", keyOff);
+
+function keyOff() {
+  document.documentElement.classList.remove("keyNav");
+}
+
+function logKey(e) {
+  if(e.key === "ArrowRight") {
+    document.documentElement.classList.add("keyNav");
+    if(current.nextElementSibling.classList) {
+      e.preventDefault();
+      currentPhoto(current.nextElementSibling);
+    }
+  }
+  if(e.key === "ArrowLeft") {
+    document.documentElement.classList.add("keyNav");
+    if(current.previousElementSibling.classList) {
+      e.preventDefault();
+      currentPhoto(current.previousElementSibling);
+    }
+  }
+  if(e.key === "ArrowUp") {
+    document.documentElement.classList.add("keyNav");
+    if(current.closest(".filmstrip").previousSibling.classList) {
+      e.preventDefault();
+      currentPhoto(current.closest(".filmstrip").previousSibling.querySelector(".image"));
+    }
+  }
+  if(e.key === "ArrowDown") {
+    document.documentElement.classList.add("keyNav");
+    if(current.closest(".filmstrip").nextSibling) {
+      e.preventDefault();
+      currentPhoto(current.closest(".filmstrip").nextSibling.querySelector(".image"));
+    }
+  }
+}
+</script>

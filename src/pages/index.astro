@@ -12,11 +12,11 @@ const posts = (await getCollection('blog')).sort(
 const pinnedPosts = posts.filter((post) => post.data.pinned);
 ---
 
-<Landing title="Typetura — a human centered and technology driven design studio" description={SITE_DESCRIPTION}>
+<Landing title="Scott Kellum — Human centered and technology driven design" description={SITE_DESCRIPTION}>
 
 	<section class="lede wrapper">
 		<div class="content tt">
-			<h1 class="page-head">Typetura — human centered and technology driven design</h1>
+			<h1 class="page-head">Scott Kellum — Human centered and technology driven design</h1>
 			<p>Typetura is a studio where we know that, as humans, our words are the frame through which ideas are seen. Their power to communicate is amplified by being the most easily shared, translated, and understood medium.</p>
 			<p>How do you present the ideas you care about? How do you design in a way that makes them stand-out? Let’s discuss.</p>
 		</div>
@@ -77,6 +77,7 @@ const pinnedPosts = posts.filter((post) => post.data.pinned);
 		color: var(--primary-dark);
 		letter-spacing: 0.05em;
 		font-weight: 400;
+		font-style: italic;
 	}
 
 	@media (min-width: 40em) {

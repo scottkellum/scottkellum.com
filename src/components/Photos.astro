@@ -1,0 +1,128 @@
+---
+// Photos go here
+// Most recent at the top
+const data = [
+	{
+	  "url": "IMG_3826.jpg",
+	  "category": "Nature"
+	},
+	{
+	  "url": "LRM_EXPORT_20170515_221304.jpg",
+	  "category": "Nature"
+	},
+	{
+	  "url": "20190128_171411.jpg",
+	  "category": "Architecture"
+	},
+	{
+	  "url": "LRM_EXPORT_20170613_214813 (1).jpg",
+	  "category": "Architecture"
+	},
+	{
+	  "url": "IMG_20170715_185641_HDR.jpg",
+	  "category": "Architecture"
+	},
+	{
+	  "url": "20171128_172505-01.jpeg",
+	  "category": "Architecture"
+	},
+	{"url": "0200312214257_IMG_6899.jpg",
+	  "category": "Architecture"
+	},
+	{
+	"url": "PSX_20180608_185048.jpg",
+	  "category": "Architecture"
+	},
+	
+	{
+	"url": "20190323_182107.jpg",
+	  "category": "Nature"
+	},
+	{
+	  "url": "IMG_3100.jpg",
+	  "category": "Nature"
+	},
+	{
+	  "url": "IMG_7203.jpg",
+	  "category": "Fashion"
+	},
+	{
+	  "url": "20210910151322_IMG_7526.jpg",
+	  "category": "Fashion"
+	},
+	{
+	  "url": "IMG_7133.jpg",
+	  "category": "Fashion"
+	},
+	{
+	  "url": "20210910152748_IMG_7559.jpg",
+	  "category": "Fashion"
+	},
+	{
+	  "url": "IMG_7125.jpg",
+	  "category": "Fashion"
+	},
+	{
+	  "url": "20210212161329_IMG_7349.jpg",
+	  "category": "Fashion"
+	},
+	{
+	  "url": "IMG_7158.jpg",
+	  "category": "Fashion"
+	},
+	{
+	  "url": "20210910143128_IMG_7463.jpg",
+	  "category": "Fashion"
+	},
+	{
+	  "url": "20210910152621_IMG_7553.jpg",
+	  "category": "Fashion"
+	},
+	{
+	  "url": "IMG_20210128_232423_563.jpg",
+	  "category": "Fashion"
+	},
+	
+];
+
+// Define props
+const { heading = 'Recent Photos', number = 4, category = null } = Astro.props; Astro
+// Create photo array with parameters from props
+let photos = []
+
+// Push the photos you want to select into the array
+let i = 0;
+data.forEach(photo => {
+	if(i < number) {
+		if(category) {
+			if(category === photo.category) {
+				photos.push(photo);
+				i = i + 1;
+			}
+		} else {
+			photos.push(photo);
+			i = i + 1;
+		}
+	}
+});
+---
+
+<section class="photos">
+    <h1 class="page-heading">{heading}</h1>
+    <div class="photos-gallery">
+			{photos.map((photo) => (
+				<img src={`/images/${photo.url}`}/>
+			))}
+    </div>
+</section>
+
+<style>
+
+
+.photos-gallery{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 5fr));
+    gap: 1rem;
+}
+
+</style>

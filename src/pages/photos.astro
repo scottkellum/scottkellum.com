@@ -1,0 +1,56 @@
+---
+// Component Imports
+import BaseHead from '../components/BaseHead.astro';
+import Filmstrip from '../components/Filmstrip.astro';
+import HomeLink from '../components/HomeLink.astro';
+
+let title = 'Scott Kellum’s Photographs';
+let description = 'Photos taken by Scott Kellum. Most on Ilford HP5+ film with my Leica M3 and Vöigtlander 50mm f1.5 Nokton MC II';
+let permalink = 'https://scottkellum.com/photos';
+---
+
+<html lang="en">
+	<head>
+		<BaseHead {title} {description} {permalink} />
+		<style>
+			:root {
+        background: #000;
+        animation: 1s var(--tt-ease, linear) calc(-1s * var(--tt-bind, 500) / var(--tt-max, 1000)) 1 both paused var(--tt-key, none);
+        --tt-key: photos-html;
+        --tt-max: 1000;
+        --tt-ease: cubic-bezier(0,0,0.67,1);
+        --blend: screen;
+        --primary: #FF6C4B;
+
+        scrollbar-color: var(--primary) transparent;
+        scrollbar-width: thin;
+
+			}
+      body {
+        container-type: inline-size;
+      }
+      @media (max-height: 60em) {
+        :root {
+          scroll-snap-type: y mandatory;
+        }
+      }
+      @keyframes photos-html {
+        0% {
+          font-size: 0%;
+        }
+      }
+		</style>
+		<script>
+			function resize() {
+					document.documentElement.style.setProperty("--tt-bind", window.innerWidth)
+			} resize(); window.onresize = resize;
+		</script>
+	</head>
+
+	<body>
+    <HomeLink />
+		<main>
+	      <Filmstrip />
+		</main>
+	</body>
+</html>

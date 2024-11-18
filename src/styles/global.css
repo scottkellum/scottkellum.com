@@ -1,27 +1,43 @@
 @font-face {
-	font-family: 'Nostrav';
-	src: url('/fonts/nostrav-sett.woff2') format('woff2');
-	font-weight: 400;
+	font-family: 'Gamay web';
+	src: url('/assets/fonts/Gamay.woff2') format('woff2');
+	font-weight: 100 900;
+	font-stretch: 60 200;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Gamay web';
+	src: url('/assets/fonts/Gamay-Italic.woff2') format('woff2');
+	font-weight: 100 900;
+	font-stretch: 60 200;
 	font-style: italic;
 	font-display: swap;
 }
 @font-face {
-	font-family: 'Nostrav';
-	src: url('/fonts/nostrav-stream.woff2') format('woff2');
+	font-family: 'Sentient web';
+	src: url('/assets/fonts/Sentient.woff2') format('woff2');
+	font-weight: 200 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Sentient web';
+	src: url('/assets/fonts/Sentient-Italic.woff2') format('woff2');
+	font-weight: 200 700;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Arnold web';
+	src: url('/assets/fonts/arnold.woff2') format('woff2');
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
-	font-family: 'Arnold';
-	src: url('/fonts/arnold.woff2') format('woff2');
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: 'Arnold';
-	src: url('/fonts/arnold-italic.woff2') format('woff2');
+	font-family: 'Arnold web';
+	src: url('/assets/fonts/arnold-italic.woff2') format('woff2');
 	font-weight: 400;
 	font-style: italic;
 	font-display: swap;
@@ -34,7 +50,7 @@
 	font-optical-sizing: auto;
 	scroll-behavior: smooth;
 	scroll-margin-top: 3rem;
-	/* font-size-adjust: from-font; */
+	font-size-adjust: from-font;
 }
 
 /* Styles */
@@ -43,9 +59,9 @@ html {
 	--foreground: #142226;
 	--background: #fff;
 
-	--primary: #129681;
-	--primary-dark: #085147;
-	--accent: #fff3f0;
+	--primary: #d32c07;
+	--primary-dark: #691300;
+	--accent: #fff1ed;
 	--accent-dark: #ffe3dc;
 
 	--action-light: #ffad82;
@@ -63,8 +79,9 @@ html {
 
 	--speed: 0.2s;
 
-	--font: Arnold, Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', Monaco, monospace;
-	--display: Nostrav, var(--font);
+	--font: 'Sentient web', serif;
+	--display: 'Gamay web', var(--font);
+	--mono: 'Arnold web', Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', Monaco, monospace;
 
 	font-family: var(--font);
 	color: var(--foreground);
@@ -162,13 +179,14 @@ h6 {
 	line-height: 1.1;
 	font-weight: 700;
 	text-wrap: balance;
+	font-family: var(--display);
 }
 
 .lede > .content {
 	margin: auto;
 	padding-block: 2em calc(2em + 1rem);
 	line-height: 1.4;
-	font-weight: 500;
+	font-weight: 400;
 	letter-spacing: 0.01em;
 	color: var(--primary-dark);
 	text-wrap: balance;
