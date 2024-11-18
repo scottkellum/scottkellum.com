@@ -11,18 +11,17 @@
 				<meta name="color-scheme" content="dark light"/>
 				<style>
           @font-face {
-            font-family: 'Roslindale';
-            src: url('/roslindale.woff2') format('woff2-variations');
-            font-weight: 200 800;
-            font-stretch: 75% 100%;
-            font-style: normal italic;
+            font-family: 'Gamay web';
+            src: url('/assets/fonts/Gamay.woff2') format('woff2');
+            font-weight: 100 900;
+            font-stretch: 60 200;
+            font-style: normal;
             font-display: swap;
           }
           @font-face {
-            font-family: 'Gamay';
-            src: url('/gamay-expanded-medium.woff2') format('woff2');
-            font-weight: 500;
-            font-stretch: expanded;
+            font-family: 'Sentient web';
+            src: url('/assets/fonts/Sentient.woff2') format('woff2');
+            font-weight: 200 700;
             font-style: normal;
             font-display: swap;
           }
@@ -31,14 +30,14 @@
             --foreground: #142226;
             --background: #fff;
 
-            --primary: #129681;
-            --primary-dark: #085147;
-            --accent: #fff3f0;
+            --primary: #d32c07;
+            --primary-dark: #691300;
+            --accent: #fcf9f7;
             --accent-dark: #ffe3dc;
 
-            --actoin-light: #ffbc64;
-            --action-dark: #8e5000;
-            --action-neutral: #f5920f;
+            --action-light: #ffad82;
+            --action-dark: #943600;
+            --action-neutral: #f5540f;
             --action: var(--action-dark);
             --warning: #ba0d04;
             --pink: #E01C82;
@@ -47,9 +46,12 @@
             --blend: multiply;
 
             --width: 50rem;
+            --margin: calc((100vw - min(var(--width), 90vw)) / 2);
 
-            --font: Roslindale, serif;
-            --gamay: Gamay, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            --speed: 0.2s;
+
+            --font: 'Sentient web', serif;
+            --display: 'Gamay web', var(--font);
 
             font-family: var(--font);
             color: var(--foreground);
@@ -93,7 +95,7 @@
             line-height: 1.1;
           }
           h1, h2, .homelink {
-            font-family: var(--gamay);
+            font-family: var(--display);
             font-weight: 500;
             font-size: 0.9rem;
           }
@@ -103,7 +105,8 @@
           h3 {
             font-size: 1.5rem;
             font-weight: 700;
-            font-stretch: 70%;
+            font-stretch: 160%;
+            font-family: var(--display);
           }
 
           p {
@@ -119,7 +122,7 @@
           .date {
             color: var(--primary-dark);
             font-size: 0.7rem;
-            font-family: var(--gamay);
+            font-family: var(--display);
           }
 
           a {
@@ -148,7 +151,7 @@
             content: ' — click to copy';
             font-size: 0.67rem;
             color: var(--primary-dark);
-            font-family: var(--gamay);
+            font-family: var(--display);
           }
           :focus {
             border-radius: 0.1px;

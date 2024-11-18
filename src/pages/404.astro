@@ -5,9 +5,26 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import Card from '../components/Card.astro';
 
 import { getCollection } from 'astro:content';
-const posts = (await getCollection('blog')).sort(
+import FormattedDate from '../components/FormattedDate.astro';
+import photos from '../data/photos.json'
+
+let rolls = photos.rolls;
+
+interface MarkdownFrontmatter {
+	publishDate: number;
+}
+
+function rollID(t) {
+  t = t.replaceAll('[', '');
+  t = t.replaceAll(']', '');
+  t = t.replaceAll(' ', '-');
+  return t;
+}
+
+const work = (await getCollection('work')).sort(
 	(b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
+const pinnedPosts = work.filter((post) => post.data.pinned);
 ---
 
 <Landing title="Scott Kellum" description={SITE_DESCRIPTION}>
@@ -15,21 +32,32 @@ const posts = (await getCollection('blog')).sort(
 	<section class="lede wrapper">
 		<div class="content tt">
 			<h1 class="page-head">Oops!</h1>
-			<p>We’re sorry we couldn’t find that page.</p>
+			<p class="current-work">We’re sorry we couldn’t find that page.</p>
 		</div>
 	</section>
 	
 	<Nav />
 
 	<main class="main wrapper" id="solutions">
-
 		<section class="featured" id="featured-work">
 			<hr>
+			<h2 class="featured-head">Work with me</h2>
+			<p>I run a full-service design studio called <a href="https://typetura.com" target="_blank">Typetura</a>, where we do everything from designing impactful branding to building beautiful high-quality websites.</p>
+			<hr>
+			<h2 class="featured-head">Photography</h2>
+			<div class="home-filmstrip">
+				{rolls.map((roll) => (
+					<a class="item" href={`/photos#${rollID(roll.title)}`}>
+						<img loading="lazy" src={`/photos/${roll.photos[0].src}`} alt={roll.photos[0].alt}>
+					</a>
+				))}
+			</div>
+		<hr>
 			<h2 class="featured-head">Featured work</h2>
 
 			<ul class="featured-list">
 				{
-					posts.map((post) => (
+					pinnedPosts.map((post) => (
 						<li class="featured-post">
 								<img src={post.data.heroImage} alt={post.data.alt} width="441" height="441" />
 								<div class="work-container">
@@ -45,7 +73,7 @@ const posts = (await getCollection('blog')).sort(
 				}
 			</ul>
 
-			<a class="more-work" href="/blog/">More work and updates</a>
+			<a class="more-work" href="/work/">More work and updates</a>
 
 		</section>
 
@@ -53,6 +81,57 @@ const posts = (await getCollection('blog')).sort(
 </Landing>
 
 <style>
+	.current-work {
+		font-size: 2rem;
+		line-height: 1.35;
+		animation-name: home-lede-content;
+		text-wrap: pretty;
+	}
+	@keyframes home-lede-content {
+		0% {
+			font-size: 1rem;
+		}
+		100% {
+			font-size: 2rem;
+		}
+	}
+
+	.home-filmstrip {
+		width: 100%;
+		overflow: auto;
+		margin-block: 1rem;
+		writing-mode: vertical-lr;
+		margin: 0;
+		padding: 1rem 0;	
+		scrollbar-width: thin;
+		scrollbar-color: var(--primary) transparent;
+	}
+	.home-filmstrip img {
+		height: 10rem;
+		width: auto;
+		display: block;
+		margin: 0;
+	}
+	.home-filmstrip a {
+		display: block;
+		text-decoration: none;
+		margin: 0;
+		margin-block-end: 0.5rem;
+		border-radius: 0.5rem;
+		overflow: hidden;
+	}
+
+	.lede .page-head,
+	.featured-head {
+		font-size: 0.8rem;
+		font-family: var(--gamay);
+		animation-name: none;
+		color: var(--primary-dark);
+		letter-spacing: 0.05em;
+		font-weight: 400;
+		font-style: italic;
+	}
+
 	@media (min-width: 40em) {
 		.card-container {
 			width: calc(100% + 2rem);
@@ -109,6 +188,8 @@ const posts = (await getCollection('blog')).sort(
 
 	.featured-post img {
 		width: 100%;
+		height: auto;
+		aspect-ratio: 1;
 		margin: 0.5px;
 		outline: 1px solid var(--accent-dark);
 		object-fit: cover;
@@ -176,6 +257,11 @@ const posts = (await getCollection('blog')).sort(
 	@media (max-width: 40em) {
 		.more-work {
 			margin-inline: auto;
+		}
+	}
+	@media (min-width: 40em) {
+		.more-work {
+			margin-block-end: 2rem;
 		}
 	}
 

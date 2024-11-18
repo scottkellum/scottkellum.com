@@ -6,7 +6,7 @@ import MarkdownIt from 'markdown-it';
 const parser = new MarkdownIt();
 
 export async function GET(context) {
-	const posts = (await getCollection('blog')).sort(
+	const work = (await getCollection('work')).sort(
 		(b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 	);	
 	return rss({
@@ -16,7 +16,7 @@ export async function GET(context) {
 		stylesheet: '/rss.xsl',
 		javascript: '/rss.js',
 		favicon: '/favicon.svg',
-		items: posts.map((post) => ({
+		items: work.map((post) => ({
 			content: sanitizeHtml(parser.render(post.body), {
         allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img'])
       }),

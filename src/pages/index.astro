@@ -32,8 +32,17 @@ const pinnedPosts = work.filter((post) => post.data.pinned);
 	<section class="lede wrapper">
 		<div class="content tt">
 			<h1 class="page-head">Scott Kellum — Human centered and technology driven design</h1>
-			<p>Typetura is a studio where we know that, as humans, our words are the frame through which ideas are seen. Their power to communicate is amplified by being the most easily shared, translated, and understood medium.</p>
-			<p>How do you present the ideas you care about? How do you design in a way that makes them stand-out? Let’s discuss.</p>
+			<p>Scott Kellum is an internationally-recognized leader in design for the web, with a
+				specialized focus on dynamic typesetting in digital space. In addition to his web design
+				expertise, Scott brings with him two decades of involvement and partnership with some
+				of the most well-respected teams in design, including Darden Studio, Fjord, and Vox
+				Media. While in these roles, Scott successfully built cross-organzational buy-in for his
+				unique approaches to web design problems, bringing together advertising, editorial, and
+				engineering teams to build focused, beautiful, and efficient solutions.</p>
+			<p>Scott takes a multi-stakeholder approach to everything he does. His inclusive concept of
+				customer-centered product development means that his work speaks to stakeholders up
+				and down the product chain, while always optimzing for the end user to create easy-to-
+				use, easy-to-maintain products for individuals and organizations.</p>
 		</div>
 	</section>
 	
@@ -41,6 +50,9 @@ const pinnedPosts = work.filter((post) => post.data.pinned);
 
 	<main class="main wrapper" id="solutions">
 		<section class="featured" id="featured-work">
+			<hr>
+			<h2 class="featured-head">Work with me</h2>
+			<p class="current-work">I run a full-service design studio called <a href="https://typetura.com" target="_blank">Typetura</a>, where we do everything from designing impactful branding to building beautiful high-quality websites.</p>
 			<hr>
 			<h2 class="featured-head">Photography</h2>
 			<div class="home-filmstrip">
@@ -79,10 +91,11 @@ const pinnedPosts = work.filter((post) => post.data.pinned);
 </Landing>
 
 <style>
-	.lede > .content {
+	.current-work {
 		font-size: 2rem;
 		line-height: 1.35;
 		animation-name: home-lede-content;
+		text-wrap: pretty;
 	}
 	@keyframes home-lede-content {
 		0% {
