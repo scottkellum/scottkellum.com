@@ -1,0 +1,119 @@
+---
+import Landing from '../layouts/Landing.astro';
+import Nav from '../components/Nav.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Card from '../components/Card.astro';
+
+import { getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+import photos from '../data/photos.json'
+
+let rolls = photos.rolls;
+
+interface MarkdownFrontmatter {
+	publishDate: number;
+}
+
+function rollID(t) {
+  t = t.replaceAll('[', '');
+  t = t.replaceAll(']', '');
+  t = t.replaceAll(' ', '-');
+  return t;
+}
+
+const work = (await getCollection('work')).sort(
+	(b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+const pinnedPosts = work.filter((post) => post.data.pinned);
+---
+
+<Landing title="Scott Kellum — Human centered and technology driven design" description={SITE_DESCRIPTION}>
+
+	<section class="lede wrapper">
+		<div class="content tt">
+			<h1 class="page-head">Scott Kellum — Résumé</h1>
+			<p>Scott Kellum is an internationally-recognized leader in design for the web, with a
+				specialized focus on dynamic typesetting in digital space. In addition to his web design
+				expertise, Scott brings with him two decades of involvement and partnership with some
+				of the most well-respected teams in design, including Darden Studio, Fjord, and Vox
+				Media. While in these roles, Scott successfully built cross-organzational buy-in for his
+				unique approaches to web design problems, bringing together advertising, editorial, and
+				engineering teams to build focused, beautiful, and efficient solutions.</p>
+			<p>Scott takes a multi-stakeholder approach to everything he does. His inclusive concept of
+				customer-centered product development means that his work speaks to stakeholders up
+				and down the product chain, while always optimzing for the end user to create easy-to-
+				use, easy-to-maintain products for individuals and organizations.</p>
+		</div>
+	</section>
+	
+	<Nav />
+
+	<main class="main wrapper" id="solutions">
+		<section class="featured" id="featured-work">
+			<hr>
+			<h2 class="featured-head">Work Experience</h2>
+			<h1>Typetura</h1>
+			<p class="meta date">Oct 2019 – present | Co-founder and CEO</p>
+			<p>Bootstrapped Typetura, an innovation and design studio, from $0.00 to over a half million dollars in investment and sales from 2020-2022, during the height of the Covid-19 pandemic. Under my leadership, Typetura deploys ground-breaking typesetting technology to design and launch accessible, beautiful websites to companies ranging in size from single-founder publications to global, multi-nationals.</p>
+			<p>Concurrent with scaling the business, I partnered with internationally-established intellectual property firm Loeb & Loeb to secure multiple patents focusing on the implementation of our dynamic typesetting technology (2020-2024).</p>
+			<p>Crucially, building this business allowed me to develop an entrepreneurial mindset, learning how to find product-market fit, identify customers, and create value for them, their shareholders, and their investors.</p>
+
+		</section>
+
+</main>
+</Landing>
+
+<style>
+	.lede .page-head,
+	.featured-head {
+		font-size: 0.8rem;
+		font-family: var(--gamay);
+		animation-name: none;
+		color: var(--primary-dark);
+		letter-spacing: 0.05em;
+		font-weight: 400;
+		font-style: italic;
+	}
+
+	@media (min-width: 40em) {
+		.card-container {
+			width: calc(100% + 2rem);
+			display: flex;
+			gap: 1em;
+			margin-inline: -1rem;
+			margin-block: 2rem;
+		}
+	}
+
+	.featured {
+		grid-column: 2 / 3;
+		/* text-align: center; */
+	}
+
+  .more-work {
+    font-family: var(--gamay);
+    color: var(--primary-dark);
+    transition: color var(--speed) ease-in-out;
+    mix-blend-mode: var(--blend);
+		display: block;
+		width: fit-content;
+		margin-inline: auto 1rem;
+  }
+	@media (max-width: 40em) {
+		.more-work {
+			margin-inline: auto;
+		}
+	}
+	@media (min-width: 40em) {
+		.more-work {
+			margin-block-end: 2rem;
+		}
+	}
+
+  .more-work:hover,
+  .more-work:focus,
+  .more-work:active {
+    text-decoration: underline;
+    text-decoration-color: var(--action-neutral);
+  }
+</style>
