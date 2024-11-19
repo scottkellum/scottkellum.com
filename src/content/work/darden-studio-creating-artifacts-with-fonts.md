@@ -7,7 +7,7 @@ alt: 'Darden Studio Pin on a white surface surrounded by small objects'
 pinned: true
 ---
 
-Darden Studio is a renowned digital type foundry, creating fonts used by major brands and campaigns across the world like AT&T, Mazers, Crayola, Bernie Sanders, and Hearst. With the new releases of Kit and Gamay, the studio needed a way to promote their new fonts. The primary challenge of promoting these new fonts being that nothing has been made with them yet. [Fonts are a material](https://klim.co.nz/blog/a-typeface-is-not-a-tool/), something that you make things with. So naturally, we worked with Joyce Ketterer and Quinn Keaveney at Darden Studio to make these artifacts.
+Darden Studio is a renowned digital type foundry, creating fonts used by major brands and campaigns across the world like AT&T, Mazers, Crayola, Bernie Sanders, and Hearst. With the new releases of Kit and Gamay, the studio needed a way to promote their new fonts. The primary challenge of promoting these new fonts being that nothing has been made with them yet. [Fonts are a material](https://klim.co.nz/blog/a-typeface-is-not-a-tool/), something that you make things with. So naturally, I worked with Joyce Ketterer and Quinn Keaveney at Darden Studio to make these artifacts.
 
 <div class="bento">
   <p class="box">
@@ -20,7 +20,7 @@ Darden Studio is a renowned digital type foundry, creating fonts used by major b
   </p>
 </div>
 
-With the marketing efforts we have been involved with over the past year, there have been sizable improvements in the traffic and activations of new Darden Studio releases. Merch has been a key part of the marketing strategy, creating a delightful touchpoint for conference and meetup attendees.
+With the marketing efforts I have been involved with over the past year, there have been sizable improvements in the traffic and activations of new Darden Studio releases. Merch has been a key part of the marketing strategy, creating a delightful touchpoint for conference and meetup attendees.
 
 ## The Kit Pin
 
@@ -36,7 +36,7 @@ _Photography by [Paulina (Pau) Pedraza](https://www.pauphotography.com/) for Dar
 
 Merch will be available from Darden Studio’s website soon if you want to get your hands on your own Kit pin.
 
-<a target="_blank" class="cta">Available soon from Darden Studio</a>
+<a target="_blank" href="https://www.dardenstudio.com/merch/kit-pronoun-pin" class="cta">Available from Darden Studio</a>
 
 ## Contains Multitudes Gamay Tape
 
@@ -48,4 +48,4 @@ _Photography by [Paulina (Pau) Pedraza](https://www.pauphotography.com/) for Dar
 ![A roll of magenta packing tape with yellow letters across it reading “CONTAINS MULTITUDES”](../../../public/img/ds-tape-taped.avif)
 _Photography by [Paulina (Pau) Pedraza](https://www.pauphotography.com/) for Darden Studio. License: All Rights Reserved._
 
-<a target="_blank" class="cta">Available soon from Darden Studio</a>
+<a target="_blank" href="https://www.dardenstudio.com/merch/gamay-packing-tape" class="cta">Available from Darden Studio</a>
