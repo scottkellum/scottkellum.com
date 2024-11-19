@@ -152,51 +152,9 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"drafts": {
-"Shifting the control mindset from measures to proportion.md": {
-	id: "Shifting the control mindset from measures to proportion.md";
-  slug: "shifting-the-control-mindset-from-measures-to-proportion";
-  body: string;
-  collection: "drafts";
-  data: any
-} & { render(): Render[".md"] };
-"an-argument-for-writing-clever-code.md": {
-	id: "an-argument-for-writing-clever-code.md";
-  slug: "an-argument-for-writing-clever-code";
-  body: string;
-  collection: "drafts";
-  data: any
-} & { render(): Render[".md"] };
-"consistent-markup-for-accessibility.md": {
-	id: "consistent-markup-for-accessibility.md";
-  slug: "consistent-markup-for-accessibility";
-  body: string;
-  collection: "drafts";
-  data: any
-} & { render(): Render[".md"] };
-"creating-shaker-style-websites.md": {
-	id: "creating-shaker-style-websites.md";
-  slug: "creating-shaker-style-websites";
-  body: string;
-  collection: "drafts";
-  data: any
-} & { render(): Render[".md"] };
 "el-education.md": {
 	id: "el-education.md";
   slug: "el-education";
-  body: string;
-  collection: "drafts";
-  data: any
-} & { render(): Render[".md"] };
-"heading-levels-are-taxonomy-not-hirarchy.md": {
-	id: "heading-levels-are-taxonomy-not-hirarchy.md";
-  slug: "heading-levels-are-taxonomy-not-hirarchy";
-  body: string;
-  collection: "drafts";
-  data: any
-} & { render(): Render[".md"] };
-"speak-selection.md": {
-	id: "speak-selection.md";
-  slug: "speak-selection";
   body: string;
   collection: "drafts";
   data: any
@@ -227,13 +185,6 @@ declare module 'astro:content' {
 "showcasing-roslindale-specimen-microsite.md": {
 	id: "showcasing-roslindale-specimen-microsite.md";
   slug: "showcasing-roslindale-specimen-microsite";
-  body: string;
-  collection: "work";
-  data: InferEntrySchema<"work">
-} & { render(): Render[".md"] };
-"unit-division-with-css-and-fallbacks.md": {
-	id: "unit-division-with-css-and-fallbacks.md";
-  slug: "unit-division-with-css-and-fallbacks";
   body: string;
   collection: "work";
   data: InferEntrySchema<"work">

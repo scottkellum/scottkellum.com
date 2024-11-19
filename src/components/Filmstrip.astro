@@ -226,12 +226,7 @@ function rollID(t) {
   }
 </style>
 
-<script>
-function filmScroll() {
-  this.style.setProperty('--scroll', this.scrollLeft);
-  this.style.setProperty('--rate', screen.width / this.offsetWidth);
-}
-
+<script is:inline>
 let current = document.querySelector(".image");
 
 function currentPhoto(e) {
@@ -247,44 +242,6 @@ function currentPhoto(e) {
     }
     else {
       window.location.hash= id;
-    }
-  }
-}
-
-document.addEventListener('keydown', logKey);
-document.addEventListener("mousemove", keyOff);
-
-function keyOff() {
-  document.documentElement.classList.remove("keyNav");
-}
-
-function logKey(e) {
-  if(e.key === "ArrowRight") {
-    document.documentElement.classList.add("keyNav");
-    if(current.nextElementSibling.classList) {
-      e.preventDefault();
-      currentPhoto(current.nextElementSibling);
-    }
-  }
-  if(e.key === "ArrowLeft") {
-    document.documentElement.classList.add("keyNav");
-    if(current.previousElementSibling.classList) {
-      e.preventDefault();
-      currentPhoto(current.previousElementSibling);
-    }
-  }
-  if(e.key === "ArrowUp") {
-    document.documentElement.classList.add("keyNav");
-    if(current.closest(".filmstrip").previousSibling.classList) {
-      e.preventDefault();
-      currentPhoto(current.closest(".filmstrip").previousSibling.querySelector(".image"));
-    }
-  }
-  if(e.key === "ArrowDown") {
-    document.documentElement.classList.add("keyNav");
-    if(current.closest(".filmstrip").nextSibling) {
-      e.preventDefault();
-      currentPhoto(current.closest(".filmstrip").nextSibling.querySelector(".image"));
     }
   }
 }
