@@ -96,13 +96,17 @@ const pinnedPosts = work.filter((post) => post.data.pinned);
 		}
 	}
 
-	.home-filmstrip {
-		width: 100%;
+.home-filmstrip {
+		width: 100cqb;
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
 		overflow: auto;
 		margin-block: 1rem;
 		writing-mode: vertical-lr;
 		margin: 0;
-		padding: 1rem 0;	
+		padding: 1rem calc((100cqb - var(--width)) / 2);
+		box-sizing: border-box;
 		scrollbar-width: thin;
 		scrollbar-color: var(--primary) transparent;
 	}
@@ -119,6 +123,9 @@ const pinnedPosts = work.filter((post) => post.data.pinned);
 		margin-block-end: 0.5rem;
 		border-radius: 0.5rem;
 		overflow: hidden;
+	}
+	.home-filmstrip a:last-child {
+		margin-block-end: 0;
 	}
 
 	.lede .page-head,
