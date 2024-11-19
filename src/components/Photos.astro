@@ -88,7 +88,7 @@ const data = [
 // Define props
 const { heading = 'Recent Photos', number = 4, category = null } = Astro.props; Astro
 // Create photo array with parameters from props
-let photos = []
+let photos: { url: string; category: string }[] = []
 
 // Push the photos you want to select into the array
 let i = 0;

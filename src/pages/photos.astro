@@ -6,12 +6,11 @@ import HomeLink from '../components/HomeLink.astro';
 
 let title = 'Scott Kellum’s Photographs';
 let description = 'Photos taken by Scott Kellum. Most on Ilford HP5+ film with my Leica M3 and Vöigtlander 50mm f1.5 Nokton MC II';
-let permalink = 'https://scottkellum.com/photos';
 ---
 
 <html lang="en">
 	<head>
-		<BaseHead {title} {description} {permalink} />
+		<BaseHead {title} {description} />
 		<style>
 			:root {
         background: #000;
@@ -40,7 +39,7 @@ let permalink = 'https://scottkellum.com/photos';
         }
       }
 		</style>
-		<script>
+		<script is:inline>
 			function resize() {
 					document.documentElement.style.setProperty("--tt-bind", window.innerWidth)
 			} resize(); window.onresize = resize;
