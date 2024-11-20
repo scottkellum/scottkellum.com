@@ -1,0 +1,53 @@
+<div class="keep-scrolling" aria-hidden="true">
+  <span class="hand">☜</span> Keep Scrolling<span class="so-much-more">, there’s so much more!</span>
+</div>
+
+<style>
+  .keep-scrolling {
+    grid-row: 1 / 5;
+    grid-column-start: 3;
+    width: 100%;
+    max-height: 100vh;
+    max-height: 100svh;
+    max-width: 4rem;
+    padding-top: 1.5rem;
+    box-sizing: border-box;
+    right: var(--margin);
+    z-index: 9;
+    writing-mode: vertical-lr;
+    transform: translateX(-50%) rotate(180deg);
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 400;
+    font-stretch: 160%;
+    letter-spacing: 0.1em;
+    color: var(--primary);
+    mix-blend-mode: var(--blend);
+    pointer-events: none;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  .hand {
+    position: relative;
+    display: inline-block;
+    animation: hand 1s ease-in-out infinite alternate;
+  }
+  @keyframes hand {
+    from {
+      transform: translateY(0) rotate(-13deg) scale(1.1);
+    }
+    to {
+      transform: translateY(-1em) rotate(3deg) scale(1.3);
+    }
+  }
+  @media (min-height: 80em) {
+    .keep-scrolling {
+      display: none;
+    }
+  }
+  @media (max-height: 26em) {
+    .so-much-more {
+      display: none;
+    }
+  }
+</style>

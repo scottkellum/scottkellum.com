@@ -3,6 +3,7 @@ import Landing from '../layouts/Landing.astro';
 import Nav from '../components/Nav.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import Card from '../components/Card.astro';
+import KeepScrolling from '../components/KeepScrolling.astro';
 
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
@@ -36,6 +37,8 @@ const pinnedPosts = work.filter((post) => post.data.pinned);
 			<p>Scott takes a multi-stakeholder approach to everything he does. His inclusive concept of customer-centered product development means his work speaks to stakeholders up and down the product chain, while always optimizing for the customer to create easy-to-use, easy-to-maintain products for individuals and organizations.</p>
 		</div>
 	</section>
+
+	<KeepScrolling />
 	
 	<Nav />
 

@@ -3,6 +3,7 @@ import Landing from '../layouts/Landing.astro';
 import Nav from '../components/Nav.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import Card from '../components/Card.astro';
+import KeepScrolling from '../components/KeepScrolling.astro';
 
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
@@ -37,6 +38,8 @@ const pinnedPosts = work.filter((post) => post.data.pinned);
 		</div>
 	</section>
 	
+	<KeepScrolling />
+
 	<Nav />
 
 	<main class="main wrapper" id="solutions">
