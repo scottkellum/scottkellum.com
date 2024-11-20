@@ -24,7 +24,7 @@ alt: 'Lauren Kaplan Art Tours logo in an art deco font with red background over 
 
 ## Background
 
-Lauren A. Kaplan has decades of experience crafting and leading fine art tours in New York City and throughout the U.S. As she built her vibrant business, she gradually outgrew her original branding and digital workflow. She identified the need to present herself with the same sophistication and attention to detail that she had built over her years of experience, but she wasn't sure what the possibilities were or even where to start. That's when a friend connected her with Typetura.
+Lauren A. Kaplan has decades of experience crafting and leading fine art tours in New York City and throughout the U.S. As she built her vibrant business, she gradually outgrew her original branding and digital workflow. She identified the need to present herself with the same sophistication and attention to detail that she had built over her years of experience, but she wasn't sure what the possibilities were or even where to start. That’s when a friend connected her with Typetura.
 
 ## Brand
 
