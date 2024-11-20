@@ -1,5 +1,5 @@
 ---
-title: 'Elevating the artistry and art of Kaplan Art Tours'
+title: 'Elevating the Artistry and Art of Kaplan Art Tours'
 description: 'A new brand and website along with SEO improvements elevated Lauren’s profile and trust with her clients.'
 pubDate: 'Dec 14 2022'
 heroImage: '/img/kaplanart.avif'

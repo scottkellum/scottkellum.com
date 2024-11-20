@@ -1,5 +1,5 @@
 ---
-title: 'Building an accessible education platform'
+title: 'Building an Accessible Education Platform'
 description: 'One of the largest providers of online learning materials and the design agency Type/Code reached out to collaborate on a robust and accessible front-end.'
 pubDate: 'Aug 13 2022'
 heroImage: '/img/el-education.avif'

@@ -1,5 +1,5 @@
 ---
-title: 'Launching a marquee news vertical'
+title: 'Launching a Marquee News Vertical'
 description: 'In just 9 weeks we took Vox from an idea to successful media launch.'
 pubDate: 'Mar 9 2014'
 heroImage: '/img/vox.svg'

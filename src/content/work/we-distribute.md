@@ -1,5 +1,5 @@
 ---
-title: 'A fresh new look for We Distribute'
+title: 'A Fresh New Look for We Distribute'
 description: 'We Distribute provides groundbreaking journalism and coverage to the fediverse, an emerging social networking universe. Typetura created a new brand that helps to elevate the profile of their coverage.'
 pubDate: 'September 17 2024'
 heroImage: '/img/we-distribute.avif'

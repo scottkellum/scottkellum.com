@@ -1,5 +1,5 @@
 ---
-title: 'A Luxe design for Gold’s Guide'
+title: 'A Luxe Design for Gold’s Guide'
 description: 'Designing a sophisticated and fresh look to showcase the in-depth and thought provoking work of Tyler Gold.'
 pubDate: 'Aug 13 2021'
 heroImage: '/img/golds-guide.avif'
