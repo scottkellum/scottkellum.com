@@ -2,6 +2,7 @@
 import IconLinkedIn from '../components/IconLinkedIn.astro';
 import IconMastodon from '../components/IconMastodon.astro';
 import IconGithub from '../components/IconGithub.astro';
+import IconTypetura from '../components/IconTypetura.astro';
 import IconRSS from '../components/IconRSS.astro';
 const today = new Date();
 ---
@@ -24,6 +25,7 @@ const today = new Date();
 				<a href="https://typetura.social/@scott" target="_blank" rel="noopener noreferrer"><IconMastodon /> Mastodon</a>
 				<a href="https://github.com/scottkellum" target="_blank" rel="noopener noreferrer"><IconGithub /> Github</a>
 				<a href="https://www.linkedin.com/in/scott-kellum/" target="_blank" rel="noopener noreferrer"><IconLinkedIn /> LinkedIn</a>
+				<a href="https://typetura.com" target="_blank" rel="noopener noreferrer"><IconTypetura /> Typetura</a>
 				<a href="/rss.xml" target="_blank"><IconRSS /> RSS</a>
 			</div>
 		</div>
@@ -70,6 +72,7 @@ const today = new Date();
 	}
 	.links a:hover {
 		text-decoration: underline;
+		color: var(--action);
 	}
 
 	.cta {

@@ -40,3 +40,5 @@ The article page was focused on ergonomics. People came to read and Gold’s Gui
 After the redesign of Gold’s Guide, they saw a 2x uptick in page views and reduction in bounce rates of 10%. Readers were spending 3x more time on the site increasing engagement.
 
 <a href="https://goldsguide.com/" target="_blank" class="cta">Visit Gold’s Guide</a>
+
+_Note: the site has undergone design changes without my input_
