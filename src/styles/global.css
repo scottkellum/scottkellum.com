@@ -185,7 +185,7 @@ h6 {
 .lede > .content {
 	margin: auto;
 	padding-block: 2em calc(2em + 1rem);
-	line-height: 1.4;
+	line-height: 1.5;
 	font-weight: 400;
 	letter-spacing: 0.01em;
 	color: var(--primary-dark);
@@ -197,10 +197,10 @@ h6 {
 }
 @keyframes lede-content {
 	0% {
-		font-size: 1rem;
+		font-size: 1.1rem;
 	}
 	100% {
-		font-size: 1.3rem;
+		font-size: 1.5rem;
 	}
 }
 
@@ -361,6 +361,16 @@ hr {
 	border: none;
 }
 
+.main .cta {
+	font-family: var(--gamay);
+	color: var(--action);
+	font-size: 1.25rem;
+	font-weight: 500;
+	display: block;
+	text-align: center;
+	margin-inline: auto;
+	width: fit-content;
+}
 
 .prose img,
 .prose pre,

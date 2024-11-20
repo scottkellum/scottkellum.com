@@ -4,7 +4,6 @@ description: 'A new brand and website along with SEO improvements elevated Laure
 pubDate: 'Dec 14 2022'
 heroImage: '/img/kaplanart.avif'
 alt: 'Lauren Kaplan Art Tours logo in an art deco font with red background over an expressionist painting'
-pinned: true
 ---
 
 <!-- <div class="bento">

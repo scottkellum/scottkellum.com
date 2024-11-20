@@ -3,7 +3,6 @@ title: 'Building an accessible education platform'
 description: 'One of the largest providers of online learning materials and the design agency Type/Code reached out to collaborate on a robust and accessible front-end.'
 pubDate: 'Aug 13 2022'
 heroImage: '/img/el-education.avif'
-pinned: true
 ---
 
 EL Education is one of the largest providers of online learning materials and they were in the midst of a major redesign with Type/Code. They reached out to me and Typetura to create a robust and accessible front-end for the platform. We took on this project, closely collaborating with the team at Type/Code while staffing up our own team with specialized contractors to ensure on-time and on-budget implementation.

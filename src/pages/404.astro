@@ -73,7 +73,7 @@ const pinnedPosts = work.filter((post) => post.data.pinned);
 				}
 			</ul>
 
-			<a class="more-work" href="/work/">More work and updates</a>
+			<a class="cta" href="/work/">More work and updates</a>
 
 		</section>
 
@@ -249,26 +249,6 @@ const pinnedPosts = work.filter((post) => post.data.pinned);
 			margin-block-end: -0.5px;
 			margin-inline-end: 1rem;
 			transition: border-color var(--speed) ease-in-out;
-		}
-	}
-
-  .more-work {
-    font-family: var(--gamay);
-    color: var(--primary-dark);
-    transition: color var(--speed) ease-in-out;
-    mix-blend-mode: var(--blend);
-		display: block;
-		width: fit-content;
-		margin-inline: auto 1rem;
-  }
-	@media (max-width: 40em) {
-		.more-work {
-			margin-inline: auto;
-		}
-	}
-	@media (min-width: 40em) {
-		.more-work {
-			margin-block-end: 2rem;
 		}
 	}
 
