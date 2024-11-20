@@ -1,6 +1,6 @@
 ---
 title: 'Elevating the Artistry and Art of Kaplan Art Tours'
-description: 'A new brand and website along with SEO improvements elevated Lauren’s profile and trust with her clients.'
+description: 'A new brand and website with SEO improvements elevated Lauren’s profile and trust with her clients.'
 pubDate: 'Dec 14 2022'
 heroImage: '/img/kaplanart.avif'
 alt: 'Lauren Kaplan Art Tours logo in an art deco font with red background over an expressionist painting'

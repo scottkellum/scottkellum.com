@@ -7,7 +7,7 @@ alt: 'Darden Studio Pin on a white surface surrounded by small objects'
 pinned: true
 ---
 
-Darden Studio is a renowned digital type foundry, creating fonts used by major brands and campaigns across the world like AT&T, Mazers, Crayola, Bernie Sanders, and Hearst. With the new releases of Kit and Gamay, the studio needed a way to promote their new fonts. The primary challenge of promoting these new fonts being that nothing has been made with them yet. [Fonts are a material](https://klim.co.nz/blog/a-typeface-is-not-a-tool/), something that you make things with. So naturally, I worked with Joyce Ketterer and Quinn Keaveney at Darden Studio to make these artifacts.
+Darden Studio is a renowned digital type foundry, creating fonts used by major brands and campaigns across the world like AT&T, Mazers, Crayola, Bernie Sanders, and Hearst. With the new releases of Kit and Gamay, the studio needed a way to promote their new fonts. The primary challenge of promoting these new fonts is that nothing has been made with them yet. [Fonts are a material](https://klim.co.nz/blog/a-typeface-is-not-a-tool/), something that you make things with. So naturally, I worked with Joyce Ketterer and Quinn Keaveney at Darden Studio to make these artifacts.
 
 <div class="bento">
   <p class="box">
@@ -24,7 +24,7 @@ With the marketing efforts I have been involved with over the past year, there h
 
 ## The Kit Pin
 
-With Darden Studio merch being handed out for promotions at conferences and meetups, we wanted something that people could engage with. Something that would be visible and have utility. Pronoun pins were the perfect artifact to create for these events. We also wanted to create one pin, a spinner or slider, to accommodate different pronouns. After numerous iterations we broke down 3rd person subject pronoun into their parts and found we could make a slider that contained the letters _“t”, “s”,_ and _“y”_ on the back plate and _“he”_ on the front plate, revealing different letters for each pronoun.
+With Darden Studio merch being handed out for promotions at conferences and meetups, we wanted something that people could engage with. Something that would be visible and have utility. Pronoun pins were the perfect artifact to create for these events. We also wanted to create one pin, a spinner or slider, to accommodate different pronouns. After numerous iterations we broke down the 3rd person subject pronoun into their parts and found we could make a slider that contained the letters _“t”, “s”,_ and _“y”_ on the back plate and _“he”_ on the front plate, revealing different letters for each pronoun.
 
 ![A tomato wearing a “he” pronoun pin, fennel wearing a “they” pronoun pin, and a peach wearing a “she” pronoun pin](../../../public/img/ds-pin-produce.avif)
 _Photography by [Paulina (Pau) Pedraza](https://www.pauphotography.com/) for Darden Studio. License: All Rights Reserved._
