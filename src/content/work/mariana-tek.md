@@ -9,7 +9,7 @@ I Led design on the dashboard products for Mariana Tek, coordinating with sales,
 
 ## Collaboration
 
-I collaborated deeply with sales and research to identify user needs and ensure my design directions would lead to customer success. This involved on-site research with clients and in-person whiteboarding sessions with stakeholders. Through focused outcome-driven meetings I was able to glean insights and avoid assumptions to inform products.
+I collaborated deeply with sales and research to identify customer needs and ensure my design directions would lead to customer success. This involved on-site research with clients and in-person whiteboarding sessions with stakeholders. Through focused outcome-driven meetings I was able to glean insights and avoid assumptions to inform products.
 
 ![Mariana Ted class dashboard screenshot](/img/mariana-tek-class.avif)
 
