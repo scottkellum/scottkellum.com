@@ -362,7 +362,8 @@ hr {
 	border: none;
 }
 
-.main .cta {
+.main .cta,
+.cta-group {
 	font-family: var(--gamay);
 	color: var(--action);
 	font-size: 1.25rem;
@@ -371,6 +372,10 @@ hr {
 	text-align: center;
 	margin-inline: auto;
 	width: fit-content;
+}
+.cta-group {
+	display: flex;
+	gap: 1rem;
 }
 
 .prose img,

@@ -3,6 +3,7 @@ title: 'Launching a Marquee News Vertical'
 description: 'In just 9 weeks we took Vox from an idea to a successful media launch.'
 pubDate: 'Mar 9 2014'
 heroImage: '/img/vox.svg'
+category: 'work'
 ---
 
 I led the front end and heavily assisted with the design for the launch of Vox (2014). The timeline was rapid, as it took just 9 weeks to go from the idea of a news vertical to launch. To achieve this we carefully managed the scope, expanding it in areas where it would be most impactful with the new explainer format, then iterating on what we had built for other sites. It was an immensely successful launch and it has become Vox Media’s marquee news vertical.

@@ -8,7 +8,7 @@ import { SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 
 const work = (await getCollection('work'))
-    .filter(i => i.data.category === 'work')
+    .filter(i => i.data.category === 'writing')
     .sort((b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
 

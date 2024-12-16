@@ -5,6 +5,7 @@ pubDate: 'Aug 13 2024'
 heroImage: '/img/ds-pin-ispy.avif'
 alt: 'Darden Studio Pin on a white surface surrounded by small objects'
 pinned: true
+category: 'work'
 ---
 
 Darden Studio is a renowned digital type foundry, creating fonts used by major brands and campaigns across the world like AT&T, Mazers, Crayola, Bernie Sanders, and Hearst. With the new releases of Kit and Gamay, the studio needed a way to promote their new fonts. The primary challenge of promoting these new fonts is that nothing has been made with them yet. [Fonts are a material](https://klim.co.nz/blog/a-typeface-is-not-a-tool/), something that you make things with. So naturally, I worked with Joyce Ketterer and Quinn Keaveney at Darden Studio to make these artifacts.

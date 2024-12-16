@@ -5,6 +5,7 @@ pubDate: 'Aug 13 2021'
 heroImage: '/img/golds-guide.avif'
 alt: 'Gold’s Guide ‘G’ logo on a yellow background'
 pinned: true
+category: 'work'
 ---
 
 <div class="bento">

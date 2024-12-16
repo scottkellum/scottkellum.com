@@ -151,19 +151,24 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"drafts": {
-"el-education.md": {
-	id: "el-education.md";
-  slug: "el-education";
-  body: string;
-  collection: "drafts";
-  data: any
-} & { render(): Render[".md"] };
-};
-"work": {
+		"work": {
 "darden-studio-creating-artifacts-with-fonts.md": {
 	id: "darden-studio-creating-artifacts-with-fonts.md";
   slug: "darden-studio-creating-artifacts-with-fonts";
+  body: string;
+  collection: "work";
+  data: InferEntrySchema<"work">
+} & { render(): Render[".md"] };
+"discussing-our-design-practice.md": {
+	id: "discussing-our-design-practice.md";
+  slug: "discussing-our-design-practice";
+  body: string;
+  collection: "work";
+  data: InferEntrySchema<"work">
+} & { render(): Render[".md"] };
+"el-education.md": {
+	id: "el-education.md";
+  slug: "el-education";
   body: string;
   collection: "work";
   data: InferEntrySchema<"work">
@@ -182,9 +187,30 @@ declare module 'astro:content' {
   collection: "work";
   data: InferEntrySchema<"work">
 } & { render(): Render[".md"] };
+"mariana-tek.md": {
+	id: "mariana-tek.md";
+  slug: "mariana-tek";
+  body: string;
+  collection: "work";
+  data: InferEntrySchema<"work">
+} & { render(): Render[".md"] };
 "showcasing-roslindale-specimen-microsite.md": {
 	id: "showcasing-roslindale-specimen-microsite.md";
   slug: "showcasing-roslindale-specimen-microsite";
+  body: string;
+  collection: "work";
+  data: InferEntrySchema<"work">
+} & { render(): Render[".md"] };
+"unit-division-with-css-and-fallbacks.md": {
+	id: "unit-division-with-css-and-fallbacks.md";
+  slug: "unit-division-with-css-and-fallbacks";
+  body: string;
+  collection: "work";
+  data: InferEntrySchema<"work">
+} & { render(): Render[".md"] };
+"vox-launch.md": {
+	id: "vox-launch.md";
+  slug: "vox-launch";
   body: string;
   collection: "work";
   data: InferEntrySchema<"work">
@@ -201,7 +227,12 @@ declare module 'astro:content' {
 	};
 
 	type DataEntryMap = {
-		
+		"drafts": Record<string, {
+  id: string;
+  collection: "drafts";
+  data: any;
+}>;
+
 	};
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;

@@ -3,6 +3,7 @@ title: 'Growing a Global Fitness Platform'
 description: 'Coordinating with sales, research, product, and development on new features; I drove a positive feedback loop with our customers and teams creating exponential growth of the business from national to global.'
 pubDate: 'Oct 1 2019'
 heroImage: '/img/mariana-tek.avif'
+category: 'work'
 ---
 
 I Led design on the dashboard products for Mariana Tek, coordinating with sales, research, product, and development on new features. This iteration created a positive feedback loop with our customers and teams, contributing to the sales and exponential growth of the business from national to global.
