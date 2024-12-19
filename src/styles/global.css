@@ -88,8 +88,8 @@ html {
 	background-color: var(--accent);
 	margin: 0;
 	padding: 0;
-	font-size: 115%;
-	line-height: 1.45;
+	font-size: 125%;
+	line-height: 1.5;
 	animation-name: html;
 	animation-timing-function: cubic-bezier(0,0.7,0.3,1);
 	interpolate-size: allow-keywords;
@@ -100,7 +100,7 @@ html {
 		font-size: 0px;
 	}
 	100% {
-		font-size: 115%;
+		font-size: 125%;
 	}
 }
 
