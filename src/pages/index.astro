@@ -8,6 +8,7 @@ import KeepScrolling from '../components/KeepScrolling.astro';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 import photos from '../data/photos.json'
+import CooperType from '../components/CooperType.astro';
 
 let rolls = photos.rolls;
 
@@ -57,7 +58,8 @@ const pinnedPosts = work.filter((post) => post.data.pinned);
 					</a>
 				))}
 			</div>
-		<hr>
+			<CooperType />
+			<hr>
 			<h2 class="featured-head">Featured posts below. <a href="/work">more work here</a> and <a href="/writing">more writing here</a>.</h2>
 
 			<ul class="featured-list">

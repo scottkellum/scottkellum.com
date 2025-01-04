@@ -79,11 +79,13 @@ for (let i = 0; i < ring.length; i++) {
   }
   @media (min-width: 40em) {
     .cooper-type {
-      position: absolute;
+      position: sticky;
+      top: -2rem;
+      left: calc(100%);
       right: 0;
-      left: calc(100% - (var(--size) / 2) - var(--margin) - 1px);
-      margin: 0;
+      margin-inline: 0 calc(var(--size) / -2 - 1px);
       margin-block: calc(var(--size) / -2 - 1px);
+      margin-block: -4rem -7rem;
     }
   }
 </style>
