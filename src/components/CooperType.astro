@@ -79,11 +79,9 @@ for (let i = 0; i < ring.length; i++) {
   }
   @media (min-width: 40em) {
     .cooper-type {
-      position: sticky;
+      position: absolute;
       right: 0;
-      left: calc(100% - (var(--size) / 2.125) - var(--margin));
-      top: -2rem;
-      bottom: -2rem;
+      left: calc(100% - (var(--size) / 2) - var(--margin) - 1px);
       margin: 0;
       margin-block: calc(var(--size) / -2 - 1px);
     }
