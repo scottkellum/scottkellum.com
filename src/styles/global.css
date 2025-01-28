@@ -117,6 +117,7 @@ html {
 		--action: var(--action-light);
 
 		--blend: screen;
+		font-weight: 300;
 	}
 }
 
@@ -180,6 +181,14 @@ h6 {
 	font-weight: 700;
 	text-wrap: balance;
 	font-family: var(--display);
+}
+
+strong {
+	font-weight: 700;
+	color: var(--primary-dark);
+}
+em {
+	font-style: italic;
 }
 
 .lede > .content {
