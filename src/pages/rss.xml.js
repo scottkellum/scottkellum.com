@@ -22,13 +22,6 @@ export async function GET(context) {
       }),
 			...post.data,
 			link: `/blog/${post.slug}/`,
-      customData: `<media:content
-          type="image/${post.data.heroImage.format == "jpg" ? "jpeg" : "png"}"
-          width="${post.data.heroImage.width}"
-          height="${post.data.heroImage.height}"
-          medium="image"
-          url="${context.site + post.data.heroImage.src}" />
-      `,
 		})),
 	});
 }
