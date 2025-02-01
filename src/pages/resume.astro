@@ -1,12 +1,10 @@
 ---
 import Landing from '../layouts/Landing.astro';
 import Nav from '../components/Nav.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import Card from '../components/Card.astro';
+import { SITE_DESCRIPTION } from '../consts';
 import KeepScrolling from '../components/KeepScrolling.astro';
 
 import { getCollection } from 'astro:content';
-import FormattedDate from '../components/FormattedDate.astro';
 import photos from '../data/photos.json'
 
 let rolls = photos.rolls;
@@ -33,8 +31,8 @@ const pinnedPosts = work.filter((post) => post.data.pinned);
 	<section class="lede wrapper">
 		<div class="content tt">
 			<h1 class="page-head">Scott Kellum</h1>
-			<p class="meta">Strategy & Design Leader with B2B, SaaS, Editorial, and Product Expertise</p>
-			<p>Innovative design leader and technology entrepreneur with 20+ years of experience in web design, product development, and digital innovation. Expertise leading cross-functional teams and working with clients to deliver high quality experiences on time and under budget. Proven track record of developing scalable digital solutions, securing intellectual property, and driving business growth.</p>
+			<p class="meta">Strategy & Design Leader with B2B, SAAS, Editorial, and Product Expertise</p>
+			<p>A proven leader in design and technology innovation with 20+ years of experience, driven to achieve goals at a high standard of quality, I am seeking a challenging opportunity to manage and lead large projects where my advanced skills, entrepreneurial mindset, extensive training, and many years of experience can be fully utilized.</p>
 		</div>
 	</section>
 	
@@ -46,112 +44,103 @@ const pinnedPosts = work.filter((post) => post.data.pinned);
 		<section class="featured prose" id="featured-work">
 
 			<ul>
-				<li>Transformative leader with a track record of building pivotal new businesses in complex, highly regulated environments. Led large-scale strategic pivots and the development of new product and service-generators for federal agencies and private industries.</li>
-				<li>Excels at building multi-skillset teams capable of collaborating cross-functionally, with design, engineering, product, sales, and marketing, and operations to drive innovation and align execution with ambitious goals.</li>
-				<li>History of building high-performing teams to accelerate organizational maturity through identifying new product and service opportunities concurrently with cost savings, revenue opportunities, and avoidance avenues. Establishes systems and process improvements that empower teams to thrive through ambiguity.</li>
+				<li>A transformative leader with a track record of building pivotal new businesses in complex, highly regulated environments. Led large-scale strategic pivots and developed new product and service generators for federal agencies and private industries.</li>
+				<li>Excels at building multi-skillset teams capable of collaborating cross-functionally, with design, engineering, product, sales, marketing, and operations to drive innovation and align execution with ambitious goals.</li>
+				<li>History of building high-performing teams that accelerate organizational maturity through identifying new product and service prospects concurrently with cost savings, revenue opportunities, and avoidance avenues to deliver high-quality experiences on time and under budget.</li>
 			</ul>
 
 			<a href="/scott-kellum-resume.docx" class="cta">Download Résumé</a>
 
 			<h2 id="core-competencies">Core Competencies</h2>
-			<div class="multicol">
-				<ul class="core-competencies-list">
-					<li>Team Leadership</li>
-					<li>Entrepreneurship</li>
-					<li>Business Strategy</li>
-					<li>Strategic Planning</li>
-					<li>Growth Strategy</li>
-					<li>B2B SaaS Customer Success</li>
-					<li>Digital Customer Experience</li>
-					<li>Stakeholder Engagement</li>
-					<li>Relationship Management</li>
-					<li>Systems Thinking</li>
-					<li>Product & Service Design</li>
-					<li>Typography</li>
-					<li>User Experience (UX) Design</li>
-					<li>Design Engineering</li>
-					<li>Front-End Development</li>
-					<li>Product Research</li>
-					<li>Technology innovation</li>
-					<li>Data Design</li>
-					<li>Data Interpretation</li>
-					<li>Process Improvement</li>
-					<li>Cross-Functional Collaboration</li>
-					<li>Business Operations</li>
-				</ul>
-			</div>
+			<ul class="core-competencies-list">
+				<li>Team Leadership</li>
+				<li>Stakeholder alignment</li>
+				<li>Product, brand, and type design</li>
+				<li>Front-end product engineering</li>
+				<li>Product and technology innovation</li>
+				<li>Goal-oriented success</li>
+			</ul>
 
 			<h2 id="professional-experience">Professional Experience</h2>
 			<h3 id="typetura">Co-founder and CEO | <a href="https://typetura.com" target="_blank">Typetura</a></h3>
-			<p class="meta">October 2019 - Present</p>
-			<p>Bootstrapped Typetura, an innovation and design studio, from $0 to over a quarter million dollars in investment and sales from 2020-2022, during the height of the COVID-19 pandemic. Brings an entrepreneurial mindset, building and managing multiple teams to achieve business success. Leads quarterly and annual planning for board members and partners; defines budgets; sets KPIs; and ensures execution is aligned with strategic priorities. Establishes customer-facing milestones that support brands spanning maturity levels. Under my leadership, Typetura deploys ground-breaking typesetting technology to design and launch accessible, beautiful websites for companies ranging in size from single-founder publications to global, multi-nationals.</p>
+			<p class="meta">October 2019–Present</p>
+			<p>Bootstrapped Typetura, an innovation and design studio, from $0 to over a half-million dollars. Brings an entrepreneurial mindset to build and manage teams and contractors to achieve business success. Defines budgets; sets KPIs; and ensures execution is aligned with strategic priorities. Establishes customer-facing milestones that support brands spanning maturity levels. Under my leadership, Typetura secured multiple patents and deployed ground-breaking typesetting technology to design and launch accessible, beautiful websites and brands for companies ranging in size from small startups to global multinationals.</p>
 			<ul>
-				<li>Bootstrapped a design and innovation studio from <strong>$0 to over $250,000 in sales and investment</strong> during COVID-19 pandemic.</li>
-				<li>Secured <strong>multiple patents for technologies</strong> on dynamic typesetting in partnership with Loeb & Loeb, a multi-national IP firm.</li>
-				<li>Developed entrepreneurial strategies for product-market fit and customer value creation.</li>
-				<li>Manage up to <strong>five concurrent projects</strong>, delivering on time and within budget.</li>
-				<li>Coordinate client stakeholders, business partners, and contractors to achieve company and project goals.</li>
+				<li>Bootstrapped a design and innovation studio from <strong>$0 to over $500k in sales and investment</strong></li>
+				<li>Secured <strong>multiple patents for technologies</strong> on dynamic typesetting in partnership with Loeb & Loeb, a multi-national IP firm</li>
+				<li>Developed entrepreneurial strategies for product-market fit and customer value creation</li>
+				<li>Manage up to <strong>five concurrent projects</strong>, delivering on time and within budget</li>
+				<li>Coordinate client stakeholders, business partners, and contractors to achieve company and project goals</li>
 			</ul>
 
 			<h3 id="cooper-union">Instructor | <a href="https://coopertype.org" target="_blank">Cooper Union</a></h3>
-			<p class="meta">March 2022 - Present</p>
-			<p>Proposed, formatted, and achieved greenlight from department heads to bring unique, technology-driven offering to Cooper Union public programs. Administers course on semester-basis to a wide range of students from industry leaders to early career professionals.</p>
+			<p class="meta">March 2022–Present</p>
+			<p>Proposed, formatted, and achieved greenlight from department heads to bring unique, technology-driven offerings to Cooper Union public programs. Administers courses on a semester basis to a wide range of students from industry leaders to early career professionals.</p>
 			<ul>
-				<li>Maintain a strong curriculum at an internationally renowned design school.</li>
-				<li>Educate and engage global audience of students.</li>
-				<li>Create and build community within the classes, enhancing value for students.</li>
+				<li>Maintain a strong curriculum at an internationally renowned design school</li>
+				<li>Educate and engage a global audience of students</li>
+				<li>Create and build community within the classes, enhancing value for students</li>
 			</ul>
 
 			<h2 id="key-projects-and-achievements">Key Projects and Achievements</h2>
 
 			<h3 id="darden-studio"><a href="/work/darden-studio-creating-artifacts-with-fonts/">Darden Studio</a> | Graphic Design and Production</h3>
-			<p class="meta">2023 - Present</p>
-			<p>Continuous partnership with well-respected font foundry Darden Studio to activate fonts through branding, packaging, and product designs. In the Summer of 2024, identified the success of this object-material work as a potential revenue-driver for the studio. Worked with studio stakeholders to conceptualize and achieve agreement on creative vision for this business vertical. Designed and oversaw the successful launch of a new vertical, November 2024.</p>
+			<p class="meta">2023–Present</p>
+			<p>Continuous partnership with well-respected font foundry Darden Studio to drive sales through branding, packaging, and physical product design. In the Summer of 2024, I identified the success of unique letterform objects as a potential marketing tool and revenue driver for the studio. Worked with studio stakeholders to conceptualize and achieve agreement on creative vision for this business vertical. Designed and oversaw the successful launch of this vertical, in November 2024.</p>
 			<ul>
-				<li>Creates a marketing direction for the brand, <strong>increasing website traffic by 17%</strong>.</li>
-				<li><strong>Manages vendors</strong> to ensure products are delivered to our standards and within budget.</li>
-				<li>Works with CEO and partners to identify revenue sources as studio diversifies its interests.</li>
-				<li>Sets quarterly goals with senior leaders and ensures their implementation in collaboration with contractors.</li>
+				<li>Creates a marketing direction for the brand, <strong>increasing website traffic by 17%</strong></li>
+				<li><strong>Manages vendors</strong> to ensure products are delivered to our standards and within budget</li>
+				<li>Works with CEO and partners to identify revenue sources as the studio diversifies its interests</li>
+				<li>Sets quarterly goals with senior leaders and ensures their implementation in collaboration with contractors</li>
 			</ul>
 
 			<h3 id="we-distribute"><a href="/work/we-distribute/">WeDistribute</a> | Branding and Web Design</h3>
 			<p class="meta">2024</p>
-			<p>Revitalized WeDistribute’s brand, positioning them as the leader in covering Fediverse developments. Led brand positioning exercises with founders, focusing on identifying color schemes, typography, and treatments that would solidify their market position and achieve audience awareness. Designed and implemented the new brand, customizing its WordPress theme to bring forward core attributes.</p>
+			<p>Revitalized WeDistribute, positioning them as the leader in covering distributed social platforms. Led brand positioning exercises with founders, identifying color schemes, typography, and treatments that would solidify their market position and achieve audience awareness. Designed and developed an implementation strategy, customizing its WordPress theme to bring forward core attributes.</p>
 			<ul>
-				<li>Repositioned brand as the leader in their space.</li>
-				<li><strong>Cultivated stakeholder alignment</strong> through cultivating comprehensive design research and brand positioning exercises.</li>
-				<li>Developed and executed successful brand launch strategy including WordPress theme customization.</li>
+				<li>Repositioned the brand as the leader in their space</li>
+				<li>Cultivated <strong>stakeholder alignment</strong> through cultivating comprehensive design research and <strong>brand positioning</strong> exercises</li>
+				<li>Developed and executed a successful <strong>brand launch strategy</strong> including WordPress theme customization</li>
 			</ul>
 
 			<h3 id="el-education"><a href="/work/el-education/">EL Education</a> | Front-End Development</h3>
 			<p class="meta">2022</p>
-			<p>Modernized the front-end of EL Education’s website with a bold new look and accessible page structures. Collaborated with agency Type/Code to match their back-end data structure with Typetura’s front-end expertise. Developed and executed the project’s talent strategy, including recruiting, setting market-based compensation, and defining roles with specialized contractors. Led data mapping and the design of easy-to-use, accessible interactive components. Achieved project completion on time and under budget.</p>
+			<p>Modernized the front end of EL Education’s website with a bold new look and highly accessible page architecture. Collaborated with agency Type/Code to integrate their content management system with Typetura’s front-end expertise. Developed and executed the project’s talent strategy, including recruiting, setting market-based compensation, and defining roles with specialized contractors. Led data mapping and the design of easy-to-use, accessible interactive components. Achieved project completion on time and within budget.</p>
 			<ul>
-				<li>Rebuilt front-end website for global online learning materials provider.</li>
-				<li>Scaled platform to house over <strong>15,000 pages</strong>.</li>
-				<li>Designed strategy to ensure a <strong>perfect 100 accessibility score</strong> using industry-standard Google Lighthouse testing software.</li>
-				<li>Managed cross-organizational implementation of complex content infrastructure.</li>
-				<li>Ensured website accessibility and user engagement.</li>
+				<li>Rebuilt front-end website for global online learning materials provider</li>
+				<li>Scaled platform to house over <strong>15,000 pages</strong></li>
+				<li>Designed strategy to ensure a <strong>perfect 100 accessibility score</strong> in Google Lighthouse tests</li>
+				<li>Managed cross-organizational implementation of complex content infrastructure</li>
+				<li>Ensured website accessibility and user engagement</li>
+			</ul>
+
+			<h3 id="mariana-tek"><a href="/work/mariana-tek/">Mariana Tek Design System</a> | Project management and design</h3>
+			<p class="meta">2018–2019</p>
+			<p>Led design on client-side products for Mariana Tek, coordinating with sales, research, product, and development on new features. Multiplied the velocity of the product team 3x by developing a design system, creating a positive feedback loop between sales and product, resulting in the exponential growth of the business from national to global.</p>
+			<ul>
+				<li><strong>3x increase in product velocity</strong> with a new design system</li>
+				<li>Took the platform global to serve 4 countries worldwide</li>
+				<li>Coordinated <strong>stakeholder alignment</strong> across sales, research, product, design, and development</li>
 			</ul>
 
 			<h3 id="concert"><a href="https://concert.io">Concert Ad Platform</a> | Prototype, design, and development</h3>
 			<p class="meta">2012, 2016–2017</p>
-			<p>Created the Concert ad platform at Vox Media that reaches over 90% of the US online audience and drives over $20M in revenue YoY. Driven by the thesis that ads should elevate experiences, I prototyped the ad format. Increasing profitability and scale, I worked to expand the suite of ad products to Condé Nast, Comcast, NBC,  publications and removed the overhead of our creative team by standardizing creative formats.</p>
+			<p>Created the Concert ad platform at Vox Media, reaching over 90% of the US online audience and driving over $20M YoY in revenue. Driven by the thesis that ads should elevate experiences, I prototyped the ad format. Increasing profitability and scale, I worked to expand the suite of ad products to Condé Nast, Comcast, NBC, and 80+ more publications, while removing the burden on our creative team by standardizing creative formats.</p>
 			<ul>
-				<li>Drives <strong>$20M in revenue YoY</strong>.</li>
-				<li>reaches <strong>over 90% of the US online audience</strong>.</li>
-				<li>expanded the suite of ad products to <strong>80+ partners</strong> including NBCUniversal, The Atlantic, Condé Nast, and Hearst Newspapers.</li>
-				<li>Reaches <strong>230MM monthly uniques</strong>.</li>
+				<li>Drives <strong>$20M+ YoY</strong> in revenue</li>
+				<li>Reaches over <strong>90% of the US online audience</strong></li>
+				<li>Expanded the suite of ad products to <strong>80+ partners</strong> including NBCUniversal, The Atlantic, Condé Nast, and Hearst Newspapers</li>
+				<li>Reaches <strong>230MM uniques</strong></li>
 			</ul>
 
 			<h3 id="vox"><a href="/work/vox-launch/">Vox</a> | Founding Design and Front-End Website Development</h3>
 			<p class="meta">2014</p>
-			<p>Led front-end for the launch of Vox (2014). Achieved launch in 9 weeks, from ideation to go-live moment. Managed project scoping, expanding in areas where it would be most impactful and work with emerging formats while establishing a compatible, scalable format for other sites. Project resulted in Vox Media’s marquee news vertical.</p>
+			<p>Led front-end for the launch of Vox (2014). Achieved launch in 9 weeks, from ideation to release. Managed project scope, exploring high-impact opportunities in working with emerging formats while narrowing scope in other areas. The project culminated in Vox Media’s marquee news vertical.</p>
 			<ul>
-				<li>Launched Vox Media’s marquee website in just <strong>9 weeks</strong>.</li>
-				<li>Amassed more than <strong>5 million unique visitors in the first month</strong> after launch.</li>
-				<li><strong>Optimized engagement</strong> by redesigning the home page and feature pages.</li>
-				<li>Lead front-end development ensuring impeccable design implementation.</li>
+				<li>Launched Vox Media’s marquee website in just <strong>9 weeks</strong></li>
+				<li>Amassed more than <strong>5 million unique visitors in the first month</strong> after launch</li>
+				<li><strong>Optimized engagement</strong> by redesigning the home page and feature pages</li>
+				<li>Led front-end development ensuring impeccable design and implementation</li>
 			</ul>
 
 			<h3 id="previous-roles">Previous Roles</h3>
@@ -164,8 +153,37 @@ const pinnedPosts = work.filter((post) => post.data.pinned);
 				<li>Designer, Very Memorable Inc. <em>2006–2008</em></li>
 			</ul>
 
-			<h2 id="technical-skills">Technical Skills</h2>
+			<h2 id="skills">Skills</h2>
 			<div class="multicol">
+				<h4 class="meta">Business Skills</h4>
+				<ul>
+					<li>Strategic Planning</li>
+					<li>B2B SaaS Customer Success</li>
+					<li>Stakeholder Engagement</li>
+					<li>Client Relationship Management</li>
+					<li>Technology Innovation</li>
+					<li>Team Development and Management</li>
+					<li>Process Optimization</li>
+					<li>Cross-Functional Collaboration</li>
+					<li>Business Operations</li>
+				</ul>
+
+				<h4 class="meta">Design Skills</h4>
+				<ul>
+					<li>Systems Thinking</li>
+					<li>Design Thinking</li>
+					<li>Human-Centered Design (HCD)</li>
+					<li>Product & Service Design</li>
+					<li>High-Fidelity Prototyping</li>
+					<li>Responsive Web Design</li>
+					<li>UX/UI Design</li>
+					<li>Design Engineering</li>
+					<li>Product and Customer Research</li>
+					<li>Typography</li>
+					<li>Type Design</li>
+					<li>Brand Design	</li>
+				</ul>
+
 				<h4 class="meta">Design Tools</h4>
 				<ul>
 					<li>Figma</li>
@@ -175,7 +193,7 @@ const pinnedPosts = work.filter((post) => post.data.pinned);
 					<li>Illustrator</li>
 				</ul>
 
-				<h4 class="meta">development</h4>
+				<h4 class="meta">Development Tools</h4>
 				<ul>
 					<li>HTML5</li>
 					<li>CSS3</li>
@@ -185,38 +203,27 @@ const pinnedPosts = work.filter((post) => post.data.pinned);
 					<li>Astro</li>
 					<li>WordPress</li>
 				</ul>
-
-				<h4 class="meta">Design Specialties</h4>
-				<ul>
-					<li>Design Specialties</li>
-					<li>Typography</li>
-					<li>Type Design</li>
-					<li>Responsive Web Design</li>
-					<li>User Interface (UI) Design</li>
-					<li>Branding</li>
-					<li>Prototyping</li>
-				</ul>
 			</div>
 
 			<h2 id="education">Education</h2>
-			<p>Formal training in design thinking and execution, I focus on a mastery of fundamental design concepts that can be universally applied and expanded upon through career growth and experience. I learn so that I can cross-apply the value of my education to everything I do, enabling me to quickly identify opportunities and avoid missteps.</p>
+			<p>Formal training in design thinking and execution. I focus on mastery of fundamental design concepts that can be universally applied and expanded upon through career growth and experience. I learn so that I can cross-apply the value of my education to everything I do, enabling me to quickly identify opportunities and avoid missteps.</p>
 
 			<h3 id="parsons">Parsons The New School for Design</h3>
 			<p class="meta">Bachelor of Fine Arts in Communication Design, 2005-2009</p>
 			<ul>
-				<li>Focused on fundamental concepts of typography, printmaking, and design thinking.</li>
-				<li>Ideated through project concepts rapidly to identify key opportunities.</li>
-				<li>Collaborated deeply with my cohort to develop projects.</li>
+				<li>Focused on fundamental concepts of typography, printmaking, and design thinking</li>
+				<li>Ideated through project concepts rapidly to identify key opportunities</li>
+				<li>Collaborated deeply with my cohort to develop projects</li>
 			</ul>
 
 			<h2 id="ip">Intellectual Property</h2>
 			<h3 id="dynamic-typesetting"><a href="https://patents.google.com/patent/US10769348B1/en" target="_blank">Dynamic Typesetting</a></h3>
 			<p class="meta date">US Patent 10769348 and international patents</p>
-			<p>This patent describes how typographic systems can be made to adapt to any layout and then distributed for use in designs. This means that typesetting, not just fonts, can be distributed to customers independent of layout, making content easier to style.</p>
+			<p>This patent describes how typographic systems can be made to adapt to any layout and distributed for use in designs. This means that typesetting, not just fonts, can be distributed to customers independent of layout, optimizing workflows and design quality.</p>
 
 			<h3 id="fluid-design-keyframes"><a href="https://patents.google.com/patent/US10592087B1/en" target="_blank">Fluid Design Keyframes in a GUI</a></h3>
 			<p class="meta date">US Patent 10592087</p>
-			<p>This patent describes an interface that has keyframes at various widths. Design characteristics fluidly change between these keyframes as the width of an element changes.</p>
+			<p>This patent describes an interface that has keyframes at various widths. Design characteristics fluidly change between these keyframes as the width of an element changes, creating a natural and intuitive interface for responsive styles.</p>
 
 			<h2 id="speaking-and-publications">Professional Speaking & Publications</h2>
 			<h3 id="speaking">Speaking Engagements</h3>
@@ -262,14 +269,23 @@ const pinnedPosts = work.filter((post) => post.data.pinned);
 		margin-inline-start: 0.5em;
 		font-family: var(--display);
 	}
-	.multicol {
-		column-width: 12rem;
-		overflow: hidden;
-	}
 	.multicol > :first-child {
 		margin-block-start: 0;
 	}
-	@media (min-width: 52.5em) {
+	@media (min-width: 40em) {
+		.multicol {
+			column-count: 2;
+			overflow: hidden;
+		}
+		.multicol > h4:nth-last-of-type(2n) {
+			break-before: column;
+		}
+	}
+	@media (min-width: 60em) {
+		.multicol {
+			column-count: 4;
+			overflow: hidden;
+		}
 		.multicol > h4 {
 			break-before: column;
 		}
