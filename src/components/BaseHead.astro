@@ -21,11 +21,15 @@ const { title, description, image, fedi } = Astro.props;
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" href="/favicon.ico">
 <meta name="generator" content={Astro.generator} />
 
 <!-- Font preloads -->
-<!-- <link rel="preload" href="/roslindale.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="preload" href="/gamay-expanded-medium.woff2" as="font" type="font/woff2" crossorigin /> -->
+<link rel="preload" href="/assets/fonts/Gamay.woff2" as="font" type="font/woff2" />
+<link rel="preload" href="/assets/fonts/Gamay-Italic.woff2" as="font" type="font/woff2" />
+<link rel="preload" href="/assets/fonts/Sentient.woff2" as="font" type="font/woff2" />
+<link rel="preload" href="/assets/fonts/Sentient-Italic.woff2" as="font" type="font/woff2" />
+<link rel="preload" href="/assets/fonts/arnold-italic.woff2" as="font" type="font/woff2" />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
