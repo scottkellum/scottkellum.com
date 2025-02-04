@@ -552,7 +552,8 @@ hr {
 	font-variation-settings: 'slnt' -8, 'opsz' 10;
 }
 
-.prose img + em {
+.prose img + em,
+.prose p.caption {
 	font-family: var(--font);
 	display: block;
 	font-size: 0.7rem;
