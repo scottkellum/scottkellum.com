@@ -151,7 +151,23 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"work": {
+		"drafts": {
+"editorial-design.md": {
+	id: "editorial-design.md";
+  slug: "editorial-design";
+  body: string;
+  collection: "drafts";
+  data: any
+} & { render(): Render[".md"] };
+};
+"work": {
+"concert-ad-products.md": {
+	id: "concert-ad-products.md";
+  slug: "concert-ad-products";
+  body: string;
+  collection: "work";
+  data: InferEntrySchema<"work">
+} & { render(): Render[".md"] };
 "darden-studio-creating-artifacts-with-fonts.md": {
 	id: "darden-studio-creating-artifacts-with-fonts.md";
   slug: "darden-studio-creating-artifacts-with-fonts";
@@ -187,9 +203,9 @@ declare module 'astro:content' {
   collection: "work";
   data: InferEntrySchema<"work">
 } & { render(): Render[".md"] };
-"mariana-tek.md": {
-	id: "mariana-tek.md";
-  slug: "mariana-tek";
+"mariana-tek-global-fitness-design-system.md": {
+	id: "mariana-tek-global-fitness-design-system.md";
+  slug: "mariana-tek-global-fitness-design-system";
   body: string;
   collection: "work";
   data: InferEntrySchema<"work">
@@ -227,12 +243,7 @@ declare module 'astro:content' {
 	};
 
 	type DataEntryMap = {
-		"drafts": Record<string, {
-  id: string;
-  collection: "drafts";
-  data: any;
-}>;
-
+		
 	};
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;

@@ -8,7 +8,7 @@ import Footer from '../components/Footer.astro';
 import Grid from '../components/Grid.astro';
 
 type Props = CollectionEntry<'work'>['data'];
-let { title, description, pubDate, heroImage, alt } = Astro.props;
+let { title, description, pubDate, heroImage, heroWide, alt } = Astro.props;
 
 const work = (await getCollection('work')).sort(
 	(b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
@@ -29,10 +29,18 @@ let author = 'Scott Kellum';
 	</head>
 	<body>
 		<section class="lede wrapper">
-			<div class="content tt">
-				<div class="hero-image">
-					{heroImage && <img width={441} height={441} src={heroImage} alt={alt} />}
-				</div>
+			<div class={`content tt ${heroWide ? 'has-hero-wide' : ''}`}>
+				
+				{heroWide ? (
+					<div class="hero-wide">
+						<img src={heroWide} alt={alt} />
+					</div>
+				) : (
+					<div class="hero-image">
+						{heroImage && <img width={441} height={441} src={heroImage} alt={alt} />}
+					</div>
+				)}
+
 				<div class="hgroup cq">
 					<p class="date">
 						<FormattedDate date={pubDate} />
@@ -89,11 +97,28 @@ let author = 'Scott Kellum';
 		font-family: var(--display);
 	}
 	@media (min-width: 55em) {
-		.lede > .content {
+		.lede > .content:not(.has-hero-wide) {
 			display: flex;
 			grid-gap: 1rem;
 			width: 100%;
 		}
+	}
+
+	.has-hero-wide img {
+		width: 100%;
+		height: auto;
+		outline: none;
+		border-radius: 0;
+		width: 100cqi;
+		margin-left: 50%;
+		transform: translateX(-50%);
+	}
+	.has-hero-wide .hgroup {
+		text-align: center;
+	}
+	.has-hero-wide .page-head {
+		margin-block: 0rem 0.5rem;
+		line-height: 1;
 	}
 
 	.date,
