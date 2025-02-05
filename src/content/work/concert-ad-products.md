@@ -201,4 +201,4 @@ function activate(e) {
 }
 </script>
 
-In 2016 I rejoined the Concert team to expand the reach of the ad platform, reaching over 90% of the US online audience and driving over $20M YoY in revenue. Increasing profitability and scale, I worked to expand the suite of ad products to Condé Nast, Comcast, NBC, and 80+ more publications, while removing the burden on our creative team by standardizing creative formats.
+In 2016 I rejoined the Concert team to expand the reach of the ad platform, reaching over 90% of the US online audience and driving over $20M YoY in revenue. To achieve this scale we brought our ad suite to over 80 outside publications including Condé Nast, Comcast, and NBC.
