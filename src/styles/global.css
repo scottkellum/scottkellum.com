@@ -601,6 +601,7 @@ hr {
 	border: 1px solid var(--accent-dark);
 	border-radius: 0.25rem;
 	padding: 0 1rem 1rem;
+	-webkit-backdrop-filter: blur(1rem);
 	backdrop-filter: blur(1rem);
 	text-align: center;
 	line-height: 1;

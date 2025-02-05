@@ -1,5 +1,5 @@
 ---
-title: 'Building a Global Fitness Platform'
+title: 'Scaling a Global Fitness Platform'
 description: 'Coordinating with sales, research, product, and development on new features; I drove a positive feedback loop with our customers and teams creating exponential growth of the business from national to global.'
 pubDate: 'Oct 1 2019'
 heroImage: '/img/mariana-tek.avif'
