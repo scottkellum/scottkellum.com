@@ -5,6 +5,7 @@ pubDate: 'Mar 9 2014'
 heroImage: '/img/vox.svg'
 heroWide: '/img/vox-banner.avif'
 category: 'work'
+pinned: true
 ---
 
 <div class="bento">

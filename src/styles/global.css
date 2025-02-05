@@ -582,6 +582,25 @@ hr {
 	flex: 1;
 }
 
+.prose img.wide {
+	width: 100%;
+	max-width: none;
+	height: auto;
+	outline: none;
+	border-radius: 0;
+}
+.prose img.full {
+	width: 100cqi;
+	max-width: none;
+	height: auto;
+	outline: none;
+	border-block: 1px solid var(--accent-dark);
+	border-radius: 0;
+	margin: 0;
+	margin-inline-start: 50%;
+	transform: translateX(-50%);
+}
+
 /* Bento box */
 
 .bento {

@@ -5,6 +5,7 @@ pubDate: 'April 9 2016'
 heroImage: '/img/concert-spot.avif'
 heroWide: '/img/concert.avif'
 category: 'work'
+pinned: true
 ---
 
 <div class="bento">
