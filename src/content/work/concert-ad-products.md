@@ -21,7 +21,7 @@ pinned: true
 
 Advertising is the price everyone can afford for high-quality content. The problem is that digital ads are often low quality, tarnishing the customer relationship with both the publisher and advertiser. There is an opportunity for online ads to be better; A chance to build trust and value with the audience.
 
-<img src="/img/concert-phone.avif" alt="Concert mobile expereance" style="outline: none; display: block;" />
+<img src="/img/concert-phone.avif" alt="Concert mobile experience" style="outline: none; display: block;" />
 
 After prototyping new high-impact storytelling experiences at SB Nation in 2012, I identified a problem with our standard ad units. The beautiful layouts we were building were dotted with low-quality advertising, so I designed a new ad unit that was beautiful and responsive, distinguishing itself on the page but not overwhelming the viewer. This prototype was affectionately dubbed the “fishtank” ad, and it encapsulated a brand experience that you could peer into. A little slice of the page a brand could build a world in. An idea that grew into the Concert ad platform.
 
