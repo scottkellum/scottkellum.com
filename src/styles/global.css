@@ -303,16 +303,16 @@ code {
 
 a {
 	color: inherit;
-	text-decoration-thickness: 0.11em;
-	text-underline-offset: 0.1em;
-	text-decoration-style: dotted;
-	text-decoration-color: var(--action-neutral) !important;
-	text-decoration-thickness: 0.11em !important;
-	text-underline-offset: 0.1em !important;
+	text-decoration: none;
 }
 
 a:hover {
-	text-decoration-style: solid;
+	text-decoration: underline;
+	text-decoration-thickness: 0.11em;
+	text-underline-offset: 0.1em;
+	text-decoration-color: var(--action-neutral) !important;
+	text-decoration-thickness: 0.11em !important;
+	text-underline-offset: 0.1em !important;
 }
 
 :focus {
