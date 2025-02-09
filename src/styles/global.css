@@ -303,16 +303,15 @@ code {
 
 a {
 	color: inherit;
-	text-decoration: none;
+	text-decoration: underline;
+	text-decoration-color: color-mix(in hsl, var(--primary-dark), var(--background) 80%) !important;
+	text-decoration-thickness: 0.1em;
+	text-underline-offset: 0.1em;
+	transition: text-decoration-color var(--speed) ease-in-out;
 }
 
 a:hover {
-	text-decoration: underline;
-	text-decoration-thickness: 0.11em;
-	text-underline-offset: 0.1em;
 	text-decoration-color: var(--action-neutral) !important;
-	text-decoration-thickness: 0.11em !important;
-	text-underline-offset: 0.1em !important;
 }
 
 :focus {
