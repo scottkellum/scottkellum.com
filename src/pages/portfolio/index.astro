@@ -8,19 +8,20 @@ import { SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 
 const work = (await getCollection('work'))
-    .filter(i => i.data.category === 'writing')
+    .filter(i => i.data.category === 'work')
     .sort((b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title="Scott Kellum’s Writing" description={SITE_DESCRIPTION} />
+		<BaseHead title="Scott Kellum’s Work" description={SITE_DESCRIPTION} />
 	</head>
 	<body>
 		<section class="lede wrapper">
 			<div class="content tt">
-				<h1 class="page-head">Writing</h1>
+				<h1 class="page-head">Portfolio</h1>
+				<p>I have over 20+ years of experience in the design industry delivering products and brands to a global audience. Below are a sample of the accomplishments I’m most proud of.</p>
 			</div>
 		</section>
 		

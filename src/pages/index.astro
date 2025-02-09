@@ -49,18 +49,9 @@ const pinnedPosts = work.filter((post) => post.data.pinned);
 			<h2 class="featured-head">Work with me</h2>
 			<p class="current-work">I’m looking for full-time innovation and design leadership roles. My <a href="/resume">résumé</a> outlines my extensive experience.</p>
 			<p class="current-work">I run a full-service design studio, <a href="https://typetura.com" target="_blank">Typetura</a>, where we showcase client value through innovative branding and high-quality websites.</p>
-			<hr>
-			<h2 class="featured-head">Photography</h2>
-			<div class="home-filmstrip">
-				{rolls.map((roll) => (
-					<a class="item" href={`/photos#${rollID(roll.title)}`}>
-						<img loading="lazy" src={`/photos/${roll.photos[0].src}`} alt={roll.photos[0].alt}>
-					</a>
-				))}
-			</div>
 			<CooperType />
 			<hr>
-			<h2 class="featured-head">Featured posts below. <a href="/work">more work here</a> and <a href="/writing">more writing here</a>.</h2>
+			<h2 class="featured-head">Featured posts below. <a href="/portfolio">more work here</a> and <a href="/writing">more writing here</a>.</h2>
 
 			<ul class="featured-list">
 				{
@@ -69,7 +60,7 @@ const pinnedPosts = work.filter((post) => post.data.pinned);
 								<img src={post.data.heroImage} alt={post.data.alt} width="441" height="441" />
 								<div class="work-container">
 									<h3 class="head">
-									<a href={`/work/${post.slug}/`}>{post.data.title}</a>
+									<a href={`/portfolio/${post.slug}/`}>{post.data.title}</a>
 								</h3>
 								<p class="description">
 									{post.data.description}
@@ -81,10 +72,21 @@ const pinnedPosts = work.filter((post) => post.data.pinned);
 			</ul>
 
 			<div class="cta-group">
-				<a class="cta" href="/work/">More work</a>
+				<a class="cta" href="/portfolio/">More work</a>
 				<a class="cta" href="/writing/">More writing</a>
 			</div>
 
+			<hr>
+
+			<h2 class="featured-head">Photography</h2>
+			<div class="home-filmstrip">
+				{rolls.map((roll) => (
+					<a class="item" href={`/photos#${rollID(roll.title)}`}>
+						<img loading="lazy" src={`/photos/${roll.photos[0].src}`} alt={roll.photos[0].alt}>
+					</a>
+				))}
+			</div>
+			
 		</section>
 
 </main>
