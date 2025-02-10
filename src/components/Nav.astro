@@ -2,6 +2,7 @@
 import Logo from '../components/Logo.astro';
 import IconMastodon from '../components/IconMastodon.astro';
 import IconLinkedIn from './IconLinkedIn.astro';
+import IconEmail from './IconEmail.astro';
 ---
 
 <nav class="nav wrapper">
@@ -14,6 +15,7 @@ import IconLinkedIn from './IconLinkedIn.astro';
     <a href="/resume">Résumé</a>
 		<div class="social-container">
 			<div class="social">
+				<a href="mailto:scott@scottkellum.com"><IconEmail /><span class="hidden">Email</span></a>
 				<a href="https://www.linkedin.com/in/scott-kellum/" target="_blank" rel="noopener noreferrer"><IconLinkedIn /><span class="hidden">LinkedIn</span></a>
 				<a href="https://typetura.social/@scott" target="_blank" rel="noopener noreferrer"><IconMastodon /><span class="hidden">Mastodon</span></a>
 			</div>
@@ -55,7 +57,7 @@ import IconLinkedIn from './IconLinkedIn.astro';
 	}
 	.nav .social {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
 		gap: 0.5rem;
 		align-items: center;
 		color: var(--primary);
