@@ -4,6 +4,7 @@ import IconMastodon from '../components/IconMastodon.astro';
 import IconGithub from '../components/IconGithub.astro';
 import IconTypetura from '../components/IconTypetura.astro';
 import IconRSS from '../components/IconRSS.astro';
+import IconEmail from './IconEmail.astro';
 const today = new Date();
 ---
 
@@ -13,8 +14,8 @@ const today = new Date();
 		<div class="link-wrapper">
 			<div class="cta links">
 				<a href="/">Home</a>
-				<a href="/portfolio" target="_blank">Portfolio</a>
-				<a href="/resume" target="_blank">Résumé</a>
+				<a href="/portfolio">Portfolio</a>
+				<a href="/resume">Résumé</a>
 			</div>
 			<div class="internal links">
 				<a href="/writing">Writing</a>
@@ -22,7 +23,7 @@ const today = new Date();
 				<a href="/rss.xml" target="_blank">RSS <IconRSS /></a>
 			</div>
 			<div class="social links">
-				<a href="mailto:scott@scottkellum.com"> Email</a>
+				<a href="mailto:scott@scottkellum.com"><IconEmail /> Email</a>
 				<a href="https://typetura.com" target="_blank" rel="noopener noreferrer"><IconTypetura /> Typetura</a>
 				<a href="https://typetura.social/@scott" target="_blank" rel="noopener noreferrer"><IconMastodon /> Mastodon</a>
 				<a href="https://github.com/scottkellum" target="_blank" rel="noopener noreferrer"><IconGithub /> Github</a>
