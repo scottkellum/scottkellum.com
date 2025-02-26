@@ -161,6 +161,13 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "work": {
+"a-new-social.md": {
+	id: "a-new-social.md";
+  slug: "a-new-social";
+  body: string;
+  collection: "work";
+  data: InferEntrySchema<"work">
+} & { render(): Render[".md"] };
 "concert-ad-products.md": {
 	id: "concert-ad-products.md";
   slug: "concert-ad-products";

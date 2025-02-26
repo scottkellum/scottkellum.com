@@ -6,6 +6,7 @@ heroImage: '/img/concert-spot.avif'
 heroWide: '/img/concert.avif'
 category: 'work'
 pinned: true
+tags: ['product design', 'advertising', 'design']
 ---
 
 <div class="bento">

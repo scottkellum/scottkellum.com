@@ -15,6 +15,7 @@ const work = defineCollection({
 		pinned: z.boolean().optional(),
 		fedi: z.string().optional(),
 		alt: z.string().optional(),
+		tags: z.array(z.string()).optional(),
 	}),
 });
 

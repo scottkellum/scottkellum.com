@@ -5,6 +5,7 @@ pubDate: 'Aug 13 2022'
 heroImage: '/img/el-education.avif'
 category: 'work'
 pinned: true
+tags: ['development', 'design systems']
 ---
 
 EL Education is one of the largest providers of online learning materials and they were in the midst of a major redesign with Type/Code. They reached out to me and Typetura to create a robust and accessible front end for the platform. We took on this project, closely collaborating with the team at Type/Code while staffing up our team with specialized contractors to ensure on-time and on-budget implementation.

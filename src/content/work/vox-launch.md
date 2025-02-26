@@ -6,6 +6,7 @@ heroImage: '/img/vox.svg'
 heroWide: '/img/vox-banner.avif'
 category: 'work'
 pinned: true
+tags: ['design', 'development', 'product design', 'editorial']
 ---
 
 <div class="bento">

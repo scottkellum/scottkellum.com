@@ -5,6 +5,7 @@ pubDate: 'Dec 14 2022'
 heroImage: '/img/kaplanart.avif'
 alt: 'Lauren Kaplan Art Tours logo in an art deco font with red background over an expressionist painting'
 category: 'work'
+tags: ['branding', 'design', 'web design', 'development']
 ---
 
 <!-- <div class="bento">

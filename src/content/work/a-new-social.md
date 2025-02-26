@@ -1,12 +1,12 @@
 ---
-title: 'A Fresh New Look for We Distribute'
+title: 'Connecting Our Social Selves'
 description: 'We Distribute provides groundbreaking journalism and coverage to the fediverse, an emerging social networking universe. Typetura created a new brand that helps to elevate the profile of their coverage.'
 pubDate: 'September 17 2024'
 heroImage: '/img/we-distribute.avif'
 alt: 'A colorful and pixelated logo with the letters “We” and a cursor embedded in the “W”'
 pinned: true
 category: 'work'
-tags: ['branding', 'design', 'web design']
+tags: ['branding', 'design']
 ---
 
 [Sean Tilley](https://social.wedistribute.org/@deadsuperhero) has been a part of the federated social web for over 15 years and is covering news, updates, and profiles in this space through [We Distribute](https://wedistribute.org/). They have already seen success with their coverage and investigations over the past year. With an interest in expanding the scope of the project, they sought help elevating their brand to be something more impactful and distinguished.
