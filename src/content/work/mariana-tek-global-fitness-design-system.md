@@ -6,6 +6,7 @@ heroImage: '/img/mariana-tek.avif'
 heroWide: '/img/mariana-tek-banner.avif'
 category: 'work'
 pinned: true
+tags: ['design', 'design systems', 'product design']
 ---
 
 <div class="bento">

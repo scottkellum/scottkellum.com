@@ -6,6 +6,7 @@ heroImage: '/img/golds-guide.avif'
 alt: 'Gold’s Guide ‘G’ logo on a yellow background'
 pinned: true
 category: 'work'
+tags: ['branding', 'design', 'web design', 'development']
 ---
 
 <div class="bento">

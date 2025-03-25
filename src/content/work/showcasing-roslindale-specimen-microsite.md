@@ -6,6 +6,7 @@ heroImage: '/img/djr-roslindale.avif'
 alt: 'An ‘R’ set in the Roslindale typeface'
 pinned: true
 category: 'work'
+tags: ['design', 'web design']
 ---
 
 We love Roslindale by David Jonathan Ross, so when he approached us to design a specimen site to showcase the font’s rich design characteristics and history we jumped at the opportunity. We worked with David to scaffold a rough outline of the microsite and [André Mora](https://andremora.com/) to draft content.
