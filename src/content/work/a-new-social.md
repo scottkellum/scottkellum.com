@@ -35,4 +35,4 @@ After more iterations, I played with bringing the stars closer together, overlap
 
 The resulting brand guidelines enabled A New Social to launch a platform that connects people across networks. With their board recently announced, there is still work to be done. This effort establishes a solid foundation and brand identity to support that work.
 
-<a href="https://anew.social.org" target="_blank" class="cta">Visit A New Social</a>
+<a href="https://anew.social" target="_blank" class="cta">Visit A New Social</a>
