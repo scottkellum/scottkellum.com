@@ -213,7 +213,7 @@ em {
 	}
 }
 
-.main > .content :not(div, iframe) {
+.main > .content :not(div, iframe, el-slides) {
 	margin-inline: auto;
 	max-width: 30rem;
 }

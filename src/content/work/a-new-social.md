@@ -1,5 +1,5 @@
 ---
-title: 'Connecting Our Social Selves'
+title: 'Connecting Our Social Personas'
 description: 'A New Social.'
 pubDate: 'February 29 2025'
 heroImage: '/img/a-new-social.avif'
@@ -9,48 +9,30 @@ category: 'work'
 tags: ['branding', 'design']
 ---
 
+A New Social offers a bold new vision for social media: a vision in which you can control how and where you connect with your friends online. Their first product, [Bridgy Fed](https://fed.brid.gy/docs), allows you to talk and interact with accounts across [Bluesky](https://bsky.app) and [Mastodon](https://joinmastodon.org/sponsors) networks, but the vision is bigger. I introduced the concept of “constellations,” where unique networks intertwine to create a single image. These constellations enable people to connect with you and enable you to connect with others across multiple networks. Each line in a constellation is a bridge.
 
-<div class="img-group">
-  <img src="/img/we-distribute-before.avif" alt="The old We Distribute website with a grey and dull color scheme." />
-  <img src="/img/we-distribute-after.avif" alt="The new We Distribute website with a bright and colorful design and less cluttered and more seamless background." />
-</div>
+![Constellation inspiration, including watercolor illustrations and various styles of star diagrams](/img/a-new-social/a-new-social-constellations.avif)
+_Reference material, predominantly sourced from Margret and H. A. Rey illustrations_
 
-<a href="https://anew.social/" target="_blank" class="cta">Visit A New Social</a>
+Inspired by the wonderous simplicity of Margret and H. A. Rey's illustrations, I worked to distill a visual language that incorporated star diagrams and a very warm, very human aesthetic. I also explored typography treatments, settling on Libre Caslon for this iteration. It was important for the typography to be OFL licensed, not just for budgetary concerns, but to align with the open principles of A New Social.
 
-<style>
-html {
-	--foreground: #142226;
-	--background: #fff;
+![A muted and warm background with cool turquoise serif text saying “A New Social” and a 3-star diagram connected with lines to form a triangle](/img/a-new-social/a-new-social-first.avif)
+_A logo from the first round of brand ideation for A New Social_
 
-	--primary: #F36D1F;
-	--primary-dark: #A54C18;
-	--accent: #fcf9f7;
-	--accent-dark: #ffebe6;
+Another requirement is that this iconography needs to work across platforms and networks. While the client all loved the aesthetics and flavor of this branding, it would stand out on platforms where we might want it to blend in to become a part of an existing interface. We needed something that would work as an icon and a logo. A tighter logo mark, and typography that is more common.
 
-	--action-light: #ffad82;
-	--action-dark: #943600;
-	--action-neutral: #f5540f;
-}
-@media (prefers-color-scheme: dark) {
-	html {
-		--foreground: #fff;
-		--background:rgb(0, 0, 0);
-	
-		--primary: #47D9FF;
-		--primary-dark: #e2eef7;
-		--accent: #001c24;
-		--accent-dark: #002547;
+After more iterations, I played with bringing the stars closer together, overlapping the celestial bodies to partially eclipse each other’s form. This resulted in an icon at home in a button within an app or work as a logo atop a website. I also cast aside color schemes, relying on shape alone to forge the identity. Consequently, this also enabled dramatically different light and dark mode color schemes, using warm oranges for light mode and cool blues and purples for dark mode. I also created assets like a constellation map that can be incorporated into designs, building depth and complexity.
 
-    --action-light: #47D9FF;
-    --action-dark:rgb(0, 72, 91);
-    --action-neutral:rgb(0, 153, 191);
-  }
-}
+<el-slides>
+<img src="/img/a-new-social/presentation-1.avif" alt="" />
+<img src="/img/a-new-social/presentation-2.avif" alt="" />
+<img src="/img/a-new-social/presentation-3.avif" alt="" />
+<img src="/img/a-new-social/presentation-4.avif" alt="" />
+<img src="/img/a-new-social/presentation-5.avif" alt="" />
+<img src="/img/a-new-social/presentation-6.avif" alt="" />
+<img src="/img/a-new-social/presentation-7.avif" alt="" />
+</el-slides>
 
-.lede {
-  background-image: url('/img/a-new-social-stars.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-</style>
+The resulting brand guidelines enabled A New Social to launch a platform that brings people together across networks. With their board recently announced, there is still much work to be done. This effort establishes a solid foundation and brand identity to support that work.
+
+<a href="https://anew.social.org" target="_blank" class="cta">Visit A New Social</a>
