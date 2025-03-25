@@ -1,7 +1,7 @@
 ---
 title: 'Connecting Our Social Personas'
 description: 'A New Social offers a bold new vision for social media: a vision in which you can control how and where you connect with your friends online.'
-pubDate: 'February 29 2025'
+pubDate: 'March 24 2025'
 heroImage: '/img/a-new-social.avif'
 alt: 'A New Social'
 pinned: true
