@@ -7,6 +7,7 @@ alt: 'A New Social'
 pinned: true
 category: 'work'
 tags: ['branding', 'design']
+readNext: 'we-distribute'
 ---
 
 A New Social offers a bold new vision for social media: a vision in which you can control how and where you connect with your friends online. Their first product, [Bridgy Fed](https://fed.brid.gy/docs), allows you to talk and interact with accounts across [Bluesky](https://bsky.app) and [Mastodon](https://joinmastodon.org/sponsors), but the vision is bigger. I introduced the concept of “constellations,” where unique networks intertwine to create a single image. These constellations enable people to connect with you, and enable you to connect with others across multiple networks. Each line in a constellation is a bridge.

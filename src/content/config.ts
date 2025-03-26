@@ -16,6 +16,7 @@ const work = defineCollection({
 		fedi: z.string().optional(),
 		alt: z.string().optional(),
 		tags: z.array(z.string()).optional(),
+		readNext: z.string().optional(),
 	}),
 });
 

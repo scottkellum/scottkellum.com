@@ -8,15 +8,20 @@ import Footer from '../components/Footer.astro';
 import Grid from '../components/Grid.astro';
 
 type Props = CollectionEntry<'work'>['data'];
-let { title, description, pubDate, heroImage, heroWide, alt } = Astro.props;
+let { title, description, pubDate, heroImage, heroWide, alt, readNext } = Astro.props;
 
 const work = (await getCollection('work')).sort(
 	(b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 
-let nextPost = work[0]; // Get the next post
-if (nextPost.data.title === title) {
-	nextPost = work[1]; // Get the next post
+let nextPost;
+if (readNext) {
+	nextPost = work.find(post => post.slug === readNext);
+} else {
+	nextPost = work[0]; // Get the next post
+	if (nextPost.data.title === title) {
+		nextPost = work[1]; // Get the next post
+	}
 }
 
 let author = 'Scott Kellum';
