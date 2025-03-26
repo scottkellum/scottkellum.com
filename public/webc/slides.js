@@ -23,7 +23,7 @@ class ElSlides extends HTMLElement {
           display: inline-block;
           scroll-snap-align: center;
           margin: 0.25rem !important;
-          width: 100% !important;
+          width: calc(100% - 0.5rem) !important;
           max-width: calc(var(--width) - 0.75rem) !important;
         }
       </style>`
