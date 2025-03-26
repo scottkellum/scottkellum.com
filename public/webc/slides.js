@@ -14,13 +14,17 @@ class ElSlides extends HTMLElement {
           overflow: auto;
           scroll-snap-type: x mandatory;
           margin-block: 1rem;
+          width: calc(100% + (var(--margin) * 2));
+          margin-left: calc(var(--margin) * -1);
+          padding-inline: calc(var(--margin) + 0.125rem);
+          box-sizing: border-box;
         }
-        ::slotted(*) {
+        ::slotted(img) {
           display: inline-block;
           scroll-snap-align: center;
           margin: 0.25rem !important;
-          width: 90% !important;
-          max-width: 90% !important;
+          width: 100% !important;
+          max-width: calc(var(--width) - 0.75rem) !important;
         }
       </style>`
   }
