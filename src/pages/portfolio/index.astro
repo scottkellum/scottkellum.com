@@ -107,10 +107,12 @@ const work = (await getCollection('work'))
 
 	.post-post img {
 		width: 100%;
+		height: auto;
 		margin: 0.5px;
 		outline: 1px solid var(--accent-dark);
 		object-fit: cover;
 		transition: outline-color var(--speed) ease-in-out;
+		aspect-ratio: 1 / 1;
 	}
 	.post-post:has(a:hover) .work-container {
 		border-color: var(--action-neutral);
