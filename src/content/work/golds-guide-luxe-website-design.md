@@ -41,6 +41,11 @@ The article page was focused on ergonomics. People came to read and Gold’s Gui
 
 After the redesign of Gold’s Guide, they saw a 2x uptick in page views and a reduction in bounce rates of 10%. Readers were spending 3x more time on the site increasing engagement.
 
-<a href="https://goldsguide.com/" target="_blank" class="cta">Visit Gold’s Guide</a>
+<ul class="testimonials" id="testimonials">
+  <li>
+    <p class="quote">Not to brag, but... Gold’s Guide now has better typesetting than Monocle, GQ, and even the New York Times.</p>
+    <p class="cite"><a href="https://www.linkedin.com/in/tylergold/" target="_blank">Tyler Gold</a>, Founder</p>
+  </li>
+</ul>
 
-_Note: the site has undergone design changes without my input_
+<a href="https://goldsguide.com/" target="_blank" class="cta">Visit Gold’s Guide</a>

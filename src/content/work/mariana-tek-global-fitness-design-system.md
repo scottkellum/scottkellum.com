@@ -41,6 +41,6 @@ With these improvements to the product pipeline and a sleek, unified aesthetic, 
 <ul class="testimonials" id="testimonials">
   <li>
     <p class="quote">Scott is not only an incredible designer, but an even more incredible person and leader!</p>
-    <p class="cite"><a href="https://www.linkedin.com/in/lindsayboylan/" target="_blank">Lindsay Thomason</a>, <a href="/portfolio/mariana-tek-global-fitness-design-system">Mariana Tek</a></p>
+    <p class="cite"><a href="https://www.linkedin.com/in/lindsayboylan/" target="_blank">Lindsay Thomason</a>, Global Product Lead</p>
   </li>
 </ul>

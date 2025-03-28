@@ -30,7 +30,7 @@ I am extremely excited about the results of this redesign. We Distribute now has
 <ul class="testimonials" id="testimonials">
   <li>
     <p class="quote">I absolutely love the work you’ve done with us. We Distribute looks so good thanks to your thoughtfulness and skillful approach.</p>
-    <p class="cite"><a href="https://social.wedistribute.org/users/deadsuperhero" target="_blank">Sean Tilley</a></p>
+    <p class="cite"><a href="https://social.wedistribute.org/users/deadsuperhero" target="_blank">Sean Tilley</a>, Founder</p>
   </li>
 </ul>
 
