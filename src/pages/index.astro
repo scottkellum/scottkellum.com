@@ -9,6 +9,7 @@ import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 import photos from '../data/photos.json'
 import CooperType from '../components/CooperType.astro';
+import Testimonials from '../components/Testimonials.astro';
 
 let rolls = photos.rolls;
 
@@ -34,8 +35,7 @@ const pinnedPosts = work.filter((post) => post.data.pinned);
 	<section class="lede wrapper">
 		<div class="content tt">
 			<h1 class="page-head">Scott Kellum — Human-centered and technology-driven design</h1>
-			<p>Scott Kellum is an internationally recognized leader in design with 20+ years of experience and a specialized focus on dynamic typography. Scott brings two decades of involvement and partnership with some of the most well-respected teams in design, including Darden Studio, Fjord, and Vox Media. While in these roles, Scott successfully built cross-organizational buy-in for his unique approaches to design problems, bringing together advertising, editorial, and engineering teams to create focused, beautiful, and efficient solutions.</p>
-			<p>Scott takes a multi-stakeholder approach to everything he does. His inclusive concept of customer-centered product development means his work speaks to stakeholders up and down the product chain, while always optimizing for the customer to create easy-to-use, easy-to-maintain products for individuals and organizations.</p>
+			<p>Scott Kellum is an internationally recognized leader in design with 20+ years of experience and a specialized focus on dynamic typography. Scott brings two decades of involvement and partnership with some of the most well-respected teams in design, including Darden Studio, Fjord, and Vox Media. While in these roles, Scott successfully built cross-organizational buy-in for his unique approaches to design problems, bringing people together to create focused, beautiful, and efficient solutions.</p>
 		</div>
 	</section>
 
@@ -50,6 +50,8 @@ const pinnedPosts = work.filter((post) => post.data.pinned);
 			<p class="current-work">I’m looking for full-time innovation and design leadership roles. My <a href="/resume">résumé</a> outlines my extensive experience.</p>
 			<p class="current-work">I run a full-service design studio, <a href="https://typetura.com" target="_blank">Typetura</a>, where we showcase client value through innovative branding and high-quality websites.</p>
 			<!-- <CooperType /> -->
+			<hr>
+			<Testimonials />
 			<hr>
 			<h2 class="featured-head">Featured posts below. <a href="/portfolio">more work here</a> and <a href="/writing">more writing here</a>.</h2>
 

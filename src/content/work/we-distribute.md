@@ -27,4 +27,11 @@ After solidifying the brand for both We Distribute and their podcast Decentered,
 
 I am extremely excited about the results of this redesign. We Distribute now has a more own-able brand that will aid in audience growth and retention. This project is still ongoing and we will continue to update this post with more details.
 
+<ul class="testimonials" id="testimonials">
+  <li>
+    <p class="quote">I absolutely love the work you’ve done with us. We Distribute looks so good thanks to your thoughtfulness and skillful approach.</p>
+    <p class="cite"><a href="https://social.wedistribute.org/users/deadsuperhero" target="_blank">Sean Tilley</a></p>
+  </li>
+</ul>
+
 <a href="https://wedistribute.org/" target="_blank" class="cta">Visit We Distribute</a>

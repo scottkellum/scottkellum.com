@@ -6,6 +6,7 @@ import KeepScrolling from '../components/KeepScrolling.astro';
 
 import { getCollection } from 'astro:content';
 import photos from '../data/photos.json'
+import Testimonials from '../components/Testimonials.astro';
 
 let rolls = photos.rolls;
 
@@ -225,7 +226,13 @@ const pinnedPosts = work.filter((post) => post.data.pinned);
 			<h3><a href="https://alistapart.com/article/a-pixel-identity-crisis" target="_blank">A Pixel Identity Crisis</a></h3>
 			<p class="meta">A List Apart – <em>Published January 2012</em></p>
 
+			<hr>
+
 			<a href="/scott-kellum-resume.pdf" class="cta">Download Résumé</a>
+
+			<hr>
+
+			<Testimonials />
 
 		</section>
 

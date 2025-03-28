@@ -662,3 +662,37 @@ hr {
 		grid-template-columns: 1fr;
 	}
 }
+
+.testimonials {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+  text-wrap: balance;
+}
+.testimonials li {
+  padding: 1rem;
+}
+.testimonials .quote {
+  font-size: 1.25rem;
+  font-style: italic;
+  margin: 0;
+}
+.testimonials .quote::before {
+  content: '“';
+}
+.testimonials .quote::after {
+  content: '”';
+}
+.testimonials .cite {
+  margin: 0;
+  font-size: 0.6rem;
+  font-family: var(--display);
+  font-stretch: 160%;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 1rem;
+}

@@ -42,5 +42,12 @@ To launch quickly we focused on recycling as much of our existing infrastructure
 
 With tight collaboration and dedication, we were able to launch Vox with unprecedented speed and quality, exceeding expectations. With a continued push to iterate and improve the website Vox quickly became the marquee news vertical for Vox Media.
 
+<ul class="testimonials" id="testimonials">
+  <li>
+    <p class="quote">Scott is one of those designers who can do it all, and truly does so with grace. From design execution to front-end development, Scott is truly a master of his craft.</p>
+    <p class="cite"><a href="https://www.linkedin.com/in/joshlaincz/" target="_blank">Josh Laincz</a>, VP of Design at Vox Media</a></p>
+  </li>
+</ul>
+
 <a href="https://vox.com/" target="_blank" class="cta">Visit Vox</a>
 

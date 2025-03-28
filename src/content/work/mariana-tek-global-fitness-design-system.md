@@ -37,3 +37,10 @@ The company was in the midst of rapid growth, and scaling our product to meet th
 <img src="/img/mariana-tek-ds.avif" alt="Mariana Tek design system spread" class="full" />
 
 With these improvements to the product pipeline and a sleek, unified aesthetic, Mariana Tek was successfully sold and scaled up from a US domestic fitness platform to serve hundreds of clients in four countries worldwide.
+
+<ul class="testimonials" id="testimonials">
+  <li>
+    <p class="quote">Scott is not only an incredible designer, but an even more incredible person and leader!</p>
+    <p class="cite"><a href="https://www.linkedin.com/in/lindsayboylan/" target="_blank">Lindsay Thomason</a>, <a href="/portfolio/mariana-tek-global-fitness-design-system">Mariana Tek</a></p>
+  </li>
+</ul>

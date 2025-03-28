@@ -11,7 +11,7 @@ tags: ['product design', 'advertising', 'design']
 
 <div class="bento">
   <p class="box">
-    <span class="value" style="font-size: 35cqi;">$20M+</span>
+    <span class="value" style="font-size: 35cqi;">$200M+</span>
     <span class="label">YoY Revenue</span>
   </p>
   <p class="box">
@@ -203,4 +203,11 @@ function activate(e) {
 }
 </script>
 
-In 2016 I rejoined the Concert team to expand the reach of the ad platform, reaching over 90% of the US online audience and driving over $20M YoY in revenue. To achieve this scale we brought our ad suite to over 80 outside publications including Condé Nast, Comcast, and NBC.
+In 2016 I rejoined the Concert team to expand the reach of the ad platform, reaching over 90% of the US online audience and driving over $200M YoY in revenue. To achieve this scale we brought our ad suite to over 80 outside publications including Condé Nast, Comcast, and NBC.
+
+<ul class="testimonials" id="testimonials">
+  <li>
+    <p class="quote">Scott is one of those designers who can do it all, and truly does so with grace. From design execution to front-end development, Scott is truly a master of his craft.</p>
+    <p class="cite"><a href="https://www.linkedin.com/in/joshlaincz/" target="_blank">Josh Laincz</a>, VP of Design at Vox Media</a></p>
+  </li>
+</ul>

@@ -36,4 +36,11 @@ After more iterations, I played with bringing the stars closer together, overlap
 
 The resulting brand guidelines enabled A New Social to launch a platform that connects people across networks. With their board recently announced, there is still work to be done. This effort establishes a solid foundation and brand identity to support that work.
 
+<ul class="testimonials" id="testimonials">
+  <li>
+    <p class="quote">I obviously loved what you made for us, but the process was definitely my favorite part. Can’t wait to work with you again in the future!</p>
+    <p class="cite"><a href="https://mastodon.social/@quillmatiq/114235605739776683" target="_blank">Anuj Ahooja</a></p>
+  </li>
+</ul>
+
 <a href="https://anew.social" target="_blank" class="cta">Visit A New Social</a>
