@@ -51,6 +51,7 @@
 	scroll-behavior: smooth;
 	scroll-margin-top: 3rem;
 	font-size-adjust: from-font;
+	text-wrap: pretty;
 }
 
 /* Styles */

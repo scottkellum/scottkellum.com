@@ -203,6 +203,13 @@ declare module 'astro:content' {
   collection: "work";
   data: InferEntrySchema<"work">
 } & { render(): Render[".md"] };
+"ishmael-interactive.md": {
+	id: "ishmael-interactive.md";
+  slug: "ishmael-interactive";
+  body: string;
+  collection: "work";
+  data: InferEntrySchema<"work">
+} & { render(): Render[".md"] };
 "lauren-kaplan-art-tours-artistry-art-and-design.md": {
 	id: "lauren-kaplan-art-tours-artistry-art-and-design.md";
   slug: "lauren-kaplan-art-tours-artistry-art-and-design";
