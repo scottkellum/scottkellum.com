@@ -1,7 +1,7 @@
 ---
 title: 'Public-Sector Human-Centered Design Reborn'
 description: 'A group of former federal employees blaze their own path forward. The post has changed, but the mission continues.'
-pubDate: 'April 11 2025'
+pubDate: 'April 10 2025'
 heroImage: '/img/ishmael.avif'
 alt: 'Ishmael Interactive'
 pinned: true
