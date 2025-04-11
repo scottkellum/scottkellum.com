@@ -23,11 +23,11 @@ With mission-critical content mostly sorted, branding work came second. The goal
 ![Ishmael Interactive color palette.](/img/ishmael-brand-colors.avif)
 [![Ishmael Interactive website.](/img/ishmael-website.avif)](https://ishmaelinteractive.com)
 
-<!-- <ul class="testimonials" id="testimonials">
+<ul class="testimonials" id="testimonials">
   <li>
-    <p class="quote">TKTKTKTKTKTKTKTK</p>
+    <p class="quote">Our new branding and website literally makes me weep for joy. At Ishmael Interactive, we had traditional branding needs paired with a massive amount of text to wrangle, and Typetura organized it all into this fun, sleek, cohesive website that’s inviting and easy to navigate.</p>
     <p class="cite"><a href="https://anamonroe.com" target="_blank">Ana Monroe</a>, Founder</p>
   </li>
-</ul> -->
+</ul>
 
 <a href="https://ishmaelinteractive.com" target="_blank" class="cta">Visit Ishmael Interactive</a>
