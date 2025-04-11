@@ -25,7 +25,7 @@ With mission-critical content mostly sorted, branding work came second. The goal
 
 <ul class="testimonials" id="testimonials">
   <li>
-    <p class="quote">Our new branding and website literally makes me weep for joy. At Ishmael Interactive, we had traditional branding needs paired with a massive amount of text to wrangle, and Typetura organized it all into this fun, sleek, cohesive website that’s inviting and easy to navigate.</p>
+    <p class="quote">Our new branding and website literally makes me weep for joy. At Ishmael Interactive, we had traditional branding needs paired with a massive amount of text to wrangle, and Scott organized it all into this fun, sleek, cohesive website that’s inviting and easy to navigate.</p>
     <p class="cite"><a href="https://anamonroe.com" target="_blank">Ana Monroe</a>, Founder</p>
   </li>
 </ul>
