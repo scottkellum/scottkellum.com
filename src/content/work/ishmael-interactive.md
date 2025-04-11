@@ -7,7 +7,6 @@ alt: 'Ishmael Interactive'
 pinned: true
 category: 'work'
 tags: ['branding', 'design', 'identity', 'web']
-readNext: 'a-new-social'
 ---
 
 After a wildly successful run, including performing the **first digital audit finding $11 million in profit** for the General Services Administration (GSA) and winning a Service to the Citizen Award, this group of federal employees found themselves subject to mass layoffs and firings. Eager to continue the work, they are carrying on their mission to bring Human-centered Design (HCD) training and mission-oriented focus to people and organizations in both the public and private sectors. Over two months, I have been building a new brand for this work, archiving and compiling public domain materials, and giving them a new home.
