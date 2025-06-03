@@ -15,11 +15,11 @@ Being in front of a computer requires intention. It involves going to a physical
 
 ## Safari, the Everything app
 
-As hard as you work to remove the apps from your phone, Safari will happily get you back into Instagram, Twitter, or whatever social media you just deleted. If you’re the kind of person who needs to look that thing up that popped into your brain, it’ll let you do that, too. Having access to the world’s information in your pocket is incredible. It’s also unnecessary. Knowledge is powerful, but it can stifle wonder. I didn’t need to know things right away; now, I find I can savor the wonder of the things around me. If it’s essential, I can always look it up later. Or, if I need help in a store or museum, it turns out those places are filled with helpful and knowledgeable humans.
+As hard as you work to remove the apps from your phone, Safari will happily get you back into Instagram, Twitter, or whatever social media you just deleted. If you’re the kind of person who needs to look that thing up that popped into your brain, it’ll let you do that, too. Having access to the world’s information in your pocket is incredible. It’s also unnecessary. Information can stifle our sense of wonder. If the information I’m seeking is essential, I can always look it up later. Or, if I need help in a store or museum, it turns out those places are filled with helpful and knowledgeable humans.
 
 ## My Phone
 
-This is all well and good, but how is _my_ phone set up exactly?
+This is all well and good, but how exactly is my phone set up?
 
 Home screen:
 
