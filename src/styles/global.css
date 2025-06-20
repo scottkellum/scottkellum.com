@@ -129,6 +129,7 @@ html {
 .sub-head,
 .prose h2,
 .prose h3 {
+	text-wrap: balance;
 	--tt: var(--on);
 }
 
