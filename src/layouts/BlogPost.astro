@@ -33,149 +33,241 @@ let author = 'Scott Kellum';
 		<BaseHead title={`${title} | Scott Kellum`} description={description} image={heroImage} />
 	</head>
 	<body>
-		<section class="lede wrapper">
-			<div class={`content tt ${heroWide ? 'has-hero-wide' : ''}`}>
-				
-				{heroWide ? (
-					<div class="hero-wide">
-						<img src={heroWide} alt={alt} />
-					</div>
-				) : (
-					<div class="hero-image">
-						{heroImage && <img width={441} height={441} src={heroImage} alt={alt} />}
-					</div>
-				)}
-
-				<div class="hgroup cq">
-					<p class="date">
-						<FormattedDate date={pubDate} />
-					</p>
-					<h1 class="page-head">{title}</h1>
-					<p class="author">By {author}</p>
-				</div>
-			</div>
-		</section>
-		
-		<Nav />
-
-		<main class="main wrapper">
-			<div class="content prose">
+		<main>
+			<hgroup class={`content tt ${heroWide ? 'has-hero-wide' : ''}`}>
+				<h1 class="hed">{title}</h1>
+				<p class="date"><FormattedDate date={pubDate} /></p>
+			</hgroup>
+			<article>
 				<slot />
-				<div class="content">
-					<h2 class="read-next">Read next</h2>
-					<div class="next-post">
-						<a href={`/portfolio/${nextPost.slug}/`}>
-							<h3>{nextPost.data.title}</h3>
-							<img src={nextPost.data.heroImage} alt={nextPost.data.alt} width="441" height="441" />
-						</a>
-					</div>
+
+				<div class="end">
+					<a href={`/portfolio/${nextPost.slug}/`}>
+						<h3>{nextPost.data.title}</h3>
+						<img src={nextPost.data.heroImage} alt={nextPost.data.alt} width="441" height="441" />
+					</a>
 				</div>
-			</div>
+			</article>
 		</main>
-
-		<Footer />
-		<Grid />
-
-		<script is:inline src="/webc/slides.js" />
+		<footer>
+			<a href="/" class="publicatoin">
+				Publication
+			</a>
+		</footer>
 	</body>
 </html>
 
 <style>
-	.lede > .content {
-		padding-block-start: 0;
+	html {
+		--column: 18rem;
+		--gutter: min(5vw, 2rem);
+		--primary: hsl(10deg 80% 35%);
+		--color: #000;
+		--background: white;
+		scrollbar-width: thin;
+		font-family: 'Bennet Text', serif;
+		font-size: calc(18 / 16 * 100%);
+		line-height: 1.4;
+		text-wrap: pretty;
+		overflow-y: hidden;
+		background: var(--background);
+		color: var(--color);
+		scrollbar-color: var(--primary) var(--background);
 	}
-	.lede > .content > * {
-		flex: 1;
-	}
-	.lede .hero-image {
-		margin-block: 0;
-	}
-	.lede img {
-		margin: 0.5px;
-		margin-block-start: 0;
-		border-radius: 0 0 4rem 4rem;
-		outline: 1px solid var(--accent-dark);
-	}
-	.hgroup {
-		align-self: flex-end;
-		margin-block-start: 1rem;
-	}
-	.page-head {
-		font-family: var(--display);
-	}
-	@media (min-width: 55em) {
-		.lede > .content:not(.has-hero-wide) {
-			display: flex;
-			grid-gap: 1rem;
-			width: 100%;
+	@media (prefers-color-scheme: dark) {
+		html {
+			--primary: hsl(10deg 70% 55%);
+			--color: hsl(10deg 25% 80%);
+			--background: black;
 		}
 	}
 
-	.has-hero-wide img {
-		width: 100%;
-		height: auto;
-		outline: none;
-		border-radius: 0;
-		width: 100cqi;
-		margin-left: 50%;
-		transform: translateX(-50%);
-	}
-	.has-hero-wide .hgroup {
-		text-align: center;
-	}
-	.has-hero-wide .page-head {
-		margin-block: 0rem 0.5rem;
-		line-height: 1;
+	html,
+	body,
+	main {
+		height: 100%;
 	}
 
-	.date,
-	.author {
-		font-size: 0.7rem;
-		color: var(--primary-dark);
+	html,
+	body,
+	main,
+	article,
+	hgroup {
+		margin: 0;
 	}
 
-	img {
-		width: 100%;
-		height: auto;
-		display: block;
-		margin-block-start: 2rem;
+	main {
+		writing-mode: sideways-lr;
+	}
+	main > * {
+		writing-mode: horizontal-tb;
 	}
 
-
-	.next-post a {
+	hgroup {
+		height: 100%;
+		margin-inline-end: 6rem;
+		padding: 2rem;
+		box-sizing: border-box;
 		display: flex;
-		flex-direction: row;
-		gap: 1rem;
-		align-items: center;
-		text-decoration: none;
-	}
-	.next-post a:hover {
-		text-decoration: underline;
-	}
-	.next-post img {
-		order: 1;
-		height: 6rem;
-		width: 6rem;
-		min-width: 6rem;
-		margin: 0;
-		padding: 0;
-	}
-	.next-post h3 {
-		order: 2;
-		margin: 0;
-		padding: 0;
-		line-height: 1;
-	}
-
-	.clients {
-		text-align: center;
+		flex-direction: column;
+		background: hsl(0 0% 50% / 10%);
+		color: var(--primary);
+		justify-content: center;
 		text-wrap: balance;
 	}
-	.clients h2 {
+	.hed {
+		font-family: 'Bennet Banner', serif;
+		font-weight: 400;
+		font-size: clamp(1.2rem, 15vmin, 7rem);
+		max-width: 30rem;
+		line-height: 0.9;
 		margin-block: 0;
-		padding-block: 0;
 	}
-	.clients h2::before {
-		display: none;
+	.dek {
+		font-family: 'Bennet Banner', serif;
+		font-size: clamp(1rem, 5vmin, 2rem);
+		font-weight: 300;
+		font-style: italic;
+		line-height: 1;
+		margin-block: 0;
+	}
+	.date {
+		font-family: 'IvyEpic', system-ui;
+		font-size: 0.67rem;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		font-weight: 400;
+		margin-block: 3rem 0;
+	}
+
+	article {
+		height: 67dvh;
+		margin-block: 0 2rem;
+		hyphens: auto;
+	/* 	text-align: justify; */
+		column-width: var(--column);
+		column-gap: var(--gutter);
+		column-fill: auto;
+		width: calc(100% - (var(--gutter) * 2));
+		orphans: 2;
+		widows: 3;
+	}
+
+	article :global(*) {
+		width: 100%;
+	}
+
+	article > :global(p) {
+		margin: 0;
+		text-indent: 33%;
+	}
+	article > :global(p:last-of-type::after) {
+		content: ' ○';
+		color: var(--primary);
+	}
+	article :global(img),
+	article :global(figure),
+	article :global(p:has(img)) {
+		height: 67dvh;
+		width: 100%;
+		object-fit: contain;
+		object-position: center;
+		break-inside: avoid;
+	}
+
+	article :global(p:has(img)) {
+		text-indent: 0;
+	}
+
+	article :global(.fill) {
+		object-fit: cover;
+	}
+
+	article :global(.end) {
+		break-before: column;
+		break-inside: avoid;
+		position: relative;
+		padding-right: var(--gutter);
+	}
+
+	article > :global(p:first-child) {
+		text-indent: 0;
+	}
+
+	@supports (initial-letter: 6 2) {
+		article > :global(p:first-child) {
+			margin-block-start: -4lh;
+		}
+		article > :global(p:first-child::first-letter) {
+			initial-letter: 6 2;
+			margin-inline: -1rem 0.5rem;
+			font-family: 'Bennet Banner', serif;
+			font-weight: 700;
+			font-style: italic;
+			color: var(--primary);
+		}
+		@media (width < 30em) {
+			article > :global(p:first-child::first-letter) {
+				initial-letter: 3 2;
+				margin-inline: 0 0.5rem;
+			}
+		}
+	}
+	@supports selector(::column) {
+		html {
+			scroll-snap-type: x mandatory;
+			scroll-padding-inline-start: var(--gutter);
+		}
+		::column, hgroup {
+			scroll-snap-align: start;
+		}
+		article :global(img),
+		article :global(figure),
+		article :global(p:has(img)) {
+			height: calc(100% + 33dvh - 4rem);
+			margin-top: calc(-33dvh + 4rem);
+		}
+		@media (width > 47.2rem) {
+			article :global(.double) {
+				width: calc(200% + var(--gutter));
+			}
+			article :global(.double + *::before) {
+				content: '';
+				display: block;
+				width: 100%;
+				height: 100%;
+				break-before: column;
+				break-after: column;
+			}
+		}
+		article :global(.fill) {
+			position: relative;
+			height: calc(100dvh + 1rem);
+			margin-top: calc(-33dvh + 1rem);
+			z-index: 1;
+		}
+	}
+
+	footer {
+		display: flex;
+		position: fixed;
+		bottom: 0;
+		inset-inline: var(--gutter);
+		border-block-start: 1px solid var(--primary);
+		color: var(--primary);
+		font-family: 'IvyEpic', system-ui;
+		font-size: 0.67rem;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		font-weight: 600;
+		padding: 0.25rem;
+		padding-inline: 0;
+	}
+	footer a {
+		text-decoration: inherit;
+		color: inherit;
+	}
+	footer a:hover {
+		text-decoration: underline;
 	}
 </style>
