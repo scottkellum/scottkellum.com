@@ -178,6 +178,10 @@ let author = 'Scott Kellum';
 	article :global(p:has(img)) {
 		text-indent: 0;
 	}
+	article :global(p img) {
+		height: 100% !important;
+		margin-block: 0 !important;
+	}
 
 	article :global(.fill) {
 		object-fit: cover;
@@ -226,6 +230,8 @@ let author = 'Scott Kellum';
 		article :global(p:has(img)) {
 			height: calc(100% + 33dvh - 4rem);
 			margin-top: calc(-33dvh + 4rem);
+			break-before: column;
+			break-after: column;
 		}
 		@media (width > 47.2rem) {
 			article :global(.double) {
