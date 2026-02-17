@@ -13,7 +13,7 @@ After a wildly successful run, including performing the **first digital audit fi
 
 The bulk of the work was building a new platform for the [Human-centered Design Guide series](https://hcd.ishmaelinteractive.com), an eight-part book with hundreds of pages of material. These guides provide detailed yet approachable steps for every phase of the design process, from discovery to measuring success. I built a platform in Astro, then designed and developed an interface that navigated all eight books efficiently and clearly. One of the most difficult challenges with an extensive web content collection is providing clarity about where you are. With a physical book, it’s easy to see how many pages of content you’ve read through and mark sections as you go. I created a navigation with sections that persist to make a clear map of where you are in the context of what you are actively reading.
 
-[![HCD design guides interface with a left-rail as an interactive table of contents, and content on the right.](/img/ishmael-guides.avif)](https://hcd.ishmaelinteractive.com)
+<img src="/img/ishmael-guides.avif" alt="HCD design guides interface with a left-rail as an interactive table of contents, and content on the right." class="double">
 
 To add value to the work and create an artifact people can hold and take notes on, I also developed a series of PDF variants of the guides. These two forms meet people where they are in their projects. Eight and a half years of research, development, planning, testing, and execution has gone into this material, so ensuring the guides have a quality place to exist has been the primary focus of my work with Ishmael Interactive.
 
