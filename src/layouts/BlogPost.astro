@@ -2,10 +2,6 @@
 import { type CollectionEntry, getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import FormattedDate from '../components/FormattedDate.astro';
-import Nav from '../components/Nav.astro';
-
-import Footer from '../components/Footer.astro';
-import Grid from '../components/Grid.astro';
 
 type Props = CollectionEntry<'work'>['data'];
 let { title, description, pubDate, heroImage, heroWide, alt, readNext } = Astro.props;
@@ -31,16 +27,29 @@ let author = 'Scott Kellum';
 <html lang="en">
 	<head>
 		<BaseHead title={`${title} | Scott Kellum`} description={description} image={heroImage} />
+		<link rel="preconnect" href="https://typographer.io/">
+		<link rel="stylesheet" href="https://typographer.io/1/users/7fed6df4c187946a210959b4ecd1556d39d9ff919812fad8e95fde2c6be2e1a2/1e97126c063332188209513aaa63aaa89fad45c5606c776361438b808e5d5c30/css?token=f8632f052d">
+		<script type="module">try{navigator.sendBeacon("https://use.typographer.io/1/users/7fed6df4c187946a210959b4ecd1556d39d9ff919812fad8e95fde2c6be2e1a2/1e97126c063332188209513aaa63aaa89fad45c5606c776361438b808e5d5c30/css?token=f8632f052d")}catch{}</script>
 	</head>
 	<body>
-		<main>
+			<!-- <hgroup class={`content tt ${heroWide ? 'has-hero-wide' : ''}`}>
+				<h1 class="hed">{title}</h1>
+				<p class="date"><FormattedDate date={pubDate} /></p>
+			</hgroup> -->
+
 			<hgroup class={`content tt ${heroWide ? 'has-hero-wide' : ''}`}>
 				<h1 class="hed">{title}</h1>
 				<p class="date"><FormattedDate date={pubDate} /></p>
 			</hgroup>
-			<article>
-				<slot />
 
+			<div class="cols">
+				<div class="wrap">
+					<div class="inner">
+						<slot />
+					</div>
+				</div>
+			</div>
+<!-- 
 				<div class="end">
 					<a href={`/portfolio/${nextPost.slug}/`}>
 						<h3>{nextPost.data.title}</h3>
@@ -53,227 +62,129 @@ let author = 'Scott Kellum';
 			<a href="/" class="publicatoin">
 				Publication
 			</a>
-		</footer>
+		</footer> -->
 	</body>
 </html>
 
 <style>
-	html {
-		--column: 18rem;
-		--gutter: min(5vw, 2rem);
-		--primary: hsl(10deg 80% 35%);
-		--color: #000;
-		--background: white;
-		scrollbar-width: thin;
-		font-family: 'Bennet Text', serif;
-		font-size: calc(18 / 16 * 100%);
-		line-height: 1.4;
-		text-wrap: pretty;
-		overflow-y: hidden;
-		background: var(--background);
-		color: var(--color);
-		scrollbar-color: var(--primary) var(--background);
-	}
-	@media (prefers-color-scheme: dark) {
-		html {
-			--primary: hsl(10deg 70% 55%);
-			--color: hsl(10deg 25% 80%);
-			--background: black;
-		}
-	}
 
 	html,
-	body,
-	main {
+	body {
 		height: 100%;
 	}
 
-	html,
-	body,
-	main,
-	article,
-	hgroup {
-		margin: 0;
-	}
-
-	main {
+	body {
 		writing-mode: sideways-lr;
 	}
-	main > * {
+	body > * {
 		writing-mode: horizontal-tb;
 	}
-
 	hgroup {
+		column-height: var(--page-height);
+		scroll-snap-align: start;
+		box-shadow: inset 0 0 0 1px green;
 		height: 100%;
-		margin-inline-end: 6rem;
-		padding: 2rem;
+		padding: 4rem;
 		box-sizing: border-box;
-		display: flex;
-		flex-direction: column;
-		background: hsl(0 0% 50% / 10%);
-		color: var(--primary);
-		justify-content: center;
-		text-wrap: balance;
-	}
-	.hed {
-		font-family: 'Bennet Banner', serif;
-		font-weight: 400;
-		font-size: clamp(1.2rem, 15vmin, 7rem);
-		max-width: 30rem;
-		line-height: 0.9;
-		margin-block: 0;
-	}
-	.dek {
-		font-family: 'Bennet Banner', serif;
-		font-size: clamp(1rem, 5vmin, 2rem);
-		font-weight: 300;
-		font-style: italic;
-		line-height: 1;
-		margin-block: 0;
-	}
-	.date {
-		font-family: 'IvyEpic', system-ui;
-		font-size: 0.67rem;
-		text-transform: uppercase;
-		letter-spacing: 0.15em;
-		font-weight: 400;
-		margin-block: 3rem 0;
 	}
 
-	article {
-		height: 67dvh;
-		margin-block: 0 2rem;
-		hyphens: auto;
-		text-align: justify;
-		column-width: var(--column);
-		column-gap: var(--gutter);
+	html {
+		scroll-snap-type: x mandatory;
+		--page-margin: 2rem;
+		--column-height: 60vh;
+		--page-height: 90vh;
+		--primary: hsl(20deg 80% 40%);
+		--background: #fff;
+
+		--font-text: 'Bennet Text', serif;
+		--font-display: 'Bennet Banner', serif;
+		--font-meta: 'IvyEpic', system-ui;
+		font-family: var(--font-text);
+		line-height: 1.3;
+		background-color: var(--background);
+		scrollbar-color: var(--primary) var(--background);
+		scrollbar-width: thin;
+	}
+
+	html, body {
+		height: 100%;
+		margin: 0;
+		padding: 0;
+	}
+
+	.inner :global(p) {
+		margin-block: 0;
+		text-indent: 25%;
+	}
+
+	.inner :global(h1),
+	.inner :global(h2),
+	.inner :global(h3),
+	.inner :global(h4),
+	.inner :global(h5),
+	.inner :global(h6) {
+		font-size: 1em;
+		line-height: 1rlh;
+		font-weight: 700;
+		margin-block: 1rlh 0;
+		break-inside: avoid;
+	}
+
+	.inner :global(h2) {
+		font-size: 1.33rlh;
+		line-height: 1rlh;
+		margin-block: 1rlh;
+		font-family: var(--font-display);
+	}
+
+	.inner :global(h1 + p),
+	.inner :global(h2 + p),
+	.inner :global(h3 + p),
+	.inner :global(h4 + p),
+	.inner :global(h5 + p),
+	.inner :global(h6 + p) {
+		text-indent: 0;
+	}
+
+	
+	.inner :global(p:first-child) {
+		text-indent: 0;
+		margin-top: -3lh;
+	}
+	.inner :global(p:first-child:first-letter) {
+		initial-letter: 6 3;
+		font-weight: 500;
+		color: var(--primary);
+		margin-inline-end: 1rem;
+		font-family: var(--font-display);
+	}
+
+	.cols {
+		columns: 1;
+		height: 100%;
+		gap: 0;
+		margin: 0;
 		column-fill: auto;
-		width: calc(100% - (var(--gutter) * 2));
+		width: 100vw;
+	}
+	.cols::column {
+		scroll-snap-align: center;
+	}
+
+	.wrap {
+		padding: calc(var(--page-height) - var(--column-height)) var(--page-margin) var(--page-margin);
+		box-decoration-break: clone;
+		box-shadow: inset 0 0 0 1px red;
+	}
+
+	.inner {
+		gap: 2rem;
+		column-width: 18rem;
+		column-height: var(--column-height);
+		column-fill: auto;
+		text-align: justify;
+		hyphens: auto;
 		orphans: 2;
 		widows: 3;
-	}
-
-	article :global(*) {
-		width: 100%;
-	}
-
-	article > :global(p) {
-		margin: 0;
-		text-indent: 33%;
-	}
-	article > :global(p:last-of-type::after) {
-		content: ' ○';
-		color: var(--primary);
-	}
-	article :global(img),
-	article :global(figure),
-	article :global(p:has(img)) {
-		height: 67dvh;
-		width: 100%;
-		object-fit: contain;
-		object-position: center;
-		break-inside: avoid;
-	}
-
-	article :global(p:has(img)) {
-		text-indent: 0;
-	}
-	article :global(p img) {
-		height: 100% !important;
-		margin-block: 0 !important;
-	}
-
-	article :global(.fill) {
-		object-fit: cover;
-	}
-
-	article :global(.end) {
-		break-before: column;
-		break-inside: avoid;
-		position: relative;
-		padding-right: var(--gutter);
-	}
-
-	article > :global(p:first-child) {
-		text-indent: 0;
-	}
-
-	@supports (initial-letter: 6 2) {
-		article > :global(p:first-child) {
-			margin-block-start: -4lh;
-		}
-		article > :global(p:first-child::first-letter) {
-			initial-letter: 6 2;
-			margin-inline: -1rem 0.5rem;
-			font-family: 'Bennet Banner', serif;
-			font-weight: 700;
-			font-style: italic;
-			color: var(--primary);
-		}
-		@media (width < 30em) {
-			article > :global(p:first-child::first-letter) {
-				initial-letter: 3 2;
-				margin-inline: 0 0.5rem;
-			}
-		}
-	}
-	@supports selector(::column) {
-		html {
-			scroll-snap-type: x mandatory;
-			scroll-padding-inline-start: var(--gutter);
-		}
-		::column, hgroup {
-			scroll-snap-align: start;
-		}
-		article :global(img),
-		article :global(figure),
-		article :global(p:has(img)) {
-			height: calc(100% + 33dvh - 4rem);
-			margin-top: calc(-33dvh + 4rem);
-			break-before: column;
-			break-after: column;
-		}
-		@media (width > 47.2rem) {
-			article :global(.double) {
-				width: calc(200% + var(--gutter));
-			}
-			article :global(.double + *::before) {
-				content: '';
-				display: block;
-				width: 100%;
-				height: 100%;
-				break-before: column;
-				break-after: column;
-			}
-		}
-		article :global(.fill) {
-			position: relative;
-			height: calc(100dvh + 1rem);
-			margin-top: calc(-33dvh + 1rem);
-			z-index: 1;
-		}
-	}
-
-	footer {
-		display: flex;
-		position: fixed;
-		bottom: 0;
-		inset-inline: var(--gutter);
-		border-block-start: 1px solid var(--primary);
-		color: var(--primary);
-		font-family: 'IvyEpic', system-ui;
-		font-size: 0.67rem;
-		text-transform: uppercase;
-		letter-spacing: 0.15em;
-		font-weight: 600;
-		padding: 0.25rem;
-		padding-inline: 0;
-	}
-	footer a {
-		text-decoration: inherit;
-		color: inherit;
-	}
-	footer a:hover {
-		text-decoration: underline;
 	}
 </style>
