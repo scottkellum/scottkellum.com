@@ -32,14 +32,11 @@ let author = 'Scott Kellum';
 		<script type="module">try{navigator.sendBeacon("https://use.typographer.io/1/users/7fed6df4c187946a210959b4ecd1556d39d9ff919812fad8e95fde2c6be2e1a2/1e97126c063332188209513aaa63aaa89fad45c5606c776361438b808e5d5c30/css?token=f8632f052d")}catch{}</script>
 	</head>
 	<body>
-			<!-- <hgroup class={`content tt ${heroWide ? 'has-hero-wide' : ''}`}>
-				<h1 class="hed">{title}</h1>
-				<p class="date"><FormattedDate date={pubDate} /></p>
-			</hgroup> -->
 
-			<hgroup class={`content tt ${heroWide ? 'has-hero-wide' : ''}`}>
+		<hgroup class={`content tt ${heroWide ? 'has-hero-wide' : ''}`}>
 				<h1 class="hed">{title}</h1>
 				<p class="date"><FormattedDate date={pubDate} /></p>
+				<img src={heroImage} alt={alt} width="600" height="600" />
 			</hgroup>
 
 			<div class="cols">
@@ -67,38 +64,18 @@ let author = 'Scott Kellum';
 </html>
 
 <style>
-
-	html,
-	body {
-		height: 100%;
-	}
-
-	body {
-		writing-mode: sideways-lr;
-	}
-	body > * {
-		writing-mode: horizontal-tb;
-	}
-	hgroup {
-		column-height: var(--page-height);
-		scroll-snap-align: start;
-		box-shadow: inset 0 0 0 1px green;
-		height: 100%;
-		padding: 4rem;
-		box-sizing: border-box;
-	}
-
 	html {
 		scroll-snap-type: x mandatory;
 		--page-margin: 2rem;
 		--column-height: 60vh;
 		--page-height: 90vh;
-		--primary: hsl(20deg 80% 40%);
+		--primary: hsl(285, 88%, 46%);
 		--background: #fff;
 
 		--font-text: 'Bennet Text', serif;
 		--font-display: 'Bennet Banner', serif;
 		--font-meta: 'IvyEpic', system-ui;
+		
 		font-family: var(--font-text);
 		line-height: 1.3;
 		background-color: var(--background);
@@ -106,11 +83,56 @@ let author = 'Scott Kellum';
 		scrollbar-width: thin;
 	}
 
-	html, body {
+	html,
+	body {
 		height: 100%;
 		margin: 0;
 		padding: 0;
 	}
+
+	/* Orient the page flow direction as horizontal */
+	body {
+		writing-mode: sideways-lr;
+	}
+	body > * {
+		writing-mode: horizontal-tb;
+	}
+
+	/* The lede or cover */
+	hgroup {
+		column-height: var(--page-height);
+		scroll-snap-align: start;
+		box-shadow: inset 0 0 0 1px green;
+		height: 100%;
+		padding: 2rem;
+		padding-block: 20vh 2rem;
+		box-sizing: border-box;
+		max-width: clamp(min(90vw, 40rem), 25rem, 100vw);
+	}
+
+	hgroup .hed {
+		font-family: var(--font-display);
+		font-size: clamp(2.5rem, 8vw, 3.5rem);
+		line-height: 1;
+		margin-block: 2rem;
+		text-wrap: balance;
+	}
+
+	hgroup .date {
+		font-family: var(--font-meta);
+		font-size: 0.9em;
+		color: var(--primary);
+		margin-top: -1rem;
+	}
+
+	hgroup img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		mix-blend-mode: lighten;
+	}
+
+	/* General text styles */
 
 	.inner :global(p) {
 		margin-block: 0;
@@ -123,18 +145,22 @@ let author = 'Scott Kellum';
 	.inner :global(h4),
 	.inner :global(h5),
 	.inner :global(h6) {
+		text-wrap: balance;
 		font-size: 1em;
 		line-height: 1rlh;
 		font-weight: 700;
 		margin-block: 1rlh 0;
 		break-inside: avoid;
+		text-align: left;
 	}
 
 	.inner :global(h2) {
-		font-size: 1.33rlh;
-		line-height: 1rlh;
+		font-size: 2rlh;
+		line-height: 2rlh;
 		margin-block: 1rlh;
 		font-family: var(--font-display);
+		text-align: center;
+		color: var(--primary);
 	}
 
 	.inner :global(h1 + p),
@@ -146,7 +172,33 @@ let author = 'Scott Kellum';
 		text-indent: 0;
 	}
 
-	
+	.inner :global(ul),
+	.inner :global(ol) {
+		margin-inline: 0.75lh 0;
+		padding-inline: 0;
+		margin-block: 1lh;
+		text-align: left;
+		font-size: 0.9em;
+		line-height: 1rlh;
+	}
+	.inner :global(ul ::marker),
+	.inner :global(ol ::marker) {
+		color: var(--primary);
+	}
+
+	.inner :global(a) {
+		color: inherit;
+		text-decoration-color: color-mix(in srgb, var(--primary) 30%, transparent 70%);
+		transition: text-decoration-color 0.25s ease-in-out;
+		text-decoration-thickness: 0.1rem;
+		text-underline-offset: 0.15rem;
+	}
+	.inner :global(a:hover),
+	.inner :global(a:focus) {
+		text-decoration-color: var(--primary);
+	}
+
+	/* Dropcap */
 	.inner :global(p:first-child) {
 		text-indent: 0;
 		margin-top: -3lh;
