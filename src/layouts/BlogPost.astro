@@ -69,8 +69,8 @@ let author = 'Scott Kellum';
 		--page-margin: 2rem;
 		--column-height: 60vh;
 		--page-height: 90vh;
-		--primary: hsl(285, 88%, 46%);
-		--background: #fff;
+		--primary: hsl(42, 100%, 44%);
+		--background: #f4f2ee;
 
 		--font-text: 'Bennet Text', serif;
 		--font-display: 'Bennet Banner', serif;
@@ -100,12 +100,15 @@ let author = 'Scott Kellum';
 
 	/* The lede or cover */
 	hgroup {
+		position: relative;
+		display: grid;
+		grid-template-rows: 1fr min-content 2fr;
+		grid-template-columns: auto auto;
+		gap: 0 1rem;
 		column-height: var(--page-height);
 		scroll-snap-align: start;
-		box-shadow: inset 0 0 0 1px green;
 		height: 100%;
 		padding: 2rem;
-		padding-block: 20vh 2rem;
 		box-sizing: border-box;
 		max-width: clamp(min(90vw, 40rem), 25rem, 100vw);
 	}
@@ -116,20 +119,25 @@ let author = 'Scott Kellum';
 		line-height: 1;
 		margin-block: 2rem;
 		text-wrap: balance;
+		grid-row: 2 / 3;
+		grid-column: 1 / -1;
 	}
 
 	hgroup .date {
 		font-family: var(--font-meta);
 		font-size: 0.9em;
 		color: var(--primary);
-		margin-top: -1rem;
+		margin-block: 0;
+		grid-row: 3 / 4;
 	}
 
 	hgroup img {
-		position: absolute;
-		top: 0;
-		left: 0;
-		mix-blend-mode: lighten;
+		grid-row: 3 / 4;
+		width: calc(100% + 2rem);
+		height: auto;
+		position: relative;
+		z-index: -1;
+		outline: 4rem solid #fff;
 	}
 
 	/* General text styles */
@@ -160,7 +168,6 @@ let author = 'Scott Kellum';
 		margin-block: 1rlh;
 		font-family: var(--font-display);
 		text-align: center;
-		color: var(--primary);
 	}
 
 	.inner :global(h1 + p),
@@ -171,12 +178,22 @@ let author = 'Scott Kellum';
 	.inner :global(h6 + p) {
 		text-indent: 0;
 	}
+	
+	.inner :global(img) {
+		max-width: 100%;
+		height: auto;
+		margin-block: 1rlh;
+		break-inside: avoid;
+	}
+	.inner :global(p:has(img)) {
+		text-indent: 0;
+	}
 
 	.inner :global(ul),
 	.inner :global(ol) {
 		margin-inline: 0.75lh 0;
 		padding-inline: 0;
-		margin-block: 1lh;
+		margin-block: 0 1lh;
 		text-align: left;
 		font-size: 0.9em;
 		line-height: 1rlh;
@@ -184,6 +201,10 @@ let author = 'Scott Kellum';
 	.inner :global(ul ::marker),
 	.inner :global(ol ::marker) {
 		color: var(--primary);
+	}
+	.inner :global(ul p),
+	.inner :global(ol p) {
+		text-indent: 0;
 	}
 
 	.inner :global(a) {
@@ -199,11 +220,11 @@ let author = 'Scott Kellum';
 	}
 
 	/* Dropcap */
-	.inner :global(p:first-child) {
+	.inner > :global(p:first-child) {
 		text-indent: 0;
 		margin-top: -3lh;
 	}
-	.inner :global(p:first-child:first-letter) {
+	.inner > :global(p:first-child:first-letter) {
 		initial-letter: 6 3;
 		font-weight: 500;
 		color: var(--primary);
@@ -226,7 +247,6 @@ let author = 'Scott Kellum';
 	.wrap {
 		padding: calc(var(--page-height) - var(--column-height)) var(--page-margin) var(--page-margin);
 		box-decoration-break: clone;
-		box-shadow: inset 0 0 0 1px red;
 	}
 
 	.inner {
