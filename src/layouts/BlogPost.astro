@@ -94,6 +94,7 @@ let author = 'Scott Kellum';
 	/* Orient the page flow direction as horizontal */
 	body {
 		writing-mode: sideways-lr;
+		container-type: block-size;
 	}
 	body > * {
 		writing-mode: horizontal-tb;
@@ -240,7 +241,7 @@ let author = 'Scott Kellum';
 		break-after: column;
 		break-inside: avoid;
 		width: 4rem;
-		height: 3rem;
+		height: 4rem;
 		background-color: red;
 	}
 
@@ -284,6 +285,7 @@ let author = 'Scott Kellum';
 		hyphens: auto;
 		orphans: 2;
 		widows: 3;
+		position: relative;
 	}
 
 	/* Footer */
