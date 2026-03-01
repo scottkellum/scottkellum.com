@@ -1,21 +1,21 @@
 ---
-title: 'Advertising that enhances experiences'
-description: 'Advertising is the price everyone can afford for high-quality content. The problem is that digital ads are often low quality, tarnishing the customer relationship with both the publisher and advertiser. There is an opportunity for online ads to be better; A chance to build trust and value with the audience.'
-pubDate: 'April 9 2016'
-heroImage: '/img/concert-spot.avif'
-heroWide: '/img/concert.avif'
-category: 'work'
+title: "Advertising that enhances experiences"
+description: "Advertising is the price everyone can afford for high-quality content. The problem is that digital ads are often low quality, tarnishing the customer relationship with both the publisher and advertiser. There is an opportunity for online ads to be better; A chance to build trust and value with the audience."
+pubDate: "April 9 2016"
+heroImage: "/img/concert-spot.avif"
+heroWide: "/img/concert.avif"
+category: "work"
 pinned: true
-tags: ['product design', 'advertising', 'design']
+tags: ["product design", "advertising", "design"]
 ---
 
 <div class="bento">
   <p class="box">
-    <span class="value" style="font-size: 35cqi;">$200M+</span>
+    <span class="value">$200M+</span>
     <span class="label">YoY Revenue</span>
   </p>
   <p class="box">
-    <span class="value" style="font-size: 35cqi;">90%</span>
+    <span class="value">90%</span>
     <span class="label">US Audience Reach</span>
   </p>
 </div>
