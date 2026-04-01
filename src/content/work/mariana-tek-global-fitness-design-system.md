@@ -30,11 +30,11 @@ Every project started with research. Fitness promotions and class schedules are 
 
 The challenges of designing for boutique fitness are complex. I designed point-of-sale, reporting, and class packages encompassing various promotional options, scheduling, class roster, and front-desk sign-in interfaces. Each of these features has to follow and empower the unique processes of every studio while complying with local regulations and tax codes. It was a joy to work through these puzzles with my team to achieve the best outcomes.
 
-<img src="/img/mariana-tek-screens.avif" alt="Mariana Tek class and point of sale screens" class="double" />
+<img src="/img/mariana-tek-screens.avif" alt="Mariana Tek class and point of sale screens" class="wide" />
 
 The company was in the midst of rapid growth, and scaling our product to meet the increasing demands of customers was putting a strain on feature development. Mockups I was creating in Sketch were being pieced together with utility classes instead of fully built-out patterns. This resulted in inconsistencies along with delays in development and design reviews. I identified the need for a clear and structured design system, leveraging common components built using Atomic Design principles. Working closely with front-end development, product, and client relationship partners we moved swiftly to create and implement a phased build and release schedule. The result was a 3x increase in product velocity and improved consistency and reliability for our clients.
 
-<img src="/img/mariana-tek-ds.avif" alt="Mariana Tek design system spread" class="double" />
+<img src="/img/mariana-tek-ds.avif" alt="Mariana Tek design system spread" class="wide" />
 
 With these improvements to the product pipeline and a sleek, unified aesthetic, Mariana Tek was successfully sold and scaled up from a US domestic fitness platform to serve hundreds of clients in four countries worldwide.
 
