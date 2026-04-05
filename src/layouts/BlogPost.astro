@@ -2,6 +2,7 @@
 import { type CollectionEntry, getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import Filters from '../components/Filters.astro';
 
 type Props = CollectionEntry<'work'>['data'];
 let { title, description, pubDate, heroImage, heroWide, alt, readNext } = Astro.props;
@@ -33,6 +34,8 @@ let author = 'Scott Kellum';
 	</head>
 	<body>
 
+		<Filters />
+
 		<hgroup class={`content tt ${heroWide ? 'has-hero-wide' : ''}`}>
 				<h1 class="hed">{title}</h1>
 				<p class="date"><FormattedDate date={pubDate} /></p>
@@ -44,6 +47,7 @@ let author = 'Scott Kellum';
 					<div class="inner">
 						<slot />
 					</div>
+			    <div class="end">END</div>
 				</div>
 			</div>
 <!-- 
@@ -72,7 +76,9 @@ let author = 'Scott Kellum';
 		--primary: hsl(42, 100%, 44%);
 		--foreground: #000;
 		--background: #f4f2ee;
-		--background-alt: #fff;
+		--background-alt: hsl(0 0 100% / 0.5);
+
+		--gradient-stops: ;
 
 		--font-text: 'Bennet Text', serif;
 		--font-display: 'Bennet Banner', serif;
@@ -93,7 +99,7 @@ let author = 'Scott Kellum';
 			--primary: hsl(42, 100%, 60%);
 			--foreground: #fff;
 			--background: #000;
-			--background-alt: #222;
+			--background-alt: hsl(0 0 100% / 0.1);
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
 		}
@@ -112,6 +118,12 @@ let author = 'Scott Kellum';
 	}
 	body > * {
 		writing-mode: horizontal-tb;
+	}
+
+	/* SVG Filters */
+
+	.svg-filters {
+		position: absolute;
 	}
 
 	/* Scroll markers */
@@ -262,6 +274,33 @@ let author = 'Scott Kellum';
 		}
 		hgroup img {
 			outline: 4rem solid var(--background-alt);
+		}
+	}
+
+	hgroup::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+		mix-blend-mode: multiply;
+		filter: url(#topography);
+		z-index: -1;
+		background:
+		radial-gradient(
+					ellipse at 0% 100% in oklch,
+				hsl(210 100% 80% / 1),
+				hsl(30 100% 80% / 0) 90vw
+			);
+	}
+	@media (prefers-color-scheme: dark) {
+		hgroup::before {
+			mix-blend-mode: screen;
+			background:
+			radial-gradient(
+					ellipse at 0% 100% in oklch,
+					hsl(190 60% 30% / 1),
+					hsl(30 100% 80% / 0) 90vw
+				);
 		}
 	}
 
@@ -530,6 +569,52 @@ let author = 'Scott Kellum';
 		}
 		.inner > p:first-child:first-letter {
 			initial-letter: 4 2;
+		}
+	}
+
+	/* End */
+	.end {
+		break-before: column;
+		break-inside: avoid;
+		display: grid;
+		place-content: center;
+		font-family: var(--font-display);
+		font-size: 10vmin;
+		line-height: 1;
+		
+		position: relative;
+		width: 100vw;
+		box-sizing: border-box;
+		height: calc(100vh - var(--gutter));
+		margin-block: calc(var(--column-height) - var(--page-height)) calc(var(--gutter) * -2);
+		margin-inline: calc(var(--gutter) * -1) 0;
+		padding-inline: 0;
+	}
+	.end::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		inset-inline: -100vw 0;
+		width: 200vw;
+		pointer-events: none;
+		mix-blend-mode: multiply;
+		filter: url(#topography);
+		background:
+		radial-gradient(
+				ellipse at 100% -10% in oklch,
+				hsl(210 100% 80% / 1),
+				hsl(30 100% 100% / 0) 200vw
+			);
+	}
+	@media (prefers-color-scheme: dark) {
+		.end::before {
+			mix-blend-mode: screen;
+			background:
+			radial-gradient(
+					ellipse at 100% -10% in oklch,
+					hsl(190 60% 30% / 1),
+					hsl(30 80% 40% / 0) 200vw
+				);
 		}
 	}
 

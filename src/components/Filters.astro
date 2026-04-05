@@ -1,0 +1,53 @@
+<svg class="svg-filters" width="0" height="0" viewBox="0 0 0 0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+	<defs>
+		<filter id="topography">
+			<feTurbulence seed="0" type="fractalNoise" baseFrequency="0.0015" numOctaves="8" />
+			<feColorMatrix type="saturate" values="0" result="noise" />
+
+			<feComponentTransfer in="noise" result="h1">
+				<feFuncA type="table" tableValues="-220 100" />
+			</feComponentTransfer>
+			<feMorphology operator="dilate" radius="1" />
+			<feComposite in2="h1" result="a1" operator="out" />
+
+			<feComponentTransfer in="noise" result="h2">
+				<feFuncA type="table" tableValues="-160 100" />
+			</feComponentTransfer>
+			<feMorphology operator="dilate" radius="1" />
+			<feComposite in2="h2" result="a2" operator="out" />
+
+			<feComponentTransfer in="noise" result="h3">
+				<feFuncA type="table" tableValues="-120 100" />
+			</feComponentTransfer>
+			<feMorphology operator="dilate" radius="1" />
+			<feComposite in2="h3" result="a3" operator="out" />
+
+			<feComponentTransfer in="noise" result="h4">
+				<feFuncA type="table" tableValues="-80 100" />
+			</feComponentTransfer>
+			<feMorphology operator="dilate" radius="1" />
+			<feComposite in2="h4" result="a4" operator="out" />
+
+			<feComponentTransfer in="noise" result="h5">
+				<feFuncA type="table" tableValues="-50 100" />
+			</feComponentTransfer>
+			<feMorphology operator="dilate" radius="1" />
+			<feComposite in2="h5" result="a5" operator="out" />
+
+			<feComposite in="a1" in2="a2" result="c1" operator="over" />
+			<feComposite in="c1" in2="a3" result="c2" operator="over" />
+			<feComposite in="c2" in2="a4" result="c3" operator="over" />
+			<feComposite in="c3" in2="a5" result="c4" operator="over" />
+
+			<feComponentTransfer in="c4" result="c5">
+				<feFuncR type="discrete" tableValues="0 1 0 1"/>
+				<feFuncG type="discrete" tableValues="0 1 0 1"/>
+				<feFuncB type="discrete" tableValues="0 1 0 1"/>
+				<feFuncA type="discrete" tableValues="0 1 0 1"/>
+			</feComponentTransfer>
+
+			<feComposite in="SourceAlpha" in2="c5" operator="out" result="alpha" />
+			<feComposite in="SourceGraphic" operator="out" />
+		</filter>
+	</defs>
+</svg>
