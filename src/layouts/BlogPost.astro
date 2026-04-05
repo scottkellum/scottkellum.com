@@ -11,14 +11,13 @@ const work = (await getCollection('work')).sort(
 	(b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 
-let nextPost;
+let nextPosts;
 if (readNext) {
-	nextPost = work.find(post => post.slug === readNext);
+	const customPost = work.find(post => post.slug === readNext);
+	nextPosts = customPost ? [customPost] : [];
 } else {
-	nextPost = work[0]; // Get the next post
-	if (nextPost.data.title === title) {
-		nextPost = work[1]; // Get the next post
-	}
+	// Get 3 latest posts that aren't the current post
+	nextPosts = work.filter(post => post.data.title !== title).slice(0, 3);
 }
 
 let author = 'Scott Kellum';
@@ -47,21 +46,22 @@ let author = 'Scott Kellum';
 					<div class="inner">
 						<slot />
 					</div>
-			    <div class="end">END</div>
+			    <div class="end" id="end">
+						<ul>
+							{nextPosts && nextPosts.map(post => (
+								<li>
+									<img src={post.data.heroImage} alt={post.data.alt} width="600" height="600" />
+									<a href={`/work/${post.slug}`}>
+										{post.data.title}
+									</a>
+								</li>
+							))}
+						</ul>
+					</div>
 				</div>
 			</div>
-<!-- 
-				<div class="end">
-					<a href={`/portfolio/${nextPost.slug}/`}>
-						<h3>{nextPost.data.title}</h3>
-						<img src={nextPost.data.heroImage} alt={nextPost.data.alt} width="441" height="441" />
-					</a>
-				</div>
-			</article>
-		</main>
-		 -->
 		<footer>
-			<a href="/" class="publicatoin">
+			<a href="/" class="publication">
 				Scott Kellum
 			</a>
 		</footer>
@@ -439,6 +439,11 @@ let author = 'Scott Kellum';
 		margin-top: 0.5em;
 	}
 
+	.inner > :global(p:last-child::after) {
+		content: ' ✶';
+		color: var(--primary);
+	}
+
 	/* CTA */
 	.inner :global(p:has(.cta)) {
 		text-indent: 0;
@@ -579,7 +584,6 @@ let author = 'Scott Kellum';
 		display: grid;
 		place-content: center;
 		font-family: var(--font-display);
-		font-size: 10vmin;
 		line-height: 1;
 		
 		position: relative;
@@ -590,6 +594,55 @@ let author = 'Scott Kellum';
 		margin-inline: calc(var(--gutter) * -1) 0;
 		padding-inline: 0;
 	}
+
+	.end ul,
+	.end li {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.end ul {
+		display: grid;
+		position: absolute;
+		inset: 0;
+		grid-template-areas:
+			"a b"
+			"a c";
+		grid-template-columns: 1fr 1fr;
+		align-items: stretch;
+		gap: var(--gutter);
+		margin: var(--gutter);
+	}
+
+	.end li {
+		display: flex;
+		position: relative;
+		container-type: inline-size;
+		flex-direction: column;
+		gap: 1lh;
+		outline: 1px solid var(--primary);
+	}
+
+	.end img {
+		width: 100%;
+		height: 100px;
+		object-fit: cover;
+	}
+
+	.end a {
+		color: inherit;
+		text-decoration-color: color-mix(in srgb, var(--primary) 30%, transparent 70%);
+		transition: text-decoration-color 0.25s ease-in-out;
+		text-decoration-thickness: 0.1rem;
+		text-underline-offset: 0.15rem;
+		flex: 1;
+	}
+
+	.end li:first-child { grid-area: a }
+	.end li:nth-child(2) { grid-area: b }
+	.end li:nth-child(3) { grid-area: c }
+
 	.end::before {
 		content: '';
 		position: absolute;
