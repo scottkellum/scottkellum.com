@@ -116,14 +116,11 @@ let author = 'Scott Kellum';
 	html {
 		writing-mode: sideways-lr;
 	}
+	body {
+		overflow-y: hidden;
+	}
 	body > * {
 		writing-mode: horizontal-tb;
-	}
-
-	/* SVG Filters */
-
-	.svg-filters {
-		position: absolute;
 	}
 
 	/* Scroll markers */
@@ -603,38 +600,14 @@ let author = 'Scott Kellum';
 	}
 
 	.end ul {
-		display: grid;
-		position: absolute;
 		inset: 0;
-		grid-template-areas:
-			"a b"
-			"a c";
-		grid-template-columns: 2fr 1fr;
-		align-items: stretch;
-		gap: var(--gutter);
-		margin: var(--gutter);
-	}
-	@media (aspect-ratio < 0.8) {
-		.end ul {
-			grid-template-areas:
-				"a"
-				"b"
-				"c";
-			grid-template-columns: 1fr;
-		}
+		margin-inline: auto;
+		max-width: 40rem;
+		padding: var(--gutter);
+		box-sizing: border-box;
+		overflow: auto;
 	}
 
-	.end li {
-		display: flex;
-		position: relative;
-		container-type: inline-size;
-		flex-direction: column;
-		/* background: var(--foreground);
-		color: var(--background);
-		overflow: hidden; */
-		outline: 0.25rem solid transparent;
-		transition: outline 0.2s ease-out;
-	}
 	.end li:has(a:hover),
 	.end li:has(a:focus) {
 		outline: 0.25rem solid var(--primary);
@@ -663,11 +636,11 @@ let author = 'Scott Kellum';
 	.end a:focus {
 		text-decoration-color: var(--primary);
 	}
-	.end a::after {
+	/* .end a::after {
 		content: '';
 		position: absolute;
 		inset: 0;
-	}
+	} */
 
 	.end li:first-child { grid-area: a }
 	.end li:nth-child(2) { grid-area: b }
