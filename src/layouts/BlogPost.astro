@@ -14,7 +14,12 @@ const work = (await getCollection('work')).sort(
 let nextPosts;
 if (readNext) {
 	const customPost = work.find(post => post.slug === readNext);
-	nextPosts = customPost ? [customPost] : [];
+	if (customPost) {
+		const otherPosts = work.filter(post => post.data.title !== title && post.slug !== readNext).slice(0, 2);
+		nextPosts = [customPost, ...otherPosts];
+	} else {
+		nextPosts = [];
+	}
 } else {
 	// Get 3 latest posts that aren't the current post
 	nextPosts = work.filter(post => post.data.title !== title).slice(0, 3);
@@ -596,6 +601,19 @@ let author = 'Scott Kellum';
 		padding-inline: 0;
 	}
 
+	.end h2,
+	.end h3 {
+		font: inherit;
+		margin-block: 0;
+	}
+
+	.end h2 {
+		margin-block: var(--gutter) 0.5rem;
+		margin-inline: var(--gutter);
+		text-wrap: balance;
+		font-style: italic;
+	}
+
 	.end ul,
 	.end li {
 		list-style: none;
@@ -606,6 +624,7 @@ let author = 'Scott Kellum';
 	.end ul {
 		max-width: 26rem;
 		padding: var(--gutter);
+		padding-block-start: 0;
 		box-sizing: border-box;
 		overflow: auto;
 		scrollbar-width: thin;
@@ -613,6 +632,7 @@ let author = 'Scott Kellum';
 	}
 
 	.end li {
+		position: relative;
 		display: flex;
 		gap: 1rem;
 		align-items: flex-end;
@@ -640,11 +660,11 @@ let author = 'Scott Kellum';
 	.end a:focus {
 		text-decoration-color: var(--primary);
 	}
-	/* .end a::after {
+	.end a::after {
 		content: '';
 		position: absolute;
 		inset: 0;
-	} */
+	}
 
 	.end li:first-child { grid-area: a }
 	.end li:nth-child(2) { grid-area: b }
@@ -663,7 +683,7 @@ let author = 'Scott Kellum';
 		radial-gradient(
 				ellipse at 100% -10% in oklch,
 				hsl(210 100% 80% / 1),
-				hsl(30 100% 100% / 0) 200vw
+				hsla(298, 100%, 57%, 0) 200vw
 			);
 	}
 	@media (prefers-color-scheme: dark) {
@@ -672,7 +692,7 @@ let author = 'Scott Kellum';
 			radial-gradient(
 					ellipse at 100% -10% in oklch,
 					hsl(190 60% 30% / 1),
-					hsl(30 80% 40% / 0) 200vw
+					hsla(30, 80%, 40%, 0) 200vw
 				);
 		}
 	}
