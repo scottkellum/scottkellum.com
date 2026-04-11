@@ -360,6 +360,10 @@ let author = 'Scott Kellum';
 	.inner :global(ul ::marker),
 	.inner :global(ol ::marker) {
 		content: '✦ ';
+		color: color-mix(in srgb, var(--primary) 50%, transparent 50%);
+	}
+	.inner :global(ul:hover ::marker),
+	.inner :global(ol:hover ::marker) {
 		color: var(--primary);
 	}
 	.inner :global(ul p),
@@ -576,11 +580,11 @@ let author = 'Scott Kellum';
 		html {
 			--column-height: 80vh;
 		}
-		.inner > p:first-child {
-			margin-top: 0;
+		.inner > ::global(p:first-child) {
+			margin-top: -1lh;
 		}
-		.inner > p:first-child:first-letter {
-			initial-letter: 4 2;
+		.inner > ::global(p:first-child:first-letter) {
+			initial-letter: 4 3;
 		}
 	}
 
