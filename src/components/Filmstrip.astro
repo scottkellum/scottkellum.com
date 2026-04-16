@@ -39,6 +39,8 @@ function rollID(t) {
 
 <style is:global>
   .filmstrip {
+    display: flex;
+    align-items: flex-start;
     position: relative;
     color: #1AE8DB;
     width: 100cqi;
@@ -52,6 +54,11 @@ function rollID(t) {
     scroll-snap-align: start;
     scroll-margin-block-start: 2vh;
     font-family: var(--mono);
+    --display: var(--mono);
+  }
+  :focus,
+  :focus-visible {
+    outline: 1px solid var(--primary);
   }
   @media (max-width: 80em) {
     .filmstrip {
@@ -119,37 +126,24 @@ function rollID(t) {
   }
   .filmstrip h1 {
     max-block-size: min(36rem, 90vh);
-    inline-size: min-content;
     display: inline-block;
     font-family: var(--display);
-    font-weight: 700;
-    font-stretch: 200%;
-    font-size: min(5rem, 16vh);
-    line-height: 1;
+    font-weight: 400;
+    font-size: 1rem;
     mix-blend-mode: screen;
     white-space: initial;
     position: relative;
     margin-block: 0;
     margin-inline-start: 2rem;
-    margin-inline-end: -0.5ch;
-    animation: 1s var(animation-timing-function, linear) calc(-1s * var(--tt-bind, 500) / var(--to, 1000)) 1 both paused var(animation-name, none);
+    margin-inline-end: 3ch;
     scroll-snap-align: start;
     scroll-margin-inline-start: 2rem;
     z-index: 9;
-    animation-name: filmstrip-h1;
-    --to: 1600;
-    animation-timing-function: cubic-bezier(0.1,0.4,0.7,1);
-  }
-  @keyframes filmstrip-h1 {
-    0% {
-      font-size: 1rem;
-    }
-  }
-  .filmstrip h1 strong {
-    font-weight: 700;
+    margin-top: 2lh;
   }
   .filmstrip .meta {
     position: absolute;
+    top: 0;
     mix-blend-mode: screen;
     display: flex;
     gap: 2rem;
@@ -195,7 +189,6 @@ function rollID(t) {
     .filmstrip h1 {
       font: inherit !important;
       font-weight: 400 !important;
-      animation: none;
       grid-column-start: 1;
       grid-row-start: 1;
       margin: 0;
@@ -230,11 +223,7 @@ function rollID(t) {
 let current = document.querySelector(".image");
 
 function currentPhoto(e) {
-  current.classList.remove("current");
   current = e;
-  e.classList.add("current")
-  e.scrollIntoView({behavior: "smooth", block: "nearest", inline: "center"});
-  e.closest(".filmstrip").scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
   let id = current.closest(".filmstrip").id;
   if(window.location.hash != `#${id}`) {
     if(history.pushState) {

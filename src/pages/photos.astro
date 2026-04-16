@@ -1,8 +1,8 @@
 ---
 // Component Imports
-import BaseHead from '../components/BaseHead.astro';
 import Filmstrip from '../components/Filmstrip.astro';
 import HomeLink from '../components/HomeLink.astro';
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 let title = 'Scott Kellum’s Photographs';
 let description = 'Photos taken by Scott Kellum. Most on Ilford HP5+ film with my Leica M3 and Vöigtlander 50mm f1.5 Nokton MC II';
@@ -10,23 +10,57 @@ let description = 'Photos taken by Scott Kellum. Most on Ilford HP5+ film with m
 
 <html lang="en">
 	<head>
-		<BaseHead {title} {description} />
+    <!-- Global Metadata -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico">
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Font preloads -->
+    <link rel="preconnect" href="https://typographer.io/">
+    <link rel="stylesheet" href="https://typographer.io/1/users/7fed6df4c187946a210959b4ecd1556d39d9ff919812fad8e95fde2c6be2e1a2/1e97126c063332188209513aaa63aaa89fad45c5606c776361438b808e5d5c30/css?token=f8632f052d">
+    <script type="module">try{navigator.sendBeacon("https://use.typographer.io/1/users/7fed6df4c187946a210959b4ecd1556d39d9ff919812fad8e95fde2c6be2e1a2/1e97126c063332188209513aaa63aaa89fad45c5606c776361438b808e5d5c30/css?token=f8632f052d")}catch{}</script>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description ? description : ''} />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://scottkellum.com/rss.xml">
+
+    <!-- App icons -->
+    <link rel="apple-touch-icon" sizes="512x512" href="/icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Mastodon verification links -->
+    <link rel="me" href="https://typetura.social/@typetura">
+    <link rel="me" href="https://typetura.social/@scott">
+    <meta name="fediverse:creator" content="@scott@typetura.social" />
+
+      <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={`${title}`} />
+    <meta property="og:description" content={description} />
+
 		<style>
 			:root {
         background: #000;
-        animation: 1s var(--tt-ease, linear) calc(-1s * var(--tt-bind, 500) / var(--tt-max, 1000)) 1 both paused var(--tt-key, none);
-        --tt-key: photos-html;
-        --tt-max: 1000;
-        --tt-ease: cubic-bezier(0,0,0.67,1);
         --blend: screen;
         --primary: #FF6C4B;
 
         scrollbar-color: var(--primary) transparent;
         scrollbar-width: thin;
+        overscroll-behavior: none;
 
+        --mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
 			}
       body {
         container-type: inline-size;
+        margin: 0;
       }
       @media (max-height: 60em) {
         :root {
@@ -39,11 +73,6 @@ let description = 'Photos taken by Scott Kellum. Most on Ilford HP5+ film with m
         }
       }
 		</style>
-		<script is:inline>
-			function resize() {
-					document.documentElement.style.setProperty("--tt-bind", window.innerWidth)
-			} resize(); window.onresize = resize;
-		</script>
 	</head>
 
 	<body>
