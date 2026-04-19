@@ -62,6 +62,14 @@ let description = 'Photos taken by Scott Kellum. Most on Ilford HP5+ film with m
         container-type: inline-size;
         margin: 0;
       }
+      h1 {
+        scroll-snap-align: start;
+        color: #ccc;
+        font: inherit;
+        font-family: var(--mono);
+        padding: 2rem;
+        font-weight: 400;
+      }
       @media (max-height: 60em) {
         :root {
           scroll-snap-type: y mandatory;
@@ -77,6 +85,7 @@ let description = 'Photos taken by Scott Kellum. Most on Ilford HP5+ film with m
 
 	<body>
     <HomeLink />
+    <h1>Scott’s Photography</h1>
 		<main>
 	      <Filmstrip />
 		</main>

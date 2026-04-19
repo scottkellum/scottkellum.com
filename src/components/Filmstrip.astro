@@ -25,7 +25,7 @@ function rollID(t) {
         <path d="M29.7324 15L7.43317 27.8744L7.43317 2.12548L29.7324 15Z" fill="currentcolor"/>
       </svg>
     </div>
-    <h1>{roll.title}</h1>
+    <h2>{roll.title}</h2>
     {roll.photos.map((photo) => (
       <section class="image" onclick="currentPhoto(this)">
         <img loading="lazy" src={`/photos/${photo.src}`} alt={photo.alt}>
@@ -124,7 +124,7 @@ function rollID(t) {
   .keyNav .filmstrip .current .stereo {
     display: block;
   }
-  .filmstrip h1 {
+  .filmstrip h2 {
     max-block-size: min(36rem, 90vh);
     display: inline-block;
     font-family: var(--display);
@@ -186,16 +186,12 @@ function rollID(t) {
       margin: 0;
       opacity: 1 !important;
     }
-    .filmstrip h1 {
-      font: inherit !important;
-      font-weight: 400 !important;
+    .filmstrip h2 {
+      font: inherit;
       grid-column-start: 1;
       grid-row-start: 1;
       margin: 0;
       inline-size: 100%;
-    }
-    .filmstrip h1 strong {
-      font-weight: 400 !important;
     }
     .filmstrip .meta {
       display: block;
@@ -218,20 +214,3 @@ function rollID(t) {
     }
   }
 </style>
-
-<script is:inline>
-let current = document.querySelector(".image");
-
-function currentPhoto(e) {
-  current = e;
-  let id = current.closest(".filmstrip").id;
-  if(window.location.hash != `#${id}`) {
-    if(history.pushState) {
-      history.pushState(null, null, `/photos#${id}`);
-    }
-    else {
-      window.location.hash= id;
-    }
-  }
-}
-</script>
