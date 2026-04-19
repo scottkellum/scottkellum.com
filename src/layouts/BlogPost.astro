@@ -86,7 +86,10 @@ let author = 'Scott Kellum';
 		--background: #f4f2ee;
 		--background-alt: hsl(0 0 100% / 0.5);
 
-		--gradient-stops: ;
+		--gradient-stops:
+			hsl(210 100% 80% / 1),
+			hsl(30 100% 80% / 0);
+		--blend: multiply;
 
 		--font-text: 'Bennet Text', serif;
 		--font-display: 'Bennet Banner', serif;
@@ -109,8 +112,13 @@ let author = 'Scott Kellum';
 			--foreground: #fff;
 			--background: #000;
 			--background-alt: hsl(0 0 100% / 0.1);
+			--blend: screen;
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
+
+			--gradient-stops:
+				hsl(190 60% 30% / 1),
+				hsl(30 100% 80% / 0);
 		}
 	}
 
@@ -288,26 +296,13 @@ let author = 'Scott Kellum';
 		position: absolute;
 		inset: 0;
 		pointer-events: none;
-		mix-blend-mode: multiply;
 		filter: url(#topography);
 		z-index: -1;
+		mix-blend-mode: var(--blend);
 		background:
 		radial-gradient(
-					ellipse at 0% 100% in oklch,
-				hsl(210 100% 80% / 1),
-				hsl(30 100% 80% / 0) 90vw
-			);
-	}
-	@media (prefers-color-scheme: dark) {
-		hgroup::before {
-			mix-blend-mode: screen;
-			background:
-			radial-gradient(
-					ellipse at 0% 100% in oklch,
-					hsl(190 60% 30% / 1),
-					hsl(30 100% 80% / 0) 90vw
-				);
-		}
+			ellipse at 0% 100% in oklch,
+			var(--gradient-stops) 90vw);
 	}
 
 	/* General text styles */
@@ -686,20 +681,8 @@ let author = 'Scott Kellum';
 		filter: url(#topography);
 		background:
 		radial-gradient(
-				ellipse at 100% -10% in oklch,
-				hsl(210 100% 80% / 1),
-				hsla(298, 100%, 57%, 0) 200vw
-			);
-	}
-	@media (prefers-color-scheme: dark) {
-		.end::before {
-			background:
-			radial-gradient(
-					ellipse at 100% -10% in oklch,
-					hsl(190 60% 30% / 1),
-					hsla(30, 80%, 40%, 0) 200vw
-				);
-		}
+			ellipse at 100% 0% in oklch,
+			var(--gradient-stops) 200vw);
 	}
 
 	/* Footer */
