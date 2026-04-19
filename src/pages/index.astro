@@ -27,12 +27,18 @@ const pinnedPosts = work.filter((post) => post.data.pinned);
 
 <Landing title="Scott Kellum — Human-centered and technology-driven design" description={SITE_DESCRIPTION}>
 
-	<section class="lede wrapper">
-		<div class="content tt">
-			<h1 class="page-head">Scott Kellum — Human-centered and technology-driven design</h1>
-			<p>Scott Kellum is an internationally recognized leader in design with 20+ years of experience and a specialized focus on dynamic typography. Scott brings two decades of involvement and partnership with some of the most well-respected teams in design, including Darden Studio, Fjord, and Vox Media. While in these roles, Scott successfully built cross-organizational buy-in for his unique approaches to design problems, bringing people together to create focused, beautiful, and efficient solutions.</p>
-		</div>
-	</section>
+	<main>
+		<section class="lead" id="lead">
+			LEAD STORY
+		</section>
+		<section class="featured" id="featured">
+			FEATURED WORK
+		</section>
+		<section class="about" id="about">
+			<Testimonials />
+		</section>
+
+	</main>
 
 	<main class="main wrapper" id="solutions">
 		<section class="featured" id="featured-work">
@@ -78,10 +84,19 @@ const pinnedPosts = work.filter((post) => post.data.pinned);
 </Landing>
 
 <style>
+	html, body {
+		scroll-snap-type: x proximity;
+	}
+	body {
+		overflow-y: auto; /* PLACEHODLER */
+	}
 	main {
 		writing-mode: sideways-lr;
 	}
 	main > * {
 		writing-mode: horizontal-tb;
+	}
+	section {
+		scroll-snap-align: start;
 	}
 </style>
