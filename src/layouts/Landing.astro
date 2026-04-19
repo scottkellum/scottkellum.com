@@ -1,6 +1,5 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
 import Grid from '../components/Grid.astro';
 
 const { title, description = 'Scott Kellum is an internationally-recognized leader in design for the web, with a specialized focus on dynamic typesetting in digital space.', image = '/preview.png', fedi = '@scott@typetura.social' } = Astro.props;
@@ -9,11 +8,10 @@ const { title, description = 'Scott Kellum is an internationally-recognized lead
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={description} image={image} fedi={fedi} />
+		<BaseHead title={title} description={description} image={image} />
 	</head>
 	<body>
     <slot />
-		<Footer />
 		<Grid />
 	</body>
 </html>

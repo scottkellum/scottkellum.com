@@ -9,11 +9,10 @@ interface Props {
 	title: string;
 	description: string;
 	image?: string;
-	fedi?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const { title, description, image, fedi } = Astro.props;
+const { title, description, image } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -42,9 +41,8 @@ const { title, description, image, fedi } = Astro.props;
 <link rel="manifest" href="/site.webmanifest" />
 
 <!-- Mastodon verification links -->
-<link rel="me" href="https://typetura.social/@typetura">
-<link rel="me" href="https://typetura.social/@scott">
-<meta name="fediverse:creator" content="@scott@typetura.social" />
+<link rel="me" href="https://typo.social/@scott">
+<meta name="fediverse:creator" content="@scott@typo.social">
 
 	<!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
