@@ -13,6 +13,9 @@ html {
   --font-text: "Bennet Text", serif;
   --font-display: "Bennet Banner", serif;
   --font-meta: "IvyEpic", system-ui;
+  --mono:
+    ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
+    "DejaVu Sans Mono", monospace;
 
   font-family: var(--font-text);
   line-height: 1.35;
@@ -27,7 +30,7 @@ html {
 }
 @media (prefers-color-scheme: dark) {
   html {
-    --primary: hsl(169, 90%, 47%);
+    --primary: hsl(299, 100%, 55%);
     --foreground: #fff;
     --background: #000;
     --background-alt: hsl(0 0 100% / 0.1);

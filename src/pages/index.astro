@@ -110,45 +110,43 @@ const pinnedWork = work
 
 	.cover {
 	}
-	.cover::before {
+	.cover::before,
+	.cover::after {
+		pointer-events: none;
 		content: '';
 		position: absolute;
-		inset: 0;
-		inset-inline: var(--gutter);
+		inset: var(--gutter);
+		z-index: -1;
+	}
+	.cover::before {
 		background-image:
 			radial-gradient(
 			ellipse at 0% 100% in oklch,
 			var(--gradient-stops) min(60rem, 90vw - (var(--gutter) * 2)));
 		filter: url(#topography);
-		opacity: 0.5;
-		z-index: -2;
 	}
 	.cover::after {
-		content: '';
-		position: absolute;
-		inset: 0;
-		inset-inline: var(--gutter);
-		width: 1px;
-		z-index: -1;
-		background: rgb(104, 104, 104);
+		border: 1px solid rgb(104, 104, 104);
 		mix-blend-mode: color-burn;
 	}
 @media (prefers-color-scheme: dark) {
 		.cover::after {
-		background: rgb(182, 182, 182);
+		border-color: rgb(182, 182, 182);
 			mix-blend-mode: color-dodge;
 		}
 	}
 
 	.cover img {
-		width: 100%;
+		width: 50%;
 		height: auto;
 		object-fit: cover;
-		margin-inline-start: calc(var(--gutter) * -1);
+		margin-inline: calc(var(--gutter) * -0.5);
 	}
 
+
 	.masthead {
-		color: var(--primary);
+		text-align: center;
+		padding: var(--gutter);
 	}
 	.masthead h1 {
 		font-weight: 400;
@@ -162,5 +160,35 @@ const pinnedWork = work
 		font-size: 1rem;
 		margin-block: 0;
 		font-style: italic;
+	}
+
+	/* PHOTOGRAPHY */
+
+	.photography {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: var(--gutter);
+		--primary: #FF6C4B;
+		height: min-content;
+	}
+	.photography h2 {
+		font: inherit;
+		font-family: var(--mono);
+		color: var(--primary);
+		grid-column: 1 / -1;
+	}
+	.photography .item {
+		line-height: 0;
+	}
+	.photography a {
+		width: 100%;
+		display: block;
+		color: inherit;
+	}
+	.photography img {
+		width: 100%;
+		height: auto;
+		aspect-ratio: 1 / 1;
+		object-fit: contain;
 	}
 </style>
