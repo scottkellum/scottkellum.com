@@ -1,11 +1,12 @@
 ---
-title: 'Making a Smartphone, Dumb'
-description: 'An exploration of transforming an iPhone into a distraction-free device. Reduce screen time and regain focus to build a healthier relationship with your smartphone.'
-pubDate: 'June 20 2025'
-heroImage: '/img/iphone-dumbphone.avif'
-alt: 'A colorful montage showing an iPhone 13 Mini with a black and white home screen and Assistive Access mode.'
-category: 'writing'
+title: "Making a Smartphone, Dumb"
+description: "An exploration of transforming an iPhone into a distraction-free device. Reduce screen time and regain focus to build a healthier relationship with your smartphone."
+pubDate: "June 20 2025"
+heroImage: "/img/iphone-dumbphone.avif"
+alt: "A colorful montage showing an iPhone 13 Mini with a black and white home screen and Assistive Access mode."
+category: "writing"
 pinned: true
+featured: true
 ---
 
 Sometimes, I find myself scrolling. A quick check on a friend or a break with a YouTube video can add up to hours of wasted time every day. If you asked a social media company about my engagement with these apps, they would claim the solid metrics indicate I had an enjoyable experience. While I might have gained value from that first check-in or video, these sessions leave me feeling pretty messed up, foggy, and unhappy with the precious time I’ve wasted. Our devices are addictive, and I think a lot of my peers are in the same boat. So, let’s do something about it.
@@ -32,7 +33,7 @@ This is all well and good, but how exactly is my phone set up?
 
 ### Accessibility
 
-- **Display & Text Size / On/Off Labels**  is turned on
+- **Display & Text Size / On/Off Labels** is turned on
 - **Display & Text Size / Reduce Transparency** is turned on
 - **Display & Text Size / Differentiate Without Color** is turned on
 - **Display & Text Size / Color Filters** is turned on and set to Grayscale
