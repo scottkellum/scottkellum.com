@@ -2,7 +2,7 @@ html {
   --gutter: min(2rem, 5vw);
   --column-height: 60vh;
   --page-height: 90vh;
-  --primary: hsl(42, 100%, 44%);
+  --primary: hsl(169, 95%, 25%);
   --foreground: #000;
   --background: #f4f2ee;
   --background-alt: hsl(0 0 100% / 0.5);
@@ -27,7 +27,7 @@ html {
 }
 @media (prefers-color-scheme: dark) {
   html {
-    --primary: hsl(42, 100%, 60%);
+    --primary: hsl(169, 90%, 47%);
     --foreground: #fff;
     --background: #000;
     --background-alt: hsl(0 0 100% / 0.1);
@@ -74,6 +74,7 @@ body > * {
   height: 1rem;
 }
 hgroup::scroll-marker,
+section::scroll-marker,
 .cols::column::scroll-marker {
   font-size: min(0.5rem, 2vw);
   color: inherit;

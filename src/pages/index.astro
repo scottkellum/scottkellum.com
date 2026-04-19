@@ -22,8 +22,6 @@ function rollID(t) {
 const work = (await getCollection('work')).sort(
 	(b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
-const pinnedPosts = work.filter((post) => post.data.pinned);
-
 const featuredPost = work.find((post) => post.data.featured);
 
 const pinnedWriting = work
@@ -38,13 +36,17 @@ const pinnedWork = work
 <Landing title="Scott Kellum — Human-centered and technology-driven design" description={SITE_DESCRIPTION}>
 
 	<main>
-		<section class="lead" id="lead">
+		<section class="cover" id="cover">
+			<div class="masthead">
+				<p>Human-centered and technology-driven design</p>
+				<h1>Scott Kellum</h1>
+			</div>
 			{featuredPost && (
-				<article>
+				<>
 					{featuredPost.data.heroImage && <img src={featuredPost.data.heroImage} alt={featuredPost.data.alt} />}
 					<h2><a href={`/writing/${featuredPost.slug}/`}>{featuredPost.data.title}</a></h2>
 					<p>{featuredPost.data.description}</p>
-				</article>
+				</>
 			)}
 		</section>
 		<section class="writing" id="writing">
@@ -95,8 +97,70 @@ const pinnedWork = work
 	}
 	section {
 		scroll-snap-align: start;
+		box-sizing: border-box;
+		height: 100%;
+		width: min(60rem, 90vw - (var(--gutter) * 2));
+		padding: var(--gutter);
 	}
 	img {
 		width: 100px;
+	}
+
+	/* COVER */
+
+	.cover {
+	}
+	.cover::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		inset-inline: var(--gutter);
+		background-image:
+			radial-gradient(
+			ellipse at 0% 100% in oklch,
+			var(--gradient-stops) min(60rem, 90vw - (var(--gutter) * 2)));
+		filter: url(#topography);
+		opacity: 0.5;
+		z-index: -2;
+	}
+	.cover::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		inset-inline: var(--gutter);
+		width: 1px;
+		z-index: -1;
+		background: rgb(104, 104, 104);
+		mix-blend-mode: color-burn;
+	}
+@media (prefers-color-scheme: dark) {
+		.cover::after {
+		background: rgb(182, 182, 182);
+			mix-blend-mode: color-dodge;
+		}
+	}
+
+	.cover img {
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+		margin-inline-start: calc(var(--gutter) * -1);
+	}
+
+	.masthead {
+		color: var(--primary);
+	}
+	.masthead h1 {
+		font-weight: 400;
+		font-width: 100%;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		margin-block: 0;
+		line-height: 1;
+	}
+	.masthead p {
+		font-size: 1rem;
+		margin-block: 0;
+		font-style: italic;
 	}
 </style>
