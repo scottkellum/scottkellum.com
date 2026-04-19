@@ -6,7 +6,7 @@ import { getCollection } from 'astro:content';
 import photos from '../data/photos.json'
 import Testimonials from '../components/Testimonials.astro';
 
-let rolls = photos.rolls;
+let rolls = photos.rolls.slice(0, 12);
 
 interface MarkdownFrontmatter {
 	publishDate: number;
@@ -23,64 +23,58 @@ const work = (await getCollection('work')).sort(
 	(b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 const pinnedPosts = work.filter((post) => post.data.pinned);
+
+const featuredPost = work.find((post) => post.data.featured);
+
+const pinnedWriting = work
+	.filter((post) => post.data.pinned && post.data.category === 'writing' && post.slug !== featuredPost?.slug)
+	.slice(0, 2);
+
+const pinnedWork = work
+	.filter((post) => post.data.pinned && post.data.category === 'work')
+	.slice(0, 2);
 ---
 
 <Landing title="Scott Kellum — Human-centered and technology-driven design" description={SITE_DESCRIPTION}>
 
 	<main>
 		<section class="lead" id="lead">
-			LEAD STORY
+			{featuredPost && (
+				<article>
+					{featuredPost.data.heroImage && <img src={featuredPost.data.heroImage} alt={featuredPost.data.alt} />}
+					<h2><a href={`/writing/${featuredPost.slug}/`}>{featuredPost.data.title}</a></h2>
+					<p>{featuredPost.data.description}</p>
+				</article>
+			)}
 		</section>
-		<section class="featured" id="featured">
-			FEATURED WORK
+		<section class="writing" id="writing">
+			{pinnedWriting.map((post) => (
+				<article>
+					{post.data.heroImage && <img src={post.data.heroImage} alt={post.data.alt} />}
+					<h2><a href={`/writing/${post.slug}/`}>{post.data.title}</a></h2>
+					<p>{post.data.description}</p>
+				</article>
+			))}
+		</section>
+		<section class="work" id="work">
+			{pinnedWork.map((post) => (
+				<article>
+					{post.data.heroImage && <img src={post.data.heroImage} alt={post.data.alt} />}
+					<h2><a href={`/writing/${post.slug}/`}>{post.data.title}</a></h2>
+					<p>{post.data.description}</p>
+				</article>
+			))}
 		</section>
 		<section class="about" id="about">
 			ABOUT
 		</section>
 		<section class="photography" id="photography">
-			PHOTOGRAPHY
-		</section>
-
-	</main>
-
-	<main class="main wrapper" id="solutions">
-		<section class="featured" id="featured-work">
-			<h2 class="featured-head">Featured posts below. <a href="/portfolio">more work here</a> and <a href="/writing">more writing here</a>.</h2>
-
-			<ul class="featured-list">
-				{
-					pinnedPosts.map((post) => (
-						<li class="featured-post">
-								<img src={post.data.heroImage} alt={post.data.alt} width="441" height="441" />
-								<div class="work-container">
-									<h3 class="head">
-									<a href={`/writing/${post.slug}/`}>{post.data.title}</a>
-								</h3>
-								<p class="description">
-									{post.data.description}
-								</p>
-							</div>
-						</li>
-					))
-				}
-			</ul>
-
-			<div class="cta-group">
-				<a class="cta" href="/portfolio/">More work</a>
-				<a class="cta" href="/writing/">More writing</a>
-			</div>
-
-			<hr>
-
-			<h2 class="featured-head">Photography</h2>
-			<div class="home-filmstrip">
-				{rolls.map((roll) => (
-					<a class="item" href={`/photos#${rollID(roll.title)}`}>
-						<img loading="lazy" src={`/photos/${roll.photos[0].src}`} alt={roll.photos[0].alt}>
-					</a>
-				))}
-			</div>
-			
+			<h2><a href="/photos/">Photography</a></h2>
+			{rolls.map((roll) => (
+				<a class="item" href={`/photos#${rollID(roll.title)}`}>
+					<img loading="lazy" src={`/photos/${roll.photos[0].src}`} alt={roll.photos[0].alt}>
+				</a>
+			))}
 		</section>
 
 	</main>
@@ -101,5 +95,8 @@ const pinnedPosts = work.filter((post) => post.data.pinned);
 	}
 	section {
 		scroll-snap-align: start;
+	}
+	img {
+		width: 100px;
 	}
 </style>

@@ -13,6 +13,7 @@ const work = defineCollection({
 		heroImage: z.string().optional(),
 		heroWide: z.string().optional(),
 		pinned: z.boolean().optional(),
+		featured: z.boolean().optional(),
 		fedi: z.string().optional(),
 		alt: z.string().optional(),
 		tags: z.array(z.string()).optional(),
