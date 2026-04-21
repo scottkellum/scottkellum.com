@@ -30,7 +30,7 @@ html {
 }
 @media (prefers-color-scheme: dark) {
   html {
-    --primary: hsl(299, 100%, 55%);
+    --primary: hsl(29, 90%, 53%);
     --foreground: #fff;
     --background: #000;
     --background-alt: hsl(0 0 100% / 0.1);
