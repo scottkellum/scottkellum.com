@@ -1,5 +1,5 @@
-const cardWidth = window.innerWidth * 0.6;
-let scrollTimeout;
+const cardWidth = window.innerWidth * 0.5;
+let lastWheelTime = 0;
 
 const prevNext = (type) => {
   if (type === "prev") {
@@ -7,13 +7,6 @@ const prevNext = (type) => {
   } else if (type === "next") {
     window.scrollBy({ left: cardWidth, behavior: "smooth" });
   }
-};
-
-const debounce = (fn, delay) => {
-  return (...args) => {
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(() => fn(...args), delay);
-  };
 };
 
 document.addEventListener("keydown", (e) => {
@@ -26,5 +19,13 @@ document.addEventListener("keydown", (e) => {
   } else if (e.key === "ArrowRight") {
     e.preventDefault();
     prevNext("next");
+  }
+});
+
+window.addEventListener("wheel", (e) => {
+  const now = Date.now();
+  if (Math.abs(e.deltaY) > 20 && now - lastWheelTime > 100) {
+    prevNext(e.deltaY > 0 ? "next" : "prev");
+    lastWheelTime = now;
   }
 });
