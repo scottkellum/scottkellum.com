@@ -33,19 +33,21 @@ const pinnedWork = work
 	.slice(0, 2);
 ---
 
-<Landing title="Scott Kellum — Human-centered and technology-driven design" description={SITE_DESCRIPTION}>
+<Landing title="Scott Kellum — Human-centered and technology-driven design" description={SITE_DESCRIPTION}>
 
 	<main>
 		<section class="cover" id="cover">
-			<div class="masthead">
+			<!-- <div class="masthead">
 				<p>Human-centered and technology-driven design</p>
 				<h1>Scott Kellum</h1>
-			</div>
+			</div> -->
 			{featuredPost && (
 				<>
-					{featuredPost.data.heroImage && <img src={featuredPost.data.heroImage} alt={featuredPost.data.alt} />}
-					<h2><a href={`/writing/${featuredPost.slug}/`}>{featuredPost.data.title}</a></h2>
-					<p>{featuredPost.data.description}</p>
+					{featuredPost.data.heroImage && <img class="cover-image" src={featuredPost.data.heroImage} alt={featuredPost.data.alt} />}
+					<div class="cover-text">
+						<h2 class="cover-hed"><a href={`/writing/${featuredPost.slug}/`}>{featuredPost.data.title}</a></h2>
+						<p>{featuredPost.data.description}</p>
+					</div>
 				</>
 			)}
 		</section>
@@ -109,40 +111,43 @@ const pinnedWork = work
 	/* COVER */
 
 	.cover {
-	}
-	.cover::before,
-	.cover::after {
-		pointer-events: none;
-		content: '';
-		position: absolute;
-		inset: var(--gutter);
-		z-index: -1;
-	}
-	.cover::before {
-		background-image:
-			radial-gradient(
-			ellipse at 0% 100% in oklch,
-			var(--gradient-stops) min(60rem, 90vw - (var(--gutter) * 2)));
-		filter: url(#topography);
-	}
-	.cover::after {
-		border: 1px solid rgb(104, 104, 104);
-		border-top: none;
-		border-right: none;
-		mix-blend-mode: color-burn;
-	}
-@media (prefers-color-scheme: dark) {
-		.cover::after {
-		border-color: rgb(182, 182, 182);
-			mix-blend-mode: color-dodge;
-		}
+		position: relative;
+		z-index: 9;
+		width: 100vmin;
 	}
 
-	.cover img {
-		width: 50%;
-		height: auto;
+	.cover-image {
+		width: calc(100vmin - var(--gutter));
+		height: calc(100vmin - var(--gutter));
+		/* height: auto; */
 		object-fit: cover;
-		margin-inline: calc(var(--gutter) * -0.5);
+		margin-inline: calc(var(--gutter) * -1) 0;
+		margin-block: calc(var(--gutter) * -1) 0;
+		display: block;
+	}
+
+	.cover-text {
+		background: var(--primary);
+		backdrop-filter: blur(2rem);
+		margin-block: calc(var(--gutter) * -1);
+		margin-inline: var(--gutter) calc(var(--gutter) * -1);
+		padding: var(--gutter);
+		position: relative;
+		z-index: 1;
+		position: sticky;
+		bottom: 0;
+	}
+	.cover-hed {
+		text-wrap: balance;
+		font-size: 8vw;
+		line-height: 1;
+		font-stretch: 60%;
+		text-transform: uppercase;
+		margin-block-end: 1rem;
+		font-weight: 700;
+	}
+	.cover-hed a {
+		text-decoration: none;
 	}
 
 

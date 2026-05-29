@@ -10,8 +10,8 @@ html {
   --gradient-stops: hsl(210 100% 80% / 1), hsl(30 100% 80% / 0);
   --blend: multiply;
 
-  --font-text: "Bennet Text", serif;
-  --font-display: "Bennet Banner", serif;
+  --font-text: "Bennet Text", system-ui;
+  --font-display: "Bennet Banner", system-ui;
   --font-meta: "IvyEpic", system-ui;
   --mono:
     ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
@@ -27,6 +27,7 @@ html {
   scroll-marker-group: before;
   scroll-behavior: smooth;
   overscroll-behavior: none;
+  text-wrap: pretty;
 }
 @media (prefers-color-scheme: dark) {
   html {
@@ -47,6 +48,24 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: inherit;
+  font: inherit;
+}
+
+a {
+  text-decoration-color: color-mix(var(--primary), transparent);
+  transition: text-decoration-color 0.2s ease-in-out;
+  text-underline-offset: 0.15em;
+}
+a:hover,
+a:focus {
+  text-decoration-color: var(--primary);
 }
 
 /* Orient the page flow direction as horizontal */
