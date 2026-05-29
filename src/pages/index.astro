@@ -168,17 +168,29 @@ const pinnedWork = work
 
 	.photography {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-		gap: var(--gutter);
+		grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+		gap: calc(var(--gutter) / 2);
 		--primary: #FF6C4B;
 		height: min-content;
+		padding: var(--gutter);
+		margin-inline: 0 4rem;
+		max-height: calc(100vh - 2rem);
+		overflow: auto;
+		background-color: var(--foreground);
+		transform: rotate(1deg) translateY(4%);
+		transition: transform 0.2s ease-in-out;
+	}
+	.photography:hover {
+		transform: rotate(0) translateY(0);
 	}
 	.photography h2 {
 		font: inherit;
 		font-family: var(--mono);
 		color: var(--primary);
 		grid-column: 1 / -1;
-	}
+		width: fit-content;
+		margin-block: 0 1rem;
+		}
 	.photography .item {
 		line-height: 0;
 	}
