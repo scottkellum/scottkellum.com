@@ -127,15 +127,18 @@ const pinnedWork = work
 	}
 
 	.cover-text {
-		background: var(--primary);
-		backdrop-filter: blur(2rem);
+		background-image: linear-gradient(90deg, color-mix(in srgb, transparent, var(--background)), var(--background));
+		backdrop-filter: blur(3rem);
 		margin-block: calc(var(--gutter) * -1);
-		margin-inline: var(--gutter) calc(var(--gutter) * -1);
+		margin-inline: var(--gutter) 0;
 		padding: var(--gutter);
+		padding-inline: var(--gutter) 0;
 		position: relative;
 		z-index: 1;
 		position: sticky;
 		bottom: 0;
+		border: 2px solid var(--background);
+		border-width: 2px 0 0 2px;
 	}
 	.cover-hed {
 		text-wrap: balance;
@@ -145,6 +148,8 @@ const pinnedWork = work
 		text-transform: uppercase;
 		margin-block-end: 1rem;
 		font-weight: 700;
+		border-top: 2px solid currentColor;
+		padding-top: 1rem;
 	}
 	.cover-hed a {
 		text-decoration: none;
