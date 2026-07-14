@@ -11,11 +11,11 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
-    "@astrojs/mdx": "^4.3.0",
+    "@astrojs/mdx": "^7.0.3",
     "@astrojs/rss": "^4.0.6",
     "@astrojs/sitemap": "^3.1.6",
-    "astro": "^5.10.0",
-    "markdown-it": "^12.3.2",
+    "astro": "^7.0.9",
+    "markdown-it": "^14.3.0",
     "sanitize-html": "2.13.0",
     "typescript": "^5.5.2"
   }

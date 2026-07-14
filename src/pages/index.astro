@@ -25,7 +25,7 @@ const work = (await getCollection('work')).sort(
 const featuredPost = work.find((post) => post.data.featured);
 
 const pinnedWriting = work
-	.filter((post) => post.data.pinned && post.data.category === 'writing' && post.slug !== featuredPost?.slug)
+	.filter((post) => post.data.pinned && post.data.category === 'writing' && post.id !== featuredPost?.id)
 	.slice(0, 2);
 
 const pinnedWork = work
@@ -45,7 +45,7 @@ const pinnedWork = work
 				<>
 					{featuredPost.data.heroImage && <img class="cover-image" src={featuredPost.data.heroImage} alt={featuredPost.data.alt} />}
 					<div class="cover-text">
-						<h2 class="cover-hed"><a href={`/writing/${featuredPost.slug}/`}>{featuredPost.data.title}</a></h2>
+						<h2 class="cover-hed"><a href={`/writing/${featuredPost.id}/`}>{featuredPost.data.title}</a></h2>
 						<p>{featuredPost.data.description}</p>
 					</div>
 				</>
@@ -55,7 +55,7 @@ const pinnedWork = work
 			{pinnedWriting.map((post) => (
 				<article>
 					{post.data.heroImage && <img src={post.data.heroImage} alt={post.data.alt} />}
-					<h2><a href={`/writing/${post.slug}/`}>{post.data.title}</a></h2>
+					<h2><a href={`/writing/${post.id}/`}>{post.data.title}</a></h2>
 					<p>{post.data.description}</p>
 				</article>
 			))}
@@ -64,7 +64,7 @@ const pinnedWork = work
 			{pinnedWork.map((post) => (
 				<article>
 					{post.data.heroImage && <img src={post.data.heroImage} alt={post.data.alt} />}
-					<h2><a href={`/writing/${post.slug}/`}>{post.data.title}</a></h2>
+					<h2><a href={`/writing/${post.id}/`}>{post.data.title}</a></h2>
 					<p>{post.data.description}</p>
 				</article>
 			))}

@@ -36,7 +36,7 @@ const work = (await getCollection('work'))
 									<img src={post.data.heroImage} alt={post.data.alt} width="441" height="441" />
 									<div class="work-container">
 										<h2 class="head">
-										<a href={`/portfolio/${post.slug}/`}>{post.data.title}</a>
+										<a href={`/portfolio/${post.id}/`}>{post.data.title}</a>
 									</h2>
 									<p class="description">
 										{post.data.description}

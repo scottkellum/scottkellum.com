@@ -21,9 +21,9 @@ export async function GET(context) {
         allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img'])
       }),
 			...post.data,
-			link: post.data.category === 'work' 
-				? `/portfolio/${post.slug}/` 
-				: `/writing/${post.slug}/`,
+			link: post.data.category === 'work'
+				? `/portfolio/${post.id}/`
+				: `/writing/${post.id}/`,
 		})),
 	});
 }

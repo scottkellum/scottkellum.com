@@ -13,9 +13,9 @@ const work = (await getCollection('work')).sort(
 
 let nextPosts;
 if (readNext) {
-	const customPost = work.find(post => post.slug === readNext);
+	const customPost = work.find(post => post.id === readNext);
 	if (customPost) {
-		const otherPosts = work.filter(post => post.data.title !== title && post.slug !== readNext).slice(0, 2);
+		const otherPosts = work.filter(post => post.data.title !== title && post.id !== readNext).slice(0, 2);
 		nextPosts = [customPost, ...otherPosts];
 	} else {
 		nextPosts = [];
@@ -53,7 +53,7 @@ if (readNext) {
 								<li>
 									<img src={post.data.heroImage} alt={post.data.alt} width="600" height="600" />
 									<h3>
-										<a href={`/work/${post.slug}`}>
+										<a href={`/work/${post.id}`}>
 											{post.data.title}
 										</a>
 									</h3>
