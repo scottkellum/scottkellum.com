@@ -37,10 +37,6 @@ const pinnedWork = work
 
 	<main>
 		<section class="cover" id="cover">
-			<!-- <div class="masthead">
-				<p>Human-centered and technology-driven design</p>
-				<h1>Scott Kellum</h1>
-			</div> -->
 			{featuredPost && (
 				<>
 					{featuredPost.data.heroImage && <img class="cover-image" src={featuredPost.data.heroImage} alt={featuredPost.data.alt} />}
@@ -150,7 +146,7 @@ html {
 		font-size: max(16vmin, 2rem);
 		padding-inline: 0.5em;
 		/*rotate: -5deg;*/
-		line-height: 1;
+		line-height: 0.9;
 		font-stretch: 60%;
 		/*text-transform: uppercase;*/
 		margin-block-end: 1rem;
