@@ -32,7 +32,7 @@ html {
 }
 @media (prefers-color-scheme: dark) {
   html {
-    --primary: hsl(43, 84%, 50%);
+    --primary: hsl(100, 40%, 20%);
     --foreground: #fff;
     --background: #000;
     --background-alt: hsl(0 0 100% / 0.1);
@@ -140,13 +140,12 @@ html::scroll-button(*) {
   cursor: pointer;
   z-index: 9;
   font-family: inherit;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-family: var(--font-meta);
-  font-weight: 300;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.2em;
   color: #fff;
-  mix-blend-mode: difference;
+  /*mix-blend-mode: difference;*/
   transition: opacity 0.3s ease-in-out;
 }
 

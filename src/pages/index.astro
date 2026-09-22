@@ -51,6 +51,10 @@ const pinnedWork = work
 				</>
 			)}
 		</section>
+		<section class="masthead">
+			<p>Human-centered and technology-driven design</p>
+			<h1>Scott Kellum</h1>
+		</section>
 		<section class="writing" id="writing">
 			{pinnedWriting.map((post) => (
 				<article>
@@ -85,6 +89,9 @@ const pinnedWork = work
 </Landing>
 
 <style>
+html {
+  background: var(--primary);
+}
 	html, body {
 		scroll-snap-type: x proximity;
 	}
@@ -117,39 +124,44 @@ const pinnedWork = work
 	}
 
 	.cover-image {
-		width: calc(100vmin - var(--gutter));
-		height: calc(100vmin - var(--gutter));
+		width: calc(100vmin - (var(--gutter) * 2));
+		height: calc(100vmin - (var(--gutter) * 2));
 		/* height: auto; */
 		object-fit: cover;
-		margin-inline: calc(var(--gutter) * -1) 0;
-		margin-block: calc(var(--gutter) * -1) 0;
+		margin-inline: 0;
+		margin-block: 0;
 		display: block;
 	}
 
 	.cover-text {
-		background-image: linear-gradient(90deg, color-mix(in srgb, transparent, var(--background)), var(--background));
-		backdrop-filter: blur(3rem);
-		margin-block: calc(var(--gutter) * -1);
-		margin-inline: 0;
-		padding: var(--gutter);
-		padding-inline: var(--gutter) 0;
+		margin: 0;
+		padding-block: 0 var(--gutter);
 		position: relative;
 		z-index: 1;
 		position: sticky;
 		bottom: 0;
-		border: 1px solid var(--background);
-		border-width: 1px 0 0 1px;
 	}
 	.cover-hed {
 		text-wrap: balance;
-		font-size: max(8vmin, 2rem);
+		text-align: center;
+		font-family: var(--font-cover);
+		/*font-style: italic;*/
+		font-weight: 800;
+		font-size: max(16vmin, 2rem);
+		padding-inline: 0.5em;
+		/*rotate: -5deg;*/
 		line-height: 1;
 		font-stretch: 60%;
-		text-transform: uppercase;
+		/*text-transform: uppercase;*/
 		margin-block-end: 1rem;
-		font-weight: 700;
-		border-top: 1px solid var(--primary);
-		padding-top: 1rem;
+		text-shadow: 0.08em 0.08em 0 var(--primary);
+	}
+	.cover-text p {
+	  font-family: var(--font-meta);
+  	max-width: 30rem;
+    background-color: var(--primary);
+    margin-inline: auto;
+    padding: 1rem;
 	}
 	.cover-hed a {
 		text-decoration: none;
