@@ -1,0 +1,25 @@
+@font-face {
+  font-family: Kass;
+  src: url("/kass.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: regular;
+}
+@font-face {
+  font-family: Kass;
+  src: url("/kass-italic.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: Arnold;
+  src: url("/arnold.woff2") format("woff2");
+  font-weight: 400;
+  font-style: regular;
+}
+@font-face {
+  font-family: Arnold;
+  src: url("/arnold-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}

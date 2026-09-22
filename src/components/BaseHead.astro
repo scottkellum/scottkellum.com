@@ -1,9 +1,9 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
+import '../styles/fonts.css';
 import '../styles/global.css';
 import '../styles/typetura.css';
-
 
 interface Props {
 	title: string;
@@ -21,11 +21,6 @@ const { title, description, image } = Astro.props;
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="icon" href="/favicon.ico">
 <meta name="generator" content={Astro.generator} />
-
-<!-- Font preloads -->
-<!-- <link rel="preconnect" href="https://typographer.io/">
-<link rel="stylesheet" href="https://typographer.io/1/users/7fed6df4c187946a210959b4ecd1556d39d9ff919812fad8e95fde2c6be2e1a2/1e97126c063332188209513aaa63aaa89fad45c5606c776361438b808e5d5c30/css?token=f8632f052d">
-<script type="module">try{navigator.sendBeacon("https://use.typographer.io/1/users/7fed6df4c187946a210959b4ecd1556d39d9ff919812fad8e95fde2c6be2e1a2/1e97126c063332188209513aaa63aaa89fad45c5606c776361438b808e5d5c30/css?token=f8632f052d")}catch{}</script> -->
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
@@ -50,3 +45,7 @@ const { title, description, image } = Astro.props;
 <meta property="og:title" content={`${title}`} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={image ? new URL(image, Astro.url) : ''} />
+
+<link rel="preconnect" href="https://typographer.io/">
+<link rel="stylesheet" href="https://typographer.io/1/users/7fed6df4c187946a210959b4ecd1556d39d9ff919812fad8e95fde2c6be2e1a2/1e97126c063332188209513aaa63aaa89fad45c5606c776361438b808e5d5c30/css?token=f8632f052d">
+<script type="module">try{navigator.sendBeacon("https://use.typographer.io/1/users/7fed6df4c187946a210959b4ecd1556d39d9ff919812fad8e95fde2c6be2e1a2/1e97126c063332188209513aaa63aaa89fad45c5606c776361438b808e5d5c30/css?token=f8632f052d")}catch{}</script>

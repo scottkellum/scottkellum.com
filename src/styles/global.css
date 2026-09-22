@@ -10,11 +10,12 @@ html {
   --gradient-stops: hsl(210 100% 80% / 1), hsl(30 100% 80% / 0);
   --blend: multiply;
 
-  --font-text: "Bennet Text", system-ui;
-  --font-display: "Bennet Banner", system-ui;
-  --font-meta: "IvyEpic", system-ui;
+  --font-text: IvyPresto, system-ui;
+  --font-display: Wayfinder, system-ui;
+  --font-cover: Kass, system-ui;
+  --font-meta: Arnold, system-ui;
   --mono:
-    ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
+    Arnold, ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
     "DejaVu Sans Mono", monospace;
 
   font-family: var(--font-text);
