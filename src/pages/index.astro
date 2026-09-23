@@ -141,23 +141,27 @@ html {
 		text-wrap: balance;
 		text-align: center;
 		font-family: var(--font-cover);
-		/*font-style: italic;*/
+		font-style: italic;
 		font-weight: 800;
-		font-size: max(16vmin, 2rem);
+		font-size: max(12vmin, 2rem);
 		padding-inline: 0.5em;
-		/*rotate: -5deg;*/
+		rotate: -5deg;
 		line-height: 0.9;
 		font-stretch: 60%;
-		/*text-transform: uppercase;*/
-		margin-block-end: 1rem;
+		margin-block-end: 10vb;
 		text-shadow: 0.08em 0.08em 0 var(--primary);
+		-webkit-text-stroke: 0.08em var(--primary);
+		paint-order: stroke fill;
 	}
 	.cover-text p {
 	  font-family: var(--font-meta);
   	max-width: 30rem;
     background-color: var(--primary);
-    margin-inline: auto;
+    margin-inline: auto 0;
     padding: 1rem;
+    padding-block-end: 0;
+    padding-inline-end: 0;
+    text-box: trim-both cap alphabetic;
 	}
 	.cover-hed a {
 		text-decoration: none;

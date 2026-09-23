@@ -92,7 +92,7 @@ body > * {
   left: 0;
   right: 0;
   gap: min(0.33rem, 1vw);
-  z-index: 9;
+  z-index: 99;
   padding: 0.5rem;
   height: 1rem;
 }
@@ -167,8 +167,4 @@ html::scroll-button(left) {
 
 html::scroll-button(right) {
   content: "Next";
-}
-
-::selection {
-  background: color-mix(in hsl, transparent, var(--primary));
 }
