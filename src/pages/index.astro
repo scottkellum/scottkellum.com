@@ -5,6 +5,7 @@ import { SITE_DESCRIPTION } from '../consts';
 import { getCollection } from 'astro:content';
 import photos from '../data/photos.json'
 import Testimonials from '../components/Testimonials.astro';
+import HomeStamp from '../components/HomeStamp.astro';
 
 let rolls = photos.rolls.slice(0, 12);
 
@@ -37,6 +38,7 @@ const pinnedWork = work
 
 	<main>
 		<section class="cover" id="cover">
+		  <HomeStamp />
 			{featuredPost && (
 				<>
 					{featuredPost.data.heroImage && <img class="cover-image" src={featuredPost.data.heroImage} alt={featuredPost.data.alt} />}
