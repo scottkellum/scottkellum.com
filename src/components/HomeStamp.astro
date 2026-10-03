@@ -26,16 +26,18 @@
 .home-stamp {
   font-size: max(32vmin, 6rem);
   position: absolute;
-  top: -0.25em;
-  left: 0;
+  top: 0;
+  left: 2rem;
   width: 1em;
   height: 1em;
   display: grid;
   place-items: center;
   color: #000;
+  overflow: hidden;
 }
 .home-stamp > svg {
   grid-area: 1 / 1;
+  margin-block-start: -.4em;
 }
 .home-stamp-rings {
   width: 100%;

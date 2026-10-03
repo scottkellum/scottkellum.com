@@ -52,6 +52,12 @@ const pinnedWork = work
 		<section class="masthead">
 			<p>Human-centered and technology-driven design</p>
 			<h1>Scott Kellum</h1>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nobis quae dolores voluptatibus, quo totam nisi architecto aperiam accusamus corrupti officiis cum ipsa aliquid libero iure porro error suscipit animi.</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nobis quae dolores voluptatibus, quo totam nisi architecto aperiam accusamus corrupti officiis cum ipsa aliquid libero iure porro error suscipit animi.</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nobis quae dolores voluptatibus, quo totam nisi architecto aperiam accusamus corrupti officiis cum ipsa aliquid libero iure porro error suscipit animi.</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nobis quae dolores voluptatibus, quo totam nisi architecto aperiam accusamus corrupti officiis cum ipsa aliquid libero iure porro error suscipit animi.</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nobis quae dolores voluptatibus, quo totam nisi architecto aperiam accusamus corrupti officiis cum ipsa aliquid libero iure porro error suscipit animi.</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nobis quae dolores voluptatibus, quo totam nisi architecto aperiam accusamus corrupti officiis cum ipsa aliquid libero iure porro error suscipit animi.</p>
 		</section>
 		<section class="writing" id="writing">
 			{pinnedWriting.map((post) => (
@@ -122,12 +128,12 @@ html {
 	}
 
 	.cover-image {
-		width: calc(100vmin - (var(--gutter) * 2));
-		height: calc(100vmin - (var(--gutter) * 2));
+		width: calc(100vmin - (var(--gutter) * 1));
+		height: calc(100vmin - (var(--gutter) * 1));
 		/* height: auto; */
 		object-fit: cover;
 		margin-inline: 0;
-		margin-block: 0;
+		margin-block: calc(var(--gutter) * -1) 0;
 		display: block;
 	}
 
@@ -144,7 +150,7 @@ html {
 		text-align: center;
 		font-family: var(--font-cover);
 		font-style: italic;
-		font-weight: 800;
+		font-weight: 900;
 		font-size: max(12vmin, 2rem);
 		padding-inline: 0.5em;
 		rotate: -5deg;
@@ -172,21 +178,10 @@ html {
 
 
 	.masthead {
-		text-align: center;
 		padding: var(--gutter);
-	}
-	.masthead h1 {
-		font-weight: 400;
-		font-width: 100%;
-		text-transform: uppercase;
-		letter-spacing: 0.15em;
-		margin-block: 0;
-		line-height: 1;
-	}
-	.masthead p {
-		font-size: 1rem;
-		margin-block: 0;
-		font-style: italic;
+		background-color: color-mix(in srgb, var(--background) 50%, transparent);
+		width: auto;
+		column-width: 10rem;
 	}
 
 	/* PHOTOGRAPHY */
