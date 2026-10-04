@@ -37,6 +37,16 @@ const pinnedWork = work
 <Landing title="Scott Kellum — Human-centered and technology-driven design" description={SITE_DESCRIPTION}>
 
 	<main>
+  	<section class="masthead">
+  		<img src="/headshot.jpg" alt="Scott Kellum headshot" />
+  		<div class="text">
+   			<h1 class="eyebrow"><span class="hidden">Scott Kellum | </span>Human-centered and technology-driven design</h1>
+  			<h2 class="hed" aria-hidden="true">Scott Kellum</h2>
+  			<p>Scott is an internationally recognized leader in design with 20+ years of experience and a specialized focus on dynamic typography. Scott brings two decades of involvement and partnership with some of the most well-respected teams in design, including Darden Studio, Fjord, and Vox Media. While in these roles, Scott successfully built cross-organizational buy-in for his unique approaches to design problems, bringing people together to create focused, beautiful, and efficient solutions.</p>
+  			<p>Scott is an internationally recognized leader in design with 20+ years of experience and a specialized focus on dynamic typography. Scott brings two decades of involvement and partnership with some of the most well-respected teams in design, including Darden Studio, Fjord, and Vox Media. While in these roles, Scott successfully built cross-organizational buy-in for his unique approaches to design problems, bringing people together to create focused, beautiful, and efficient solutions.</p>
+  			<p>Scott is an internationally recognized leader in design with 20+ years of experience and a specialized focus on dynamic typography. Scott brings two decades of involvement and partnership with some of the most well-respected teams in design, including Darden Studio, Fjord, and Vox Media. While in these roles, Scott successfully built cross-organizational buy-in for his unique approaches to design problems, bringing people together to create focused, beautiful, and efficient solutions.</p>
+  		</div>
+  	</section>
 		<section class="cover" id="cover">
 		  <HomeStamp />
 			{featuredPost && (
@@ -48,16 +58,6 @@ const pinnedWork = work
 					</div>
 				</>
 			)}
-		</section>
-		<section class="masthead">
-			<p>Human-centered and technology-driven design</p>
-			<h1>Scott Kellum</h1>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nobis quae dolores voluptatibus, quo totam nisi architecto aperiam accusamus corrupti officiis cum ipsa aliquid libero iure porro error suscipit animi.</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nobis quae dolores voluptatibus, quo totam nisi architecto aperiam accusamus corrupti officiis cum ipsa aliquid libero iure porro error suscipit animi.</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nobis quae dolores voluptatibus, quo totam nisi architecto aperiam accusamus corrupti officiis cum ipsa aliquid libero iure porro error suscipit animi.</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nobis quae dolores voluptatibus, quo totam nisi architecto aperiam accusamus corrupti officiis cum ipsa aliquid libero iure porro error suscipit animi.</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nobis quae dolores voluptatibus, quo totam nisi architecto aperiam accusamus corrupti officiis cum ipsa aliquid libero iure porro error suscipit animi.</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nobis quae dolores voluptatibus, quo totam nisi architecto aperiam accusamus corrupti officiis cum ipsa aliquid libero iure porro error suscipit animi.</p>
 		</section>
 		<section class="writing" id="writing">
 			{pinnedWriting.map((post) => (
@@ -93,9 +93,6 @@ const pinnedWork = work
 </Landing>
 
 <style>
-html {
-  background: var(--primary);
-}
 	html, body {
 		scroll-snap-type: x proximity;
 	}
@@ -104,6 +101,8 @@ html {
 	}
 	main {
 		writing-mode: sideways-lr;
+		display: flex;
+		flex-direction: column;
 	}
 	main > * {
 		writing-mode: horizontal-tb;
@@ -125,10 +124,15 @@ html {
 		position: relative;
 		z-index: 9;
 		width: 100vmin;
+		background: var(--primary);
+	}
+	.cover,
+	.cover::scroll-marker {
+  	order: -1;
 	}
 
 	.cover-image {
-		width: calc(100vmin - (var(--gutter) * 1));
+		width: calc(100vmin - (var(--gutter) * 2));
 		height: calc(100vmin - (var(--gutter) * 1));
 		/* height: auto; */
 		object-fit: cover;
@@ -160,6 +164,7 @@ html {
 		text-shadow: 0.08em 0.08em 0 var(--primary);
 		-webkit-text-stroke: 0.08em var(--primary);
 		paint-order: stroke fill;
+		will-change: scale;
 	}
 	.cover-text p {
 	  font-family: var(--font-meta);
@@ -179,9 +184,59 @@ html {
 
 	.masthead {
 		padding: var(--gutter);
-		background-color: color-mix(in srgb, var(--background) 50%, transparent);
-		width: auto;
-		column-width: 10rem;
+		background-color: var(--background);
+		max-width: none;
+		grid-template-columns: 1fr 2fr;
+		align-items: start;
+		gap: var(--gutter);
+	}
+
+	.masthead img {
+		width: 100%;
+		mix-blend-mode: var(--blend);
+		display: block;
+		visibility: hidden;
+	}
+
+	.masthead .eyebrow {
+		text-transform: uppercase;
+		font-family: var(--font-meta);
+		font-size: 0.8rem;
+		padding-block: 0.3em;
+		text-wrap: balance;
+	}
+	.masthead .hed {
+		font-family: var(--font-display);
+    font-size: 3rem;
+    /*line-height: 1;*/
+    margin-block: 1rlh 0;
+	}
+	.masthead p {
+		font-size: 1.15rem;
+	}
+	.masthead .text {
+  	background: red;
+    height: calc(100dvh - (var(--gutter) * 3));
+    width: auto;
+    gap: var(--gutter);
+		column-width: 20rem;
+		column-height: calc(100dvh - (var(--gutter) * 3));
+		column-fill: auto;
+		/* column-fill: balance; */
+		text-align: justify;
+		hyphens: auto;
+		orphans: 2;
+		widows: 3;
+		position: relative;
+	}
+
+	@media (width > 40rem) {
+		.masthead {
+			display: grid;
+		}
+		.masthead .eyebrow {
+			border-top: 1px solid color-mix(in srgb, currentColor 50%, transparent);
+		}
 	}
 
 	/* PHOTOGRAPHY */

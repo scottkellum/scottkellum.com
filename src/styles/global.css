@@ -2,9 +2,9 @@ html {
   --gutter: min(2rem, 5vw);
   --column-height: 60vh;
   --page-height: 90vh;
-  --primary: hsl(18, 100%, 41%);
+  --primary: hsl(70, 100%, 50%);
   --foreground: #000;
-  --background: #f4f2ee;
+  --background: hsl(70, 20%, 95%);
   --background-alt: hsl(0 0 100% / 0.5);
 
   --gradient-stops: hsl(210 100% 80% / 1), hsl(30 100% 80% / 0);
@@ -32,9 +32,9 @@ html {
 }
 @media (prefers-color-scheme: dark) {
   html {
-    --primary: hsl(10, 70%, 16%);
+    --primary: hsl(340, 100%, 25%);
     --foreground: #fff;
-    --background: #000;
+    --background: hsl(340, 100%, 5%);
     --background-alt: hsl(0 0 100% / 0.1);
     --blend: screen;
     -webkit-font-smoothing: antialiased;
@@ -167,4 +167,16 @@ html::scroll-button(left) {
 
 html::scroll-button(right) {
   content: "Next";
+}
+
+/* Utility */
+
+.hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  white-space: nowrap;
 }
