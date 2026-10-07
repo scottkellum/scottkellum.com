@@ -22,10 +22,10 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-window.addEventListener("wheel", (e) => {
-  const now = Date.now();
-  if (Math.abs(e.deltaY) > 20 && now - lastWheelTime > 100) {
-    prevNext(e.deltaY > 0 ? "next" : "prev");
-    lastWheelTime = now;
-  }
-});
+// window.addEventListener("wheel", (e) => {
+//   const now = Date.now();
+//   if (Math.abs(e.deltaY) > 20 && now - lastWheelTime > 100) {
+//     prevNext(e.deltaY > 0 ? "next" : "prev");
+//     lastWheelTime = now;
+//   }
+// });
