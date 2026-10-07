@@ -215,26 +215,28 @@ const pinnedWork = work
 		font-size: 1.15rem;
 	}
 	.masthead .text {
-  	background: red;
     height: calc(100dvh - (var(--gutter) * 3));
-    width: auto;
-    gap: var(--gutter);
-		column-width: 20rem;
-		column-height: calc(100dvh - (var(--gutter) * 3));
-		column-fill: auto;
-		/* column-fill: balance; */
-		text-align: justify;
-		hyphens: auto;
-		orphans: 2;
-		widows: 3;
-		position: relative;
+    overflow: auto;
+    padding-inline-end: 1ch;
+	}
+	.masthead .text::after {
+		content: "";
+		position: sticky;
+		display: block;
+		height: 2lh;
+		width: 100%;
+		bottom: 0;
+		background: linear-gradient(to top, var(--background), transparent);
+	}
+	.masthead p:not(:first-of-type) {
+		text-indent: 25%;
 	}
 
 	@media (width > 40rem) {
 		.masthead {
 			display: grid;
 		}
-		.masthead .eyebrow {
+		.masthead .text {
 			border-top: 1px solid color-mix(in srgb, currentColor 50%, transparent);
 		}
 	}
