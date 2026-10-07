@@ -92,7 +92,7 @@ if (readNext) {
 
 	hgroup .hed {
 		font-family: var(--font-display);
-		font-size: clamp(2.5rem, 10vw, 5rem);
+		font-size: clamp(2.5rem, 12vw, 6rem);
 		line-height: 1;
 		margin-block: var(--gutter);
 		text-wrap: balance;
@@ -103,10 +103,10 @@ if (readNext) {
 	hgroup .date {
 		font-family: var(--font-meta);
 		font-size: 0.9em;
-		color: var(--primary);
 		margin-block: 0;
 		grid-row: 3 / 4;
 		text-align: right;
+		text-box: trim-both cap alphabetic;
 	}
 
 	hgroup img {
@@ -118,7 +118,8 @@ if (readNext) {
 		max-height: min(100%, 40vh);
 		position: relative;
 		z-index: -1;
-		outline: 8rem solid var(--background-alt);
+		outline: 8rem solid var(--primary);
+		box-shadow: 0 0 0 9rem var(--background);
 		margin-bottom: 20rem;
 	}
 	@media (width < 42em) {
@@ -126,7 +127,8 @@ if (readNext) {
 			padding-inline-end: 0rem;
 		}
 		hgroup img {
-			outline: 4rem solid var(--background-alt);
+			outline: 4rem solid var(--primary);
+			box-shadow: 0 0 0 5rem var(--background);
 		}
 	}
 
@@ -134,14 +136,13 @@ if (readNext) {
 		content: '';
 		position: absolute;
 		inset: 0;
+		inset-block: auto 1.7rem;
+		height: 50vh;
+		width: calc(100% - (var(--gutter) * 2));
 		pointer-events: none;
 		filter: url(#topography);
 		z-index: -1;
-		mix-blend-mode: var(--blend);
-		background:
-		radial-gradient(
-			ellipse at 0% 100% in oklch,
-			var(--gradient-stops) 90vw);
+		background: var(--primary);
 	}
 
 	/* General text styles */
@@ -195,11 +196,12 @@ if (readNext) {
 	.inner :global(ul ::marker),
 	.inner :global(ol ::marker) {
 		content: '✦ ';
-		color: color-mix(in srgb, var(--primary) 50%, transparent 50%);
+		color: color-mix(in srgb, var(--foreground) 50%, transparent 50%);
+		transition: color 0.25s ease-in-out;
 	}
 	.inner :global(ul:hover ::marker),
 	.inner :global(ol:hover ::marker) {
-		color: var(--primary);
+		color: var(--foreground);
 	}
 	.inner :global(ul p),
 	.inner :global(ol p) {
@@ -375,9 +377,11 @@ if (readNext) {
 	.inner > :global(p:first-child:first-letter) {
 		initial-letter: 6 3;
 		font-weight: 500;
-		color: var(--primary);
+		/*color: var(--primary);*/
 		margin-inline-end: 1rem;
 		font-family: var(--font-display);
+		/*text-shadow: -1rem -1rem 0 var(--primary), 1rem 1rem 0 var(--primary);*/
+		/*box-shadow: -1rem -1rem 0 1rem var(--primary), 1rem 1rem 0 1rem var(--primary);*/
 	}
 
 	/* Pagination logic */
@@ -514,15 +518,12 @@ if (readNext) {
 		content: '';
 		position: absolute;
 		inset: 0;
-		inset-inline: -100vw 0;
-		width: 200vw;
+		inset-inline: calc(var(--gutter) * -0.5) 0;
+		width: calc(100vw + (var(--gutter) * 0.5));
 		pointer-events: none;
 		z-index: -1;
 		filter: url(#topography);
-		background:
-		radial-gradient(
-			ellipse at 100% 0% in oklch,
-			var(--gradient-stops) 200vw);
+		background: var(--primary);
 	}
 
 	/* Footer */
