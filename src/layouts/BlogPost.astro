@@ -47,19 +47,21 @@ if (readNext) {
 						<slot />
 					</div>
 			    <div class="end" id="end">
-						<h2>Read Next</h2>
-						<ul>
-							{nextPosts && nextPosts.map(post => (
-								<li>
-									<img src={post.data.heroImage} alt={post.data.alt} width="600" height="600" />
-									<h3>
-										<a href={`/work/${post.id}`}>
-											{post.data.title}
-										</a>
-									</h3>
-								</li>
-							))}
-						</ul>
+						<div class="end-inner">
+  						<h2>Read Next</h2>
+  						<ul>
+  							{nextPosts && nextPosts.map(post => (
+  								<li>
+  									<img src={post.data.heroImage} alt={post.data.alt} width="600" height="600" />
+  									<h3>
+  										<a href={`/work/${post.id}`}>
+  											{post.data.title}
+  										</a>
+  									</h3>
+  								</li>
+  							))}
+  						</ul>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -143,6 +145,7 @@ if (readNext) {
 		filter: url(#topography);
 		z-index: -1;
 		background: var(--primary);
+		opacity: 0.33;
 	}
 
 	/* General text styles */
@@ -439,9 +442,12 @@ if (readNext) {
 		width: 100vw;
 		box-sizing: border-box;
 		height: calc(100vh - var(--gutter));
-		margin-block: calc(var(--column-height) - var(--page-height)) calc(var(--gutter) * -2);
+		margin-block: calc(var(--column-height) - var(--page-height)) 0;
 		margin-inline: calc(var(--gutter) * -1) 0;
 		padding-inline: 0;
+	}
+	.end-inner {
+	  background-color: color-mix(in srgb, var(--background) 67%, transparent 33%);
 	}
 
 	.end h2,
@@ -451,10 +457,14 @@ if (readNext) {
 	}
 
 	.end h2 {
-		margin-block: var(--gutter) 0.5rem;
+		margin-block: var(--gutter) 1lh;
 		margin-inline: var(--gutter);
 		text-wrap: balance;
-		font-style: italic;
+		font-size: 1rem;
+		line-height: 1;
+		font-family: var(--font-meta);
+		text-transform: uppercase;
+		letter-spacing: 0.2em;
 	}
 
 	.end ul,
@@ -497,7 +507,8 @@ if (readNext) {
 		transition: text-decoration-color 0.25s ease-in-out;
 		text-decoration-thickness: 0.1rem;
 		text-underline-offset: 0.15rem;
-		font-size: 1.25rem;
+		font-size: 1.75rem;
+		font-family: var(--font-display);
 	}
 	.end a:hover,
 	.end a:focus {
@@ -517,8 +528,8 @@ if (readNext) {
 	.end::before {
 		content: '';
 		position: absolute;
-		inset: 0;
 		inset-inline: calc(var(--gutter) * -0.5) 0;
+		inset-block: 0 -0.3rem;
 		width: calc(100vw + (var(--gutter) * 0.5));
 		pointer-events: none;
 		z-index: -1;
