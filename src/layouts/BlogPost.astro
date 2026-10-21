@@ -138,14 +138,13 @@ if (readNext) {
 		content: '';
 		position: absolute;
 		inset: 0;
-		inset-block: auto 1.7rem;
+		inset-block: auto 1.75rem;
 		height: 50vh;
 		width: calc(100% - (var(--gutter) * 2));
 		pointer-events: none;
 		filter: url(#topography);
 		z-index: -1;
 		background: var(--primary);
-		opacity: 0.33;
 	}
 
 	/* General text styles */
@@ -460,7 +459,7 @@ if (readNext) {
 		margin-block: var(--gutter) 1lh;
 		margin-inline: var(--gutter);
 		text-wrap: balance;
-		font-size: 1rem;
+		font-size: 0.8rem;
 		line-height: 1;
 		font-family: var(--font-meta);
 		text-transform: uppercase;
@@ -505,8 +504,9 @@ if (readNext) {
 		color: inherit;
 		text-decoration-color: transparent;
 		transition: text-decoration-color 0.25s ease-in-out;
-		text-decoration-thickness: 0.1rem;
-		text-underline-offset: 0.15rem;
+		text-decoration-thickness: 0.3em;
+		text-underline-offset: -0.1em;
+		text-decoration-skip-ink: none;
 		font-size: 1.75rem;
 		font-family: var(--font-display);
 	}

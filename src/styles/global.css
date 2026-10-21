@@ -2,7 +2,7 @@ html {
   --gutter: min(2rem, 5vw);
   --column-height: 60vh;
   --page-height: 90vh;
-  --primary: hsl(70, 100%, 50%);
+  --primary: hsl(75, 100%, 48%);
   --foreground: #000;
   --background: hsl(70, 20%, 95%);
   --background-alt: hsl(0 0 100% / 0.5);
