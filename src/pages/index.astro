@@ -40,18 +40,26 @@ const pinnedWork = work
   	<section class="masthead">
   		<img src="/headshot.avif" alt="Scott Kellum headshot" />
   		<div class="text">
-   			<h1 class="eyebrow"><span class="hidden">Scott Kellum | </span>Human-centered and technology-driven design</h1>
-  			<h2 class="hed" aria-hidden="true">Scott Kellum</h2>
-  			<p>Scott is an internationally recognized leader in design with 20+ years of experience and a specialized focus on dynamic typography. Scott brings two decades of involvement and partnership with some of the most well-respected teams in design, including Darden Studio, Fjord, and Vox Media. While in these roles, Scott successfully built cross-organizational buy-in for his unique approaches to design problems, bringing people together to create focused, beautiful, and efficient solutions.</p>
-        <div class="meta">
-          <a href="/resume">Résumé</a>
-          <a href="mailto:scott@scottkellum.com">scott@scottkellum.com</a>
-          <a rel="me" href="https://typo.social/@scott" target="_blank">Mastodon</a>
-          <ul class="locations">
-            <li class="current">Madrid, Spain</li>
-            <li>Los Angeles, CA</li>
-            <li>New York, NY</li>
-          </ul>
+        <div class="top">
+     			<h1 class="eyebrow"><span class="hidden">Scott Kellum | </span>Human-centered and technology-driven design</h1>
+    			<h2 class="hed" aria-hidden="true">Scott Kellum</h2>
+    			<p>Scott is an internationally recognized leader in design with 20+ years of experience and a specialized focus on dynamic typography. Scott brings two decades of involvement and partnership with some of the most well-respected teams in design, including Darden Studio, Fjord, and Vox Media. While in these roles, Scott successfully built cross-organizational buy-in for his unique approaches to design problems, bringing people together to create focused, beautiful, and efficient solutions.</p>
+          <div class="meta">
+            <a href="/resume">Résumé</a>
+            <a href="mailto:scott@scottkellum.com">scott@scottkellum.com</a>
+            <a rel="me" href="https://typo.social/@scott" target="_blank">Mastodon</a>
+            <ul class="locations">
+              <li class="current">Madrid, Spain</li>
+              <li>Los Angeles, CA</li>
+              <li>New York, NY</li>
+            </ul>
+          </div>
+        </div>
+        <div class="bottom">
+          <div class="colophon">
+            <p>The text is set in <a href="https://ivyfoundry.com/families/ivypresto/" target="_blank">IvyPresto from Ivy Foundry</a> and served with <a href="https://typographer.com/" target="_blank">Typographer</a>. Headlines are set in <a href="https://connary.com/fonts/wayfinder/" target="_blank">Wayfinder by Connary Fagen</a> and served with <a href="https://typographer.com/" target="_blank">Typographer</a>. Cover headlines are set in <a href="https://www.futurefonts.com/cinketype/kass" target="_blank">Kass by Cinketype</a>. <a href="https://www.futurefonts.com/rudiger/arnold" target="_blank">Arnold by Rüdiger</a> is used for supporting text.</p>
+            <p>Special thanks to <a href="https://kizu.dev/">Roman Komarov</a> for assistance with some of the pagination CSS.</p>
+          </div>
         </div>
   		</div>
   	</section>
@@ -229,27 +237,31 @@ const pinnedWork = work
     height: calc(100dvh - (var(--gutter) * 3));
     overflow: auto;
     padding-inline-end: 1ch;
-	}
-	.masthead .text::after {
-		content: "";
-		position: sticky;
-		display: block;
-		height: 2lh;
-		width: 100%;
-		bottom: 0;
-		background: linear-gradient(to top, var(--background), transparent);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 	}
 	.masthead p:not(:first-of-type) {
 		text-indent: 25%;
 	}
 
+	.masthead .meta,
+	.masthead .bottom p {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+	}
+
+	.masthead .bottom {
+  	overflow: hidden;
+    margin-block: 2rem 0.25rem;
+    min-height: fit-content;
+	}
+
 	.masthead .meta {
-	  font-family: var(--mono);
-			font-size: 0.8rem;
-			display: flex;
-			flex-direction: column;
-			gap: 0.5em;
-			margin-block: 1em;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5em;
+		margin-block: 1em;
 	}
 	.masthead .meta > * {
 	  font: unset;
@@ -260,7 +272,7 @@ const pinnedWork = work
 			display: grid;
 		}
 		.masthead .text {
-			border-top: 1px solid color-mix(in srgb, currentColor 50%, transparent);
+			border-block: 1px solid var(--border);
 		}
 	}
 
