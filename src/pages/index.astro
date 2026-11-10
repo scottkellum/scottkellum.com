@@ -200,6 +200,7 @@ const pinnedWork = work
 
 
 	.masthead {
+	overflow: auto;
 		padding: var(--gutter);
 		background-color: var(--background);
 		max-width: none;
@@ -210,11 +211,11 @@ const pinnedWork = work
 	}
 
 	.masthead img {
-		width: 200%;
+		width: 60%;
 		mix-blend-mode: var(--blend);
 		display: block;
 		rotate: 180deg;
-		translate: -50% calc(var(--gutter) * -1);
+		translate: calc(var(--gutter) * -1) calc(var(--gutter) * -1);
 	}
 
 	.masthead .eyebrow {
@@ -235,7 +236,6 @@ const pinnedWork = work
 	}
 	.masthead .text {
     height: calc(100dvh - (var(--gutter) * 3));
-    overflow: auto;
     padding-inline-end: 1ch;
     display: flex;
     justify-content: space-between;
@@ -270,8 +270,14 @@ const pinnedWork = work
 	@media (width > 40rem) {
 		.masthead {
 			display: grid;
+			overflow: hidden;
+		}
+		.masthead img {
+			width: 200%;
+			translate: -50% calc(var(--gutter) * -1);
 		}
 		.masthead .text {
+			overflow: auto;
 			border-block: 1px solid var(--border);
 		}
 	}
@@ -288,23 +294,26 @@ const pinnedWork = work
 	.photography {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-		gap: calc(var(--gutter) / 2);
-		--primary: #FF6C4B;
-		height: min-content;
+		gap: 1rem;
+		background-color: #000;
+		color: #aaa;
+		border-inline-start: 1px solid var(--primary);
 		padding: var(--gutter);
-		margin-inline: 0 4rem;
+		margin-inline: 0 var(--gutter);
 		max-height: calc(100vh - 2rem);
 		overflow: auto;
-		background-color: var(--foreground);
 		transition: transform 0.2s ease-in-out;
 	}
 	.photography h2 {
 		font: inherit;
-		font-family: var(--mono);
-		color: var(--primary);
+		font-family: var(--font-display);
+		font-size: 2rem;
 		grid-column: 1 / -1;
 		width: fit-content;
-		margin-block: 0 1rem;
+		margin-block: 0;
+		position: sticky;
+		top: -2rem;
+		mix-blend-mode: var(--blend);
 		}
 	.photography .item {
 		line-height: 0;
