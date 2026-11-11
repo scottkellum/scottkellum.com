@@ -148,6 +148,8 @@ html::scroll-button(*) {
   letter-spacing: 0.2em;
   color: var(--foreground);
   transition: opacity 0.3s ease-in-out;
+  -webkit-text-stroke: 1em var(--background);
+  paint-order: stroke fill;
 }
 
 html::scroll-button(*):hover,
