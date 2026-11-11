@@ -146,8 +146,7 @@ html::scroll-button(*) {
   font-family: var(--font-meta);
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: #fff;
-  /*mix-blend-mode: difference;*/
+  color: var(--foreground);
   transition: opacity 0.3s ease-in-out;
 }
 

@@ -128,11 +128,17 @@ const pinnedWork = work
 		scroll-snap-align: start;
 		box-sizing: border-box;
 		height: 100%;
-		width: min(60rem, 90vw - (var(--gutter) * 2));
+		width: min(60rem, 100vw - var(--gutter));
 		padding: var(--gutter);
 	}
 	img {
 		width: 100px;
+	}
+
+	/* Override prev/next offset */
+	html::scroll-button(right) {
+  content: "Next";
+    right: calc(var(--gutter) * 2);
 	}
 
 	/* COVER */
@@ -140,8 +146,9 @@ const pinnedWork = work
 	.cover {
 		position: relative;
 		z-index: 9;
-		width: 100vmin;
+		width: calc(100vmin - var(--gutter));
 		background: var(--primary);
+		container-type: inline-size;
 	}
 	.cover,
 	.cover::scroll-marker {
@@ -149,9 +156,8 @@ const pinnedWork = work
 	}
 
 	.cover-image {
-		width: calc(100vmin - (var(--gutter) * 2));
-		height: calc(100vmin - (var(--gutter) * 1));
-		/* height: auto; */
+		width: calc(100cqi);
+		aspect-ratio: 1;
 		object-fit: cover;
 		margin-inline: 0;
 		margin-block: calc(var(--gutter) * -1) 0;
@@ -197,7 +203,6 @@ const pinnedWork = work
 	.cover-hed a {
 		text-decoration: none;
 	}
-
 
 	.masthead {
 	overflow: auto;
