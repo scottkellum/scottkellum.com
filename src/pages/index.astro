@@ -45,9 +45,11 @@ const pinnedWork = work
     			<h2 class="hed" aria-hidden="true">Scott Kellum</h2>
     			<p>Scott is an internationally recognized leader in design with 20+ years of experience and a specialized focus on dynamic typography. Scott brings two decades of involvement and partnership with some of the most well-respected teams in design, including Darden Studio, Fjord, and Vox Media. While in these roles, Scott successfully built cross-organizational buy-in for his unique approaches to design problems, bringing people together to create focused, beautiful, and efficient solutions.</p>
           <div class="meta">
-            <a href="/resume">Résumé</a>
-            <a href="mailto:scott@scottkellum.com">scott@scottkellum.com</a>
-            <a rel="me" href="https://typo.social/@scott" target="_blank">Mastodon</a>
+            <ul>
+              <li><a href="/resume">Résumé</a></li>
+              <li><a href="mailto:scott@scottkellum.com">scott@scottkellum.com</a></li>
+              <li><a rel="me" href="https://typo.social/@scott" target="_blank">Mastodon</a></li>
+            </ul>
             <ul class="locations">
               <li class="current">Madrid, Spain</li>
               <li>Los Angeles, CA</li>
@@ -56,9 +58,9 @@ const pinnedWork = work
           </div>
         </div>
         <div class="bottom">
-          <div class="colophon">
-            <p>The text is set in <a href="https://ivyfoundry.com/families/ivypresto/" target="_blank">IvyPresto from Ivy Foundry</a> and served with <a href="https://typographer.com/" target="_blank">Typographer</a>. Headlines are set in <a href="https://connary.com/fonts/wayfinder/" target="_blank">Wayfinder by Connary Fagen</a> and served with <a href="https://typographer.com/" target="_blank">Typographer</a>. Cover headlines are set in <a href="https://www.futurefonts.com/cinketype/kass" target="_blank">Kass by Cinketype</a>. <a href="https://www.futurefonts.com/rudiger/arnold" target="_blank">Arnold by Rüdiger</a> is used for supporting text.</p>
-            <p>Special thanks to <a href="https://kizu.dev/">Roman Komarov</a> for assistance with some of the pagination CSS.</p>
+          <div class="colophon-link">
+            <p>Headshot by <a href="https://normanposselt.com/" target="_blank">Norman Posselt</a></p>
+            <p><a href="#colophon">Find more information about this site in the colophon.</a></p>
           </div>
         </div>
   		</div>
@@ -105,6 +107,11 @@ const pinnedWork = work
 				</a>
 			))}
 		</section>
+		<section class="colophon" id="colophon">
+		  <h2>Colophon</h2>
+      <p>The text is set in <a href="https://ivyfoundry.com/families/ivypresto/" target="_blank">IvyPresto from Ivy Foundry</a> and served with <a href="https://typographer.com/" target="_blank">Typographer</a>. Headlines are set in <a href="https://connary.com/fonts/wayfinder/" target="_blank">Wayfinder by Connary Fagen</a> and served with <a href="https://typographer.com/" target="_blank">Typographer</a>. Cover headlines are set in <a href="https://www.futurefonts.com/cinketype/kass" target="_blank">Kass by Cinketype</a>. <a href="https://www.futurefonts.com/rudiger/arnold" target="_blank">Arnold by Rüdiger</a> is used for supporting text.</p>
+      <p>Special thanks to <a href="https://kizu.dev/">Roman Komarov</a> for assistance with some of the pagination CSS.</p>
+		</section>
 
 	</main>
 </Landing>
@@ -130,9 +137,18 @@ const pinnedWork = work
 		height: 100%;
 		width: min(60rem, 100vw - var(--gutter));
 		padding: var(--gutter);
+		padding-block-end: calc(var(--gutter) * 2);
+		overflow-y: auto;
+		border-inline-start: 1px solid var(--border);
+	}
+	h2 {
+		font: inherit;
+		font-family: var(--font-display);
+		font-size: 2rem;
+		margin-block: 0;
 	}
 	img {
-		width: 100px;
+  	width: 100px;
 	}
 
 	/* Override prev/next offset */
@@ -149,6 +165,9 @@ const pinnedWork = work
 		width: calc(100vmin - var(--gutter));
 		background: var(--primary);
 		container-type: inline-size;
+		overflow: hidden;
+		padding-block-end: 0;
+		border-inline-start: none;
 	}
 	.cover,
 	.cover::scroll-marker {
@@ -199,20 +218,18 @@ const pinnedWork = work
     padding-inline-start: 0;
     text-box: trim-both cap alphabetic;
     text-wrap: pretty;
+    font-size: clamp(0.8rem, 2cqi + 0.3rem, 1rem);
 	}
 	.cover-hed a {
 		text-decoration: none;
 	}
 
 	.masthead {
-	overflow: auto;
-		padding: var(--gutter);
-		background-color: var(--background);
+    overflow: auto;
 		max-width: none;
 		grid-template-columns: 1fr 2fr;
 		align-items: start;
 		gap: var(--gutter);
-		border-inline-start: 1px solid var(--border);
 	}
 
 	.masthead img {
@@ -233,11 +250,18 @@ const pinnedWork = work
 	.masthead .hed {
 		font-family: var(--font-display);
     font-size: 3rem;
-    /*line-height: 1;*/
     margin-block: 1rlh 0;
 	}
 	.masthead p {
 		font-size: 1.15rem;
+	}
+	.masthead ul {
+  	display: flex;
+  	flex-wrap: wrap;
+    /*gap: 1rem;*/
+	}
+	li + li::before {
+	  content: ' • ';
 	}
 	.masthead .text {
     height: calc(100dvh - (var(--gutter) * 3));
@@ -260,6 +284,9 @@ const pinnedWork = work
   	overflow: hidden;
     margin-block: 2rem 0.25rem;
     min-height: fit-content;
+	}
+	.masthead .colophon-link p {
+  	text-indent: 0;
 	}
 
 	.masthead .meta {
@@ -287,14 +314,6 @@ const pinnedWork = work
 		}
 	}
 
-	/* Writing and Work */
-
-	.writing,
-	.work,
-	.photography {
-  	border-inline-start: 1px solid var(--border);
-	}
-
 	/* PHOTOGRAPHY */
 
 	.photography {
@@ -307,16 +326,12 @@ const pinnedWork = work
 		scrollbar-color: var(--primary) #000;
 	}
 	.photography h2 {
-		font: inherit;
-		font-family: var(--font-display);
-		font-size: 2rem;
 		grid-column: 1 / -1;
 		width: fit-content;
-		margin-block: 0;
+		mix-blend-mode: screen;
 		position: sticky;
 		top: 0;
-		mix-blend-mode: screen;
-		}
+	}
 	.photography .item {
 		line-height: 0;
 	}
@@ -324,6 +339,7 @@ const pinnedWork = work
 		width: 100%;
 		display: block;
 		color: inherit;
+		text-decoration-skip-ink: none;
 	}
 	.photography img {
 		width: 100%;
