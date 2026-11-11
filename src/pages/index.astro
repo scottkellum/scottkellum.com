@@ -7,7 +7,7 @@ import photos from '../data/photos.json'
 import Testimonials from '../components/Testimonials.astro';
 import HomeStamp from '../components/HomeStamp.astro';
 
-let rolls = photos.rolls.slice(0, 12);
+let rolls = photos.rolls;
 
 interface MarkdownFrontmatter {
 	publishDate: number;
@@ -285,24 +285,20 @@ const pinnedWork = work
 	/* Writing and Work */
 
 	.writing,
-	.work {
+	.work,
+	.photography {
   	border-inline-start: 1px solid var(--border);
 	}
 
 	/* PHOTOGRAPHY */
 
 	.photography {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-		gap: 1rem;
-		background-color: #000;
-		color: #ddd;
-		border-inline-start: 1px solid var(--primary);
-		padding: var(--gutter);
-		margin-inline: 0 var(--gutter);
-		max-height: calc(100vh - 2rem);
+  	background-color: #000;
+    color: #ddd;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 1rem;
 		overflow: auto;
-		transition: transform 0.2s ease-in-out;
 	}
 	.photography h2 {
 		font: inherit;
@@ -312,7 +308,7 @@ const pinnedWork = work
 		width: fit-content;
 		margin-block: 0;
 		position: sticky;
-		top: -2rem;
+		top: 0;
 		mix-blend-mode: screen;
 		}
 	.photography .item {
